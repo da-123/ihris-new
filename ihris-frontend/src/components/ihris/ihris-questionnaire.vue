@@ -8,6 +8,7 @@
         color="primary"
         indeterminate
         ></v-progress-circular>
+      <v-btn icon @click="overlay = false"><v-icon>mdi-close</v-icon></v-btn>
     </v-overlay>
 
     <v-navigation-drawer
@@ -49,7 +50,7 @@
 <script>
 export default {
   name: "ihris-questionnaire",
-  props: ["id", "title", "description", "purpose", "section-menu"],
+  props: ["id", "url", "title", "description", "purpose", "section-menu", "view-page", "edit"],
   data: function() {
     return {
       fhir: {},
@@ -58,25 +59,21 @@ export default {
       isEdit: false
     }
   },
-  created: function() {
-  },
-  computed: {
-  },
   methods: {
     processFHIR: function() {
       this.overlay = true
       this.loading = true
       //console.log(this.field)
       this.fhir = { 
-        resourceType: this.field,
-        meta: {
-          profile: [ this.profile ]
-        }
+        resourceType: "QuestionnaireResponse",
+        questionnaire: this.url,
+        status: "completed",
+        item: []
       }
       //console.log(this)
-      processChildren( this.field, this.fhir, this.$children )
+      processChildren( this.fhir.item, this.$children )
       console.log("SAVE",this.fhir)
-      fetch( "/fhir/"+this.field, {
+      fetch( "/fhir/QuestionnaireResponse", {
         method: "POST",
         headers: {
           "Content-Type": "application/fhir+json"
@@ -90,7 +87,18 @@ export default {
           response.json().then(data => {
             this.overlay = false
             this.loading = false
-            this.$router.push({ name:"resource_view", params: {page: this.page, id: data.id} })
+            if ( this.viewPage && data.subject && data.subject.reference ) {
+              let subject = data.subject.reference.split('/')
+              if ( subject[1] ) {
+                subject = subject[1]
+              } else {
+                subject = data.subject.reference
+              }
+              this.$router.push({ name:"resource_view", params: {page: this.viewPage, id: subject } })
+            } else {
+              this.$router.push({ name:"home" })
+            }
+            //console.log(data)
           })
         }
       } )
@@ -104,64 +112,40 @@ export default {
   }
 }
 
-const processChildren = function( parent, obj, children ) {
+const processChildren = function( obj, children, itemMap ) {
   //console.log("called on "+parent)
+  if ( !itemMap ) itemMap = {}
 
   children.forEach( child => {
 
-    let fullField = parent
-
     let next = obj
+    let myItemMap = {}
 
-    if ( child.field && !child.fieldType /* ignore arrays */ ) {
-      //console.log("working on "+parent+" . "+child.field)
-      let field
-      if ( child.sliceName ) {
-        if ( child.field.startsWith("value[x]") ) {
-          field = child.field.substring(9)
-          fullField += "." + field
-        } else {
-          field = child.field.replace(":"+child.sliceName, "")
-          fullField += "." + field
-        }
+    if ( child.isArray ) {
+      //console.log("ARRAY", child.path)
+    } else if ( child.isQuestionnaireGroup ) {
+      //console.log("GROUP", child.path)
+      let section = { linkId: child.path, text: child.label, item: [] } 
+      next.push( section )
+      next = section.item
+    } else if ( child.qField ) {
+      //console.log("PROCESS",path,child.qField,child.value)
+      let item
+      if ( itemMap.hasOwnProperty( child.path ) ) {
+        item = itemMap[ child.path ]
       } else {
-        field = child.field
-        fullField += "."+field
+        item = { linkId: child.path, answer: [] }
+        itemMap[child.path] = item
+        next.push( item )
       }
-      if ( child.max !== "1" || child.baseMax !== "1" ) {
-        if ( !obj.hasOwnProperty(field) ) {
-          next[field] = []
-        }
-      } else {
-        next[field] = {}
-      }
-      //console.log(fullField)
-        //console.log(child.max, child.baseMax)
-      //console.log(child)
-      if ( child.hasOwnProperty("value") ) {
-        //console.log( fullField +"="+ child.value )
-        if ( Array.isArray( next[field] ) ) {
-          next[field].push( child.value )
-        } else {
-          next[field] = child.value
-        }
-        next = next[field]
-      } else {
-        if ( Array.isArray( next[field] ) ) {
-          let sub = {}
-          if ( child.profile ) {
-            sub.url = child.profile
-          }
-          next[field].push( sub )
-          next = sub
-        } else {
-          next = next[field]
-        }
-      }
+      let answer = {}
+      answer[child.qField] = child.value
+      item.answer.push( answer )
     }
 
     if ( child.$children ) {
-      processChildren( fullField, next, child.$children )
+      //console.log("PROCESSING CHILDREN OF",child.path)
+      processChildren( next, child.$children, myItemMap )
     } 
 
   } )

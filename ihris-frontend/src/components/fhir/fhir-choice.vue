@@ -23,7 +23,7 @@ const itemSort = (a,b) => {
 }
 export default {
   name: "fhir-coding",
-  props: ["label", "path", "binding"],
+  props: ["label", "path", "binding", "edit"],
   data: function() {
     return {
       value: { system: "", code: "", display: "" },
@@ -32,6 +32,7 @@ export default {
       err_messages: null,
       error: false,
       items: [],
+      qField: "valueCoding"
     }
   },
   created: function() {

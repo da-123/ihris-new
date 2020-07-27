@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container v-if="source.edit">
+    <v-container v-if="edit">
       <v-text-field :label="display" v-model="value" outlined hide-details="auto" dense>
       </v-text-field>
     </v-container>
@@ -16,11 +16,12 @@
 <script>
 export default {
   name: "fhir-string",
-  props: ["field", "label", "min", "max", "id", "path", "slotProps", "sliceName","base-min","base-max"],
+  props: ["field", "label", "min", "max", "id", "path", "slotProps", "sliceName","base-min","base-max","edit"],
   data: function() {
     return {
-      source: { path: "", data: {}, edit: true },
-      value: ""
+      source: { path: "", data: {} },
+      value: "",
+      qField: "valueString"
     }
   },
   created: function() {
@@ -39,14 +40,13 @@ export default {
   methods: {
     setupData() {
       if ( this.slotProps && this.slotProps.source ) {
-        this.source = { path: this.slotProps.source.path+"."+this.field, data: {}, edit: this.slotProps.source.edit }
+        this.source = { path: this.slotProps.source.path+"."+this.field, data: {} }
         if ( this.slotProps.source.fromArray ) {
           this.source.data = this.slotProps.source.data
           this.value = this.source.data
           //console.log("SET value to ", this.source.data, this.slotProps.input)
         } else {
-          let expression = this.field
-          if ( expression.includes('value[x]:') ) expression = expression.substring( 9 )
+          let expression = this.field.substring( this.field.indexOf(':')+1 )
           this.source.data = this.$fhirpath.evaluate( this.slotProps.source.data, expression )
           //console.log("STR FHIRPATH", this.slotProps.source.data, this.field)
           if ( this.source.data.length == 1 ) {
@@ -59,7 +59,7 @@ export default {
   },
   computed: {
     index: function() {
-      if ( this.slotProps ) return this.slotProps.input
+      if ( this.slotProps ) return this.slotProps.input.index
       else return undefined
     },
     display: function() {

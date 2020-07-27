@@ -10,10 +10,10 @@
 <script>
 export default {
   name: "fhir-address",
-  props: ["field", "slotProps","sliceName","min","max","base-min","base-max","label","path"],
+  props: ["field", "slotProps","sliceName","min","max","base-min","base-max","label","path","edit"],
   data: function() {
     return {
-      source: { path: "", data: {}, edit: true }
+      source: { path: "", data: {} }
     }
   },
   created: function() {
@@ -31,11 +31,12 @@ export default {
   methods: {
     setupData: function() {
       if ( this.slotProps && this.slotProps.source ) {
-        this.source = { path: this.slotProps.source.path+"."+this.field, data: {}, edit: this.slotProps.source.edit }
+        this.source = { path: this.slotProps.source.path+"."+this.field, data: {} }
         if ( this.slotProps.source.fromArray ) {
           this.source.data = this.slotProps.source.data
         } else {
-          this.source.data = this.$fhirpath.evaluate( this.slotProps.source.data, this.field )
+          let expression = this.field.substring( this.field.indexOf(':')+1 )
+          this.source.data = this.$fhirpath.evaluate( this.slotProps.source.data, expression )
         }
         //console.log(this.source)
       }

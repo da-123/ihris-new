@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container v-if="source.edit">
+    <v-container v-if="edit">
       <v-menu 
         ref="menu" 
         v-model="menu" 
@@ -44,12 +44,13 @@
 <script>
 export default {
   name: "fhir-date-time",
-  props: ["field","min","max","base-min","base-max", "label", "slotProps"],
+  props: ["field","min","max","base-min","base-max", "label", "slotProps", "path", "edit","sliceName"],
   data: function() {
     return {
       value: null,
       menu: false,
-      source: { path: "", data: {}, edit: true }
+      source: { path: "", data: {} },
+      qField: "valueDateTime"
     }
   },
   created: function() {
@@ -71,13 +72,14 @@ export default {
   methods: {
     setupData() {
       if ( this.slotProps && this.slotProps.source ) {
-        this.source = { path: this.slotProps.source.path+"."+this.field, data: {}, edit: this.slotProps.source.edit }
+        this.source = { path: this.slotProps.source.path+"."+this.field, data: {} }
         if ( this.slotProps.source.fromArray ) {
           this.source.data = this.slotProps.source.data
           this.value = this.source.data
           //console.log("SET value to ", this.source.data, this.slotProps.input)
         } else {
-          this.source.data = this.$fhirpath.evaluate( this.slotProps.source.data, this.field )
+          let expression = this.field.substring( this.field.indexOf(':')+1 )
+          this.source.data = this.$fhirpath.evaluate( this.slotProps.source.data, expression )
           //console.log("STR FHIRPATH", this.slotProps.source.data, this.field)
           if ( this.source.data.length == 1 ) {
             this.value = this.source.data[0]
