@@ -1,6 +1,6 @@
 const nconf = require('./config')
 const fhirAxios = nconf.fhirAxios
-const structureDef = require('./fhirStructureDefinition')
+const structureDef = require('./fhirDefinition')
 const { v5: uuidv5 } = require('uuid')
 
 
@@ -160,7 +160,6 @@ const fhirQuestionnaire = {
       }
       if ( field.hasOwnProperty("url") ) {
         if ( arrayIdx !== false ) {
-          //console.log("FIELD WITH URL",JSON.stringify(field,null,2))
           if ( !current[lastElement][arrayIdx] ) {
             current[lastElement][arrayIdx] = {}
           }
@@ -294,8 +293,6 @@ const fhirQuestionnaire = {
                     let ext = question.definition.substring( 0, question.definition.lastIndexOf('.') )
                     let extension = await structureDef.getFieldDefinition( ext )
                     let url
-                    //console.log("EXTDEF",ext,extension)
-                    if ( !extension.type ){ console.log("FAILED TO FIND type",ext,extension,item,question)}
                     if ( extension.type[0].profile ) {
                       url = extension.type[0].profile[0]
                     } else {
