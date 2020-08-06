@@ -50,12 +50,11 @@ router.get("/:resource/:id?", (req, res, next) => {
       }
     } ).catch( (err) => {
       /* return response from FHIR server */
-      return res.status( err.response.status ).json( err.response.data )
-      /* for custom responses
+      //return res.status( err.response.status ).json( err.response.data )
+      /* for custom responses */
       let outcome = { ...outcomes.ERROR }
       outcome.issue[0].diagnostics = err.message
       return res.status(500).json( outcome )
-      */
     } )
   } else {
     fhirAxios.search( req.params.resource, req.query ).then( (resource) => {
@@ -64,7 +63,7 @@ router.get("/:resource/:id?", (req, res, next) => {
         fhirFilter.filterBundle( "read", resource, req.user )
       }
       return res.status(200).json(resource)
-      
+
       // DELETE THE FOLLOWING, ALL NEED TO BE FILTERED
       /*
       if ( allowed === true ) {
@@ -103,12 +102,11 @@ router.post("/:resource", (req, res) => {
     return res.status(201).json(output)
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = err.message
     return res.status(500).json( outcome )
-    */
   } )
 } )
 
@@ -122,32 +120,34 @@ router.patch("/CodeSystem/:id/:code", (req, res) => {
   }
   let update = req.body
   fhirAxios.read( "CodeSystem", req.params.id ).then( (resource) => {
-    let codeIdx = resource.concept.findIndex( concept => concept.code === update.code )
-    if ( codeIdx === -1 ) {
-      resource.concept.push( update )
+    if ( resource.concept ) {
+      let codeIdx = resource.concept.findIndex( concept => concept.code === update.code )
+      if ( codeIdx === -1 ) {
+        resource.concept.push( update )
+      } else {
+        resource.concept[codeIdx] = update
+      }
     } else {
-      resource.concept[codeIdx] = update
+      resource.concept = [ update ]
     }
     fhirAxios.update( resource ).then( (resource) => {
       console.log("UPDATED",resource)
       return res.status(200).json({ok:true})
     } ).catch( (err) => {
       /* return response from FHIR server */
-      return res.status( err.response.status ).json( err.response.data )
-      /* for custom responses
+      //return res.status( err.response.status ).json( err.response.data )
+      /* for custom responses */
       let outcome = { ...outcomes.ERROR }
       outcome.issue[0].diagnostics = err.message
       return res.status(500).json( outcome )
-      */
     } )
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
       let outcome = { ...outcomes.ERROR }
       outcome.issue[0].diagnostics = err.message
       return res.status(500).json( outcome )
-    */
   } )
 } )
 
@@ -172,12 +172,11 @@ router.put("/:resource/:id", (req, res) => {
     return res.status(200).json(resource)
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = err.message
     return res.status(500).json( outcome )
-    */
   } )
 } )
 
@@ -198,12 +197,11 @@ router.get("/ValueSet/:id/\\$expand", (req, res) => {
     }
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = err.message
     return res.status(500).json( outcome )
-    */
   } )
 } )
 
@@ -224,12 +222,11 @@ router.get("/CodeSystem/\\$lookup", (req, res) => {
     }
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = err.message
     return res.status(500).json( outcome )
-    */
   } )
 } )
 
@@ -278,12 +275,11 @@ router.get("/DocumentReference/:id/\\$html", (req, res) => {
     }
   } ).catch( (err) => {
     /* return response from FHIR server */
-    return res.status( err.response.status ).json( err.response.data )
-    /* for custom responses
+    //return res.status( err.response.status ).json( err.response.data )
+    /* for custom responses */
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = err.message
     return res.status(500).json( outcome )
-    */
   } )
 
 

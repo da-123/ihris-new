@@ -32,11 +32,14 @@ Description:    "iHRIS profile of Practitioner."
 * period.end 0..1 MS
 * period.end ^label = "End Date"
 * extension contains
+    IhrisPractitionerRoleDepartment named department 0..1 MS and
     IhrisPractitionerRoleShift named shift 0..1 MS and
     IhrisPractitionerRoleEmploymentStatus named employmentStatus 0..1 MS and
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS
+* extension[department].valueCoding MS
+* extension[department] ^label = "Department"
 * extension[shift].valueCoding MS
 * extension[shift] ^label = "Shift"
 * extension[employmentStatus].valueCoding MS
@@ -61,7 +64,7 @@ Description:    "iHRIS extension for Job Description Shift."
 
 CodeSystem:      IhrisShiftCodeSystem
 Id:              ihris-shift-codesystem
-Title:           "iHRIS Shift Code System"
+Title:           "Shift"
 * #duty "Duty" "Duty"
 * #work "Work" "Work"
 
@@ -69,6 +72,26 @@ ValueSet:         IhrisShiftValueSet
 Id:               ihris-shift-valueset
 Title:            "iHRIS Shift Value Set"
 * codes from system IhrisShiftCodeSystem
+
+Extension:      IhrisPractitionerRoleDepartment
+Id:             ihris-practitionerrole-department
+Title:          "iHRIS Job Description Department"
+Description:    "iHRIS extension for Job Description Department."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only Coding
+* valueCoding 1..1 MS
+* valueCoding ^label = "Department"
+* valueCoding from IhrisDepartmentValueSet (required)
+
+CodeSystem:      IhrisDepartmentCodeSystem
+Id:              ihris-department-codesystem
+Title:           "Department"
+
+ValueSet:         IhrisDepartmentValueSet
+Id:               ihris-department-valueset
+Title:            "iHRIS department Value Set"
+* codes from system IhrisDepartmentCodeSystem
 
 Extension:      IhrisPractitionerRoleEmploymentStatus
 Id:             ihris-practitionerrole-employment-status
@@ -83,7 +106,7 @@ Description:    "iHRIS extension for Job Description Employment Status."
 
 CodeSystem:      IhrisEmploymentStatusCodeSystem
 Id:              ihris-employment-status-codesystem
-Title:           "iHRIS Employment Status CodeSystem"
+Title:           "Employment Status"
 * #contract "Contract" "Contract"
 * #fullTime "Full-time" "Full-time"
 * #partTime "Part-Time" "Part-Time"
@@ -107,7 +130,7 @@ Description:    "iHRIS extension for Job Description Job Type."
 
 CodeSystem:      IhrisJobTypeCodeSystem
 Id:              ihris-job-type-codesystem
-Title:           "iHRIS Job Type CodeSystem"
+Title:           "Job Type"
 * #transfer "Transfer" "Transfer"
 * #newHire "New Hire" "New Hire"
 * #redeployment  "Redeployment" "Redeployment"
@@ -116,6 +139,24 @@ ValueSet:         IhrisJobTypeValueSet
 Id:               ihris-job-type-valueset
 Title:            "iHRIS Job Type ValueSet"
 * codes from system IhrisJobTypeCodeSystem
+
+CodeSystem:      IhrisSalaryScaleCodeSystem
+Id:              ihris-salary-scale-codesystem
+Title:           "Salary Scale"
+
+ValueSet:         IhrisSalaryScaleValueSet
+Id:               ihris-salary-scale-valueset
+Title:            "iHRIS Salary Scale ValueSet"
+* codes from system IhrisSalaryScaleCodeSystem
+
+CodeSystem:      IhrisReasonDepartureCodeSystem
+Id:              ihris-reason-departure-codesystem
+Title:           "Reason For Departure"
+
+ValueSet:         IhrisReasonDepartureValueSet
+Id:               ihris-reason-departure-valueset
+Title:            "iHRIS Reason Departure ValueSet"
+* codes from system IhrisReasonDepartureCodeSystem
 
 Extension:      IhrisPractitionerRoleFirstEmploymentDate
 Id:             ihris-practitionerrole-first-employment-date
@@ -145,7 +186,19 @@ Description:      "iHRIS ValueSet for: iHRISJobEthiopia"
 
 CodeSystem:      IhrisJobEthiopiaCodeSystem
 Id:              ihris-job-ethiopia
-Title:           "iHRIS Job Title Code System for Ethiopia"
+Title:           "Job Title"
+* ^property[0].code = #cadre
+* ^property[0].uri = "http://ihris.org/fhir/ValueSet/ihris-cadre"
+* ^property[0].description = "The cadre of this job"
+* ^property[0].type = #Coding
+* ^property[1].code = #classification
+* ^property[1].uri = "http://ihris.org/fhir/ValueSet/ihris-classification"
+* ^property[1].description = "The classification of this job"
+* ^property[1].type = #Coding
+* ^property[2].code = #salary-grade
+* ^property[2].description = "The salary-grade of this job"
+* ^property[2].uri = "http://ihris.org/fhir/ValueSet/ihris-salary-grade"
+* ^property[2].type = #Coding
 * ^concept[0].designation[0].language = #urn:ietf:bcp:47#am
 * ^concept[0].designation[0].value = "ደረጃ 3 ፕሮስቴቲክ ኦርቶቲክ ቴክኒሻን I"
 * ^concept[0].display = "Level 3: Prosthetic Orthotic Technique I"

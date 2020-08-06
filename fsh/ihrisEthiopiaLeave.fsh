@@ -4,7 +4,7 @@ Id:             ihris-ethiopia-leave
 Title:          "iHRIS EthiopiaLeave"
 Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension contains
-      IhrisPractitioner named practitioner 1..1 MS and
+      IhrisPersonalInformation named practitioner 1..1 MS and
       IhrisLeaveType named leave-type 1..1 MS and
       IhrisDaysRequested named daysRequested 1..1 MS and
       IhrisRequestedDate named requestedDate 1..1 MS and
@@ -23,7 +23,7 @@ Description:    "iHRIS extension for Leave Type."
 
 CodeSystem:      IhrisLeaveTypeCodeSystem
 Id:              ihris-leave-type-codesystem
-Title:           "iHRIS leave Type CodeSystem"
+Title:           "Leave Type"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
@@ -46,7 +46,7 @@ Title:          "iHRIS Leave Period"
 Description:    "iHRIS extension for Leave Period."
 * ^context.type = #element
 * ^context.expression = "Basic"
-* value[x] only period
+* value[x] only Period
 * valuePeriod 1..1 MS
 * valuePeriod ^label = "Leave Period"
 

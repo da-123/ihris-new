@@ -12,22 +12,22 @@
       dense>
 
       <template v-for="item in menu">
-        
+
         <template v-if="item.menu">
 
           <v-list-group
             :key="item.id"
             :prepend-icon="item.icon"
             color="white--text"
-            :value="item.toggle"
-            v-model="item.toggle"
-            :class="(item.toggle ? 'primary darken-2' : '')"
+            :value="item.active"
+            v-model="item.active"
+            :class="(item.active ? 'primary darken-2' : '')"
             no-action
             >
             <template v-slot:activator>
               <v-list-item-title class="subtitle-1 font-weight-bold text-uppercase">{{item.text}}</v-list-item-title>
             </template>
-            <v-list-item 
+            <v-list-item
               v-for="sub in item.menu"
               :key="sub.id"
               :to="sub.url"
@@ -60,102 +60,56 @@
 export default {
   name: "the-navigation",
   props: ["nav"],
+  mounted: function() {
+    this.updateMenu()
+  },
+  watch: {
+    nav: {
+      handler() {
+        this.updateMenu()
+      },
+      deep: true
+    }
+  },
   data: function() {
     return {
-      menu: [ 
-        {
-          id: "person",
-          icon: "mdi-account-multiple",
-          text: "People",
-          toggle: true,
-          menu: [
-            {
-              id: "search",
-              url: "/resource/search/practitioner",
-              text: "Search People"
-            },
-            {
-              id: "add",
-              url: "/questionnaire/ihris-personal-information/practitioner",
-              text: "Add Person"
-            }/*,
-            {
-              id: "add_old",
-              url: "/resource/add/practitioner",
-              text: "Add Person (old)"
-            }*/
-          ]
-        },
-        {
-          id: "position",
-          icon: "mdi-account-multiple",
-          text: "Positions",
-          toggle: false,
-          menu: [
-            {
-              id: "search",
-              url: "/resource/search/practitionerrole",
-              text: "Search Positions"
-            },
-            {
-              id: "add",
-              url: "/resource/add/practitionerrole",
-              text: "Add Position"
-            }
-          ]
-        },/*
-        {
-          id: "mhero",
-          icon: "mdi-cellphone-basic",
-          text: "mHero",
-          toggle: false,
-          menu: [
-            {
-              id: "send",
-              url: "/page/mhero",
-              text: "Send Messages"
-            },
-            {
-              id: "dashboard",
-              url: null,
-              text: "mHero Dashboard"
-            }
-          ]
-        },*/
-        {
-          id: "vocab",
-          icon: "mdi-database",
-          text: "Database",
-          toggle: false,
-          menu: [
-            {
-              id: "search",
-              url: "/resource/search/location",
-              text: "Search Location/Facility"
-            },
-            {
-              id: "add",
-              url: "/resource/add/location",
-              text: "Add Location/Facility"
-            },
-            {
-              id: "job",
-              url: "/resource/search/job",
-              text: "Jobs"
-            }
-          ]
-        },
-        {
-          id: "dashboard",
-          icon: "mdi-poll-box",
-          url: null,
-          text: "Dashboard",
-          toggle: false
-        }
-      ]
-    };
+      menu: []
+    }
   },
   methods: {
+    updateMenu: function() {
+      this.menu = []
+      for( let menu_id of Object.keys(this.nav.menu) ) {
+        let entry = {
+          id: menu_id,
+          text: this.nav.menu[menu_id].text,
+          icon: this.nav.menu[menu_id].icon,
+          order: this.nav.menu[menu_id].order
+        }
+        if ( this.nav.active === menu_id ) {
+          entry.active = true
+        } else {
+          entry.active = false
+        }
+        if ( this.nav.menu[menu_id].menu ) {
+          entry.menu = []
+          for( let sub_id of Object.keys( this.nav.menu[menu_id].menu ) ) {
+            let sub = {
+              id: sub_id,
+              text: this.nav.menu[menu_id].menu[sub_id].text,
+              url: this.nav.menu[menu_id].menu[sub_id].url,
+              order: this.nav.menu[menu_id].menu[sub_id].order
+            }
+            entry.menu.push( sub )
+            entry.menu.sort( (a,b) => { a.order === b.order ? 0 : ( a.order < b.order ? -1 : 1 ) } )
+          }
+        } else if ( this.nav.menu[menu_id].url ) {
+          entry.url = this.nav.menu[menu_id].url
+        }
+        this.menu.push( entry )
+      }
+      this.menu.sort( (a,b) => { a.order === b.order ? 0 : ( a.order < b.order ? -1 : 1 ) } )
+    }
   }
-};
+}
 </script>

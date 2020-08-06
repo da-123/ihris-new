@@ -164,14 +164,20 @@ Description:    "iHRIS extension for Practitioner Residence."
 * valueReference.identifier 0..0
 * valueReference.display 0..0
 
+CodeSystem:         IhrisEthiopiaLanguageCodeSystem
+Id:               ihris-ethiopia-language
+Title:            "Language"
+* #en "English"
+* #am "Amharic"
+* #om "Afaan Oromoo"
+* #so "Somali"
+* #ti "Tigrinya"
+
 ValueSet:         IhrisEthiopiaLanguageValueSet
 Id:               ihris-ethiopia-language-valueset
 Title:            "iHRIS Ethiopia Language ValueSet"
-* urn:ietf:bcp:47#en "English"
-* urn:ietf:bcp:47#am "Amharic"
-* urn:ietf:bcp:47#om "Afaan Oromoo"
-* urn:ietf:bcp:47#so "Somali"
-* urn:ietf:bcp:47#ti "Tigrinya"
+* codes from system IhrisEthiopiaLanguageCodeSystem
+
 
 Extension:      IhrisPractitionerPrefix
 Id:             ihris-practitioner-prefix
@@ -210,7 +216,7 @@ Title:            "iHRIS Ethiopia Identifier ValueSet"
 
 CodeSystem:         IhrisEthiopiaIdentifierCodeSystem
 Id:               ihris-ethiopia-identifier
-Title:            "iHRIS Ethiopia Identifier Codesystem"
+Title:            "Identifier Type"
 * #employeeId "Employee Id"
 * #pensionNumber "Pension Number"
 * #tinNumber "Tin Number"
@@ -242,7 +248,7 @@ Description:    "iHRIS extension for Personal Information Educational Major."
 
 CodeSystem:      IhrisEducationalMajorCodeSystem
 Id:              ihris-educational-major-codesystem
-Title:           "iHRIS Educational Major CodeSystem"
+Title:           "Educational Major"
 * #emergencyMedicalTech "Emergency Medical Tech" "Emergency Medical Tech"
 * #medicalSurgicalAssistant "Medical/Surgical Assistant" "Medical/Surgical Assistant"
 * #medicalLabTech "Medical Lab/Tech" "Medical Lab/Tech"
@@ -255,6 +261,7 @@ ValueSet:         IhrisEducationalMajorValueSet
 Id:               ihris-educational-major-valueset
 Title:            "iHRIS Educational Major ValueSet"
 * codes from system IhrisEducationalMajorCodeSystem
+
 Extension:      IhrisPractitionerCategory
 Id:             ihris-personal-Information-Category
 Title:          "iHRIS Personal Information Category"
@@ -268,7 +275,7 @@ Description:    "iHRIS extension for Personal Information Category."
 
 CodeSystem:      IhrisCategoryCodeSystem
 Id:              ihris-category-codesystem
-Title:           "iHRIS Category CodeSystem"
+Title:           "Category"
 * #professional "Professional" "Professional"
 * #administrative "Administrative" "Administrative"
 * #academic "Academic" "Academic"
@@ -312,7 +319,7 @@ Description:    "iHRIS extension for Personal Information Ethnicity."
 
 CodeSystem:      IhrisEthnicityCodeSystem
 Id:              ihris-Ethnicity-codesystem
-Title:           "iHRIS Ethnicity CodeSystem"
+Title:           "Ethnicity"
 * #bench "Bench" "Bench"
 * #berta "Berta" "Berta"
 * #betaIsrael "Beta Israel" "Beta Israel"
@@ -399,6 +406,24 @@ ValueSet:         IhrisEthnicityValueSet
 Id:               ihris-Ethnicity-valueset
 Title:            "iHRIS Ethnicity ValueSet"
 * codes from system IhrisEthnicityCodeSystem
+
+CodeSystem:      IhrisTrainingTypeCodeSystem
+Id:              ihris-training-type-codesystem
+Title:           "Training Type"
+
+ValueSet:         IhrisTrainingTypeValueSet
+Id:               ihris-training-type-valueset
+Title:            "iHRIS Training Type ValueSet"
+* codes from system IhrisTrainingTypeCodeSystem
+
+CodeSystem:      IhrisSkillCodeSystem
+Id:              ihris-skill-codesystem
+Title:           "Skill"
+
+ValueSet:         IhrisSkillValueSet
+Id:               ihris-skill-valueset
+Title:            "iHRIS Skill ValueSet"
+* codes from system IhrisSkillCodeSystem
 
 Instance:       IhrisPractitionerEthiopiaQuestionnaire
 InstanceOf:     Questionnaire

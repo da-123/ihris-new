@@ -10,7 +10,8 @@ sushi -s .
 ```
 ### Load the FHIR Server
 
-There is a tool to load the the necessary reources to the fhir server. While in the `tools` folder. Use the `load.js` file to load the files in `fsh/build/input` folder. The files to load can be found in.
+There is a tool used to load the necessary resources to the fhir server. While in the `tools` folder. First run ```npm install```. 
+Then Use the `load.js` file to load the files in `fsh/build/input` folder. The files to load can be found in.
     - profiles
     - extensions
     - vocabulary
@@ -19,11 +20,12 @@ There is a tool to load the the necessary reources to the fhir server. While in 
 
 i.e to load files in the `profiles` folder
 ```
-node load.js --server url-of-fhir-server ../fsh/build/input/profiles/*
+node load.js --server url-of-fhir-server/fhir ../fsh/build/input/profiles/*
 ```
-You will also need to load the files in the `project-folder/resources`
+You will also need to load the files in the `base-project-folder/resources`
 
 ## Project setup
+
 ```
 npm install -g
 ```
