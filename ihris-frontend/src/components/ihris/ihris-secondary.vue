@@ -3,10 +3,43 @@
     <v-data-table
       :headers="columns"
       :items="items"
+      item-key="id"
       :items-per-page="5"
       :loading="loading"
       class="elevation-1"
-    ></v-data-table>
+      dense
+    >
+      
+      <template v-slot:top>
+        <v-toolbar flat color="white">
+          <v-toolbar-title>
+            {{ title }}
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn 
+            v-for="action in topActions" 
+            :to="setupLink( action.link, {} )" 
+            :color="action.eleClass" 
+            :key="action.text"
+            small
+            >
+            {{ action.text }}
+          </v-btn>
+        </v-toolbar>
+      </template>
+      <template v-slot:item._action="{ item }">
+        <v-btn 
+          v-for="action in item.actions" 
+          :to="setupLink( action.link, item )" 
+          :color="action.eleClass" 
+          :key="action.text"
+          small
+          rounded
+          >
+          {{ action.text }}
+        </v-btn>
+      </template>
+    </v-data-table>
   </v-container>
 </template>
 
@@ -17,13 +50,15 @@ const isObject = (obj) => {
 
 export default {
   name: "ihris-secondary",
-  props: ["title", "field", "profile", "slotProps", "link-id", "link-field", "search-field", "edit", "columns"],
+  props: ["title", "field", "profile", "slotProps", "link-id", "link-field", 
+    "search-field", "edit", "columns", "actions"],
   data: function() {
     return {
       source: { data: {}, path: this.field },
       empty: true,
       items: [],
-      loading: true
+      loading: true,
+      topActions: []
     }
   },
   mounted: function() {
@@ -73,8 +108,9 @@ export default {
           response.json().then( async data => {
             if ( data.entry ) {
               for( let entry of data.entry ) {
-                let row = {}
+                let row = { id: entry.resource.id }
                 for( let header of this.columns ) {
+                  if ( header.value === "_action" ) continue
                   try {
                     let content = this.$fhirpath.evaluate( entry.resource, header.value )
                     row[header.value] = await this.processContent( content )
@@ -82,8 +118,33 @@ export default {
                     console.log(err)
                   }
                 }
+                if ( !row.actions ) row.actions = []
+                for( let action of this.actions ) {
+                  if ( action.row ) {
+                    if ( action.condition ) {
+                      let meets = this.$fhirpath.evaluate( entry.resource, action.condition )
+                      if ( meets.every( meet => meet ) ) {
+                        row.actions.push( action )
+                      }
+                    } else {
+                      row.actions.push( action )
+                    }
+                  } else {
+                    if ( action.condition ) {
+                      let meets = this.$fhirpath.evaluate( entry.resource, action.condition )
+                      if ( action.hasOwnProperty("meets") ) {
+                        action.meets = action.meets && meets.every( meet => meet )
+                      } else {
+                        action.meets = meets.every( meet => meet )
+                      }
+                    } else {
+                      action.meets = true
+                    }
+                  }
+                }
                 this.items.push( row )
               }
+              this.topActions = this.actions.filter( action => !action.row && action.meets )
             }
 
             if ( data.link ) {
@@ -125,6 +186,9 @@ export default {
       } else {
         return content
       }
+    },
+    setupLink( link, item ) {
+      return link.replace( "ITEMID", item.id ).replace( "FHIRID", this.linkId )
     }
   }
 }

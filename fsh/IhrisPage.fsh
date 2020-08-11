@@ -57,7 +57,8 @@ Description:    "iHRIS Page Section information."
       resource 1..1 MS and
       linkfield 1..1 MS and
       searchfield 0..1 MS and
-      column 1..* MS
+      column 1..* MS and
+      action 0..* MS
 * extension[resource].extension[resource].value[x] only Reference
 * extension[resource].extension[resource].valueReference only Reference(StructureDefinition)
 * extension[resource].extension[resource].valueReference MS
@@ -77,6 +78,27 @@ Description:    "iHRIS Page Section information."
 * extension[resource].extension[column].extension[field].value[x] only string 
 * extension[resource].extension[column].extension[field].valueString MS
 * extension[resource].extension[column].extension[field].valueString ^label = "FHIRPath Expression"
+* extension[resource].extension[action].extension contains
+      link 1..1 MS and
+      text 1..1 MS and
+      row 0..1 MS and
+      condition 0..1 MS and
+      class 0..1 MS 
+* extension[resource].extension[action].extension[link].value[x] only string
+* extension[resource].extension[action].extension[link].valueString MS
+* extension[resource].extension[action].extension[link].valueString ^label = "Action Link"
+* extension[resource].extension[action].extension[text].value[x] only string
+* extension[resource].extension[action].extension[text].valueString MS
+* extension[resource].extension[action].extension[text].valueString ^label = "Action Text"
+* extension[resource].extension[action].extension[row].value[x] only boolean
+* extension[resource].extension[action].extension[row].valueBoolean MS
+* extension[resource].extension[action].extension[row].valueBoolean ^label = "Is Row Action?"
+* extension[resource].extension[action].extension[condition].value[x] only string
+* extension[resource].extension[action].extension[condition].valueString MS
+* extension[resource].extension[action].extension[condition].valueString ^label = "FHIRPation Condition do Display"
+* extension[resource].extension[action].extension[class].value[x] only string
+* extension[resource].extension[action].extension[class].valueString MS
+* extension[resource].extension[action].extension[class].valueString ^label = "Element Class for the Action"
 
 Instance:       ihris-page-practitioner
 InstanceOf:     IhrisPage
@@ -163,6 +185,29 @@ Usage:          #example
 * extension[section][8].extension[resource].extension[column][5].extension[field].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding"
 * extension[section][8].extension[resource].extension[column][6].extension[header].valueString = "Employment Status"
 * extension[section][8].extension[resource].extension[column][6].extension[field].valueString = "PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* extension[section][8].extension[resource].extension[column][7].extension[header].valueString = "End Date"
+* extension[section][8].extension[resource].extension[column][7].extension[field].valueString = "PractitionerRole.period.end"
+* extension[section][8].extension[resource].extension[column][8].extension[header].valueString = "Actions"
+* extension[section][8].extension[resource].extension[column][8].extension[field].valueString = "_action"
+* extension[section][8].extension[resource].extension[action][0].extension[link].valueString = "/resource/add/practitionerrole?PractitionerRole.practitioner.reference=Practitioner/FHIRID"
+* extension[section][8].extension[resource].extension[action][0].extension[text].valueString = "Assign Job"
+* extension[section][8].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][8].extension[resource].extension[action][0].extension[condition].valueString = "PractitionerRole.period.end.exists()"
+* extension[section][8].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][8].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/practitionerrole/ITEMID"
+* extension[section][8].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][8].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][8].extension[resource].extension[action][1].extension[class].valueString = "primary"
+* extension[section][8].extension[resource].extension[action][2].extension[link].valueString = "/questionnaire/ihris-endrole/practitioner?practitionerrole=ITEMID"
+* extension[section][8].extension[resource].extension[action][2].extension[text].valueString = "End Job"
+* extension[section][8].extension[resource].extension[action][2].extension[row].valueBoolean = true
+* extension[section][8].extension[resource].extension[action][2].extension[condition].valueString = "PractitionerRole.period.end.empty()"
+* extension[section][8].extension[resource].extension[action][2].extension[class].valueString = "warning"
+* extension[section][8].extension[resource].extension[action][3].extension[link].valueString = "/questionnaire/ihris-promote/practitioner?practitionerrole=ITEMID&practitioner=FHIRID"
+* extension[section][8].extension[resource].extension[action][3].extension[text].valueString = "Enter Promotion"
+* extension[section][8].extension[resource].extension[action][3].extension[row].valueBoolean = true
+* extension[section][8].extension[resource].extension[action][3].extension[condition].valueString = "PractitionerRole.period.end.empty()"
+* extension[section][8].extension[resource].extension[action][3].extension[class].valueString = "accent"
 
 Instance:       ihris-page-practitionerrole
 InstanceOf:     IhrisPage

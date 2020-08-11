@@ -343,3 +343,25 @@ Title:           "Job Title"
 * ^concept[35].designation[0].value = "ፐብሊክ ሄልዝ ፕሮፌሽናል ስፔሻሊሰት IV"
 * ^concept[35].display = "Public Health Professional Specialist IV"
 * ^concept[35].code = #PHPSIV
+
+Instance:       IhrisPractitionerWorkflowEndRole
+InstanceOf:      Questionnaire
+Usage:          #definition
+* title = "iHRIS End Role Workflow"
+* description = "iHRIS workflow to end a current role/job"
+* id = "ihris-endrole"
+* url = "http://ihris.org/fhir/Questionnaire/ihris-endrole"
+* name = "ihris-endrole"
+* status = #active
+* date = 2020-08-09
+* purpose = "Workflow page for ending a role/job."
+
+* item[0].linkId = "PractitionerRole"
+* item[0].text = "Job End Date"
+* item[0].type = #group
+
+* item[0].item[0].linkId = "period.end"
+* item[0].item[0].text = "End Date"
+* item[0].item[0].type = #date
+* item[0].item[0].required = true
+* item[0].item[0].repeats = false
