@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-12T09:39:00.688Z",
+        "when": "2020-08-12T15:12:41.815Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "uB/XMIaFO6s1GCUTNkol2U4J5C/zR6MFIEAQONduFkcCaC2kFdS0dF1l6qqK9lk7NC5SDD+54VJ7VlPyD5scjHmgSNNSRtrkwu1qME1DzunfYWiveaQZCf79g97gxS3TjlgGAOovnexEIAgcHJAEHXZL5hlHt3A6Yl35srusKTc="
+        "data": "ndn/B8uiKnb1Hs6zL4uuH2I1u3k1eRzZ9qb5/Ya6RwFnLtfLuTeiFatNRd4HCulBf8h5iKf9xODKokLzEFwe53baalu1aW47E2NURTesTCQqZmRA2QL3MjqvkXxnFaOo8gxZptBAAZrdcjgFdl6OIeXlZ3lcjMqWieeuNy2BbiU="
       }
     },
     {
@@ -155,48 +155,44 @@
           "valueString": "/resource/add/practitionerrole"
         },
         {
+          "name": "site:nav:menu:location:text",
+          "valueString": "Locations/Facilities"
+        },
+        {
+          "name": "site:nav:menu:location:order",
+          "valueString": "3"
+        },
+        {
+          "name": "site:nav:menu:location:icon",
+          "valueString": "mdi-map-marker-multiple"
+        },
+        {
+          "name": "site:nav:menu:location:menu:location_search:text",
+          "valueString": "Search Locations/Facilities"
+        },
+        {
+          "name": "site:nav:menu:location:menu:location_search:url",
+          "valueString": "/resource/search/location"
+        },
+        {
+          "name": "site:nav:menu:location:menu:location_add:text",
+          "valueString": "Add Location/Facility"
+        },
+        {
+          "name": "site:nav:menu:location:menu:location_add:url",
+          "valueString": "/resource/add/location"
+        },
+        {
           "name": "site:nav:menu:database:text",
           "valueString": "Database"
         },
         {
           "name": "site:nav:menu:database:order",
-          "valueString": "3"
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:database:icon",
           "valueString": "mdi-database"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:text",
-          "valueString": "Locations"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:order",
-          "valueString": "1"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_search:text",
-          "valueString": "Search Locations/Facilities"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_search:url",
-          "valueString": "/resource/search/location"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_search:order",
-          "valueString": "1"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_add:text",
-          "valueString": "Add Location/Facility"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_add:url",
-          "valueString": "/resource/add/location"
-        },
-        {
-          "name": "site:nav:menu:database:menu:location:menu:location_add:order",
-          "valueString": "2"
         },
         {
           "name": "site:nav:menu:database:menu:identifier:text",
@@ -208,7 +204,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:identifier:order",
-          "valueString": "2"
+          "valueString": "1"
         },
         {
           "name": "site:nav:menu:database:menu:language:text",
@@ -220,7 +216,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:language:order",
-          "valueString": "3"
+          "valueString": "2"
         },
         {
           "name": "site:nav:menu:database:menu:ethnicity:text",
@@ -232,7 +228,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:ethnicity:order",
-          "valueString": "4"
+          "valueString": "3"
         },
         {
           "name": "site:nav:menu:database:menu:department:text",
@@ -244,7 +240,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:department:order",
-          "valueString": "5"
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:database:menu:shift:text",
@@ -256,7 +252,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:shift:order",
-          "valueString": "6"
+          "valueString": "5"
         },
         {
           "name": "site:nav:menu:database:menu:category:text",
@@ -268,7 +264,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:category:order",
-          "valueString": "7"
+          "valueString": "6"
         },
         {
           "name": "site:nav:menu:database:menu:salary-scale:text",
@@ -280,7 +276,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:salary-scale:order",
-          "valueString": "8"
+          "valueString": "7"
         },
         {
           "name": "site:nav:menu:database:menu:directorate:text",
@@ -292,7 +288,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:directorate:order",
-          "valueString": "9"
+          "valueString": "8"
         },
         {
           "name": "site:nav:menu:database:menu:caseteam:text",
@@ -304,7 +300,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:caseteam:order",
-          "valueString": "10"
+          "valueString": "9"
         },
         {
           "name": "site:nav:menu:database:menu:job-type:text",
@@ -316,7 +312,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job-type:order",
-          "valueString": "11"
+          "valueString": "10"
         },
         {
           "name": "site:nav:menu:database:menu:job:text",
@@ -328,7 +324,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job:order",
-          "valueString": "12"
+          "valueString": "11"
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:text",
@@ -340,7 +336,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:order",
-          "valueString": "13"
+          "valueString": "12"
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:text",
@@ -352,7 +348,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:order",
-          "valueString": "14"
+          "valueString": "13"
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:text",
@@ -364,7 +360,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:order",
-          "valueString": "15"
+          "valueString": "14"
         },
         {
           "name": "site:nav:menu:database:menu:training-type:text",
@@ -376,7 +372,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:training-type:order",
-          "valueString": "16"
+          "valueString": "15"
         },
         {
           "name": "site:nav:menu:database:menu:skill:text",
@@ -388,7 +384,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:skill:order",
-          "valueString": "17"
+          "valueString": "16"
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:text",
@@ -400,7 +396,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:order",
-          "valueString": "18"
+          "valueString": "17"
         },
         {
           "name": "site:nav:menu:dashboard:text",
@@ -408,7 +404,7 @@
         },
         {
           "name": "site:nav:menu:dashboard:order",
-          "valueString": "19"
+          "valueString": "5"
         },
         {
           "name": "site:nav:menu:dashboard:icon",
