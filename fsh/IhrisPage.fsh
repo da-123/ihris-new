@@ -226,11 +226,13 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "PractitionerRole.code"
 * extension[section][0].extension[field][1].valueString = "PractitionerRole.practitioner"
 * extension[section][0].extension[field][2].valueString = "PractitionerRole.location"
-* extension[section][0].extension[field][3].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
-* extension[section][0].extension[field][4].valueString = "PractitionerRole.period.start"
-* extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding"
-* extension[section][0].extension[field][6].valueString = "PractitionerRole.extension:shift.value[x]:valueCoding"
-* extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* extension[section][0].extension[field][3].valueString = "PractitionerRole.extension:directorate.value[x]:valueCoding"
+* extension[section][0].extension[field][4].valueString = "PractitionerRole.extension:caseteam.value[x]:valueCoding"
+* extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
+* extension[section][0].extension[field][6].valueString = "PractitionerRole.period.start"
+* extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding"
+* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:shift.value[x]:valueCoding"
+* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
 
 Instance:       ihris-page-job
 InstanceOf:     IhrisPage
@@ -495,6 +497,36 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "Display|display"
 * extension[section][0].extension[title].valueString = "Skill"
 * extension[section][0].extension[description].valueString = "Skill"
+* extension[section][0].extension[name].valueString = "CodeSystem"
+* extension[section][0].extension[field][0].valueString = "CodeSystem.display"
+* extension[section][0].extension[field][1].valueString = "CodeSystem.code"
+* extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+
+Instance:       ihris-page-caseteam
+InstanceOf:     IhrisPage
+Title:          "iHRIS CaseTeam CodeSystem Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-caseteam-codesystem)
+* extension[display].extension[search][0].valueString = "Code|code"
+* extension[display].extension[search][1].valueString = "Display|display"
+* extension[section][0].extension[title].valueString = "Case Team"
+* extension[section][0].extension[description].valueString = "Case Team"
+* extension[section][0].extension[name].valueString = "CodeSystem"
+* extension[section][0].extension[field][0].valueString = "CodeSystem.display"
+* extension[section][0].extension[field][1].valueString = "CodeSystem.code"
+* extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+
+Instance:       ihris-page-directorate
+InstanceOf:     IhrisPage
+Title:          "iHRIS Directorate CodeSystem Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-directorate-codesystem)
+* extension[display].extension[search][0].valueString = "Code|code"
+* extension[display].extension[search][1].valueString = "Display|display"
+* extension[section][0].extension[title].valueString = "Case Team"
+* extension[section][0].extension[description].valueString = "Case Team"
 * extension[section][0].extension[name].valueString = "CodeSystem"
 * extension[section][0].extension[field][0].valueString = "CodeSystem.display"
 * extension[section][0].extension[field][1].valueString = "CodeSystem.code"

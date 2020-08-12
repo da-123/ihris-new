@@ -1,10 +1,23 @@
 <template>
   <v-app id="top">
-    <the-header :header="header" />
-    <the-navigation :nav="nav" />
-
+    <the-header app :header="header" />
+    <the-navigation app :nav="nav" />
 
     <v-content>
+      <v-snackbar
+        app
+        class="mt-12"
+        v-model="$store.state.message.active"
+        :color="$store.state.message.type"
+        top
+        multi-line
+        >
+        {{ $store.state.message.text }}
+          <v-btn icon dark @click="$store.commit('closeMessage')">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+      </v-snackbar>
+
       <router-view :key="$route.path"/>
     </v-content>
 
@@ -56,25 +69,7 @@ export default {
     },
     nav: {
       active: null,
-      menu: {
-        'mhero': {
-          text: 'mHero',
-          icon: 'mdi-cellphone-basic',
-          menu: [{
-            id: 'sendSMS',
-            url: '/page/mhero',
-            text: 'Send Message'
-          }, {
-            id: 'subContGrps',
-            url: '/page/contact-groups',
-            text: 'Contact Groups'
-          }, {
-            id: 'dashboard',
-            url: '',
-            text: 'mHero Dashboard'
-          }]
-        }
-      }
+      menu: {}
     }
   }),
   components: {

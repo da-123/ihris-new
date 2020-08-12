@@ -32,14 +32,18 @@ Description:    "iHRIS profile of Practitioner."
 * period.end 0..1 MS
 * period.end ^label = "End Date"
 * extension contains
-    IhrisPractitionerRoleDepartment named department 0..1 MS and
+    IhrisPractitionerRoleDirectorate named directorate 0..1 MS and
+    IhrisPractitionerRoleCaseTeam named caseteam 0..1 MS and
     IhrisPractitionerRoleShift named shift 0..1 MS and
     IhrisPractitionerRoleEmploymentStatus named employmentStatus 0..1 MS and
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
-    IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS
-* extension[department].valueCoding MS
-* extension[department] ^label = "Department"
+    IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
+    IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS
+* extension[directorate].valueCoding MS
+* extension[directorate] ^label = "Directorate"
+* extension[caseteam].valueCoding MS
+* extension[caseteam] ^label = "Case Team"
 * extension[shift].valueCoding MS
 * extension[shift] ^label = "Shift"
 * extension[employmentStatus].valueCoding MS
@@ -50,6 +54,8 @@ Description:    "iHRIS profile of Practitioner."
 * extension[firstEmploymentDate] ^label = "First Employment Date"
 * extension[jobInformationRemark].valueString MS
 * extension[jobInformationRemark] ^label = "Remark"
+* extension[reasonForDepature].valueCoding MS
+* extension[reasonForDepature] ^label = "Reason for Departure"
 
 Extension:      IhrisPractitionerRoleShift
 Id:             ihris-practitionerrole-shift
@@ -73,16 +79,16 @@ Id:               ihris-shift-valueset
 Title:            "iHRIS Shift Value Set"
 * codes from system IhrisShiftCodeSystem
 
-Extension:      IhrisPractitionerRoleDepartment
-Id:             ihris-practitionerrole-department
-Title:          "iHRIS Job Description Department"
-Description:    "iHRIS extension for Job Description Department."
+Extension:      IhrisPractitionerRoleDirectorate
+Id:             ihris-practitionerrole-directorate
+Title:          "iHRIS Job Description Directorate"
+Description:    "iHRIS extension for Job Description Directorate."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only Coding
 * valueCoding 1..1 MS
-* valueCoding ^label = "Department"
-* valueCoding from IhrisDepartmentValueSet (required)
+* valueCoding ^label = "Directorate"
+* valueCoding from IhrisDirectorateValueSet (required)
 
 CodeSystem:      IhrisDepartmentCodeSystem
 Id:              ihris-department-codesystem
@@ -149,6 +155,17 @@ Id:               ihris-salary-scale-valueset
 Title:            "iHRIS Salary Scale ValueSet"
 * codes from system IhrisSalaryScaleCodeSystem
 
+Extension:      IhrisPractitionerRoleReasonDeparture
+Id:             ihris-practitionerrole-reason-departure
+Title:          "iHRIS Job Description Reason for Departure"
+Description:    "iHRIS extension for Job Description Reason for Departure."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only Coding
+* valueCoding 1..1 MS
+* valueCoding ^label = "Reason for Departure"
+* valueCoding from IhrisReasonDepartureValueSet (required)
+
 CodeSystem:      IhrisReasonDepartureCodeSystem
 Id:              ihris-reason-departure-codesystem
 Title:           "Reason For Departure"
@@ -178,6 +195,35 @@ Description:    "iHRIS extension for Job Information Remark."
 * valueString 1..1 MS
 * valueString ^label = "Job Information Remark"
 
+Extension:      IhrisPractitionerRoleCaseTeam
+Id:             ihris-practitionerrole-caseteam
+Title:          "iHRIS Job Description CaseTeam"
+Description:    "iHRIS extension for Job Description Case Team."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only Coding
+* valueCoding 1..1 MS
+* valueCoding ^label = "Case Team"
+* valueCoding from IhrisCaseTeamValueSet (required)
+
+CodeSystem:      IhrisCaseTeamCodeSystem
+Id:              ihris-caseteam-codesystem
+Title:           "Case Team"
+
+ValueSet:         IhrisCaseTeamValueSet
+Id:               ihris-caseteam-valueset
+Title:            "iHRIS Case Team ValueSet"
+* codes from system IhrisCaseTeamCodeSystem
+
+CodeSystem:      IhrisDirectorateCodeSystem
+Id:              ihris-directorate-codesystem
+Title:           "Directorate"
+
+ValueSet:         IhrisDirectorateValueSet
+Id:               ihris-directorate-valueset
+Title:            "iHRIS Directorate ValueSet"
+* codes from system IhrisDirectorateCodeSystem
+
 ValueSet:         IhrisJobEthiopiaValueset
 Id:               ihris-job-ethiopia
 Title:            "iHRIS Job Title Value Set"
@@ -189,14 +235,14 @@ Id:              ihris-job-ethiopia
 Title:           "Job Title"
 * ^property[0].code = #cadre
 * ^property[0].uri = "http://ihris.org/fhir/ValueSet/ihris-cadre"
-* ^property[0].description = "The cadre of this job"
+* ^property[0].description = "Cadre"
 * ^property[0].type = #Coding
 * ^property[1].code = #classification
 * ^property[1].uri = "http://ihris.org/fhir/ValueSet/ihris-classification"
-* ^property[1].description = "The classification of this job"
+* ^property[1].description = "Classification"
 * ^property[1].type = #Coding
 * ^property[2].code = #salary-grade
-* ^property[2].description = "The salary-grade of this job"
+* ^property[2].description = "Salary Grade"
 * ^property[2].uri = "http://ihris.org/fhir/ValueSet/ihris-salary-grade"
 * ^property[2].type = #Coding
 * ^concept[0].designation[0].language = #urn:ietf:bcp:47#am
@@ -357,11 +403,19 @@ Usage:          #definition
 * purpose = "Workflow page for ending a role/job."
 
 * item[0].linkId = "PractitionerRole"
-* item[0].text = "Job End Date"
+* item[0].text = "Record Departure"
 * item[0].type = #group
 
 * item[0].item[0].linkId = "period.end"
+* item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
 * item[0].item[0].text = "End Date"
 * item[0].item[0].type = #date
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
+* item[0].item[1].linkId = "PractitionerRole.extension[0]"
+* item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
+* item[0].item[1].text = "Reason For Depature"
+* item[0].item[1].type = #choice
+* item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-reason-departure-valueset"
+* item[0].item[1].required = true
+* item[0].item[1].repeats = false
