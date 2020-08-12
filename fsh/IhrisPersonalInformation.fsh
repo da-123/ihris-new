@@ -68,8 +68,11 @@ Description:    "iHRIS profile of Practitioner."
 * extension[residence].valueReference.reference MS
 * extension[nationality].valueCoding MS
 * extension[nationality] ^label = "Nationality"
-* extension[dependents].valueString MS
 * extension[dependents] ^label = "Dependents"
+* extension[dependents].extension[name].valueString MS
+* extension[dependents].extension[birthDate].valueDate MS
+* extension[dependents].extension[relationship].valueString MS
+* extension[dependents].extension[gender].valueCode MS
 * extension[maritalStatus].valueCoding MS
 * extension[maritalStatus] ^label = "Marital Status"
 * extension[specialTraining].valueString  MS
@@ -302,9 +305,22 @@ Title:          "iHRIS Practitioner Dependents"
 Description:    "iHRIS extension for Practitioner dependents."
 * ^context.type = #element
 * ^context.expression = "Practitioner"
-* value[x] only string
-* valueString 1..1 MS
-* valueString ^label = "Dependents"
+* extension contains name 1..1 MS and
+    birthDate 1..1 MS and
+    relationship 1..1 MS
+* extension[name].value[x] only string
+* extension[name].valueString 1..1 MS
+* extension[name].valueString ^label = "Dependent's Name"
+* extension[birthDate].value[x] only date
+* extension[birthDate].valueDate 1..1 MS
+* extension[birthDate].valueDate ^label = "Dependent's Date of Birth"
+* extension[relationship].value[x] only string
+* extension[relationship].valueString 1..1 MS
+* extension[relationship].valueString ^label = "Relationship"
+* extension[gender].value[x] only code
+* extension[gender].valueCode 1..1 MS
+* extension[gender].valueCode from http://hl7.org/fhir/ValueSet/administrative-gender (required)
+* extension[gender].valueCode ^label = "Dependent's Gender"
 
 Extension:      IhrisPractitionerEthnicity
 Id:             ihris-practitioner-ethnicity
