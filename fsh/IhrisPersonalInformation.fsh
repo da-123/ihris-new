@@ -307,7 +307,8 @@ Description:    "iHRIS extension for Practitioner dependents."
 * ^context.expression = "Practitioner"
 * extension contains name 1..1 MS and
     birthDate 1..1 MS and
-    relationship 1..1 MS
+    relationship 1..1 MS and
+    gender 1..1 MS
 * extension[name].value[x] only string
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Dependent's Name"
