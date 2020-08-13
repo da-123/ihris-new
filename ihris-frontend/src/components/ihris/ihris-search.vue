@@ -10,17 +10,20 @@
         v-if="error_message"
         class="white--text error"
       >{{ error_message }}</v-card-subtitle>
-      <v-data-table
-        style="cursor: pointer"
-        :headers="headers"
-        :items="results"
-        :options.sync="options"
-        :server-items-length="total"
-        :footer-props="{ 'items-per-page-options': [5,10,20,50] }"
-        :loading="loading"
-        class="elevation-1"
-        @click:row="clickIt"
-      ></v-data-table>
+      <v-card-text>
+        <v-data-table
+          style="cursor: pointer"
+          :headers="headers"
+          :items="results"
+          item-key="id"
+          :options.sync="options"
+          :server-items-length="total"
+          :footer-props="{ 'items-per-page-options': [5,10,20,50] }"
+          :loading="loading"
+          class="elevation-1"
+          @click:row="clickIt"
+        ></v-data-table>
+      </v-card-text>
     </v-card>
 
   </v-container>
@@ -40,7 +43,8 @@ export default {
       total: 0,
       prevPage: -1,
       link: [],
-      error_message: null
+      error_message: null,
+      update_again: { rerun: false, restart: false }
     };
   },
   watch: {
@@ -72,13 +76,23 @@ export default {
         params: { page: this.page, id: record.id }
       });
     },
+    checkRerun() {
+      if ( !this.loading && this.update_again.rerun ) {
+        this.getData( this.update_again.restart )
+        this.update_again = { rerun: false, restart: false }
+      }
+    },
     getData(restart) {
       //console.log("getting data",restart)
+      if ( this.loading ) {
+        this.update_again.rerun = true
+        this.update_again.restart = this.update_again.restart || restart
+        return
+      }
       this.loading = true;
       this.error_message = null;
       let url = "";
       if (restart) this.options.page = 1;
-      console.log(this.link, this.options)
       if (this.options.page > 1) {
         if (this.options.page === this.prevPage - 1) {
           url = this.link.find(link => link.relation === "previous").url;
@@ -111,40 +125,45 @@ export default {
           this.profile;
         let sTerms = Object.keys(this.terms);
         for (let term of sTerms) {
-          if ( this.terms[term] ) {
+          if ( Array.isArray( this.terms[term] ) ) {
+            if ( this.terms[term].length > 0 ) {
+              url += "&" + term + "=" + this.terms[term].join(',')
+            }
+          } else if ( this.terms[term] ) {
             url += "&" + term + "=" + this.terms[term];
           }
         }
         this.debug = url;
       }
       this.prevPage = this.options.page;
-          console.log("fetching",url)
+      //console.log("fetching",url)
       fetch(url).then(response => {
-        response.json().then(data => {
+        response.json().then(async (data) => {
           this.results = [];
           if (data.total > 0) {
             this.link = data.link;
             for (let entry of data.entry) {
               let result = { id: entry.resource.id };
               for (let field of this.fields) {
-                result[field[1]] = this.$fhirpath.evaluate(
-                  entry.resource,
-                  field[1]
-                );
+                let fieldDisplay = this.$fhirpath.evaluate( entry.resource, field[1] );
+                result[field[1]] = await this.$fhirutils.lookup( fieldDisplay[0], field[2] )
               }
               this.results.push(result);
             }
           }
           this.total = data.total;
           this.loading = false;
+          this.checkRerun()
         }).catch(err => {
           this.loading = false;
           this.error_message = "Unable to load results.";
+          this.checkRerun()
           console.log(err);
         });
       }).catch(err => {
         this.loading = false;
         this.error_message = "Unable to load results.";
+        this.checkRerun()
         console.log(err);
       });
     }
