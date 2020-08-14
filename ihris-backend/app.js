@@ -72,12 +72,13 @@ async function startUp() {
     const modPaths = Object.keys(loadModules)
     for (let mod of modPaths) {
       try {
-        let reqMod = await fhirModules.require(loadModules[mod])
+        let reqMod = await fhirModules.require(loadModules[mod], nconf.getBool("security:disabled"))
         if (reqMod) {
           console.log("Loading " + mod + " (" + loadModules[mod] + ") to app.")
           app.use("/" + mod, reqMod)
         }
       } catch (err) {
+        console.log(err)
         console.log("Failed to load module " + mod + " (" + loadModules[mod] + ")")
       }
     }
@@ -102,6 +103,13 @@ module.exports = router
   const testModule = requireFromString(testStr, "ihris-module-test")
   app.use( '/mod', testModule )
   */
+
+  // Fallback for the vue router using history mode
+  // If this causes issues, would need to either 
+  // server the ui from a subdirectory or change to hash mode
+  app.use( (req,res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+  } )
 
   configLoaded = true
 }

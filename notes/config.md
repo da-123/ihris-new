@@ -50,6 +50,7 @@ IHRIS_FHIR__SERVER=http://locahost:8080/hapi/fhir
 * fhir:server (default: http://localhost:8080/hapi/fhir/)
 * fhir:username
 * fhir:password
+* security:disabled (when set to true the no signature checks are done on remote config or modules)
 * config
  * name = id of config Parameters resource
 * keys
@@ -79,7 +80,7 @@ IHRIS_FHIR__SERVER=http://locahost:8080/hapi/fhir
     * to = vue route (e.g. /static/page-about
     * href = external link
 * shortname
- * Resource
+ * [Resource]
   * fhirpath (single fhirpath for displaying for this resource)
   * format (string for util.format())
   * order = "[field],[field]" (comma delimited list of named paths)

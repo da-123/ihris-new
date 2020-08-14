@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-12T15:12:41.815Z",
+        "when": "2020-08-14T07:52:13.530Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "ndn/B8uiKnb1Hs6zL4uuH2I1u3k1eRzZ9qb5/Ya6RwFnLtfLuTeiFatNRd4HCulBf8h5iKf9xODKokLzEFwe53baalu1aW47E2NURTesTCQqZmRA2QL3MjqvkXxnFaOo8gxZptBAAZrdcjgFdl6OIeXlZ3lcjMqWieeuNy2BbiU="
+        "data": "fTQIu9BNM2qPF9V1BokMfwegwI67Cr+UPy27gW1yDkigTimdJD9uubZR52zW7B6/tOrTmkjjvVJP+GaWelbqNpWoHGuV8C9YPyQIpFdIIIbZqKDfWXUurBKw5BmFB82dH7pM5W/kewA6vPEm3U8f+C42LFPiMh8osrm2NXSolNo="
       }
     },
     {
@@ -413,6 +413,22 @@
         {
           "name": "site:nav:menu:dashboard:url",
           "valueString": "/dashboard"
+        },
+        {
+          "name": "shortname.Practitioner:format",
+          "valueString": "%s, %s"
+        },
+        {
+          "name": "shortname.Practitioner:order",
+          "valueString": "family,given"
+        },
+        {
+          "name": "shortname.Practitioner:paths:family:fhirpath",
+          "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='fathers').valueString"
+        },
+        {
+          "name": "shortname.Practitioner:paths:given:fhirpath",
+          "valueString": "name.where(use='official').first().given"
         }
       ]
     }

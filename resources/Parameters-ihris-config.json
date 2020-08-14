@@ -32,7 +32,7 @@
         },
         {
           "name": "site:site",
-          "valueString": "Demo"
+          "valueString": "Federal Ministry of Health - Ethiopia"
         },
         {
           "name": "site:logo",
@@ -124,7 +124,7 @@
         },
         {
           "name": "site:nav:menu:person:menu:person_add:url",
-          "valueString": "/questionnaire/ihris-practitioner/practitioner"
+          "valueString": "/questionnaire/ihris-personal-information/practitioner"
         },
         {
           "name": "site:nav:menu:position:text",
@@ -155,24 +155,32 @@
           "valueString": "/resource/add/practitionerrole"
         },
         {
-          "name": "site:nav:menu:mhero:order",
+          "name": "site:nav:menu:location:text",
+          "valueString": "Locations/Facilities"
+        },
+        {
+          "name": "site:nav:menu:location:order",
           "valueString": "3"
         },
         {
-          "name": "site:nav:menu:mhero:text",
-          "valueString": "mHero"
+          "name": "site:nav:menu:location:icon",
+          "valueString": "mdi-map-marker-multiple"
         },
         {
-          "name": "site:nav:menu:mhero:icon",
-          "valueString": "mdi-cellphone-basic"
+          "name": "site:nav:menu:location:menu:location_search:text",
+          "valueString": "Search Locations/Facilities"
         },
         {
-          "name": "site:nav:menu:mhero:menu:message:text",
-          "valueString": "Send Messages"
+          "name": "site:nav:menu:location:menu:location_search:url",
+          "valueString": "/resource/search/location"
         },
         {
-          "name": "site:nav:menu:mhero:menu:message:url",
-          "valueString": "/page/mhero"
+          "name": "site:nav:menu:location:menu:location_add:text",
+          "valueString": "Add Location/Facility"
+        },
+        {
+          "name": "site:nav:menu:location:menu:location_add:url",
+          "valueString": "/resource/add/location"
         },
         {
           "name": "site:nav:menu:database:text",
@@ -187,12 +195,208 @@
           "valueString": "mdi-database"
         },
         {
+          "name": "site:nav:menu:database:menu:identifier:text",
+          "valueString": "Identifier Types"
+        },
+        {
+          "name": "site:nav:menu:database:menu:identifier:url",
+          "valueString": "/resource/search/identifier"
+        },
+        {
+          "name": "site:nav:menu:database:menu:identifier:order",
+          "valueString": "1"
+        },
+        {
+          "name": "site:nav:menu:database:menu:language:text",
+          "valueString": "Languages"
+        },
+        {
+          "name": "site:nav:menu:database:menu:language:url",
+          "valueString": "/resource/search/language"
+        },
+        {
+          "name": "site:nav:menu:database:menu:language:order",
+          "valueString": "2"
+        },
+        {
+          "name": "site:nav:menu:database:menu:ethnicity:text",
+          "valueString": "Ethnicities"
+        },
+        {
+          "name": "site:nav:menu:database:menu:ethnicity:url",
+          "valueString": "/resource/search/ethnicity"
+        },
+        {
+          "name": "site:nav:menu:database:menu:ethnicity:order",
+          "valueString": "3"
+        },
+        {
+          "name": "site:nav:menu:database:menu:department:text",
+          "valueString": "Departments"
+        },
+        {
+          "name": "site:nav:menu:database:menu:department:url",
+          "valueString": "/resource/search/department"
+        },
+        {
+          "name": "site:nav:menu:database:menu:department:order",
+          "valueString": "4"
+        },
+        {
+          "name": "site:nav:menu:database:menu:shift:text",
+          "valueString": "Shifts"
+        },
+        {
+          "name": "site:nav:menu:database:menu:shift:url",
+          "valueString": "/resource/search/shift"
+        },
+        {
+          "name": "site:nav:menu:database:menu:shift:order",
+          "valueString": "5"
+        },
+        {
+          "name": "site:nav:menu:database:menu:category:text",
+          "valueString": "Categories"
+        },
+        {
+          "name": "site:nav:menu:database:menu:category:url",
+          "valueString": "/resource/search/category"
+        },
+        {
+          "name": "site:nav:menu:database:menu:category:order",
+          "valueString": "6"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salary-scale:text",
+          "valueString": "Salary Scale"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salary-scale:url",
+          "valueString": "/resource/search/salary-scale"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salary-scale:order",
+          "valueString": "7"
+        },
+        {
+          "name": "site:nav:menu:database:menu:directorate:text",
+          "valueString": "Directorates"
+        },
+        {
+          "name": "site:nav:menu:database:menu:directorate:url",
+          "valueString": "/resource/search/directorate"
+        },
+        {
+          "name": "site:nav:menu:database:menu:directorate:order",
+          "valueString": "8"
+        },
+        {
+          "name": "site:nav:menu:database:menu:caseteam:text",
+          "valueString": "Case Teams"
+        },
+        {
+          "name": "site:nav:menu:database:menu:caseteam:url",
+          "valueString": "/resource/search/caseteam"
+        },
+        {
+          "name": "site:nav:menu:database:menu:caseteam:order",
+          "valueString": "9"
+        },
+        {
+          "name": "site:nav:menu:database:menu:job-type:text",
+          "valueString": "Job Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:job-type:url",
+          "valueString": "/resource/search/job-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:job-type:order",
+          "valueString": "10"
+        },
+        {
           "name": "site:nav:menu:database:menu:job:text",
           "valueString": "Job Titles"
         },
         {
           "name": "site:nav:menu:database:menu:job:url",
           "valueString": "/resource/search/job"
+        },
+        {
+          "name": "site:nav:menu:database:menu:job:order",
+          "valueString": "11"
+        },
+        {
+          "name": "site:nav:menu:database:menu:employment-status:text",
+          "valueString": "Employment Status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:employment-status:url",
+          "valueString": "/resource/search/employment-status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:employment-status:order",
+          "valueString": "12"
+        },
+        {
+          "name": "site:nav:menu:database:menu:reason-departure:text",
+          "valueString": "Reasons For departure"
+        },
+        {
+          "name": "site:nav:menu:database:menu:reason-departure:url",
+          "valueString": "/resource/search/reason-departure"
+        },
+        {
+          "name": "site:nav:menu:database:menu:reason-departure:order",
+          "valueString": "13"
+        },
+        {
+          "name": "site:nav:menu:database:menu:educational-major:text",
+          "valueString": "Educational Major"
+        },
+        {
+          "name": "site:nav:menu:database:menu:educational-major:url",
+          "valueString": "/resource/search/educational-major"
+        },
+        {
+          "name": "site:nav:menu:database:menu:educational-major:order",
+          "valueString": "14"
+        },
+        {
+          "name": "site:nav:menu:database:menu:training-type:text",
+          "valueString": "Training Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:training-type:url",
+          "valueString": "/resource/search/training-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:training-type:order",
+          "valueString": "15"
+        },
+        {
+          "name": "site:nav:menu:database:menu:skill:text",
+          "valueString": "Skill"
+        },
+        {
+          "name": "site:nav:menu:database:menu:skill:url",
+          "valueString": "/resource/search/skill"
+        },
+        {
+          "name": "site:nav:menu:database:menu:skill:order",
+          "valueString": "16"
+        },
+        {
+          "name": "site:nav:menu:database:menu:leave-type:text",
+          "valueString": "Leave Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:leave-type:url",
+          "valueString": "/resource/search/leave-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:leave-type:order",
+          "valueString": "17"
         },
         {
           "name": "site:nav:menu:dashboard:text",
@@ -206,9 +410,25 @@
           "name": "site:nav:menu:dashboard:icon",
           "valueString": "mdi-poll-box"
         },
-         {
+        {
           "name": "site:nav:menu:dashboard:url",
           "valueString": "/dashboard"
+        },
+        {
+          "name": "shortname.Practitioner:format",
+          "valueString": "%s, %s"
+        },
+        {
+          "name": "shortname.Practitioner:order",
+          "valueString": "family,given"
+        },
+        {
+          "name": "shortname.Practitioner:paths:family:fhirpath",
+          "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='fathers').valueString"
+        },
+        {
+          "name": "shortname.Practitioner:paths:given:fhirpath",
+          "valueString": "name.where(use='official').first().given"
         }
       ]
     }

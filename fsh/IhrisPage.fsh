@@ -17,7 +17,8 @@ Description:    "iHRIS Page Display details."
 * extension contains
       resource 1..1 MS and
       search 1..* MS and
-      filter 0..* MS
+      filter 0..* MS and
+      add 0..1 MS 
 * extension[resource].value[x] only Reference
 * extension[resource].valueReference only Reference(StructureDefinition or CodeSystem)
 * extension[resource].valueReference 1..1 MS
@@ -28,6 +29,19 @@ Description:    "iHRIS Page Display details."
 * extension[filter].value[x] only string
 * extension[filter].valueString 1..1 MS
 * extension[filter].valueString ^label = "Search Filters"
+* extension[add].extension contains
+      url 1..1 MS and
+      icon 0..1 MS and
+      class 0..1 MS
+* extension[add].extension[url].value[x] only url
+* extension[add].extension[url].valueUrl MS
+* extension[add].extension[url].valueUrl ^label = "Add Link URL"
+* extension[add].extension[icon].value[x] only string
+* extension[add].extension[icon].valueString MS
+* extension[add].extension[icon].valueString ^label = "Add Link Icon"
+* extension[add].extension[class].value[x] only string
+* extension[add].extension[class].valueString MS
+* extension[add].extension[class].valueString ^label = "Add Link Class"
 
 Extension:      IhrisPageSection
 Id:             ihris-page-section
@@ -83,6 +97,7 @@ Description:    "iHRIS Page Section information."
       text 1..1 MS and
       row 0..1 MS and
       condition 0..1 MS and
+      emptyDisplay 0..1 MS and
       class 0..1 MS 
 * extension[resource].extension[action].extension[link].value[x] only string
 * extension[resource].extension[action].extension[link].valueString MS
@@ -96,6 +111,9 @@ Description:    "iHRIS Page Section information."
 * extension[resource].extension[action].extension[condition].value[x] only string
 * extension[resource].extension[action].extension[condition].valueString MS
 * extension[resource].extension[action].extension[condition].valueString ^label = "FHIRPation Condition do Display"
+* extension[resource].extension[action].extension[emptyDisplay].value[x] only boolean
+* extension[resource].extension[action].extension[emptyDisplay].valueBoolean MS
+* extension[resource].extension[action].extension[emptyDisplay].valueBoolean ^label = "Show when no records?"
 * extension[resource].extension[action].extension[class].value[x] only string
 * extension[resource].extension[action].extension[class].valueString MS
 * extension[resource].extension[action].extension[class].valueString ^label = "Element Class for the Action"
@@ -115,18 +133,22 @@ Usage:          #example
 * extension[display].extension[filter][0].valueString = "Name|name:contains"
 * extension[display].extension[filter][1].valueString = "Gender|gender|http://hl7.org/fhir/ValueSet/administrative-gender"
 * extension[display].extension[filter][2].valueString = "Employee ID|identifier"
+* extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-personal-information/practitioner"
+* extension[display].extension[add].extension[icon].valueString = "mdi-account-plus"
+* extension[display].extension[add].extension[class].valueString = "accent"
 * extension[section][0].extension[title].valueString = "Health Worker"
 * extension[section][0].extension[description].valueString = "Primary Person details"
 * extension[section][0].extension[name].valueString = "Practitioner"
-* extension[section][0].extension[field][0].valueString = "Practitioner.name"
-* extension[section][0].extension[field][1].valueString = "Practitioner.name.given"
-* extension[section][0].extension[field][2].valueString = "Practitioner.extension:familyNames.extension:fathers"
-* extension[section][0].extension[field][3].valueString = "Practitioner.extension:familyNames.extension:fathersalternativelanguage"
-* extension[section][0].extension[field][4].valueString = "Practitioner.extension:familyNames.extension:grandfatherslastname"
-* extension[section][0].extension[field][5].valueString = "Practitioner.extension:familyNames.extension:grandfathersalternativelanguage"
-* extension[section][0].extension[field][6].valueString = "Practitioner.extension:familyNames.extension:mothers"
-* extension[section][0].extension[field][7].valueString = "Practitioner.extension:nationality"
-* extension[section][0].extension[field][8].valueString = "Practitioner.extension:residence"
+* extension[section][0].extension[field][0].valueString = "Practitioner.photo"
+* extension[section][0].extension[field][1].valueString = "Practitioner.name"
+* extension[section][0].extension[field][2].valueString = "Practitioner.name.given"
+* extension[section][0].extension[field][3].valueString = "Practitioner.extension:familyNames.extension:fathers"
+* extension[section][0].extension[field][4].valueString = "Practitioner.extension:familyNames.extension:fathersalternativelanguage"
+* extension[section][0].extension[field][5].valueString = "Practitioner.extension:familyNames.extension:grandfatherslastname"
+* extension[section][0].extension[field][6].valueString = "Practitioner.extension:familyNames.extension:grandfathersalternativelanguage"
+* extension[section][0].extension[field][7].valueString = "Practitioner.extension:familyNames.extension:mothers"
+* extension[section][0].extension[field][8].valueString = "Practitioner.extension:nationality"
+* extension[section][0].extension[field][9].valueString = "Practitioner.extension:residence"
 * extension[section][1].extension[title].valueString = "Demographic Details"
 * extension[section][1].extension[description].valueString = "Demographic Informations"
 * extension[section][1].extension[name].valueString = "demographic"
@@ -192,6 +214,7 @@ Usage:          #example
 * extension[section][8].extension[resource].extension[action][0].extension[link].valueString = "/resource/add/practitionerrole?PractitionerRole.practitioner.reference=Practitioner/FHIRID"
 * extension[section][8].extension[resource].extension[action][0].extension[text].valueString = "Assign Job"
 * extension[section][8].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][8].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
 * extension[section][8].extension[resource].extension[action][0].extension[condition].valueString = "PractitionerRole.period.end.exists()"
 * extension[section][8].extension[resource].extension[action][0].extension[class].valueString = "primary"
 * extension[section][8].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/practitionerrole/ITEMID"

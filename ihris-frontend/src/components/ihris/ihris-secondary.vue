@@ -19,7 +19,7 @@
           <v-btn 
             v-for="action in topActions" 
             :to="setupLink( action.link, {} )" 
-            :color="action.eleClass" 
+            :color="action.class" 
             :key="action.text"
             small
             >
@@ -31,7 +31,7 @@
         <v-btn 
           v-for="action in item.actions" 
           :to="setupLink( action.link, item )" 
-          :color="action.eleClass" 
+          :color="action.class" 
           :key="action.text"
           small
           rounded
@@ -106,7 +106,7 @@ export default {
       fetch( url ).then( response => {
         if ( response.status === 200 ) {
           response.json().then( async data => {
-            if ( data.entry ) {
+            if ( data.entry && data.entry.length > 0 ) {
               for( let entry of data.entry ) {
                 let row = { id: entry.resource.id }
                 for( let header of this.columns ) {
@@ -144,8 +144,15 @@ export default {
                 }
                 this.items.push( row )
               }
-              this.topActions = this.actions.filter( action => !action.row && action.meets )
+            } else {
+              for( let action of this.actions ) {
+                if ( !action.row ) {
+                  action.meets = action.emptyDisplay
+                }
+              }
             }
+            this.topActions = this.actions.filter( action => !action.row && action.meets )
+
 
             if ( data.link ) {
               let next = data.link.find( link => link.relation === "next" )

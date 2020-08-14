@@ -10,7 +10,10 @@ const crypto = require('crypto')
 /* GET home page. */
 router.get('/site', function(req, res) {
   const defaultUser = nconf.get("user:loggedout") || "ihris-user-loggedout"
-  let site = nconf.get("site")
+  let site = nconf.get("site") || {}
+  if ( nconf.getBool("security:disabled") ) {
+    site.security = {disabled: true}
+  }
   if ( req.user ) {
     site.user = {}
     if ( req.user.resource.id === defaultUser ) {
@@ -78,6 +81,20 @@ router.get('/page/:page', function(req, res) {
         ext.valueString.match( /^([^|]*)\|?([^|]*)?\|?(.*)?$/ ).slice(1,4)
        )
     } catch(err) { }
+    let addLink = null
+    try {
+      let add = pageDisplay.extension.find( ext => ext.url === "add" )
+      let url = add.extension.find( ext => ext.url === "url" ).valueUrl
+      let icon, eleClass
+      try {
+        icon = add.extension.find( ext => ext.url === "icon" ).valueString
+      } catch(err) {}
+      try {
+        eleClass = add.extension.find( ext => ext.url === "class" ).valueString
+      } catch(err) {}
+      addLink = { url: url, icon: icon, class: eleClass }
+    } catch(err) {}
+
     let pageSections = resource.extension.filter( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-page-section" )
 
     //console.log(filters)
@@ -146,10 +163,15 @@ router.get('/page/:page', function(req, res) {
                 condition = action.extension.find( ext => ext.url === "condition" ).valueString
               } catch(err) {}
               try {
+                emptyDisplay = action.extension.find( ext => ext.url === "emptyDisplay" ).valueBoolean
+              } catch(err) {}
+              try {
                 eleClass = action.extension.find( ext => ext.url === "class" ).valueString
               } catch(err) {}
               if ( link && text ) {
-                actions.push( {link: link, text: text, row: row, condition: condition, eleClass: eleClass } )
+                actions.push( {link: link, text: text, row: row, 
+                  condition: condition, emptyDisplay: emptyDisplay, 
+                  class: eleClass } )
               }
             } catch(err) { }
           }
@@ -207,7 +229,11 @@ router.get('/page/:page', function(req, res) {
         resourceElement = "ihris-codesystem"
       }
 
-      let searchTemplate = '<'+searchElement+' :key="$route.params.page" page="'+req.params.page+'" label="'+(resource.title || resource.name)+'" :fields="fields" :terms="terms" resource="'+(resource.resourceType === "StructureDefinition" ? resource.type : resource.resourceType)+'" profile="'+resource.url+'">'+"\n"
+      let searchTemplate = '<'+searchElement+' :key="$route.params.page" page="'+req.params.page+'" label="'+(resource.title || resource.name)+'" :fields="fields" :terms="terms" resource="'+(resource.resourceType === "StructureDefinition" ? resource.type : resource.resourceType)+'" profile="'+resource.url+'"'
+      if ( addLink ) {
+        searchTemplate += " :add-link='"+JSON.stringify(addLink).replace(/'/g, "\'")+"'"
+      }
+      searchTemplate += '>'+"\n"
       for( let filter of filters ) {
         searchTemplate += '<ihris-search-term v-on:termChange="searchData"'
         if ( filter[1] ) {
