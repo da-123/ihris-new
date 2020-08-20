@@ -1,36 +1,45 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Home from "../views/home.vue"
-import Test from "../views/test.vue"
-import mhero from "../views/mhero/mhero.vue"
-import contactGroups from "../views/mhero/contact-groups.vue"
+//import Home from "../views/home.vue"
+import Static from "../views/static-page.vue"
+import HomeNav from "../views/home-nav.vue"
+//import Test from "../views/test.vue"
+//import mhero from "../views/mhero/mhero.vue"
+//import contactGroups from "../views/mhero/contact-groups.vue"
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: "/",
     name: "home",
-    component: Home
+    components: {
+      default: Static,
+      homeNav: HomeNav
+    },
+    props: { default: { id: "page-home", blankOnErr: true } }
   },
   {
     path: '/page/mhero',
     name: 'mhero',
-    component: mhero
+    component: () => import( /* webpackChunkName: "mhero" */ "../views/mhero/mhero.vue")
   },
   {
     path: '/page/contact-groups',
     name: 'contact-groups',
-    component: contactGroups
+    component: () => import( /* webpackChunkName: "mhero" */ "../views/mhero/contact-groups.vue")
   },
+  /*
   {
     path: "/test/:id",
     name: "test",
     component: Test
   },
+  */
   {
     path: "/static/:id",
     name: "static",
-    component: () => import( /* webpackChunkName: "static" */ "../views/static-page.vue")
+    //component: () => import( /* webpackChunkName: "static" */ "../views/static-page.vue")
+    component: Static
   },
   //{
   //path: "/resource/:type/:page/:id?",
@@ -38,7 +47,7 @@ const routes = [{
   //// route level code-splitting
   //// this generates a separate chunk (about.[hash].js) for this route
   //// which is lazy-loaded when the route is visited.
-  //component: () => import(/* webpackChunkName: "fhir" */ "../views/fhir-page-resource.vue")
+  //component: () => import(/* webpackChunkName: "resource" */ "../views/fhir-page-resource.vue")
   //},
   {
     path: "/resource/view/:page/:id",
@@ -46,7 +55,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "fhir" */ "../views/fhir-page-view.vue")
+    component: () => import( /* webpackChunkName: "resource" */ "../views/fhir-page-view.vue")
   },
   {
     path: "/resource/search/:page",
@@ -54,7 +63,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "fhir" */ "../views/fhir-page-search.vue")
+    component: () => import( /* webpackChunkName: "resource" */ "../views/fhir-page-search.vue")
   },
   {
     path: "/resource/report/:report",
@@ -62,7 +71,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "fhir" */ "../views/fhir-report.vue")
+    component: () => import( /* webpackChunkName: "report" */ "../views/fhir-report.vue")
   },
   {
     path: "/resource/add/:page",
@@ -70,7 +79,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "fhir" */ "../views/fhir-page-add.vue")
+    component: () => import( /* webpackChunkName: "resource-add" */ "../views/fhir-page-add.vue")
   },
   {
     path: "/questionnaire/:questionnaire/:page",
@@ -78,7 +87,7 @@ const routes = [{
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "fhir" */ "../views/fhir-page-questionnaire.vue")
+    component: () => import( /* webpackChunkName: "questionnaire" */ "../views/fhir-page-questionnaire.vue")
   }
 ]
 

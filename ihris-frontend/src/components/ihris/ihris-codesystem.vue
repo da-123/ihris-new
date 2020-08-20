@@ -20,7 +20,7 @@
       >
       <v-list class="white--text">
         <v-list-item>
-          <v-btn v-if="!edit" dark class="secondary" @click="$emit('setEdit', !edit)">
+          <v-btn v-if="!edit" dark class="secondary" @click="$emit('set-edit', !edit)">
           <v-icon light>mdi-pencil</v-icon>
           <span>Edit</span>
           </v-btn>
@@ -66,18 +66,19 @@ export default {
     if ( this.fhirId ) {
       this.loading = true
       //console.log("getting",this.field,this.fhirId)
-      let codeSystemId = this.profile.substring( this.profile.lastIndexOf("/") )
+      let codeSystemId = this.profile.substring( this.profile.lastIndexOf("/")+1 )
       fetch( "/fhir/"+this.field+"/"+codeSystemId ).then(response => {
-        response.json().then(data => {
-          let types = {}
-          if ( data.property ) {
-            for ( let prop of data.property ) {
-              types[prop.code] = "value"+prop.type.charAt(0).toUpperCase() + prop.type.slice(1)
+        if ( response.ok ) {
+          response.json().then(data => {
+            let types = {}
+            if ( data.property ) {
+              for ( let prop of data.property ) {
+                types[prop.code] = "value"+prop.type.charAt(0).toUpperCase() + prop.type.slice(1)
+              }
             }
-          }
-          let formatted = data.concept.find( concept => concept.code === this.fhirId )
-          //this.$store.commit('setCurrentResource', data)
-          /*
+            let formatted = data.concept.find( concept => concept.code === this.fhirId )
+            //this.$store.commit('setCurrentResource', data)
+            /*
           let formatted = { code: this.fhirId }
           try {
             formatted.display = data.parameter.find( param => param.name === "display" ).valueString
@@ -107,21 +108,32 @@ export default {
             }
           } catch (err) { //do nothing
           }
-          */
-          if ( formatted && formatted.property ) {
-            for( let property of formatted.property ) {
-              formatted[property.code] = property[ types[ property.code ] ]
+             */
+            if ( formatted && formatted.property ) {
+              for( let property of formatted.property ) {
+                formatted[property.code] = property[ types[ property.code ] ]
+              }
+              delete formatted.property
             }
-            delete formatted.property
-          }
 
-          this.source = { data: formatted, path: this.field }
+            this.source = { data: formatted, path: this.field }
+            this.loading = false
+            //console.log(data)
+          }).catch(err=> {
+            this.loading = false
+            console.log(this.field,this.fhirId,err,response)
+          })
+        } else {
           this.loading = false
-          //console.log(data)
-        }).catch(err=> {
-          console.log(this.field,this.fhirId,err)
-        })
+          console.log("Invalid response",response)
+          response.text().then(body => {
+            console.log("body text:",body)
+          } ).catch(err => {
+            console.log("Failed to get text:",err)
+          } )
+        }
       }).catch(err=> {
+        this.loading = false
         console.log(this.field,this.fhirId,err)
       })
     }
@@ -153,7 +165,7 @@ export default {
       this.fhir = { }
       //console.log(this)
       processChildren( this.field, this.fhir, this.$children )
-      let codeSystemId = this.profile.substring( this.profile.lastIndexOf("/") )
+      let codeSystemId = this.profile.substring( this.profile.lastIndexOf("/")+1 )
       let url = "/fhir/"+this.field+"/"+codeSystemId
       let opts = {
         method: "PATCH",

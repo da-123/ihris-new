@@ -9,6 +9,7 @@ const marked = require('marked')
 const { JSDOM } = require('jsdom')
 const createDOMPurify = require('dompurify')
 const outcomes = require('../config/operationOutcomes')
+const winston = require('winston')
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window)
@@ -132,7 +133,7 @@ router.patch("/CodeSystem/:id/:code", (req, res) => {
       resource.concept = [ update ]
     }
     fhirAxios.update( resource ).then( (resource) => {
-      console.log("UPDATED",resource)
+      winston.debug("UPDATED",resource)
       return res.status(200).json({ok:true})
     } ).catch( (err) => {
       /* return response from FHIR server */
@@ -231,22 +232,6 @@ router.get("/CodeSystem/\\$lookup", (req, res) => {
   } )
 } )
 
-const docToHTML = ( resource ) => {
-  try {
-    let html = ""
-    let data64 = Buffer.from( resource.content[0].attachment.data, 'base64' )
-    let data = data64.toString('utf8')
-    if ( resource.content[0].attachment.contentType === "text/markdown" ) {
-      html = marked( data )
-    } else {
-      html = data
-    }
-    return DOMPurify.sanitize("<div>" + html + "</div>")
-  } catch( err ) {
-    return "Failed to get HTML from DocumentReference"
-  }
-}
-
 router.get("/DocumentReference/:id/\\$html", (req, res) => {
   if ( !req.user ) {
     return res.status(401).json( outcomes.NOTLOGGEDIN )
@@ -257,16 +242,36 @@ router.get("/DocumentReference/:id/\\$html", (req, res) => {
     return res.status(401).json( outcomes.DENIED )
   }
   fhirAxios.read( "DocumentReference", req.params.id ).then( (resource) => {
+
+    const docToHTML = ( resource ) => {
+      try {
+        let html = ""
+        let data64 = Buffer.from( resource.content[0].attachment.data, 'base64' )
+        let data = data64.toString('utf8')
+        if ( resource.content[0].attachment.contentType === "text/markdown" ) {
+          html = marked( data )
+        } else {
+          html = data
+        }
+        return { 
+          title: resource.content[0].attachment.title, 
+          html: DOMPurify.sanitize("<div>" + html + "</div>") 
+        }
+      } catch( err ) {
+        return "Failed to get HTML from DocumentReference"
+      }
+    }
+
     if ( allowed === true ) {
-      let html = docToHTML( resource )
-      return res.status(200).send(html)
+      let content = docToHTML( resource )
+      return res.status(200).json(content)
     } else {
       // Check permissions against the specific resource and return list
       // of allowed fields
       let fieldList = req.user.hasPermissionByObject( "read", resource )
       if ( fieldList === true ) {
-        let html = docToHTML( resource )
-        return res.status(200).send(html)
+        let content = docToHTML( resource )
+        return res.status(200).json(content)
       } else if ( !fieldList ) {
         return res.status(401).json( outcomes.DENIED )
       } else {
@@ -293,14 +298,14 @@ router.get("/\\$short-name", (req, res) => {
   if ( req.query.reference ) {
     let refData = req.query.reference.split('/')
     if ( refData.length !== 2 ) {
-      console.log("invalid",req.query)
+      winston.debug("invalid",req.query)
       return res.status(401).json( outcomes.DENIED )
     }
     allowed = req.user.hasPermissionByName( "read", refData[0] )
 
     // Any read access will give short names
     if ( allowed === false ) {
-      console.log("not allowed",allowed,req.query)
+      winston.debug("not allowed",allowed,req.query)
       return res.status(401).json( outcomes.DENIED )
     }
     fhirShortName.lookup( req.query ).then ( (display) => {
@@ -313,7 +318,7 @@ router.get("/\\$short-name", (req, res) => {
       allowed = allowed && req.user.hasPermissionByName( "read", "ValueSet" ) 
     }
     if ( allowed !== true ) {
-      console.log("not allowed",allowed,req.query)
+      winston.debug("not allowed",allowed,req.query)
       return res.status(401).json( outcomes.DENIED )
     }
     fhirShortName.lookup( req.query ).then ( (display) => {

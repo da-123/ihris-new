@@ -32,6 +32,7 @@ Description:    "iHRIS profile of Practitioner."
 * period.end 0..1 MS
 * period.end ^label = "End Date"
 * extension contains
+    IhrisPractitionerRoleSalary named salary 0..1 MS and
     IhrisPractitionerRoleDirectorate named directorate 0..1 MS and
     IhrisPractitionerRoleCaseTeam named caseteam 0..1 MS and
     IhrisPractitionerRoleShift named shift 0..1 MS and
@@ -40,6 +41,8 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
     IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS
+* extension[salary].valueString MS
+* extension[salary] ^label = "Salary"
 * extension[directorate].valueCoding MS
 * extension[directorate] ^label = "Directorate"
 * extension[caseteam].valueCoding MS
@@ -169,6 +172,13 @@ Description:    "iHRIS extension for Job Description Reason for Departure."
 CodeSystem:      IhrisReasonDepartureCodeSystem
 Id:              ihris-reason-departure-codesystem
 Title:           "Reason For Departure"
+* #transfer "Transfer" "Transfer"
+* #promotion "Promotion" "Promotion"
+* #redeployment  "Redeployment" "Redeployment"
+* #death "Death" "Death"
+* #mandatoryRetirement "Mandatory Retirement" "Mandatory Retirement"
+* #earlyRetirement "Early Retirement" "Early Retirement"
+* #resignation "Resignation" "Resignation"
 
 ValueSet:         IhrisReasonDepartureValueSet
 Id:               ihris-reason-departure-valueset
@@ -194,6 +204,16 @@ Description:    "iHRIS extension for Job Information Remark."
 * value[x] only string
 * valueString 1..1 MS
 * valueString ^label = "Job Information Remark"
+
+Extension:      IhrisPractitionerRoleSalary
+Id:             ihris-practitionerrole-salary
+Title:          "iHRIS Job Description salary"
+Description:    "iHRIS extension for Job Information Salary."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only string
+* valueString 1..1 MS
+* valueString ^label = "Salary"
 
 Extension:      IhrisPractitionerRoleCaseTeam
 Id:             ihris-practitionerrole-caseteam
@@ -412,6 +432,7 @@ Usage:          #definition
 * item[0].item[0].type = #date
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
+
 * item[0].item[1].linkId = "PractitionerRole.extension[0]"
 * item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
 * item[0].item[1].text = "Reason For Depature"

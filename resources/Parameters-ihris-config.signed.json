@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-14T07:52:13.530Z",
+        "when": "2020-08-20T10:00:25.985Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "fTQIu9BNM2qPF9V1BokMfwegwI67Cr+UPy27gW1yDkigTimdJD9uubZR52zW7B6/tOrTmkjjvVJP+GaWelbqNpWoHGuV8C9YPyQIpFdIIIbZqKDfWXUurBKw5BmFB82dH7pM5W/kewA6vPEm3U8f+C42LFPiMh8osrm2NXSolNo="
+        "data": "JK0oJYELZICf6PzeB87CPPDb+oDkc8OqMn3IxCZ1eZan1yUAAfbarlsdfJMA075JdJ8o4hJIbI41wOExYfU0EiWZNyBq/q80RVEVO7W8J+EVZmBZBHBrnbkGEZH/CxBiYKKLRrjjnApZwFmUyM+hhqpuERD4bhZGoXvw2jtabwI="
       }
     },
     {
@@ -28,7 +28,7 @@
       "part": [
         {
           "name": "site:title",
-          "valueString": "Manage"
+          "valueString": "iHRIS"
         },
         {
           "name": "site:site",
@@ -36,7 +36,7 @@
         },
         {
           "name": "site:logo",
-          "valueString": "iHRIS5Logo.png"
+          "valueString": "EthiopiaMOH_logo.png"
         },
         {
           "name": "site:auth:local:method",
@@ -49,6 +49,10 @@
         {
           "name": "site:auth:local:btn:image",
           "valueString": "btn_ihris_signin.png"
+        },
+        {
+          "name": "site:auth:local:btn:image2x",
+          "valueString": "btn_ihris_signin_dark.png"
         },
         {
           "name": "site:auth:local:btn:text",
@@ -65,6 +69,10 @@
         {
           "name": "site:auth:google:btn:image",
           "valueString": "btn_google_signin_light_normal_web.png"
+        },
+        {
+          "name": "site:auth:google:btn:image2x",
+          "valueString": "btn_google_signin_dark_normal_web@2x.png"
         },
         {
           "name": "site:auth:google:btn:text",
@@ -231,18 +239,6 @@
           "valueString": "3"
         },
         {
-          "name": "site:nav:menu:database:menu:department:text",
-          "valueString": "Departments"
-        },
-        {
-          "name": "site:nav:menu:database:menu:department:url",
-          "valueString": "/resource/search/department"
-        },
-        {
-          "name": "site:nav:menu:database:menu:department:order",
-          "valueString": "4"
-        },
-        {
           "name": "site:nav:menu:database:menu:shift:text",
           "valueString": "Shifts"
         },
@@ -252,7 +248,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:shift:order",
-          "valueString": "5"
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:database:menu:category:text",
@@ -264,7 +260,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:category:order",
-          "valueString": "6"
+          "valueString": "5"
         },
         {
           "name": "site:nav:menu:database:menu:salary-scale:text",
@@ -276,7 +272,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:salary-scale:order",
-          "valueString": "7"
+          "valueString": "6"
         },
         {
           "name": "site:nav:menu:database:menu:directorate:text",
@@ -288,7 +284,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:directorate:order",
-          "valueString": "8"
+          "valueString": "7"
         },
         {
           "name": "site:nav:menu:database:menu:caseteam:text",
@@ -300,7 +296,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:caseteam:order",
-          "valueString": "9"
+          "valueString": "8"
         },
         {
           "name": "site:nav:menu:database:menu:job-type:text",
@@ -312,7 +308,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job-type:order",
-          "valueString": "10"
+          "valueString": "9"
         },
         {
           "name": "site:nav:menu:database:menu:job:text",
@@ -324,7 +320,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job:order",
-          "valueString": "11"
+          "valueString": "10"
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:text",
@@ -336,7 +332,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:order",
-          "valueString": "12"
+          "valueString": "11"
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:text",
@@ -348,7 +344,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:order",
-          "valueString": "13"
+          "valueString": "12"
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:text",
@@ -360,7 +356,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:order",
-          "valueString": "14"
+          "valueString": "13"
         },
         {
           "name": "site:nav:menu:database:menu:training-type:text",
@@ -372,7 +368,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:training-type:order",
-          "valueString": "15"
+          "valueString": "14"
         },
         {
           "name": "site:nav:menu:database:menu:skill:text",
@@ -384,7 +380,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:skill:order",
-          "valueString": "16"
+          "valueString": "15"
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:text",
@@ -396,7 +392,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:order",
-          "valueString": "17"
+          "valueString": "16"
         },
         {
           "name": "site:nav:menu:dashboard:text",
@@ -415,20 +411,48 @@
           "valueString": "/dashboard"
         },
         {
-          "name": "shortname.Practitioner:format",
+          "name": "shortname:Practitioner:format",
           "valueString": "%s, %s"
         },
         {
-          "name": "shortname.Practitioner:order",
+          "name": "shortname:Practitioner:order",
           "valueString": "family,given"
         },
         {
-          "name": "shortname.Practitioner:paths:family:fhirpath",
+          "name": "shortname:Practitioner:paths:family:fhirpath",
           "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='fathers').valueString"
         },
         {
-          "name": "shortname.Practitioner:paths:given:fhirpath",
+          "name": "shortname:Practitioner:paths:given:fhirpath",
           "valueString": "name.where(use='official').first().given"
+        },
+        {
+          "name": "shortname:Location:format",
+          "valueString": "%s"
+        },
+        {
+          "name": "shortname:Location:order",
+          "valueString": "name"
+        },
+        {
+          "name": "shortname:Location:paths:name:fhirpath",
+          "valueString": "name"
+        },
+        {
+          "name": "workflow:processor:endrole:file",
+          "valueString": "../modules/workflowEndRoleEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:endrole:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-endrole"
+        },
+        {
+          "name": "workflow:processor:promotion:file",
+          "valueString": "../modules/workflowPromotionEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:promotion:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-promotion-ethiopia"
         }
       ]
     }
