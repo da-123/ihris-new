@@ -41,7 +41,7 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
     IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS
-* extension[salary].valueString MS
+* extension[salary].valueMoney MS
 * extension[salary] ^label = "Salary"
 * extension[directorate].valueCoding MS
 * extension[directorate] ^label = "Directorate"
@@ -172,6 +172,7 @@ Description:    "iHRIS extension for Job Description Reason for Departure."
 CodeSystem:      IhrisReasonDepartureCodeSystem
 Id:              ihris-reason-departure-codesystem
 Title:           "Reason For Departure"
+* ^version = "0.2.0"
 * #transfer "Transfer" "Transfer"
 * #promotion "Promotion" "Promotion"
 * #redeployment  "Redeployment" "Redeployment"
@@ -183,6 +184,7 @@ Title:           "Reason For Departure"
 ValueSet:         IhrisReasonDepartureValueSet
 Id:               ihris-reason-departure-valueset
 Title:            "iHRIS Reason Departure ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisReasonDepartureCodeSystem
 
 Extension:      IhrisPractitionerRoleFirstEmploymentDate
@@ -211,9 +213,9 @@ Title:          "iHRIS Job Description salary"
 Description:    "iHRIS extension for Job Information Salary."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
-* value[x] only string
-* valueString 1..1 MS
-* valueString ^label = "Salary"
+* value[x] only Money
+* valueMoney 1..1 MS
+* valueMoney ^label = "Salary"
 
 Extension:      IhrisPractitionerRoleCaseTeam
 Id:             ihris-practitionerrole-caseteam
@@ -229,19 +231,23 @@ Description:    "iHRIS extension for Job Description Case Team."
 CodeSystem:      IhrisCaseTeamCodeSystem
 Id:              ihris-caseteam-codesystem
 Title:           "Case Team"
+* ^version = "0.2.0"
 
 ValueSet:         IhrisCaseTeamValueSet
 Id:               ihris-caseteam-valueset
 Title:            "iHRIS Case Team ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisCaseTeamCodeSystem
 
 CodeSystem:      IhrisDirectorateCodeSystem
 Id:              ihris-directorate-codesystem
 Title:           "Directorate"
+* ^version = "0.2.0"
 
 ValueSet:         IhrisDirectorateValueSet
 Id:               ihris-directorate-valueset
 Title:            "iHRIS Directorate ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisDirectorateCodeSystem
 
 ValueSet:         IhrisJobEthiopiaValueset

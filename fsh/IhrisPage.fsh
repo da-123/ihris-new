@@ -231,6 +231,33 @@ Usage:          #example
 * extension[section][8].extension[resource].extension[action][3].extension[row].valueBoolean = true
 * extension[section][8].extension[resource].extension[action][3].extension[condition].valueString = "PractitionerRole.period.end.empty()"
 * extension[section][8].extension[resource].extension[action][3].extension[class].valueString = "accent"
+* extension[section][9].extension[title].valueString = "Leave Information"
+* extension[section][9].extension[description].valueString = "Leave Details for the Person"
+* extension[section][9].extension[name].valueString = "leave"
+* extension[section][9].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-ethiopia-leave)
+* extension[section][9].extension[resource].extension[searchfield].valueString = "practitioner"
+* extension[section][9].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[section][9].extension[resource].extension[column][0].extension[header].valueString = "Leave Type"
+* extension[section][9].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='leave-type').valueCoding"
+* extension[section][9].extension[resource].extension[column][1].extension[header].valueString = "Days Requested"
+* extension[section][9].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='daysRequested').valuePositiveInt"
+* extension[section][9].extension[resource].extension[column][2].extension[header].valueString = "Requested Date"
+* extension[section][9].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='dateRequested').valueDate"
+* extension[section][9].extension[resource].extension[column][3].extension[header].valueString = "Start Date"
+* extension[section][9].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').period.start"
+* extension[section][9].extension[resource].extension[column][4].extension[header].valueString = "End Date"
+* extension[section][9].extension[resource].extension[column][4].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').period.end"
+* extension[section][9].extension[resource].extension[column][5].extension[header].valueString = "Actions"
+* extension[section][9].extension[resource].extension[column][5].extension[field].valueString = "_action"
+* extension[section][9].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-leave-ethiopia/practitioner?practitioner=FHIRID"
+* extension[section][9].extension[resource].extension[action][0].extension[text].valueString = "Add Leave"
+* extension[section][9].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][9].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
+* extension[section][9].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][9].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/basic/ITEMID"
+* extension[section][9].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][9].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][9].extension[resource].extension[action][1].extension[class].valueString = "primary"
 
 Instance:       ihris-page-practitionerrole
 InstanceOf:     IhrisPage
@@ -554,3 +581,26 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "CodeSystem.display"
 * extension[section][0].extension[field][1].valueString = "CodeSystem.code"
 * extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+
+Instance:       ihris-page-basic-ethiopia
+InstanceOf:     IhrisPage
+Title:          "iHRIS Basic Ethiopia Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-ethiopia-leave)
+* extension[display].extension[search][0].valueString = "Leave Type|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-leave-type').valueCoding.display"
+* extension[display].extension[search][1].valueString = "Start Date|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-leave-period').period.start"
+* extension[display].extension[search][2].valueString = "End Date|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-leave-period').period.end"
+* extension[display].extension[search][3].valueString = "Practitioner|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-personal-information')"
+* extension[display].extension[search][4].valueString = "Days Requested|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-days-requested').valuePositiveInt"
+* extension[display].extension[search][5].valueString = "Date Requested|Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-requested-date').valueDate"
+* extension[display].extension[filter][0].valueString = "Leave Type|code|http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
+* extension[section][0].extension[title].valueString = "Leave"
+* extension[section][0].extension[description].valueString = "Leave details"
+* extension[section][0].extension[name].valueString = "Leave"
+* extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
+* extension[section][0].extension[field][1].valueString = "Basic.extension:leave-type.value[x]:valueCoding"
+* extension[section][0].extension[field][2].valueString = "Basic.extension:daysRequested.value[x]:valuePositiveInt"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:period.start"
+* extension[section][0].extension[field][4].valueString = "Basic.extension:period.end"
+* extension[section][0].extension[field][5].valueString = "Basic.extension:requestedDate.value[x]:valueDate"
