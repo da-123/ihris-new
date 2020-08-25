@@ -11,6 +11,8 @@ const fhirConfig = require('./modules/fhirConfig')
 const nconf = require('./modules/config')
 const requireFromString = require('require-from-string')
 const fhirModules = require('./modules/fhirModules')
+const fhirReports = require('./modules/fhirReports')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const RedisStore = require('connect-redis')(session)
 
@@ -21,17 +23,28 @@ var configLoaded = false
 async function startUp() {
   await nconf.loadRemote()
 
+  try {
+    let reportsRunning = await fhirReports.setup()
+    if ( reportsRunning ) {
+      fhirReports.runReports()
+    } else {
+      winston.error("Failed to start up reports to ElasticSearch.")
+    }
+  } catch( err ) {
+    winston.error( err )
+  }
+
   let runEnv = process.env.NODE_ENV || "production"
   let logOpts = nconf.get("logs:"+runEnv)
   if ( !logOpts ) {
-    winston.add( new winston.transports.Console( { 
+    winston.add( new winston.transports.Console( {
       level: "error",
       format: winston.format.prettyPrint()
     } ) )
   } else {
     for( let transport of Object.keys(logOpts) ) {
       if ( transport === "console" ) {
-        winston.add( new winston.transports.Console( { 
+        winston.add( new winston.transports.Console( {
           level: logOpts[transport].level || "error",
           format: winston.format.prettyPrint()
         } ) )
@@ -40,9 +53,9 @@ async function startUp() {
           if ( !logOpts[transport][type].file ) {
             console.log("Logging by file for "+type+" config needs a file set.")
           } else {
-            winston.add( new winston.transports.File( { 
-              level: logOpts[transport][type].level || "error", 
-              file: logOpts[transport][type].file
+            winston.add( new winston.transports.File( {
+              level: logOpts[transport][type].level || "error",
+              filename: logOpts[transport][type].file
             } ) )
           }
         }
@@ -56,10 +69,21 @@ async function startUp() {
 
   app.use(logger('dev'))
 
+  // This has to be before the body parser or it won't proxy a POST body
+  app.use('/kibana', createProxyMiddleware( {
+    target: nconf.get('kibana:base') || "http://localhost:5601"
+    //headers: { 'kbn-xsrf': true },
+    //changeOrigin: true,
+    //ws: true,
+    //followRedirects: true
+  } ) )
+
+
   //const indexRouter = require('./routes/index')
   const configRouter = require('./routes/config')
   const authRouter = require('./routes/auth')
   const fhirRouter = require('./routes/fhir')
+  const esRouter = require('./routes/es')
   const questionnaireRouter = require('./routes/questionnaire')
   const mheroRouter = require('./routes/mhero')
 
@@ -99,6 +123,7 @@ async function startUp() {
 
   app.use('/fhir', questionnaireRouter)
   app.use('/fhir', fhirRouter)
+  app.use('/es', esRouter)
 
   const loadModules = nconf.get("modules")
   if (loadModules) {
@@ -137,7 +162,7 @@ module.exports = router
   */
 
   // Fallback for the vue router using history mode
-  // If this causes issues, would need to either 
+  // If this causes issues, would need to either
   // server the ui from a subdirectory or change to hash mode
   app.use( (req,res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'))

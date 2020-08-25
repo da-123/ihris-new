@@ -5,7 +5,7 @@
         src="@/assets/mHero.png"
         width="100"
       ></v-img>
-      <ihrisReport report='mhero'></ihrisReport>
+      <ihrisReport report='mhero-send-message'></ihrisReport>
       <v-card-actions class="secondary">
         <v-spacer></v-spacer>
         <v-btn
@@ -20,7 +20,7 @@
   </v-container>
 </template>
 <script>
-import ihrisReport from "@/views/fhir-report";
+import ihrisReport from "@/views/es-report";
 import { eventBus } from "@/main";
 export default {
   data() {
@@ -40,10 +40,8 @@ export default {
   methods: {
     nextStep() {
       let headers = [];
-      for (let data of this.reportData.fieldsDetails) {
-        for (let field of data.fields) {
-          headers.push({ text: field[0], value: field[1] });
-        }
+      for (let field of this.reportData.fieldsDetails) {
+        headers.push({ text: field[0], value: field[1] });
       }
       this.$emit("mheroRecipientsSelected", this.practitioners, headers);
     }

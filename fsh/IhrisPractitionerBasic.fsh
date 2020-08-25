@@ -14,5 +14,5 @@ Description:    "iHRIS Practitioner Reference to link Basic resource to a Practi
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only Reference 
-* valueReference only Reference(IhrisPractitioner) 
+* valueReference only Reference(IhrisPersonalInformation) 
 * valueReference ^label = "Practitioner"

@@ -47,7 +47,7 @@ router.post("/send-message", function (req, res, next) {
   }).then(response => {
     res.status(201).json(response.data);
   }).catch(err => {
-    res.status(400).json(err);
+    res.status(500).send(err);
   });
 });
 
@@ -76,12 +76,32 @@ router.post('/subscribe-contact-groups', (req, res) => {
   })
 })
 
+router.post('/unsubscribe-contact-groups', (req, res) => {
+  let subscriptionsData = req.body
+  async.eachSeries(subscriptionsData.groups, (groupID, nxtSubscr) => {
+    fhirAxios.read('Group', groupID).then((groupResource) => {
+      for(let memberID of subscriptionsData.members) {
+        for(let index in groupResource.member) {
+          if(groupResource.member[index].entity.reference === memberID) {
+            groupResource.member.splice(index, 1)
+          }
+        }
+      }
+      fhirAxios.update(groupResource).then((response) => {
+        return nxtSubscr();
+      })
+    })
+  }, () => {
+    return res.status(200).send()
+  })
+})
+
 /**
  * Get all workflows
  */
 router.get("/workflows", function (req, res, next) {
   let queries = {
-    '_profile': 'http://mhero.org/fhir/StructureDefinition/mHeroWorkflows',
+    '_profile': 'http://mHero.org/fhir/StructureDefinition/mhero-workflows',
     '_count': 2
   }
   let resourceType = 'Basic'
@@ -109,7 +129,7 @@ router.get("/workflows", function (req, res, next) {
     let workflows = []
     for (let data of resourceData) {
       workflow = data.resource.extension.find((ext) => {
-        return ext.url === "http://mhero.org/fhir/StructureDefinition/mHeroWorkflowsDetails"
+        return ext.url === "http://mHero.org/fhir/StructureDefinition/mhero-workflows-details"
       })
       if (workflow) {
         let name = workflow.extension.find((ext) => {
