@@ -19,7 +19,7 @@ const workflowEndRole = {
           && req.body.item[0].item[1].answer && req.body.item[0].item[1].answer[0] 
           && req.body.item[0].item[1].answer[0].valueCoding ) {
           
-          let reason = { url: req.body.item[0].item[1].definition,
+          let reason = { url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure",
                          valueCoding: req.body.item[0].item[1].answer[0].valueCoding }
           
           resource.period.end = req.body.item[0].item[0].answer[0].valueDate
