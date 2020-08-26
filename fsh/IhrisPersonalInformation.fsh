@@ -1,7 +1,7 @@
 Profile:        IhrisPersonalInformation
 Parent:         Practitioner
 Id:             ihris-personal-information
-Title:          "iHRIS Personal Information"
+Title:          "Health Worker Information"
 Description:    "iHRIS profile of Practitioner."
 
 * identifier MS
@@ -1093,32 +1093,32 @@ Usage:          #definition
 * item[0].text = "Leave Details"
 * item[0].type = #group
 
-* item[0].item[0].linkId = "Basic.extension[0]"
+* item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Leave Type"
 * item[0].item[0].type = #choice
 * item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
-* item[0].item[1].linkId = "Basic.extension[1]"
+* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Start Date"
 * item[0].item[1].type = #date
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
-* item[0].item[2].linkId = "Basic.extension[2]"
+* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "End Date"
 * item[0].item[2].type = #date
 * item[0].item[2].required = true
 * item[0].item[2].repeats = false
 
-* item[0].item[3].linkId = "Basic.extension[3]"
+* item[0].item[3].linkId = "Basic.extension[0].extension[3]"
 * item[0].item[3].text = "Days Requested"
 * item[0].item[3].type = #integer
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false
 
-* item[0].item[4].linkId = "Basic.extension[4]"
+* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Date Requested"
 * item[0].item[4].type = #date
 * item[0].item[4].required = true

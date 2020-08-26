@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-20T10:00:25.985Z",
+        "when": "2020-08-25T10:50:59.507Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "JK0oJYELZICf6PzeB87CPPDb+oDkc8OqMn3IxCZ1eZan1yUAAfbarlsdfJMA075JdJ8o4hJIbI41wOExYfU0EiWZNyBq/q80RVEVO7W8J+EVZmBZBHBrnbkGEZH/CxBiYKKLRrjjnApZwFmUyM+hhqpuERD4bhZGoXvw2jtabwI="
+        "data": "llHtd6SucI9PDFmvIjcZB58JN7mIYVXp8NO4zrqU/VAn+AMJi0qB3UJ8MfpBblRyt0yrExNPgk/oUxxwKFsuJI/QoDslMJZ49bZ/obbVY/hPMHSvQIMWcwPVtcO3ebKRr4GVhpyD+UePRbnLUzUGpEffpI//woYCFrL20r1iakQ="
       }
     },
     {
@@ -453,6 +453,23 @@
         {
           "name": "workflow:questionnaire:promotion:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-promotion-ethiopia"
+        },
+        {
+          "name": "workflow:processor:leave:file",
+          "valueString": "../modules/workflowLeaveEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:leave:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-leave-ethiopia"
+        }
+      ]
+    },
+    {
+      "name": "sync",
+      "part": [
+        {
+          "name": "escaching",
+          "valueDateTime": "1970-03-09T17:32:44"
         }
       ]
     }

@@ -1,14 +1,14 @@
 Profile:        IhrisBasicEthiopiaLeave
 Parent:         IhrisPractitionerBasic
 Id:             ihris-basic-ethiopia-leave
-Title:          "iHRIS Basic Ethiopia Leave"
+Title:          "Leave Information"
 Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension contains
-    IhrisEthiopiaLeave 1..1 MS
+    IhrisEthiopiaLeave named ethiopiaLeave 1..1 MS
     
 Extension:      IhrisEthiopiaLeave
 Id:             ihris-ethiopia-leave
-Title:          "Leave details for Ethiopia"
+Title:          "Leave details"
 * extension contains
       leave-type 1..1 MS and
       period 1..1 MS and
@@ -19,8 +19,8 @@ Title:          "Leave details for Ethiopia"
 * extension[leave-type].valueCoding ^label = "Leave Type"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod ^label = "Leave Period"
-* extension[daysRequested].value[x] only positiveInt
-* extension[daysRequested].valuePositiveInt ^label = "Days Requested"
+* extension[daysRequested].value[x] only integer
+* extension[daysRequested].valueInteger ^label = "Days Requested"
 * extension[dateRequested].value[x] only date
 * extension[dateRequested].valueDate ^label = "Requested Date"
 
