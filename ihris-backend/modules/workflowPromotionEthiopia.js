@@ -1,7 +1,7 @@
 const nconf = require('./config')
 const fhirAxios = nconf.fhirAxios
 
-const workflowEndRole = {
+const workflowPromotionEthiopia = {
   process: ( req ) => {
     return new Promise( (resolve, reject) => {
       let bundle = {
@@ -97,4 +97,4 @@ const workflowEndRole = {
   }
 }
  
-module.exports = workflowEndRole
+module.exports = workflowPromotionEthiopia

@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-25T10:50:59.507Z",
+        "when": "2020-08-27T10:55:08.722Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "llHtd6SucI9PDFmvIjcZB58JN7mIYVXp8NO4zrqU/VAn+AMJi0qB3UJ8MfpBblRyt0yrExNPgk/oUxxwKFsuJI/QoDslMJZ49bZ/obbVY/hPMHSvQIMWcwPVtcO3ebKRr4GVhpyD+UePRbnLUzUGpEffpI//woYCFrL20r1iakQ="
+        "data": "O2EMHsXw6G0veXx2hf6z7tfPsUIb5+uUQRfTi7R+dT5dAysjSPNinEAaNHotgDheQMnMXmyWqq4kzsiARpcDzryEstrqh2gJ/GN3TcBuMBdixWbIl/ODHdpIXcRCH968eq3I0/cQwYXGY1l+p5v9f1ClrrDfCPGJ+KoOlAVk3Pk="
       }
     },
     {
@@ -395,6 +395,54 @@
           "valueString": "16"
         },
         {
+          "name": "site:nav:menu:database:menu:degree:text",
+          "valueString": "Degree/Course"
+        },
+        {
+          "name": "site:nav:menu:database:menu:degree:url",
+          "valueString": "/resource/search/degree"
+        },
+        {
+          "name": "site:nav:menu:database:menu:degree:order",
+          "valueString": "17"
+        },
+        {
+          "name": "site:nav:menu:database:menu:education-level:text",
+          "valueString": "Education Level"
+        },
+        {
+          "name": "site:nav:menu:database:menu:education-level:url",
+          "valueString": "/resource/search/education-level"
+        },
+        {
+          "name": "site:nav:menu:database:menu:education-level:order",
+          "valueString": "18"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution-type:text",
+          "valueString": "Education Institution Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution-type:url",
+          "valueString": "/resource/search/institution-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution-type:order",
+          "valueString": "19"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution:text",
+          "valueString": "Education Institution"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution:url",
+          "valueString": "/resource/search/ihris-institution"
+        },
+        {
+          "name": "site:nav:menu:database:menu:institution:order",
+          "valueString": "20"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
@@ -461,6 +509,14 @@
         {
           "name": "workflow:questionnaire:leave:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-leave-ethiopia"
+        },
+        {
+          "name": "workflow:processor:education:file",
+          "valueString": "../modules/workflowEducationHistory"
+        },
+        {
+          "name": "workflow:questionnaire:education:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-education-history"
         }
       ]
     },
