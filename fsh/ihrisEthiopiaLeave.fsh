@@ -34,6 +34,14 @@ Title:           "Leave Type"
 * #sick  "Sick Leave" "Sick Leave"
 * #special  "Special Leave" "Special Leave"
 * #forced  "Forced Leave" "Forced Leave"
+* #casual "Casual Leave" "Casual Leave"
+* #educational "Educational Leave" "Educational Leave"
+* #prenatal "Prenatal Leave" "Prenatal Leave"
+* #postnatal "Postnatal Leave" "Postnatal Leave"
+* #medical  "Medical Leave" "Medical Leave"
+* #mourning "Mourning Leave" "Mourning Leave"
+* #weeding "Weeding Leave" "Weeding Leave"
+* #exam "Exam" "Exam"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset

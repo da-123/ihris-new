@@ -117,9 +117,10 @@ CodeSystem:      IhrisEmploymentStatusCodeSystem
 Id:              ihris-employment-status-codesystem
 Title:           "Employment Status"
 * #contract "Contract" "Contract"
-* #fullTime "Full-time" "Full-time"
-* #partTime "Part-Time" "Part-Time"
-* #technicalAssistance  "Technical Assistance" "Technical Assistance"
+* #permanent "Permanent" "Permanent"
+* #LTA "Long Term Absence" "Long Term Absence"
+* #LTEA  "Long Term Education Absence" "Long Term Education Absence"
+* #Separated "Separated" "Separated"
 
 ValueSet:         IhrisEmploymentStatusValueSet
 Id:               ihris-employment-status-valueset
@@ -140,9 +141,12 @@ Description:    "iHRIS extension for Job Description Job Type."
 CodeSystem:      IhrisJobTypeCodeSystem
 Id:              ihris-job-type-codesystem
 Title:           "Job Type"
-* #transfer "Transfer" "Transfer"
-* #newHire "New Hire" "New Hire"
-* #redeployment  "Redeployment" "Redeployment"
+* #NewHire "New Hire" "New Hire"
+* #Transfered "Transfered" "Transfered"
+* #Promoted "Promoted" "Promoted"
+* #Redeployed "Redeploymed" "Redeploymed"
+* #Separated "Separated" "Separated"
+* #ReHire "Re-Hire" "Re-Hire"
 
 ValueSet:         IhrisJobTypeValueSet
 Id:               ihris-job-type-valueset
@@ -180,6 +184,9 @@ Title:           "Reason For Departure"
 * #mandatoryRetirement "Mandatory Retirement" "Mandatory Retirement"
 * #earlyRetirement "Early Retirement" "Early Retirement"
 * #resignation "Resignation" "Resignation"
+* #anotherJobPosition "Another Job Position" "Another Job Position"
+* #health "Health Related" "Health Related"
+* #quit "Quit" "Quit"
 
 ValueSet:         IhrisReasonDepartureValueSet
 Id:               ihris-reason-departure-valueset
@@ -231,23 +238,238 @@ Description:    "iHRIS extension for Job Description Case Team."
 CodeSystem:      IhrisCaseTeamCodeSystem
 Id:              ihris-caseteam-codesystem
 Title:           "Case Team"
-* ^version = "0.2.0"
+* ^version = "0.3.0"
+* #RMT "Resource Mobilization Team" "Resource Mobilization Team"
+* #PT "Purchasing Team" "Purchasing Team"
+* #FT "Financial Team" "Financial Team"
+* #RPT "Revenue Payment Team" "Revenue Payment Team"
+* #WCYAT "Women, Children And Youth Affairs Team" "Women, Children And Youth Affairs Team"
+* #YAT "Youth Affairs Team" "Youth Affairs Team"
+* #TFMT "Transport And Fuel Management Team" "Transport And Fuel Management Team"
+* #VMT "Vehicle Maintenance Team" "Vehicle Maintenance Team"
+* #PST "Protocol Service Team" "Protocol Service Team"
+* #BMCMT "Building Management And Comprehensive Maintenance Team" "Building Management And Comprehensive Maintenance Team"
+* #JSt "Joint Service Team" "Joint Service Team"
+* #AMT "Asset Management Team" "Asset Management Team"
+* #ADMT "Application Development And Management Team" "Application Development And Management Team"
+* #CTIMT "Infrastructure Communication Technology Infrastructure And Management Team" "Infrastructure Communication Technology Infrastructure And Management Team"
+* #SATAT "System Administering Team" "System Administering Team"
+* #BET "Employee Benefit Enforcement Team" "Employee Benefit Enforcement Team"
+* #HRMT "Human Resource Management Team" "Human Resource Management Team"
+* #HRIMT "Human Resource Information Management (Hris) Team" "Human Resource Information Management (Hris) Team"
+* #TSCT "Technical Support Coordinating Team" "Technical Support Coordinating Team"
+* #RAMST "Record And Archive Management Service Team" "Record And Archive Management Service Team"
+* #CST "Cafeteria Service Team" "Cafeteria Service Team"
+* #HMET "Health Monitoring And Evaluation Team" "Health Monitoring And Evaluation Team"
+* #PPT "Policy Planning Team" "Policy Planning Team"
+* #MCHT "Maternal And Child Health Team" "Maternal And Child Health Team"
+* #EPBHST "Health Extension Program And Basic Health Service Team" "Health Extension Program And Basic Health Service Team"
+* #HAIT "Health Advisory And Information Team" "Health Advisory And Information Team"
+* #PCT "Prevention And Control Team" "Prevention And Control Team"
+* #TMIPT "The Mental Illness Program Team" "The Mental Illness Program Team"
+* #HSQIT "Health Service Quality Improvement Team" "Health Service Quality Improvement Team"
+* #HSCT "Hospital System Consolidation Team" "Hospital System Consolidation Team"
+* #SMSRT "Specialist Medical Services Reinforcement Team" "Specialist Medical Services Reinforcement Team"
+* #HSRASMT "Health Site Reform Action Support And Monitoring Team" "Health Site Reform Action Support And Monitoring Team"
+* #PIEMST "Pre-Health Institute Emergency Medical Services Team" "Pre-Health Institute Emergency Medical Services Team"
+* #PTST "The Patient Therapy Service Team" "The Patient Therapy Service Team"
+* #PEST "Patient Exchange Services Team" "Patient Exchange Services Team"
+* #HSST "Health System Strengthening Team" "Health System Strengthening Team"
+* #LHSST "Leader Of The Health System Strengthening Team" "Leader Of The Health System Strengthening Team"
+* #PHST "Pharmacy Services Team" "Pharmacy Services Team"
+* #MRMT "Medical Resource Management Team" "Medical Resource Management Team"
+* #CTMT "Health Care Technology Management Team" "Health Care Technology Management Team"
+* #HEHT "Hygiene And Environmental Health Team" "Hygiene And Environmental Health Team"
+* #FWSHT "Food: Water Safety And Hydrogen Team" "Food: Water Safety And Hydrogen Team"
+* #CCEST "Climate Change And Environment Suitability Team" "Climate Change And Environment Suitability Team"
+* #HRIPT "Human Resources Information And Planning Team" "Human Resources Information And Planning Team"
+* #PSCPT "Professional Standards And Curriculum Preparation Team" "Professional Standards And Curriculum Preparation Team"
+* #OHTT "Occupational Health Training Team" "Occupational Health Training Team"
+* #LPETHP "The Leader Of The Professional Ethics Team Of Health Professionals" "The Leader Of The Professional Ethics Team Of Health Professionals"
+* #QART "Qualified Assessment Registry Team" "Qualified Assessment Registry Team"
+* #ATPT "Competency Assessment Test Preparation Team" "Competency Assessment Test Preparation Team"
+* #HPIRT "Health Professionals And Institutions Registration Team" "Health Professionals And Institutions Registration Team"
+* #CATMT "Competency Assessment Test Management Team" "Competency Assessment Test Management Team"
 
 ValueSet:         IhrisCaseTeamValueSet
 Id:               ihris-caseteam-valueset
 Title:            "iHRIS Case Team ValueSet"
-* ^version = "0.2.0"
+* ^version = "0.3.0"
 * codes from system IhrisCaseTeamCodeSystem
 
 CodeSystem:      IhrisDirectorateCodeSystem
 Id:              ihris-directorate-codesystem
 Title:           "Directorate"
-* ^version = "0.2.0"
+* ^version = "0.3.0"
+* ^concept[0].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[0].designation[0].value = "ዳይሬክተር ጄኔራል (የሚኒስተሩ ጽ/ቤት ኃላፊ )"
+* ^concept[0].display = "Director General (Head of the Office of the Minister)"
+* ^concept[0].code = #DGHOM
+* ^concept[1].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[1].designation[0].value = "ሜዲካል ሰርቪስ ዳይሬክተር ጄኔራል"
+* ^concept[1].display = "Director General of Medical Services"
+* ^concept[1].code = #DGMS
+* ^concept[2].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[2].designation[0].value = "ዳይሬክተር ጄኔራል (ኦፕሬሽን ዘርፍ )"
+* ^concept[2].display = "Director General (Operations Sector)"
+* ^concept[2].code = #DGOS
+* ^concept[3].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[3].designation[0].value = "የፖሊሲ፤ ዕቅድ፤ ክትትልና ግምገማ ዳይሬክቶሬት"
+* ^concept[3].display = "Policy: Plan: Monitoring and Evaluation Directorate"
+* ^concept[3].code = #PPMED
+* ^concept[4].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[4].designation[0].value = "የውስጥ ኦዲት ዳይሬክቶሬት"
+* ^concept[4].display = "Internal Audit Directorate"
+* ^concept[4].code = #IAD
+* ^concept[5].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[5].designation[0].value = "የሕዝብ ግንኙነትና ኮሙኒኬሽን ዳይሬክቶሬት"
+* ^concept[5].display = "Directorate of Public Relations and Communication"
+* ^concept[5].code = #DPRC
+* ^concept[6].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[6].designation[0].value = "ሚኒስትር ዴኤታ (ለውጥና አስተዳደር ዘርፍ) ተጠሪ"
+* ^concept[6].display = "Minister of State (Change and Administration Sector)"
+* ^concept[6].code = #MSCAS
+* ^concept[7].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[7].designation[0].value = "የጤና ኤክስቴሽንና መሠረታዊ ጤና አገልግሎት ዳይሬክቶሬት"
+* ^concept[7].display = "Directorate of Health Extension and Basic Health Services"
+* ^concept[7].code = #DHEBHS
+* ^concept[8].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[8].designation[0].value = "የጤና ሥርዓት ማጠናከር ልዩ ድጋፍ ዳይሬክቶሬት"
+* ^concept[8].display = "Special Support Directorate of Health System Strengthening"
+* ^concept[8].code = #SSDHSS
+* ^concept[9].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[9].designation[0].value = "የበሽታዎች መከላከልና መቆጣጠር ዳይሬክቶሬት"
+* ^concept[9].display = "Directorate of Disease Prevention and Control"
+* ^concept[9].code = #DDPC
+* ^concept[10].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[10].designation[0].value = "የእናቶችና ሕጻናት ጤና ዳይሬክቶሬት"
+* ^concept[10].display = "Maternal and Child Health Directorate"
+* ^concept[10].code = #MCHD
+* ^concept[11].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[11].designation[0].value = "የሐይጅንና አከባቢ ጤና አጠባበቅ ዳይሬክቶሬት"
+* ^concept[11].display = "Department of Hygiene and Environmental Health"
+* ^concept[11].code = #DHEH
+* ^concept[12].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[12].designation[0].value = "የሪፎርምና መልካም አስተዳደር ዳይሬክቶሬት"
+* ^concept[12].display = "Reform and Good Governance Directorate"
+* ^concept[12].code = #RGGD
+* ^concept[13].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[13].designation[0].value = "የንብረት አስተዳደርና ጠቅላላ አገልግሎት ዳይሬክቶሬት"
+* ^concept[13].display = "Property Management and General Services Directorate"
+* ^concept[13].code = #PMGSD
+* ^concept[14].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[14].designation[0].value = "የሰው ሀብት አስተዳደር ዳይሬክቶሬት"
+* ^concept[14].display = "Human Resource Management Directorate"
+* ^concept[14].code = #HRMD
+* ^concept[15].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[15].designation[0].value = "የጤናና ጤና ነክ ዳይሬክቶሬት"
+* ^concept[15].display = "Directorate of Health and related services"
+* ^concept[15].code = #DHRS
+* ^concept[16].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[16].designation[0].value = "የሥነ-ምግባርና ፀረ-ሙስና ዳይሬክቶሬት"
+* ^concept[16].display = "Directorate of Ethics and Anti-Corruption"
+* ^concept[16].code = #DEAC
+* ^concept[17].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[17].designation[0].value = "የሴቶችና ወጣቶች ዳይሬክቶሬት"
+* ^concept[17].display = "Directorate for Women and Youth"
+* ^concept[17].code = #DWY
+* ^concept[18].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[18].designation[0].value = "የሕግ ጉዳዮች ዳይሬክቶሬት"
+* ^concept[18].display = "Directorate of Legal Affairs"
+* ^concept[18].code = #DLA
+* ^concept[19].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[19].designation[0].value = "ድንገተኛና ጽኑ ሕክምና አገልግሎት ዳይሬክቶሬት"
+* ^concept[19].display = "Emergency and Chronic Care Services Directorate"
+* ^concept[19].code = #ECCSD
+* ^concept[20].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[20].designation[0].value = "የክሊካል አገልግሎት ዳይሬክቶሬት"
+* ^concept[20].display = "Clinical Services Directorate"
+* ^concept[20].code = #CSD
+* ^concept[21].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[21].designation[0].value = "የመድሃኒትና ሕክምና መሣሪያዎች አገልግሎት ዳይሬክቶሬት"
+* ^concept[21].display = "Directorate of Pharmaceutical and Medical Equipment Services"
+* ^concept[21].code = #DPMES
+* ^concept[22].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[22].designation[0].value = "የጤና ጥራት አገልግሎት ዳይሬክቶሬት"
+* ^concept[22].display = "Health Quality Services Directorate"
+* ^concept[22].code = #HQSD
+* ^concept[23].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[23].designation[0].value = "የሰው ሀብት ልማት ዳይሬክቶሬት"
+* ^concept[23].display = "Human Resource Development Directorate"
+* ^concept[23].code = #HRDD
+* ^concept[24].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[24].designation[0].value = "የጤና መሠረተ-ልማት ዳይሬክቶሬት"
+* ^concept[24].display = "Health Infrastructure Directorate"
+* ^concept[24].code = #HID
+* ^concept[25].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[25].designation[0].value = "የፋይናንስና ግዥ ዳይሬክቶሬት"
+* ^concept[25].display = "Finance and Procurement Directorate"
+* ^concept[25].code = #FPD
+* ^concept[26].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[26].designation[0].value = "የጤና ባለሙያዎች ብቃት ምዘናና ፈተና አገልግሎት ዳይሬክቶሬት"
+* ^concept[26].display = "Health Professionals Assessment and Testing Service Directorate"
+* ^concept[26].code = #HPATSD
+* ^concept[27].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[27].designation[0].value = "የኢንፎርሜሽን ቴክኖሎጂ ዳይሬክቶሬት"
+* ^concept[27].display = "Health Information Technology"
+* ^concept[27].code = #HIT
+* ^concept[28].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[28].designation[0].value = "የአጋርነትና ትብብር ዳይሬክቶሬት"
+* ^concept[28].display = "Directorate of Partnership and Cooperation"
+* ^concept[28].code = #DPC
+* ^concept[29].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[29].designation[0].value = "ኤችአይቪ መከለካያና መቆጣጠሪያ ጽ/ቤት"
+* ^concept[29].display = "Office for HIV Prevention and Control"
+* ^concept[29].code = #OHPC
+* ^concept[30].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[30].designation[0].value = "ብሔራዊ የደም ባንክ አገልግሎት"
+* ^concept[30].display = "National Blood Bank Service"
+* ^concept[30].code = #NBBS
+* ^concept[31].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[31].designation[0].value = "የምግብና መድሃኒት አስተዳደር ባለሥልጣን"
+* ^concept[31].display = "Food and Drug Administration Authority"
+* ^concept[31].code = #FDAA
+* ^concept[32].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[32].designation[0].value = "የኢትዮጵያ ጤና መድን ኤጄንሲ"
+* ^concept[32].display = "Ethiopian Health Insurance Agency"
+* ^concept[32].code = #EHIA
+* ^concept[33].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[33].designation[0].value = "የመደሃኒት አቅራቢ ኤጄንሲ"
+* ^concept[33].display = "Ethiopian Pharmaceuticals Supply Agency"
+* ^concept[33].code = #EPSA
+* ^concept[34].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[34].designation[0].value = "የኢትዮጵያ ኅብረተሰብ ጤና ኢንስቲትዩት"
+* ^concept[34].display = "Ethiopian Institute of Public Health"
+* ^concept[34].code = #EIPH
+* ^concept[35].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[35].designation[0].value = "የአማኑኤል የአእምሮ ስፔሻላይዝድ ሆስፒታል"
+* ^concept[35].display = "Amanuel Mental Psychiatric Hospital"
+* ^concept[35].code = #AMPH
+* ^concept[36].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[36].designation[0].value = "የቅደስ ጴጥሮስ ቲቢ ስፔሻላይዝድ ሆስፒታል"
+* ^concept[36].display = "St. Peter's TB Specialized Hospital"
+* ^concept[36].code = #SPTBSH
+* ^concept[37].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[37].designation[0].value = "የቅደስ ጳውሎስ ሆስፒታልና ሚሊኒየም ሜድካል ኮሌጅ"
+* ^concept[37].display = "St. Paul Hospital and Millennium Medical College"
+* ^concept[37].code = #SPHMMC
+* ^concept[38].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[38].designation[0].value = "የመላው አፍሪካ ስጋ ዳዌ መከላከያና ትምህርት መስጫ (የአለርት ሆስፒታል)"
+* ^concept[38].display = "Alert Hospital"
+* ^concept[38].code = #AH
+* ^concept[40].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[40].designation[0].value = "የአርማወር ሐንሰን የምርምር ኢንስቲትዩት"
+* ^concept[40].display = "Armauer Hansen Research Institute"
+* ^concept[40].code = #AHRI
+* ^concept[41].designation[0].language = #urn:ietf:bcp:47#am
+* ^concept[41].designation[0].value = "የገፈርሳ የአእምሮ ሕሙማን ማገገሚያ ማዕከል"
+* ^concept[41].display = "Gefersa Mental Rehabilitation Center"
+* ^concept[41].code = #GMRC
 
 ValueSet:         IhrisDirectorateValueSet
 Id:               ihris-directorate-valueset
 Title:            "iHRIS Directorate ValueSet"
-* ^version = "0.2.0"
+* ^version = "0.3.0"
 * codes from system IhrisDirectorateCodeSystem
 
 ValueSet:         IhrisJobEthiopiaValueset
