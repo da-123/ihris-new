@@ -172,6 +172,7 @@ Description:    "iHRIS extension for Practitioner Residence."
 CodeSystem:         IhrisEthiopiaLanguageCodeSystem
 Id:               ihris-ethiopia-language
 Title:            "Language"
+* ^version = "0.2.0"
 * #LAN013 "Alaba" "Alaba"
 * #LAN014 "Amharic" "Amharic"
 * #LAN015 "Anfilo" "Anfilo"
@@ -260,6 +261,7 @@ Title:            "Language"
 ValueSet:         IhrisEthiopiaLanguageValueSet
 Id:               ihris-ethiopia-language-valueset
 Title:            "iHRIS Ethiopia Language ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisEthiopiaLanguageCodeSystem
 
 
