@@ -12,18 +12,6 @@
       "valueString": "http://localhost:8080/hapi/fhir"
     },
     {
-      "name": "emnutt:base",
-      "valueString": "http://localhost:3002/emNutt/fhir"
-    },
-    {
-      "name": "emnutt:username",
-      "valueString": ""
-    },
-    {
-      "name": "emnutt:password",
-      "valueString": ""
-    },
-    {
       "name": "elasticsearch:base",
       "valueString": "http://localhost:9200"
     },
