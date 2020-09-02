@@ -1,7 +1,7 @@
 Profile:        IhrisLocation
 Parent:         Location
 Id:             ihris-location
-Title:          "iHRIS Location Information"
+Title:          "Location/Facility"
 Description:    "iHRIS profile of Location."
 
 /* identifier 0..0 MS

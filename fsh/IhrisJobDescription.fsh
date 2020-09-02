@@ -1,7 +1,7 @@
 Profile:        IhrisPractitionerRole
 Parent:         PractitionerRole
 Id:             ihris-job-description
-Title:          "iHRIS Job Description"
+Title:          "Position(s)"
 Description:    "iHRIS profile of Practitioner."
 * identifier 0..0 MS
 /* identifier ^label = "Identifier"
@@ -19,10 +19,10 @@ Description:    "iHRIS profile of Practitioner."
 * practitioner.reference ^label = "Health Worker"
 * healthcareService 0..0
 * telecom 0..0
-* location MS
+* location 1..1 MS
 * location ^label = "Duty Station"
 * location.reference ^label = "Duty Station"
-* code 1..* MS
+* code 1..1 MS
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)
 * code.coding 1..1 MS
