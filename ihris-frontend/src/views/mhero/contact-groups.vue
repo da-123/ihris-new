@@ -126,7 +126,7 @@
           </v-btn>
         </v-toolbar>
         <v-card-text>
-          <ihrisReport report='groups'></ihrisReport>
+          <ihrisReport report='mhero-groups'></ihrisReport>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -156,11 +156,62 @@
         ></v-data-table>
       </v-card>
     </v-dialog>
+    <v-dialog
+      v-if="addGroupDialog"
+      v-model="addGroupDialog"
+      persistent
+      width="550px"
+    >
+      <v-card>
+        <v-toolbar
+          color="primary darken-1 white--text"
+          height="30"
+          dark
+        >
+          Adding New Group
+          <v-spacer />
+          <v-btn
+            icon
+            dark
+            @click.native="addGroupDialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-card-text>
+          <v-text-field
+            v-model="grouName"
+            label="Name"
+          ></v-text-field>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-flex xs2>
+            <v-btn
+              :disabled="groupNameBlank"
+              color="green"
+              class="white--text"
+              @click="addGroup"
+            >
+              <v-icon left>
+                mdi-plus
+              </v-icon>Save
+            </v-btn>
+          </v-flex>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-card>
       <v-img
         src="@/assets/mHero.png"
         width="100"
       ></v-img>
+      <v-layout row wrap>
+        <v-spacer></v-spacer>
+        <v-flex xs3>
+          <v-btn color="primary" @click="addGroupDialog = true"><v-icon left>mdi-database-plus</v-icon> Add New Group</v-btn>
+        </v-flex>
+      </v-layout>
       <ihrisReport report='mhero-send-message'></ihrisReport>
       <v-card-actions class="secondary">
         <v-btn
@@ -200,9 +251,11 @@ export default {
       selectedUnsubGrps: [],
       totalUnsubGroups: 0,
       reportData: {},
+      grouName: '',
       subscribeDialog: false,
       unSubscribeDialog: false,
       loadingUnsubGrps: false,
+      addGroupDialog: false,
       groupHeaders: [{
         text: "Name",
         value: "name"
@@ -221,6 +274,12 @@ export default {
     };
   },
   computed: {
+    groupNameBlank() {
+      if(!this.grouName) {
+        return true
+      }
+      return false
+    },
     practitionerSelected() {
       if (this.subscribingPractitioners.length > 0) {
         return true;
@@ -256,6 +315,42 @@ export default {
     }
   },
   methods: {
+    addGroup() {
+      let data = JSON.stringify({
+        name: this.grouName
+      });
+      let url = "/mhero/add-group";
+      let opts = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: data,
+        redirect: "manual"
+      };
+      fetch(url, opts).then((response) => {
+        if(response.status >= 200 && response.status <= 299) {
+          this.addGroupDialog = false
+          this.statusDialog.enable = true
+          this.statusDialog.color = 'success'
+          this.statusDialog.title = 'Success'
+          this.statusDialog.description = 'Group Added successfully'
+        } else {
+          this.statusDialog.enable = true
+          this.statusDialog.color = 'error'
+          this.statusDialog.title = 'Error'
+          this.statusDialog.description = 'Failed To Add Group'
+        }
+        eventBus.$emit("reload-report")
+      }).catch(err => {
+        this.unSubscribeDialog = false
+        this.statusDialog.enable = true
+        this.statusDialog.color = 'error'
+        this.statusDialog.title = 'Error'
+        this.statusDialog.description = 'Failed To Add Group'
+        console.log(err);
+      });
+    },
     getFullEntityIDs(entities) {
       let entityIDs = []
       entities.forEach(practitioner => {
@@ -372,7 +467,8 @@ export default {
       let members = this.getFullEntityIDs(this.subscribingPractitioners)
       let groups = [];
       this.subscribingGroups.forEach(group => {
-        groups.push(group.id);
+        let id = group.group.split('/')[1]
+        groups.push(id);
       });
       let data = {
         members,
@@ -410,7 +506,7 @@ export default {
   },
   created() {
     eventBus.$on("ihris-report-selections", (selections, reportData) => {
-      if(reportData.primaryResource === "Group") {
+      if(reportData.indexName === "group") {
         this.subscribingGroups = selections
       } else {
         this.subscribingPractitioners = selections;
