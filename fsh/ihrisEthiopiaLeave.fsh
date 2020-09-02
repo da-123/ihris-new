@@ -5,6 +5,14 @@ Title:          "Leave Information"
 Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension contains
     IhrisEthiopiaLeave named ethiopiaLeave 1..1 MS
+* extension[ethiopiaLeave].extension[leave-type].valueCoding MS
+* extension[ethiopiaLeave].extension[period].valuePeriod MS
+* extension[ethiopiaLeave].extension[period].valuePeriod.start MS
+* extension[ethiopiaLeave].extension[period].valuePeriod.start ^label = "Leave Start Date"
+* extension[ethiopiaLeave].extension[period].valuePeriod.end MS
+* extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[ethiopiaLeave].extension[dateRequested].valueDate MS
+* extension[ethiopiaLeave].extension[daysRequested].valueInteger MS
     
 Extension:      IhrisEthiopiaLeave
 Id:             ihris-ethiopia-leave
@@ -19,6 +27,10 @@ Title:          "Leave details"
 * extension[leave-type].valueCoding ^label = "Leave Type"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod ^label = "Leave Period"
+* extension[period].valuePeriod.start 1..1 MS
+* extension[period].valuePeriod.start ^label = "Leave Start Date"
+* extension[period].valuePeriod.end 1..1 MS
+* extension[period].valuePeriod.end ^label = "Leave End Date"
 * extension[daysRequested].value[x] only integer
 * extension[daysRequested].valueInteger ^label = "Days Requested"
 * extension[dateRequested].value[x] only date

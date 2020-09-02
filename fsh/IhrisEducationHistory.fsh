@@ -5,6 +5,16 @@ Title:          "Education History Information"
 Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension contains
     IhrisEducationHistory named educationHistory 1..1 MS
+* extension[educationHistory].extension[institution].valueReference MS
+* extension[educationHistory].extension[institution].valueReference ^label = "Institution"
+* extension[educationHistory].extension[degree].valueCoding ^label = "Degree"
+* extension[educationHistory].extension[degree].valueCoding MS
+* extension[educationHistory].extension[level].valueCoding ^label = "Education Level"
+* extension[educationHistory].extension[level].valueCoding MS
+* extension[educationHistory].extension[educationalMajor].valueCoding ^label = "Degree"
+* extension[educationHistory].extension[educationalMajor].valueCoding MS
+* extension[educationHistory].extension[year].valueDate ^label = "Days Requested"
+* extension[educationHistory].extension[year].valueDate MS
     
 Extension:      IhrisEducationHistory
 Id:             ihris-education-history

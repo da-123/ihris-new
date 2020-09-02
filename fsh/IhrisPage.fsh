@@ -299,7 +299,7 @@ Usage:          #example
 * extension[display].extension[filter][1].valueString = "Facility|PractitionerRole.location:location"
 * extension[section][0].extension[title].valueString = "Position"
 * extension[section][0].extension[description].valueString = "Position details"
-* extension[section][0].extension[name].valueString = "Position"
+* extension[section][0].extension[name].valueString = "PractitionerRole"
 * extension[section][0].extension[field][0].valueString = "PractitionerRole.code"
 * extension[section][0].extension[field][1].valueString = "PractitionerRole.practitioner"
 * extension[section][0].extension[field][2].valueString = "PractitionerRole.location"
@@ -623,13 +623,13 @@ Usage:          #example
 * extension[display].extension[filter][0].valueString = "Leave Type|code|http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
 * extension[section][0].extension[title].valueString = "Leave"
 * extension[section][0].extension[description].valueString = "Leave details"
-* extension[section][0].extension[name].valueString = "Leave"
-* extension[section][0].extension[field][0].valueString = "extension:practitioner"
-* extension[section][0].extension[field][1].valueString = "extension:ethiopiaLeave.extension:leave-type.value[x]:valueCoding"
-* extension[section][0].extension[field][2].valueString = "extension:ethiopiaLeave.extension:daysRequested.value[x]:valueInteger"
-* extension[section][0].extension[field][3].valueString = "extension:ethiopiaLeave.extension:period.value[x]:valuePeriod.start"
-* extension[section][0].extension[field][4].valueString = "extension:ethiopiaLeave.extension:period.value[x]:valuePeriod.end"
-* extension[section][0].extension[field][5].valueString = "extension:ethiopiaLeave.extension:dateRequested.value[x]:valueDate"
+* extension[section][0].extension[name].valueString = "Basic"
+* extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
+* extension[section][0].extension[field][1].valueString = "Basic.extension:ethiopiaLeave.extension:leave-type.value[x]:valueCoding"
+* extension[section][0].extension[field][2].valueString = "Basic.extension:ethiopiaLeave.extension:daysRequested.value[x]:valueInteger"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod"
+/* extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod.end"*/
+* extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:dateRequested.value[x]:valueDate"
 
 Instance:       ihris-page-basic-education-history
 InstanceOf:     IhrisPage
@@ -645,7 +645,7 @@ Usage:          #example
 * extension[display].extension[search][5].valueString = "Year|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
 * extension[section][0].extension[title].valueString = "Education History"
 * extension[section][0].extension[description].valueString = "Education History details"
-* extension[section][0].extension[name].valueString = "Education"
+* extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "extension:educationHistory.extension:institution.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "extension:educationHistory.extension:degree.value[x]:valueCoding"

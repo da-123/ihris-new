@@ -1,5 +1,6 @@
 const nconf = require('./config')
 const winston = require('winston')
+const differenceInBusinessDays = require('date-fns/differenceInBusinessDays')
 const fhirAxios = nconf.fhirAxios
 
 const workflowLeaveEthiopia = {
@@ -17,7 +18,9 @@ const workflowLeaveEthiopia = {
           && req.body.item[0].item && req.body.item[0].item[0].linkId === "Basic.extension[0].extension[0]" 
           && req.body.item[0].item[0].answer && req.body.item[0].item[0].answer[0] 
           && req.body.item[0].item[0].answer[0].valueCoding) {
-            
+            if ( req.query.practitioner ) {
+              req.body.subject = { reference: "Practitioner/" +req.query.practitioner }
+            }
             let extensions = []
             if ( resource.resourceType === "Practitioner") {
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference",
@@ -46,6 +49,9 @@ const workflowLeaveEthiopia = {
                 valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDate,
                               end:req.body.item[0].item[2].answer[0].valueDate}
                              })
+                let requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDate),new Date(req.body.item[0].item[1].answer[0].valueDate)) + 1
+                complexExt.push({ url: "daysRequested",
+                valueInteger:requestedDays})
             }
             /*if ( req.body.item[0].item[3].linkId === "Basic.extension[0].extension[3]" 
                 && req.body.item[0].item[3].answer 

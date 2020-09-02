@@ -16,7 +16,9 @@ const workflowEducationHistory = {
           && req.body.item && req.body.item[0].linkId === "Basic"
           && req.body.item[0].item && req.body.item[0].item[0].linkId === "Basic.extension[0].extension[0]" 
           && req.body.item[0].item[0].answer && req.body.item[0].item[0].answer[0]) {
-            
+            if ( req.query.practitioner ) {
+              req.body.subject = { reference: "Practitioner/" +req.query.practitioner }
+            }
             let extensions = []
             if ( resource.resourceType === "Practitioner") {
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference",
