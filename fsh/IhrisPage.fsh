@@ -284,6 +284,31 @@ Usage:          #example
 * extension[section][10].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][10].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][10].extension[resource].extension[action][1].extension[class].valueString = "primary"
+* extension[section][11].extension[title].valueString = "Performance Evaluation Information"
+* extension[section][11].extension[description].valueString = "Performance Evaluation for the Person"
+* extension[section][11].extension[name].valueString = "performance"
+* extension[section][11].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-performance)
+* extension[section][11].extension[resource].extension[searchfield].valueString = "practitioner"
+* extension[section][11].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[section][11].extension[resource].extension[column][0].extension[header].valueString = "Evaluator's Name"
+* extension[section][11].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='evaluator').valueString"
+* extension[section][11].extension[resource].extension[column][1].extension[header].valueString = "Score"
+* extension[section][11].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='score').valueCoding.display"
+* extension[section][11].extension[resource].extension[column][2].extension[header].valueString = "Start Date"
+* extension[section][11].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.start"
+* extension[section][11].extension[resource].extension[column][3].extension[header].valueString = "End Date"
+* extension[section][11].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
+* extension[section][11].extension[resource].extension[column][4].extension[header].valueString = "Actions"
+* extension[section][11].extension[resource].extension[column][4].extension[field].valueString = "_action"
+* extension[section][11].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-performance/practitioner?practitioner=FHIRID"
+* extension[section][11].extension[resource].extension[action][0].extension[text].valueString = "Add Perfromamce Evaluation"
+* extension[section][11].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][11].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
+* extension[section][11].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][11].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/performance/ITEMID"
+* extension[section][11].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][11].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][11].extension[resource].extension[action][1].extension[class].valueString = "primary"
 
 Instance:       ihris-page-practitionerrole
 InstanceOf:     IhrisPage
@@ -665,7 +690,7 @@ Usage:          #example
 * extension[display].extension[filter][1].valueString = "Institution Type|type:text"
 * extension[section][0].extension[title].valueString = "Education Institution"
 * extension[section][0].extension[description].valueString = "Education Institution details"
-* extension[section][0].extension[name].valueString = "Education Institution"
+* extension[section][0].extension[name].valueString = "Location"
 * extension[section][0].extension[field][0].valueString = "Location.name"
 * extension[section][0].extension[field][1].valueString = "Location.extension:institutionType.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "Location.telecom"

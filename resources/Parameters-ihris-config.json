@@ -505,6 +505,14 @@
         {
           "name": "workflow:questionnaire:education:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-education-history"
+        },
+        {
+          "name": "workflow:processor:performance:file",
+          "valueString": "../modules/workflowPerformance"
+        },
+        {
+          "name": "workflow:questionnaire:performance:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-performance"
         }
       ]
     },

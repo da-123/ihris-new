@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-02T16:22:26.063Z",
+        "when": "2020-09-02T18:17:15.709Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "NTEuKbsuwksi/mFga/c5T5fG/H0IvI81ShXnTFMXQeZkWjAqJTKtC+JkjwNu/+nsJ7W5ZctXEo1YQgCJI2acoNzHcyMOMftgY2W6sw0p+aCJf6r/dbTOlGV8G9BvQcU7uXQzjwQc+9zwCHCO3C9BAxETFiSu9hQjRtRRMpJg3pQ="
+        "data": "C84AbJvGcG7OphOF5z/JnMaG5fWyeSHX7IeCYaoeQz1jN/nVvUCyRJjraW+rfTGHlIARI5160P/sWCx5kkc8fJ5SXDU+8zLR0VVF0Tq7uxpXXho3jJTsSbfTAFiEQ+xDXl5UtPv2lI7oNj6+1BXanSwSmsbxiMZPRWqaHwWfvR4="
       }
     },
     {
@@ -517,6 +517,14 @@
         {
           "name": "workflow:questionnaire:education:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-education-history"
+        },
+        {
+          "name": "workflow:processor:performance:file",
+          "valueString": "../modules/workflowPerformance"
+        },
+        {
+          "name": "workflow:questionnaire:performance:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-performance"
         }
       ]
     },
