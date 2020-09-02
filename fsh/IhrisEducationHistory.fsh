@@ -83,8 +83,26 @@ Description:    "iHRIS profile of Education Institution."
 * name ^label = "Institution Name"
 * telecom 0..* MS
 * telecom ^label = "Institution Contact"
+* telecom.system MS
+* telecom.system ^label = "Type"
+* telecom.value MS
+* telecom.value ^label = "Value"
+* telecom.use MS
+* telecom.use ^label = "Use"
 * address 0..1 MS
 * address ^label = "Institution Address"
+* address.type MS
+* address.type ^label = "Address Type"
+* address.use MS
+* address.use ^label = "Use"
+* address.line 0..1 MS
+* address.line ^label = "Street name, number & P.O. Box etc."
+* address.city MS
+* address.city ^label = "Name of city, town etc"
+* address.district MS
+* address.district ^label = "District"
+* address.country MS
+* address.country ^label = "Country"
 * partOf 0..1 MS
 * partOf ^label = "Institution Location"
 * extension contains

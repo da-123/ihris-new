@@ -436,7 +436,7 @@
         },
         {
             "name": "site:nav:menu:database:menu:institution:url",
-            "valueString": "/resource/search/ihris-institution"
+            "valueString": "/resource/search/institution"
         },
         {
             "name": "site:nav:menu:database:menu:institution:order",

@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-08-27T10:55:08.722Z",
+        "when": "2020-09-02T16:22:26.063Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "O2EMHsXw6G0veXx2hf6z7tfPsUIb5+uUQRfTi7R+dT5dAysjSPNinEAaNHotgDheQMnMXmyWqq4kzsiARpcDzryEstrqh2gJ/GN3TcBuMBdixWbIl/ODHdpIXcRCH968eq3I0/cQwYXGY1l+p5v9f1ClrrDfCPGJ+KoOlAVk3Pk="
+        "data": "NTEuKbsuwksi/mFga/c5T5fG/H0IvI81ShXnTFMXQeZkWjAqJTKtC+JkjwNu/+nsJ7W5ZctXEo1YQgCJI2acoNzHcyMOMftgY2W6sw0p+aCJf6r/dbTOlGV8G9BvQcU7uXQzjwQc+9zwCHCO3C9BAxETFiSu9hQjRtRRMpJg3pQ="
       }
     },
     {
@@ -436,7 +436,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:institution:url",
-          "valueString": "/resource/search/ihris-institution"
+          "valueString": "/resource/search/institution"
         },
         {
           "name": "site:nav:menu:database:menu:institution:order",
