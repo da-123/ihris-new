@@ -97,6 +97,11 @@ Title:          "iHRIS Basic Performance Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-performance)
+* extension[display].extension[link].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link].extension[button].valueBoolean = true
+* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
 * extension[display].extension[search][0].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.start"
 * extension[display].extension[search][1].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
 * extension[section][0].extension[title].valueString = "Performance Evaluation"

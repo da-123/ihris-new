@@ -18,17 +18,21 @@ Description:    "iHRIS Page Display details."
       resource 1..1 MS and
       search 1..* MS and
       filter 0..* MS and
-      add 0..1 MS 
+      add 0..1 MS and
+      link 0..* MS
 * extension[resource].value[x] only Reference
 * extension[resource].valueReference only Reference(StructureDefinition or CodeSystem)
 * extension[resource].valueReference 1..1 MS
 * extension[resource].valueReference ^label = "Primary Resource"
+
 * extension[search].value[x] only string
 * extension[search].valueString 1..1 MS
 * extension[search].valueString ^label = "Search Headers"
+
 * extension[filter].value[x] only string
 * extension[filter].valueString 1..1 MS
 * extension[filter].valueString ^label = "Search Filters"
+
 * extension[add].extension contains
       url 1..1 MS and
       icon 0..1 MS and
@@ -42,6 +46,28 @@ Description:    "iHRIS Page Display details."
 * extension[add].extension[class].value[x] only string
 * extension[add].extension[class].valueString MS
 * extension[add].extension[class].valueString ^label = "Add Link Class"
+
+* extension[link].extension contains
+      field 0..1 MS and
+      text 0..1 MS and
+      button 0..1 MS and
+      icon 0..1 MS and
+      url 1..1 MS
+* extension[link].extension[field].value[x] only string
+* extension[link].extension[field].valueString MS
+* extension[link].extension[field].valueString ^label = "FHIRPath for field in resource"
+* extension[link].extension[text].value[x] only string
+* extension[link].extension[text].valueString MS
+* extension[link].extension[text].valueString ^label = "Text for link"
+* extension[link].extension[button].value[x] only boolean
+* extension[link].extension[button].valueBoolean MS
+* extension[link].extension[button].valueBoolean ^label = "Display as button"
+* extension[link].extension[icon].value[x] only string
+* extension[link].extension[icon].valueString MS
+* extension[link].extension[icon].valueString ^label = "Icon to display in button"
+* extension[link].extension[url].value[x] only url
+* extension[link].extension[url].valueUrl MS
+* extension[link].extension[url].valueUrl ^label = "URL to go to"
 
 Extension:      IhrisPageSection
 Id:             ihris-page-section
@@ -316,6 +342,11 @@ Title:          "iHRIS PractitionerRole Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-job-description)
+* extension[display].extension[link].extension[field].valueString = "PractitionerRole.practitioner.reference"
+* extension[display].extension[link].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link].extension[button].valueBoolean = true
+* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
 * extension[display].extension[search][0].valueString = "Job|PractitionerRole.code[0].coding[0]"
 * extension[display].extension[search][1].valueString = "Start Date|PractitionerRole.period.start"
 * extension[display].extension[search][2].valueString = "Practitioner|PractitionerRole.practitioner"
@@ -639,6 +670,11 @@ Title:          "iHRIS Basic Leave Ethiopia Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-ethiopia-leave)
+* extension[display].extension[link].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link].extension[button].valueBoolean = true
+* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
 * extension[display].extension[search][0].valueString = "Leave Type|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='leave-type').valueCoding"
 * extension[display].extension[search][1].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.start"
 * extension[display].extension[search][2].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.end"
@@ -662,6 +698,11 @@ Title:          "Education History"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-education-history)
+* extension[display].extension[link].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link].extension[button].valueBoolean = true
+* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
 * extension[display].extension[search][0].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[display].extension[search][1].valueString = "Institution|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueReference.reference"
 * extension[display].extension[search][2].valueString = "Degree|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding.display"
