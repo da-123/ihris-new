@@ -20,8 +20,8 @@ Description:    "iHRIS profile of Practitioner."
 * healthcareService 0..0
 * telecom 0..0
 * location 1..1 MS
-* location ^label = "Duty Station"
-* location.reference ^label = "Duty Station"
+* location ^label = "Duty Post"
+* location.reference ^label = "Duty Post"
 * code 1..1 MS
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)

@@ -8,8 +8,7 @@ Description:    "iHRIS profile of Practitioner."
 * identifier ^label = "Identifier"
 * identifier.use MS
 * identifier.use ^label = "Use"
-* identifier.system MS
-* identifier.system ^label = "System"
+* identifier.system 0..0
 * identifier.value MS
 * identifier.value ^label = "Value"
 * identifier.type MS
@@ -57,7 +56,6 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRemarkNote named remarkNote 0..* MS and
     IhrisPractitionerResidence named residence 0..1 MS and
     IhrisPractitionerNationality named nationality 0..1 MS and
-    IhrisPractitionerEducationalMajor named educationalMajor 0..1 MS and
     IhrisPractitionerCategory named category 0..1 MS and
     IhrisPractitionerEthnicity named ethnicity 0..1 MS and
     IhrisPractitionerFamilyNames named familyNames 0..1 MS
@@ -73,7 +71,7 @@ Description:    "iHRIS profile of Practitioner."
 * extension[dependents] ^label = "Dependents"
 * extension[dependents].extension[name].valueString MS
 * extension[dependents].extension[birthDate].valueDate MS
-* extension[dependents].extension[relationship].valueString MS
+* extension[dependents].extension[relationship].valueCoding MS
 * extension[dependents].extension[gender].valueCode MS
 * extension[maritalStatus].valueCoding MS
 * extension[maritalStatus] ^label = "Marital Status"
@@ -81,8 +79,6 @@ Description:    "iHRIS profile of Practitioner."
 * extension[specialTraining] ^label = "Special Training"
 * extension[professionalLicenseCategory].valueString MS
 * extension[professionalLicenseCategory] ^label = "Professional License Category"
-* extension[educationalMajor].valueCoding MS
-* extension[educationalMajor] ^label = "Educational Major"
 * extension[category].valueCoding MS
 * extension[category] ^label = "Category"
 * extension[remarkNote].valueString MS
@@ -321,17 +317,6 @@ Description:    "iHRIS extension for Practitioner nationality."
 * valueCoding 1..1 MS
 * valueCoding from http://hl7.org/fhir/ValueSet/iso3166-1-2 (required)
 
-Extension:      IhrisPractitionerEducationalMajor
-Id:             ihris-practitioner-educational-major
-Title:          "iHRIS Personal Information Educational Major"
-Description:    "iHRIS extension for Personal Information Educational Major."
-* ^context.type = #element
-* ^context.expression = "Practitioner"
-* value[x] only Coding
-* valueCoding 1..1 MS
-* valueCoding ^label = "Educational Major"
-* valueCoding from IhrisEducationalMajorValueSet (required)
-
 CodeSystem:      IhrisEducationalMajorCodeSystem
 Id:              ihris-educational-major-codesystem
 Title:           "Educational Major"
@@ -398,13 +383,30 @@ Description:    "iHRIS extension for Practitioner dependents."
 * extension[birthDate].value[x] only date
 * extension[birthDate].valueDate 1..1 MS
 * extension[birthDate].valueDate ^label = "Dependent's Date of Birth"
-* extension[relationship].value[x] only string
-* extension[relationship].valueString 1..1 MS
-* extension[relationship].valueString ^label = "Relationship"
+* extension[relationship].value[x] only Coding
+* extension[relationship].valueCoding 1..1 MS
+* extension[relationship].valueCoding ^label = "Relationship"
+* extension[relationship].valueCoding from IhrisEthiopiaRelationValueSet (required)
 * extension[gender].value[x] only code
 * extension[gender].valueCode 1..1 MS
 * extension[gender].valueCode from http://hl7.org/fhir/ValueSet/administrative-gender (required)
 * extension[gender].valueCode ^label = "Dependent's Gender"
+
+CodeSystem:      IhrisEthiopiaRelationCodesystem
+Id:              ihris-relation-codesystem
+Title:           "Relationship"
+* ^version = "0.2.0"
+* #spouse "Spouse" "Spouse"
+* #mother "Mother" "Mother"
+* #father "Father" "Father"
+* #child "Child" "Child"
+* #other "other" "other"
+
+ValueSet:         IhrisEthiopiaRelationValueSet
+Id:               ihris-relation-valueset
+Title:            "iHRIS Relationship ValueSet"
+* ^version = "0.2.0"
+* codes from system IhrisEthiopiaRelationCodesystem
 
 Extension:      IhrisPractitionerEthnicity
 Id:             ihris-practitioner-ethnicity
@@ -693,13 +695,6 @@ Usage:          #definition
 * item[0].item[9].item[0].item[1].required = false
 * item[0].item[9].item[0].item[1].repeats = false
 
-* item[0].item[9].item[0].item[2].linkId = "Practitioner.identifier[0].system"
-* item[0].item[9].item[0].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[0].item[2].text = "System"
-* item[0].item[9].item[0].item[2].type = #string
-* item[0].item[9].item[0].item[2].repeats = false
-* item[0].item[9].item[0].item[2].required = false
-
 * item[0].item[9].item[1].linkId = "Practitioner.identifier[1]"
 * item[0].item[9].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
 * item[0].item[9].item[1].text = "Pension Number"
@@ -721,13 +716,6 @@ Usage:          #definition
 * item[0].item[9].item[1].item[1].type = #string
 * item[0].item[9].item[1].item[1].required = false
 * item[0].item[9].item[1].item[1].repeats = false
-
-* item[0].item[9].item[1].item[2].linkId = "Practitioner.identifier[1].system"
-* item[0].item[9].item[1].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[1].item[2].text = "System"
-* item[0].item[9].item[1].item[2].type = #string
-* item[0].item[9].item[1].item[2].repeats = false
-* item[0].item[9].item[1].item[2].required = false
 
 * item[0].item[9].item[2].linkId = "Practitioner.identifier[2]"
 * item[0].item[9].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -751,13 +739,6 @@ Usage:          #definition
 * item[0].item[9].item[2].item[1].required = false
 * item[0].item[9].item[2].item[1].repeats = false
 
-* item[0].item[9].item[2].item[2].linkId = "Practitioner.identifier[2].system"
-* item[0].item[9].item[2].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[2].item[2].text = "System"
-* item[0].item[9].item[2].item[2].type = #string
-* item[0].item[9].item[2].item[2].repeats = false
-* item[0].item[9].item[2].item[2].required = false
-
 * item[0].item[9].item[3].linkId = "Practitioner.identifier[3]"
 * item[0].item[9].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
 * item[0].item[9].item[3].text = "Driving License"
@@ -779,13 +760,6 @@ Usage:          #definition
 * item[0].item[9].item[3].item[1].type = #string
 * item[0].item[9].item[3].item[1].required = false
 * item[0].item[9].item[3].item[1].repeats = false
-
-* item[0].item[9].item[3].item[2].linkId = "Practitioner.identifier[3].system"
-* item[0].item[9].item[3].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[3].item[2].text = "System"
-* item[0].item[9].item[3].item[2].type = #string
-* item[0].item[9].item[3].item[2].repeats = false
-* item[0].item[9].item[3].item[2].required = false
 
 * item[0].item[9].item[4].linkId = "Practitioner.identifier[4]"
 * item[0].item[9].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -809,13 +783,6 @@ Usage:          #definition
 * item[0].item[9].item[4].item[1].required = false
 * item[0].item[9].item[4].item[1].repeats = false
 
-* item[0].item[9].item[4].item[2].linkId = "Practitioner.identifier[4].system"
-* item[0].item[9].item[4].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[4].item[2].text = "System"
-* item[0].item[9].item[4].item[2].type = #string
-* item[0].item[9].item[4].item[2].repeats = false
-* item[0].item[9].item[4].item[2].required = false
-
 * item[0].item[9].item[5].linkId = "Practitioner.identifier[5]"
 * item[0].item[9].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
 * item[0].item[9].item[5].text = "License Id"
@@ -837,13 +804,6 @@ Usage:          #definition
 * item[0].item[9].item[5].item[1].type = #string
 * item[0].item[9].item[5].item[1].required = false
 * item[0].item[9].item[5].item[1].repeats = false
-
-* item[0].item[9].item[5].item[2].linkId = "Practitioner.identifier[5].system"
-* item[0].item[9].item[5].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.system"
-* item[0].item[9].item[5].item[2].text = "System"
-* item[0].item[9].item[5].item[2].type = #string
-* item[0].item[9].item[5].item[2].repeats = false
-* item[0].item[9].item[5].item[2].required = false
 
 * item[0].item[10].linkId = "__Practitioner:telecom"
 * item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom"
@@ -932,62 +892,49 @@ Usage:          #definition
 * item[0].item[12].text = "Education Details|Education, Training and License information"
 * item[0].item[12].type = #group
 
-* item[0].item[12].item[0].linkId = "Practitioner:educationalMajor"
-* item[0].item[12].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:educationalMajor"
-* item[0].item[12].item[0].text = "Education Details|Education major information"
+* item[0].item[12].item[0].linkId = "Practitioner:professionalLicenseCategory"
+* item[0].item[12].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory"
+* item[0].item[12].item[0].text = "License Details|Professional license category"
 * item[0].item[12].item[0].type = #group
 
 * item[0].item[12].item[0].item[0].linkId = "Practitioner.extension[4]"
-* item[0].item[12].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:educationalMajor.value[x]:valueCoding"
-* item[0].item[12].item[0].item[0].text = "Educational Major"
-* item[0].item[12].item[0].item[0].type = #choice
-* item[0].item[12].item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-educational-major-valueset"
+* item[0].item[12].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory.value[x]:valueString"
+* item[0].item[12].item[0].item[0].text = "Professional License Category"
+* item[0].item[12].item[0].item[0].type = #string
 * item[0].item[12].item[0].item[0].required = true
-* item[0].item[12].item[0].item[0].repeats = false
+* item[0].item[12].item[0].item[0].repeats = true
 
-* item[0].item[12].item[1].linkId = "Practitioner:professionalLicenseCategory"
-* item[0].item[12].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory"
-* item[0].item[12].item[1].text = "License Details|Professional license category"
+* item[0].item[12].item[1].linkId = "Practitioner:specialTraining"
+* item[0].item[12].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining"
+* item[0].item[12].item[1].text = "Training Details|Special training information"
 * item[0].item[12].item[1].type = #group
 
 * item[0].item[12].item[1].item[0].linkId = "Practitioner.extension[5]"
-* item[0].item[12].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory.value[x]:valueString"
-* item[0].item[12].item[1].item[0].text = "Professional License Category"
+* item[0].item[12].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining.value[x]:valueString"
+* item[0].item[12].item[1].item[0].text = "Special Training"
 * item[0].item[12].item[1].item[0].type = #string
-* item[0].item[12].item[1].item[0].required = true
+* item[0].item[12].item[1].item[0].required = false
 * item[0].item[12].item[1].item[0].repeats = true
 
-* item[0].item[12].item[2].linkId = "Practitioner:specialTraining"
-* item[0].item[12].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining"
-* item[0].item[12].item[2].text = "Training Details|Special training information"
+* item[0].item[12].item[2].linkId = "Practitioner:category"
+* item[0].item[12].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
+* item[0].item[12].item[2].text = "Category Details|Category information"
 * item[0].item[12].item[2].type = #group
 
 * item[0].item[12].item[2].item[0].linkId = "Practitioner.extension[6]"
-* item[0].item[12].item[2].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining.value[x]:valueString"
-* item[0].item[12].item[2].item[0].text = "Special Training"
-* item[0].item[12].item[2].item[0].type = #string
+* item[0].item[12].item[2].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category.value[x]:valueCoding"
+* item[0].item[12].item[2].item[0].text = "Category"
+* item[0].item[12].item[2].item[0].type = #choice
+* item[0].item[12].item[2].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-category-valueset"
 * item[0].item[12].item[2].item[0].required = false
-* item[0].item[12].item[2].item[0].repeats = true
-
-* item[0].item[12].item[3].linkId = "Practitioner:category"
-* item[0].item[12].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
-* item[0].item[12].item[3].text = "Category Details|Category information"
-* item[0].item[12].item[3].type = #group
-
-* item[0].item[12].item[3].item[0].linkId = "Practitioner.extension[7]"
-* item[0].item[12].item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category.value[x]:valueCoding"
-* item[0].item[12].item[3].item[0].text = "Category"
-* item[0].item[12].item[3].item[0].type = #choice
-* item[0].item[12].item[3].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-category-valueset"
-* item[0].item[12].item[3].item[0].required = false
-* item[0].item[12].item[3].item[0].repeats = false
+* item[0].item[12].item[2].item[0].repeats = false
 
 * item[0].item[13].linkId = "__Practitioner:remarkNote"
 * item[0].item[13].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote"
 * item[0].item[13].text = "Remarks|Remarks or notes"
 * item[0].item[13].type = #group
 
-* item[0].item[13].item[0].linkId = "Practitioner.extension[8]"
+* item[0].item[13].item[0].linkId = "Practitioner.extension[7]"
 * item[0].item[13].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote.value[x]:valueString"
 * item[0].item[13].item[0].text = "Remark Note"
 * item[0].item[13].item[0].type = #text
@@ -999,7 +946,7 @@ Usage:          #definition
 * item[0].item[14].text = "Photo|Person's Passport Photo"
 * item[0].item[14].type = #group
 
-* item[0].item[14].item[0].linkId = "Practitioner.extension[9]"
+* item[0].item[14].item[0].linkId = "Practitioner.extension[8]"
 * item[0].item[14].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
 * item[0].item[14].item[0].text = "Photo"
 * item[0].item[14].item[0].type = #attachment
@@ -1021,7 +968,7 @@ Usage:          #definition
 
 * item[1].item[1].linkId = "PractitionerRole.location"
 * item[1].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
-* item[1].item[1].text = "Duty Station"
+* item[1].item[1].text = "Duty Post"
 * item[1].item[1].type = #reference
 * item[1].item[1].required = false
 * item[1].item[1].repeats = false
@@ -1133,7 +1080,7 @@ Usage:          #definition
 
 * item[0].item[4].linkId = "PractitionerRole.location"
 * item[0].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
-* item[0].item[4].text = "Duty Station/Location"
+* item[0].item[4].text = "Duty Post/Location"
 * item[0].item[4].type = #reference
 * item[0].item[4].required = true
 * item[0].item[4].repeats = false
