@@ -20,8 +20,24 @@
       "valueString": "10000/1m"
     },
     {
+      "name": "elasticsearch:username",
+      "valueString": ""
+    },
+    {
+      "name": "elasticsearch:password",
+      "valueString": ""
+    },
+    {
       "name": "kibana:base",
       "valueString": "http://104.154.143.228:5601"
+    },
+    {
+      "name": "kibana:username",
+      "valueString": ""
+    },
+    {
+      "name": "kibana:password",
+      "valueString": ""
     },
     {
       "name": "logs",
