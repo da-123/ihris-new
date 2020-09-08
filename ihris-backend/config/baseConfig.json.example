@@ -21,11 +21,11 @@
     },
     {
       "name": "elasticsearch:username",
-      "valueString": ""
+      "valueString": "elastic"
     },
     {
       "name": "elasticsearch:password",
-      "valueString": ""
+      "valueString": "256changed"
     },
     {
       "name": "kibana:base",
