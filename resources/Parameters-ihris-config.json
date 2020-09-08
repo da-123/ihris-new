@@ -455,8 +455,12 @@
           "valueString": "mdi-poll-box"
         },
         {
-          "name": "site:nav:menu:dashboard:url",
-          "valueString": "/dashboard"
+          "name": "site:nav:menu:dashboard:menu:staff:text",
+          "valueString": "Dashboard"
+        },
+        {
+          "name": "site:nav:menu:dashboard:menu:staff:url",
+          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
         },
         {
           "name": "shortname:Practitioner:format",
@@ -473,6 +477,22 @@
         {
           "name": "shortname:Practitioner:paths:given:fhirpath",
           "valueString": "name.where(use='official').first().given"
+        },
+        {
+          "name": "defaults:components:date-time:minValueDateTime",
+          "valueString": "1920-01-01"
+        },
+        {
+          "name": "defaults:components:date-time:maxValueDateTime",
+          "valueString": "2030-01-01"
+        },
+        {
+          "name": "defaults:components:date:minValueDate",
+          "valueString": "1920-01-01"
+        },
+        {
+          "name": "defaults:components:date:maxValueDate",
+          "valueString": "2030-01-01"
         },
         {
           "name": "workflow:processor:endrole:file",

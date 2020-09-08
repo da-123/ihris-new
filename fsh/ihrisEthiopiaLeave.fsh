@@ -29,10 +29,10 @@ Title:          "Leave details"
 * extension[period].valuePeriod ^label = "Leave Period"
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.start ^label = "Leave Start Date"
-* extension[period].valuePeriod.start ^minValueDate = "1950-01-01"
-* extension[period].valuePeriod.start ^maxValueDate = "2030-01-01"
-* extension[period].valuePeriod.end ^minValueDate = "1950-01-01"
-* extension[period].valuePeriod.end ^maxValueDate = "2030-01-01"
+* extension[period].valuePeriod.start ^minValueDateTime = "1950-01-01"
+* extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
+* extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
+* extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[period].valuePeriod.end ^label = "Leave End Date"
 * extension[period].valuePeriod.end 1..1 MS
 * extension[daysRequested].value[x] only integer

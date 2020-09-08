@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-container v-if="edit">
+      <v-text-field v-model="value" type="number" :label="label" :min="minYear" :max="maxYear" v-if="pickerType==='year'"></v-text-field>
       <v-menu 
         ref="menu" 
         v-model="menu" 
@@ -8,6 +9,7 @@
         transition="scale-transition" 
         offset-y 
         min-width="290px"
+        v-else
       >
         <template v-slot:activator="{ on }">
           <v-text-field
@@ -26,8 +28,9 @@
           color="secondary"
           :landscape="$vuetify.breakpoint.smAndUp"
           v-model="value"
-          :max="new Date().toISOString().substr(0,10)"
-          min="1920-01-01"
+          :max="maxValueDate"
+          :min="minValueDate"
+          :type="pickerType"
           @change="save"
         ></v-date-picker>
       </v-menu>
@@ -44,18 +47,29 @@
 <script>
 export default {
   name: "fhir-date",
-  props: ["field","min","max","base-min","base-max", "label", "slotProps", "path", "edit","sliceName"],
+  props: ["field","min","max","base-min","base-max", "label", "slotProps", "path", "edit","sliceName", 
+    "minValueDate", "maxValueDate", "displayType"],
   data: function() {
     return {
       value: null,
       menu: false,
       source: { path: "", data: {} },
-      qField: "valueDate"
+      qField: "valueDate",
+      pickerType: "date"
     }
   },
   created: function() {
     //console.log("CREATE STRING",this.field,this.slotProps)
     this.setupData()
+    console.log("MINMAX",this.minValueDate, this.maxValueDate)
+  },
+  computed: {
+    minYear: function() {
+      return this.minValueDateTime.substring(0,4)
+    },
+    maxYear: function() {
+      return this.maxValueDateTime.substring(0,4)
+    }
   },
   watch: {
     menu (val) {
@@ -71,6 +85,9 @@ export default {
   },
   methods: {
     setupData() {
+      if ( this.displayType ) {
+        this.pickerType = this.displayType
+      }
       if ( this.slotProps && this.slotProps.source ) {
         this.source = { path: this.slotProps.source.path+"."+this.field, data: {} }
         if ( this.slotProps.source.fromArray ) {
