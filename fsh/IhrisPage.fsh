@@ -19,6 +19,7 @@ Description:    "iHRIS Page Display details."
       search 1..* MS and
       filter 0..* MS and
       add 0..1 MS and
+      field 0..* MS and
       link 0..* MS
 * extension[resource].value[x] only Reference
 * extension[resource].valueReference only Reference(StructureDefinition or CodeSystem)
@@ -68,6 +69,16 @@ Description:    "iHRIS Page Display details."
 * extension[link].extension[url].value[x] only url
 * extension[link].extension[url].valueUrl MS
 * extension[link].extension[url].valueUrl ^label = "URL to go to"
+
+* extension[field].extension contains
+      path 1..1 MS and
+      type 1..1 MS
+* extension[field].extension[path].value[x] only string
+* extension[field].extension[path].valueString MS
+* extension[field].extension[path].valueString ^label = "Field Path from StructureDefintion"
+* extension[field].extension[type].value[x] only string
+* extension[field].extension[type].valueString MS
+* extension[field].extension[type].valueString ^label = "Display type for the field"
 
 Extension:      IhrisPageSection
 Id:             ihris-page-section

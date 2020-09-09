@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-08T07:00:47.666Z",
+        "when": "2020-09-09T09:34:48.064Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "ZDWWriF2ud+Y+MGiC45Qdxlo36blL8XfJfwgqx3IyOiW53W/ciskXmmwD09H+A1GpL19iqIQey5XQEU9aGJqsN4P1fn64iRaIEKsmlowBxr3vcAnsXJoAJGPLdOI8mjuKynGhPz6LThMph2VatySfRnL0IUt2Ztdtksg+l3Np8Y="
+        "data": "tyiiZGj8BiM0awHRE/z/qKpBNGVzdwTlw+/7ysvURUpOsN/0NatiKr9cSFcXtgGYYJkKZuEMJzPkotMiRkY0Cl7bX5CtR0cSbw54MjPkS/wodZ7gYJYT7bX4Z5/h8zHlow6AyQGItriC+yxc26yCPxltUsEHMKZu43LEwhGJC28="
       }
     },
     {
@@ -101,6 +101,10 @@
         {
           "name": "site:footer:links:ihris:href",
           "valueString": "http://ihris.org/"
+        },
+        {
+          "name": "site:nav:home",
+          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
         },
         {
           "name": "site:nav:active",
@@ -545,15 +549,6 @@
         {
           "name": "workflow:questionnaire:performance:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-performance"
-        }
-      ]
-    },
-    {
-      "name": "sync",
-      "part": [
-        {
-          "name": "escaching",
-          "valueDateTime": "1970-03-09T17:32:44"
         }
       ]
     }

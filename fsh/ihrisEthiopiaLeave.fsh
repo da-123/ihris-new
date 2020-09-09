@@ -9,8 +9,12 @@ Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension[ethiopiaLeave].extension[period].valuePeriod MS
 * extension[ethiopiaLeave].extension[period].valuePeriod.start MS
 * extension[ethiopiaLeave].extension[period].valuePeriod.start ^label = "Leave Start Date"
+* extension[ethiopiaLeave].extension[period].valuePeriod.start ^minValueDateTime = "1950-01-01"
+* extension[ethiopiaLeave].extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end MS
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[ethiopiaLeave].extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
+* extension[ethiopiaLeave].extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[dateRequested].valueDate MS
 * extension[ethiopiaLeave].extension[daysRequested].valueInteger MS
     

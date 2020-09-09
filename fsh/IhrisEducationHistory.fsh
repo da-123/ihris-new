@@ -13,7 +13,7 @@ Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension[educationHistory].extension[level].valueCoding MS
 * extension[educationHistory].extension[educationalMajor].valueCoding ^label = "Degree"
 * extension[educationHistory].extension[educationalMajor].valueCoding MS
-* extension[educationHistory].extension[year].valueDate ^label = "Days Requested"
+* extension[educationHistory].extension[year].valueDate ^label = "Year Of Graduation"
 * extension[educationHistory].extension[year].valueDate MS
     
 Extension:      IhrisEducationHistory
@@ -38,7 +38,7 @@ Title:          "Education History details"
 * extension[educationalMajor].valueCoding ^label = "Degree"
 * extension[educationalMajor].valueCoding from IhrisEducationalMajorValueSet (required)
 * extension[year].value[x] only date
-* extension[year].valueDate ^label = "Days Requested"
+* extension[year].valueDate ^label = "Year Of Graduation"
 
 CodeSystem:      IhrisDegree
 Id:              ihris-degree
@@ -177,7 +177,7 @@ Usage:          #definition
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false
 
-* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
+* item[0].item[4].linkId = "Basic.extension[0].extension[4]#year"
 * item[0].item[4].text = "Year Of Graduation"
 * item[0].item[4].type = #date
 * item[0].item[4].required = true

@@ -657,7 +657,7 @@ Usage:          #definition
 * item[0].item[0].linkId = "period.end"
 * item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
 * item[0].item[0].text = "End Date"
-* item[0].item[0].type = #date
+* item[0].item[0].type = #dateTime
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 

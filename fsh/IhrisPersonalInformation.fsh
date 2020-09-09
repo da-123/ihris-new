@@ -1007,14 +1007,14 @@ Usage:          #definition
 * item[1].item[6].linkId = "PractitionerRole.period.start"
 * item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.start"
 * item[1].item[6].text = "Hire Date"
-* item[1].item[6].type = #date
+* item[1].item[6].type = #dateTime
 * item[1].item[6].required = true
 * item[1].item[6].repeats = false
 
 * item[1].item[7].linkId = "PractitionerRole.period.end"
 * item[1].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
 * item[1].item[7].text = "End Date"
-* item[1].item[7].type = #date
+* item[1].item[7].type = #dateTime
 * item[1].item[7].required = true
 * item[1].item[7].repeats = false
 
@@ -1053,7 +1053,7 @@ Usage:          #definition
 
 * item[0].item[0].linkId = "period.end"
 * item[0].item[0].text = "Position Change Date"
-* item[0].item[0].type = #date
+* item[0].item[0].type = #dateTime
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
@@ -1134,13 +1134,13 @@ Usage:          #definition
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Start Date"
-* item[0].item[1].type = #date
+* item[0].item[1].type = #dateTime
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "End Date"
-* item[0].item[2].type = #date
+* item[0].item[2].type = #dateTime
 * item[0].item[2].required = true
 * item[0].item[2].repeats = false
 
