@@ -1,10 +1,7 @@
 <template>
-  <v-card>
-    <v-card-subtitle class="text-uppercase font-weight-bold">{{ display }}</v-card-subtitle>
-    <v-card-text>
-      <slot :source="source"></slot>
-    </v-card-text>
-  </v-card>
+  <div>
+    <slot :source="source"></slot>
+  </div>
 </template>
 
 <script>

@@ -791,3 +791,19 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "CodeSystem.display"
 * extension[section][0].extension[field][1].valueString = "CodeSystem.code"
 * extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+
+Instance:       ihris-page-users
+InstanceOf:     IhrisPage
+Title:          "Users"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-person-user)
+* extension[display].extension[search][0].valueString = "User|Person.name.where(use='official').text"
+* extension[display].extension[search][1].valueString = "Username/Email|Person.telecom.where(system='email').value"
+* extension[display].extension[search][2].valueString = "Role|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-assign-role').valueReference.reference"
+* extension[section][0].extension[title].valueString = "System Users"
+* extension[section][0].extension[description].valueString = "System Users details"
+* extension[section][0].extension[name].valueString = "Person"
+* extension[section][0].extension[field][0].valueString = "Person.name"
+* extension[section][0].extension[field][1].valueString = "Person.telecom:"
+* extension[section][0].extension[field][2].valueString = "Person.extension:role.valueReference"

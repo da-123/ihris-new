@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-09T09:34:48.064Z",
+        "when": "2020-09-10T11:18:18.577Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "tyiiZGj8BiM0awHRE/z/qKpBNGVzdwTlw+/7ysvURUpOsN/0NatiKr9cSFcXtgGYYJkKZuEMJzPkotMiRkY0Cl7bX5CtR0cSbw54MjPkS/wodZ7gYJYT7bX4Z5/h8zHlow6AyQGItriC+yxc26yCPxltUsEHMKZu43LEwhGJC28="
+        "data": "uOonpGkS9mHuh4JLiKBu+Q0W5kS8eXZsqKWGoL+NlehNzUHs5lrv+JuiTL8W+9vmWE1zDdu7WWZQ0nuATrcLbOXBc8/8aXLzaXd5H+/OYECpnOE0F2tT2HR9Wgj4AKxEAxrr61nDYswbAkqojGnEnYVCXSir4pzMd03nqH3LO74="
       }
     },
     {
@@ -196,7 +196,7 @@
         },
         {
           "name": "site:nav:menu:database:text",
-          "valueString": "Database"
+          "valueString": "Admin"
         },
         {
           "name": "site:nav:menu:database:order",
@@ -465,6 +465,26 @@
         {
           "name": "site:nav:menu:dashboard:menu:staff:url",
           "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+        },
+        {
+          "name": "site:nav:menu:users:text",
+          "valueString": "System Users"
+        },
+        {
+          "name": "site:nav:menu:users:order",
+          "valueString": "6"
+        },
+        {
+          "name": "site:nav:menu:users:icon",
+          "valueString": "mdi-account-box-outline"
+        },
+        {
+          "name": "site:nav:menu:users:menu:users_search:text",
+          "valueString": "Search Users"
+        },
+        {
+          "name": "site:nav:menu:users:menu:users_search:url",
+          "valueString": "/resource/search/users"
         },
         {
           "name": "shortname:Practitioner:format",

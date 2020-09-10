@@ -1,40 +1,42 @@
 <template>
-  <v-card>
-    <v-card-subtitle class="text-uppercase font-weight-bold">{{ label }}</v-card-subtitle>
-    <v-card-text>
+  <ihris-element :edit="edit" :loading="loading">
+    <template #form>
       <v-autocomplete
-        v-if="edit"
         v-model="select"
         :loading="loading"
         :items="items"
         :search-input.sync="search"
         cache-items
-        class="mx-4"
         flat
         hide-no-data
         hide-details
         :label="display"
         outlined
+        dense
+        placeholder="Start typing for selection"
         :disabled="preset && $route.name === 'resource_add'"
       ></v-autocomplete>
-      <v-row dense v-else>
-        <v-col cols="3" class="font-weight-bold">{{display}}</v-col>
-        <v-col cols="9" v-if="loading">
-          <v-progress-linear indeterminate color="primary"></v-progress-linear>
-        </v-col>
-        <v-col cols="9" v-else>{{displayValue}}</v-col>
-      </v-row>
-
-    </v-card-text>
-  </v-card>
+    </template>
+    <template #header>
+      {{display}}
+    </template>
+    <template #value>
+      {{displayValue}}
+    </template>
+  </ihris-element>
 </template>
 
 <script>
+import IhrisElement from "../ihris/ihris-element.vue"
+
 const querystring = require('querystring')
 export default {
   name: "fhir-reference",
   props: ["field","label","sliceName","targetProfile","min","max","base-min","base-max",
     "slotProps","path","sub-fields","edit"],
+  components: {
+    IhrisElement
+  },
   data: function() {
     return {
       source: { path: "", data: {} },

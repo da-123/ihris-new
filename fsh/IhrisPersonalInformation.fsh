@@ -14,6 +14,7 @@ Description:    "iHRIS profile of Practitioner."
 * identifier.type MS
 * identifier.type ^label = "Type"
 * identifier.type.coding 1..1 MS
+* identifier.type.coding ^label = "Type"
 * identifier.type from IhrisEthiopiaIdentifierValueSet
 * name 1..1 MS
 * name ^label = "Name"
