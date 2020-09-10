@@ -3,6 +3,8 @@ Parent:         IhrisPractitionerBasic
 Id:             ihris-basic-performance
 Title:          "Performance Information"
 Description:    "iHRIS Profile of the Basic resource for Performance."
+* extension[practitioner].valueReference 1..1 MS
+* extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisPerformance named performance 1..1 MS
 * extension[performance].extension[evaluator].valueString MS

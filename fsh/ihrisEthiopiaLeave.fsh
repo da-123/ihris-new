@@ -3,6 +3,8 @@ Parent:         IhrisPractitionerBasic
 Id:             ihris-basic-ethiopia-leave
 Title:          "Leave Information"
 Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
+* extension[practitioner].valueReference 1..1 MS
+* extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisEthiopiaLeave named ethiopiaLeave 1..1 MS
 * extension[ethiopiaLeave].extension[leave-type].valueCoding MS
