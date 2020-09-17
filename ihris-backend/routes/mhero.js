@@ -37,6 +37,22 @@ router.post("/send-message", function (req, res, next) {
     recipient: recipients,
     resourceType: "CommunicationRequest"
   };
+  if(data.cronExpression) {
+    if(!communicationReq.meta) {
+      communicationReq.meta = {}
+    }
+    if(!communicationReq.meta.profile) {
+      communicationReq.meta.profile = []
+    }
+    if(!communicationReq.extension) {
+      communicationReq.extension = []
+    }
+    communicationReq.meta.profile.push("http://mhero.org/fhir/StructureDefinition/mhero-communication-request")
+    communicationReq.extension.push({
+      url: "http://mhero.org/fhir/StructureDefinition/recurrance-cron-expression",
+      valueString: data.cronExpression
+    })
+  }
   let url = URI(nconf.get("emnutt:base")).segment('CommunicationRequest');
   axios.post(url.toString(), communicationReq, {
     withCredentials: true,
@@ -115,8 +131,7 @@ router.post('/unsubscribe-contact-groups', (req, res) => {
  */
 router.get("/workflows", function (req, res, next) {
   let queries = {
-    '_profile': 'http://mhero.org/fhir/StructureDefinition/mhero-workflows',
-    '_count': 2
+    '_profile': 'http://mhero.org/fhir/StructureDefinition/mhero-workflows'
   }
   let resourceType = 'Basic'
   let resourceData = []
@@ -143,7 +158,7 @@ router.get("/workflows", function (req, res, next) {
     let workflows = []
     for (let data of resourceData) {
       workflow = data.resource.extension.find((ext) => {
-        return ext.url === "http://mHero.org/fhir/StructureDefinition/mhero-workflows-details"
+        return ext.url === "http://mhero.org/fhir/StructureDefinition/mhero-workflows-details"
       })
       if (workflow) {
         let name = workflow.extension.find((ext) => {

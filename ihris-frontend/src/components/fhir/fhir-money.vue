@@ -12,16 +12,17 @@
         :error="error"
         item-text="display"
         item-value="code"
+        :disabled="disabled"
         dense
       ></v-select>
-      <v-text-field :label="display" v-model="value.value" outlined hide-details="auto" dense>
+      <v-text-field :label="display" :disabled="disabled" v-model="value.value" outlined hide-details="auto" dense>
       </v-text-field>
     </template>
     <template #header>
       {{display}}
     </template>
     <template #value>
-      {{value}}
+      {{valueDisplay}} {{value.value}}
     </template>
   </ihris-element>
 </template>
@@ -36,7 +37,7 @@ const itemSort = (a,b) => {
 */
 export default {
   name: "fhir-coding",
-  props: ["field","label","sliceName","targetprofile","min","max","base-min","base-max","slotProps","path","binding","edit"],
+  props: ["field","label","sliceName","targetprofile","min","max","base-min","base-max","slotProps","path","binding","edit","readOnlyIfSet"],
   components: {
     IhrisElement
   },
@@ -51,7 +52,8 @@ export default {
       err_messages: null,
       error: false,
       items: [],
-      source: { path: "", data: {} }
+      source: { path: "", data: {} },
+      disabled: false
     }
   },
   created: function() {
@@ -91,6 +93,7 @@ export default {
           // Need to see if this works and figure out what it needs to be
           if ( this.source.data ) {
             this.value = this.source.data
+            this.disabled = this.readOnlyIfSet && (!!this.value.value)
             this.valueCurrency = this.value.currency
             //console.log("set",this.value,this.valueCurrency)
           }
@@ -101,6 +104,7 @@ export default {
           //console.log("FPATH setting value to",this.field,this.source.data[0],expression,this.slotProps.source.data)
           if ( this.source.data[0] ) {
             this.value = this.source.data[0]
+            this.disabled = this.readOnlyIfSet && (!!this.value.value)
             this.valueCurrency = this.value.currency
           }
         }

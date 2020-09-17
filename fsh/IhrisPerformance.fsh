@@ -106,6 +106,8 @@ Usage:          #example
 * extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
 * extension[display].extension[search][0].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.start"
 * extension[display].extension[search][1].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
+* extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[section][0].extension[title].valueString = "Performance Evaluation"
 * extension[section][0].extension[description].valueString = "Performance Evaluation details"
 * extension[section][0].extension[name].valueString = "Basic"

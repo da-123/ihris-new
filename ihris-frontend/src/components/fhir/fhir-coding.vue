@@ -12,6 +12,7 @@
         :error="error"
         item-text="display"
         item-value="code"
+        :disabled="disabled"
         dense
       ></v-select>
     </template>
@@ -34,7 +35,7 @@ const itemSort = (a,b) => {
 */
 export default {
   name: "fhir-coding",
-  props: ["field","label","sliceName","targetprofile","min","max","base-min","base-max","slotProps","path","binding","edit"],
+  props: ["field","label","sliceName","targetprofile","min","max","base-min","base-max","slotProps","path","binding","edit","readOnlyIfSet"],
   components: {
     IhrisElement
   },
@@ -47,7 +48,8 @@ export default {
       err_messages: null,
       error: false,
       items: [],
-      source: { path: "", data: {}, binding: this.binding }
+      source: { path: "", data: {}, binding: this.binding },
+      disabled: false
     }
   },
   created: function() {
@@ -98,6 +100,7 @@ export default {
             this.valueCode = this.value.code
           }
         }
+        this.disabled = this.readOnlyIfSet && (!!this.valueCode)
       }
       let binding = this.binding || this.slotProps.source.binding
       this.$fhirutils.expand( binding ).then( items => {

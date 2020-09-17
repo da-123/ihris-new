@@ -35,33 +35,40 @@ const workflowPromotionEthiopia = {
             req.body.subject = { reference: resource.practitioner.reference }
           }
           let extensions = []
-          if ( req.body.item[0].item[3].linkId === "PractitionerRole.extension[4]" 
+          if ( req.body.item[0].item[3].linkId === "PractitionerRole.extension[5]" 
             && req.body.item[0].item[3].answer 
             && req.body.item[0].item[3].answer[0] 
-            && req.body.item[0].item[3].answer[0].valueString){
+            && req.body.item[0].item[3].answer[0].valueCoding){
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-salary-scale",
+              valueCoding:req.body.item[0].item[3].answer[0].valueCoding })
+          }
+          if ( req.body.item[0].item[4].linkId === "PractitionerRole.extension[4]" 
+            && req.body.item[0].item[4].answer 
+            && req.body.item[0].item[4].answer[0] 
+            && req.body.item[0].item[4].answer[0].valueString){
             extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-salary",
-            valueString:req.body.item[0].item[3].answer[0].valueString })
+            valueString:req.body.item[0].item[4].answer[0].valueString })
           }
-          if ( req.body.item[0].item[5].linkId === "PractitionerRole.extension[1]" 
-            && req.body.item[0].item[5].answer 
-            && req.body.item[0].item[5].answer[0] 
-            && req.body.item[0].item[5].answer[0].valueCoding){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-shift",
-              valueCoding:req.body.item[0].item[5].answer[0].valueCoding })
-          }
-          if ( req.body.item[0].item[6].linkId === "PractitionerRole.extension[2]" 
+          if ( req.body.item[0].item[6].linkId === "PractitionerRole.extension[1]" 
             && req.body.item[0].item[6].answer 
             && req.body.item[0].item[6].answer[0] 
             && req.body.item[0].item[6].answer[0].valueCoding){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-employment-status",
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-shift",
               valueCoding:req.body.item[0].item[6].answer[0].valueCoding })
           }
-          if ( req.body.item[0].item[7].linkId === "PractitionerRole.extension[3]" 
+          if ( req.body.item[0].item[7].linkId === "PractitionerRole.extension[2]" 
             && req.body.item[0].item[7].answer 
             && req.body.item[0].item[7].answer[0] 
             && req.body.item[0].item[7].answer[0].valueCoding){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-type",
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-employment-status",
               valueCoding:req.body.item[0].item[7].answer[0].valueCoding })
+          }
+          if ( req.body.item[0].item[8].linkId === "PractitionerRole.extension[3]" 
+            && req.body.item[0].item[8].answer 
+            && req.body.item[0].item[8].answer[0] 
+            && req.body.item[0].item[8].answer[0].valueCoding){
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-type",
+              valueCoding:req.body.item[0].item[8].answer[0].valueCoding })
           } 
 
           let newRole = {
@@ -70,7 +77,7 @@ const workflowPromotionEthiopia = {
               profile: [ resource.meta.profile[0] ]
             },
             practitioner: { reference: resource.practitioner.reference },
-            location: { reference: req.body.item[0].item[4].answer },
+            location: { reference: req.body.item[0].item[5].answer },
             code: [
               { coding: [ req.body.item[0].item[2].answer[0].valueCoding ] }
             ],

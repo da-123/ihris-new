@@ -26,6 +26,7 @@ Description:    "iHRIS profile of Practitioner."
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)
 * code.coding 1..1 MS
+* code.coding ^label = "Job Title"
 * period 1..1 MS
 * period.start 1..1 MS
 * period.start ^label = "Hired Date"
@@ -40,9 +41,12 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
-    IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS
+    IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS and
+    IhrisPractitionerRoleSalaryScale named salaryScale 0..1 MS
 * extension[salary].valueMoney MS
 * extension[salary] ^label = "Salary"
+* extension[salaryScale].valueCoding MS
+* extension[salaryScale] ^label = "Salary Scale"
 * extension[directorate].valueCoding MS
 * extension[directorate] ^label = "Directorate"
 * extension[caseteam].valueCoding MS
@@ -152,6 +156,17 @@ ValueSet:         IhrisJobTypeValueSet
 Id:               ihris-job-type-valueset
 Title:            "iHRIS Job Type ValueSet"
 * codes from system IhrisJobTypeCodeSystem
+
+Extension:      IhrisPractitionerRoleSalaryScale
+Id:             ihris-practitionerrole-salary-scale
+Title:          "iHRIS Salary Scale"
+Description:    "iHRIS extension for Job Description Salary Scale."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only Coding
+* valueCoding 1..1 MS
+* valueCoding ^label = "Salary Scale"
+* valueCoding from IhrisSalaryScaleValueSet (required)
 
 CodeSystem:      IhrisSalaryScaleCodeSystem
 Id:              ihris-salary-scale-codesystem

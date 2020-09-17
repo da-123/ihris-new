@@ -83,8 +83,14 @@ router.get('/page/:page/:type?', function(req, res) {
     try {
       pageDisplay.extension.filter( ext => ext.url === "field" ).map( ext => {
         let path = ext.extension.find( subext => subext.url === "path" ).valueString
-        let type = ext.extension.find( subext => subext.url === "type" ).valueString
-        pageFields[path] = type
+        let type, readOnlyIfSet
+        try {
+          type = ext.extension.find( subext => subext.url === "type" ).valueString
+        } catch(err) {}
+        try {
+          readOnlyIfSet = ext.extension.find( subext => subext.url === "readOnlyIfSet" ).valueBoolean
+        } catch(err) {}
+        pageFields[path] = { type: type, readOnlyIfSet: readOnlyIfSet }
       } )
     } catch(err) {}
 
@@ -306,7 +312,7 @@ router.get('/page/:page/:type?', function(req, res) {
             let eleName = fhirDefinition.camelToKebab( fields[field].code )
             let attrs = [ "field", "sliceName", "targetProfile", "profile", "min", "max", "base-min",
               "base-max", "label", "path", "binding" ]
-            const minmax = [ "Date", "DateTime", "Instant", "Time", "Decimal", "Integer", "PositiveInt", 
+            const minmax = [ "Date", "DateTime", "Instant", "Time", "Decimal", "Integer", "PositiveInt",
               "UnsignedInt" ]
             for( let mm of minmax ) {
               for( let type of [ "min", "max" ] ) {
@@ -328,8 +334,13 @@ router.get('/page/:page/:type?', function(req, res) {
               attrs.unshift("id")
             }
             output += "<fhir-"+eleName +" :slotProps=\"slotProps\" :edit=\"isEdit\""
-            if ( pageFields.hasOwnProperty(fields[field].path) ) {
-              output += " displayType=\""+ pageFields[ fields[field].path ] +"\""
+            if ( pageFields.hasOwnProperty(fields[field].id) ) {
+              if ( pageFields[ fields[field].id ].type ) {
+                output += " displayType=\""+ pageFields[ fields[field].id ].type +"\""
+              }
+              if ( pageFields[ fields[field].id ].readOnlyIfSet ) {
+                output += " :readOnlyIfSet=\""+ pageFields[ fields[field].id ].readOnlyIfSet +"\""
+              }
             }
             for( let attr of attrs ) {
               if ( fields[field].hasOwnProperty(attr) ) {
@@ -512,7 +523,8 @@ router.get('/page/:page/:type?', function(req, res) {
         }
 
       } ).catch( err => {
-        winston.error(err)
+        winston.error(err.message)
+        winston.error(err.stack)
         return res.status( err.response.status ).json( err.response.data )
       } )
 
@@ -544,6 +556,7 @@ router.get('/page/:page/:type?', function(req, res) {
 
       } ).catch( (err) => {
         winston.error(err.message)
+        winston.error(err.stack)
         //return res.status( err.response.status ).json( err.response.data )
         return res.status( 500 ).json( { error: err.message } )
       } )
@@ -557,7 +570,8 @@ router.get('/page/:page/:type?', function(req, res) {
     }
 
   } ).catch( (err) => {
-    winston.error(err)
+    winston.error(err.message)
+    winston.error(err.stack)
     return res.status( err.response.status ).json( err.response.data )
   } )
 
@@ -628,13 +642,13 @@ router.get('/questionnaire/:questionnaire', function(req, res) {
         } else {
           vueOutput += "<fhir-" + itemType + " :edit=\"isEdit\" path=\"" + item.linkId + "\""
 
-          let field 
+          let field
           if ( item.definition ) {
             field = await fhirDefinition.getFieldDefinition(item.definition)
             if ( itemType === "reference" && field && field.type && field.type[0] && field.type[0].targetProfile ) {
               vueOutput += " targetProfile=\""+field.type[0].targetProfile[0]+"\""
             }
-            const minmax = [ "Date", "DateTime", "Instant", "Time", "Decimal", "Integer", "PositiveInt", 
+            const minmax = [ "Date", "DateTime", "Instant", "Time", "Decimal", "Integer", "PositiveInt",
               "UnsignedInt" ]
             for( let mm of minmax ) {
               for( let type of [ "min", "max" ] ) {
@@ -708,6 +722,7 @@ router.get('/questionnaire/:questionnaire', function(req, res) {
 
   } ).catch( (err) => {
     winston.error(err.message)
+    winston.error(err.stack)
     let outcome = { ...outcomes.ERROR }
     outcome.issue[0].diagnostics = "Unable to read questionnaire: "+req.params.questionnaire+"."
     return res.status(400).json( outcome )
@@ -816,6 +831,7 @@ router.get('/report/es/:report', (req, res) => {
       })
     }).catch((err) => {
       winston.error(err.message);
+      winston.error(err.stack);
       return res.status(500).send()
     })
   })
