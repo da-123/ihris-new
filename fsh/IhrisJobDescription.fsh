@@ -27,7 +27,7 @@ Description:    "iHRIS profile of Practitioner."
 * code from IhrisJobEthiopiaValueset (required)
 * code.coding 1..1 MS
 * code.coding ^label = "Job Title"
-* period 1..1 MS
+* period 0..1 MS
 * period.start 1..1 MS
 * period.start ^label = "Hired Date"
 * period.end 0..1 MS
@@ -171,10 +171,12 @@ Description:    "iHRIS extension for Job Description Salary Scale."
 CodeSystem:      IhrisSalaryScaleCodeSystem
 Id:              ihris-salary-scale-codesystem
 Title:           "Salary Scale"
+* ^version = "0.2.0"
 
 ValueSet:         IhrisSalaryScaleValueSet
 Id:               ihris-salary-scale-valueset
 Title:            "iHRIS Salary Scale ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisSalaryScaleCodeSystem
 
 Extension:      IhrisPractitionerRoleReasonDeparture
@@ -309,13 +311,13 @@ Title:           "Case Team"
 ValueSet:         IhrisCaseTeamValueSet
 Id:               ihris-caseteam-valueset
 Title:            "iHRIS Case Team ValueSet"
-* ^version = "0.3.0"
+* ^version = "0.2.0"
 * codes from system IhrisCaseTeamCodeSystem
 
 CodeSystem:      IhrisDirectorateCodeSystem
 Id:              ihris-directorate-codesystem
 Title:           "Directorate"
-* ^version = "0.3.0"
+* ^version = "0.2.0"
 * ^concept[0].designation[0].language = #urn:ietf:bcp:47#am
 * ^concept[0].designation[0].value = "ዳይሬክተር ጄኔራል (የሚኒስተሩ ጽ/ቤት ኃላፊ )"
 * ^concept[0].display = "Director General (Head of the Office of the Minister)"
@@ -484,7 +486,7 @@ Title:           "Directorate"
 ValueSet:         IhrisDirectorateValueSet
 Id:               ihris-directorate-valueset
 Title:            "iHRIS Directorate ValueSet"
-* ^version = "0.3.0"
+* ^version = "0.2.0"
 * codes from system IhrisDirectorateCodeSystem
 
 ValueSet:         IhrisJobEthiopiaValueset

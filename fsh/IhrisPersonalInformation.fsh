@@ -1039,8 +1039,8 @@ Usage:          #definition
 Instance:       IhrisPractitionerWorkflowPromotionEthiopia
 InstanceOf:      Questionnaire
 Usage:          #definition
-* title = "iHRIS End Role Workflow"
-* description = "iHRIS workflow to record a promotion"
+* title = "iHRIS Change Position Workflow"
+* description = "iHRIS workflow to record a Change Position"
 * id = "ihris-promotion-ethiopia"
 * url = "http://ihris.org/fhir/Questionnaire/ihris-promotion-ethiopia"
 * name = "ihris-promotion-ethiopia"
@@ -1049,73 +1049,97 @@ Usage:          #definition
 * purpose = "Workflow page for recording a promotion."
 
 * item[0].linkId = "PractitionerRole"
-* item[0].text = "Promotion Details"
+* item[0].text = "Change Position Information"
 * item[0].type = #group
 
-* item[0].item[0].linkId = "period.end"
-* item[0].item[0].text = "Position Change Date"
-* item[0].item[0].type = #dateTime
-* item[0].item[0].required = true
-* item[0].item[0].repeats = false
+* item[0].item[0].linkId = "OldPractitionerRole"
+* item[0].item[0].text = "Old Position Details"
+* item[0].item[0].type = #group
 
-* item[0].item[1].linkId = "PractitionerRole.extension[0]"
-* item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
-* item[0].item[1].text = "Reason For Change"
-* item[0].item[1].type = #choice
-* item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-reason-departure-valueset"
-* item[0].item[1].required = true
-* item[0].item[1].repeats = false
+* item[0].item[0].item[0].linkId = "period.end"
+* item[0].item[0].item[0].text = "Position Change Date"
+* item[0].item[0].item[0].type = #dateTime
+* item[0].item[0].item[0].required = true
+* item[0].item[0].item[0].repeats = false
 
-* item[0].item[2].linkId = "code"
-* item[0].item[2].text = "New Job Title"
-* item[0].item[2].type = #choice
-* item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
-* item[0].item[2].required = true
-* item[0].item[2].repeats = false
+* item[0].item[0].item[1].linkId = "PractitionerRole.extension[0]"
+* item[0].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
+* item[0].item[0].item[1].text = "Reason For Change"
+* item[0].item[0].item[1].type = #choice
+* item[0].item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-reason-departure-valueset"
+* item[0].item[0].item[1].required = true
+* item[0].item[0].item[1].repeats = false
 
-* item[0].item[3].linkId = "PractitionerRole.extension[5]"
-* item[0].item[3].text = "New Salary Scale"
-* item[0].item[3].type = #choice
-* item[0].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-scale-valueset"
-* item[0].item[3].required = true
-* item[0].item[3].repeats = false
+* item[0].item[1].linkId = "NewPractitionerRole"
+* item[0].item[1].text = "New Position Details"
+* item[0].item[1].type = #group
 
-* item[0].item[4].linkId = "PractitionerRole.extension[4]"
-* item[0].item[4].text = "New Salary"
-* item[0].item[4].type = #string
-* item[0].item[4].required = true
-* item[0].item[4].repeats = false
+* item[0].item[1].item[0].linkId = "code"
+* item[0].item[1].item[0].text = "New Job Title"
+* item[0].item[1].item[0].type = #choice
+* item[0].item[1].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
+* item[0].item[1].item[0].required = true
+* item[0].item[1].item[0].repeats = false
 
-* item[0].item[5].linkId = "PractitionerRole.location"
-* item[0].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
-* item[0].item[5].text = "Duty Post/Location"
-* item[0].item[5].type = #reference
-* item[0].item[5].required = true
-* item[0].item[5].repeats = false
+* item[0].item[1].item[1].linkId = "PractitionerRole.extension[5]"
+* item[0].item[1].item[1].text = "New Salary Scale"
+* item[0].item[1].item[1].type = #choice
+* item[0].item[1].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-scale-valueset"
+* item[0].item[1].item[1].required = true
+* item[0].item[1].item[1].repeats = false
 
-* item[0].item[6].linkId = "PractitionerRole.extension[1]"
-* item[0].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:shift.value[x]:valueCoding"
-* item[0].item[6].text = "Shift"
-* item[0].item[6].type = #choice
-* item[0].item[6].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-shift-valueset"
-* item[0].item[6].required = true
-* item[0].item[6].repeats = false
+* item[0].item[1].item[2].linkId = "PractitionerRole.extension[4]"
+* item[0].item[1].item[2].text = "New Salary"
+* item[0].item[1].item[2].type = #string
+* item[0].item[1].item[2].required = true
+* item[0].item[1].item[2].repeats = false
 
-* item[0].item[7].linkId = "PractitionerRole.extension[2]"
-* item[0].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
-* item[0].item[7].text = "Employment Status"
-* item[0].item[7].type = #choice
-* item[0].item[7].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
-* item[0].item[7].required = true
-* item[0].item[7].repeats = false
+* item[0].item[1].item[3].linkId = "PractitionerRole.location"
+* item[0].item[1].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
+* item[0].item[1].item[3].text = "Duty Post/Location"
+* item[0].item[1].item[3].type = #reference
+* item[0].item[1].item[3].required = true
+* item[0].item[1].item[3].repeats = false
 
-* item[0].item[8].linkId = "PractitionerRole.extension[3]"
-* item[0].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
-* item[0].item[8].text = "Job Type"
-* item[0].item[8].type = #choice
-* item[0].item[8].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
-* item[0].item[8].required = true
-* item[0].item[8].repeats = false
+* item[0].item[1].item[4].linkId = "PractitionerRole.extension[1]"
+* item[0].item[1].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:shift.value[x]:valueCoding"
+* item[0].item[1].item[4].text = "Shift"
+* item[0].item[1].item[4].type = #choice
+* item[0].item[1].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-shift-valueset"
+* item[0].item[1].item[4].required = true
+* item[0].item[1].item[4].repeats = false
+
+* item[0].item[1].item[5].linkId = "PractitionerRole.extension[2]"
+* item[0].item[1].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* item[0].item[1].item[5].text = "Employment Status"
+* item[0].item[1].item[5].type = #choice
+* item[0].item[1].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* item[0].item[1].item[5].required = true
+* item[0].item[1].item[5].repeats = false
+
+* item[0].item[1].item[6].linkId = "PractitionerRole.extension[3]"
+* item[0].item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
+* item[0].item[1].item[6].text = "Job Type"
+* item[0].item[1].item[6].type = #choice
+* item[0].item[1].item[6].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
+* item[0].item[1].item[6].required = true
+* item[0].item[1].item[6].repeats = false
+
+* item[0].item[1].item[7].linkId = "PractitionerRole.extension[6]"
+* item[0].item[1].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:directorate.value[x]:valueCoding"
+* item[0].item[1].item[7].text = "Directorate"
+* item[0].item[1].item[7].type = #choice
+* item[0].item[1].item[7].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
+* item[0].item[1].item[7].required = true
+* item[0].item[1].item[7].repeats = false
+
+* item[0].item[1].item[8].linkId = "PractitionerRole.extension[7]"
+* item[0].item[1].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:caseteam.value[x]:valueCoding"
+* item[0].item[1].item[8].text = "Case Team"
+* item[0].item[1].item[8].type = #choice
+* item[0].item[1].item[8].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
+* item[0].item[1].item[8].required = true
+* item[0].item[1].item[8].repeats = false
 
 Instance:       IhrisPractitionerWorkflowLeaveEthiopia
 InstanceOf:      Questionnaire

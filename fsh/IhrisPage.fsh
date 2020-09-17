@@ -271,7 +271,7 @@ Usage:          #example
 * extension[section][10].extension[resource].extension[action][2].extension[condition].valueString = "PractitionerRole.period.end.empty()"
 * extension[section][10].extension[resource].extension[action][2].extension[class].valueString = "warning"
 * extension[section][10].extension[resource].extension[action][3].extension[link].valueString = "/questionnaire/ihris-promotion-ethiopia/practitioner?practitionerrole=ITEMID"
-* extension[section][10].extension[resource].extension[action][3].extension[text].valueString = "Enter Promotion"
+* extension[section][10].extension[resource].extension[action][3].extension[text].valueString = "Change Position"
 * extension[section][10].extension[resource].extension[action][3].extension[row].valueBoolean = true
 * extension[section][10].extension[resource].extension[action][3].extension[condition].valueString = "PractitionerRole.period.end.empty()"
 * extension[section][10].extension[resource].extension[action][3].extension[class].valueString = "accent"
@@ -383,10 +383,11 @@ Usage:          #example
 * extension[section][0].extension[field][3].valueString = "PractitionerRole.extension:directorate.value[x]:valueCoding.display"
 * extension[section][0].extension[field][4].valueString = "PractitionerRole.extension:caseteam.value[x]:valueCoding.display"
 * extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
-* extension[section][0].extension[field][6].valueString = "PractitionerRole.period.start"
+* extension[section][0].extension[field][6].valueString = "PractitionerRole.period"
 * extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding.display"
 * extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:shift.value[x]:valueCoding.display"
-* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:employmentStatus.value[x]:valueCoding.display"
+* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
+* extension[section][0].extension[field][10].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
 
 Instance:       ihris-page-job
 InstanceOf:     IhrisPage
