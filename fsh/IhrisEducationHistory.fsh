@@ -153,6 +153,7 @@ Usage:          #definition
 * item[0].type = #group
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
+* item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-basic-education-history#Basic.extenstion:education.extension:institution.value[x]:valueCoding"
 * item[0].item[0].text = "Education Institution"
 * item[0].item[0].type = #reference
 * item[0].item[0].required = true
