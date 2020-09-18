@@ -34,7 +34,7 @@ Description:    "iHRIS profile of Practitioner."
 * birthDate ^label = "Birth Date"
 * gender 1..1 MS
 * gender ^label = "Gender"
-* photo MS
+* photo 0..1 MS
 * photo ^label = "Photo"
 * telecom MS
 * telecom ^label = "Telecom"
