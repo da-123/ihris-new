@@ -3,23 +3,45 @@
     <a v-if="data.method=='get'" :href="data.link">
       <img v-if="image" :src="'/images/' + image" :alt="data.btn.text" width="191" height="46"/>
     </a>
-    <v-dialog v-if="data.method=='post'" v-model="dialog" width="500">
+    <v-dialog v-if="data.method=='post'" v-model="dialog" width="800" height="200">
       <template v-slot:activator="{ on }">
         <a v-on="on">
           <img v-if="image" :src="'/images/' + image" :alt="data.btn.text" width="191" height="46"/>
         </a>
       </template>
       <v-form>
-        <v-card>
-          <v-card-title class="headline info white--text" dark primary-title>Login</v-card-title>
+        <v-card class="d-flex align-stretch" >
+        <v-card width="400" min-height="280">
+          <v-card-text align="center" justify="center">
+          <v-img :src="'/images/MOH_logo.c29ce52c.png'"  align="center" justify="center" max-width="150" max-height="132" contain/>
+          </v-card-text>
+            <v-card-text align="center" justify="center">
+              <div class="text--primary font-weight-medium">
+              ወደ HRIS እንኳን በደህና መጡ!
+              </div>
+              <div class="text--primary font-weight-medium">
+              Welcome to HRIS!<br>
+            </div>
+            </v-card-text>
+        </v-card>
+        <v-card width="400" min-height="280" color="#34495E">
+          <v-card-text align="center" justify="center">
+              <div class="white--text display-1">
+              Login<br>
+            </div>
+            </v-card-text>
           <v-card-text>
             <v-text-field 
+              color="white"
+              dark
               v-model="username" 
               label="Email Address" 
               required 
               prepend-icon="mdi-email"
             ></v-text-field>
             <v-text-field 
+              color="white"
+              dark
               v-model="password" 
               label="Password" 
               required 
@@ -30,16 +52,16 @@
               @keyup.native.enter="submit"
               ></v-text-field>
           </v-card-text>
-          <v-divider></v-divider>
+          <!--<v-divider></v-divider>-->
           <v-card-actions>
             <v-snackbar v-model="snackbar" :absolute="absolute" color="secondary">
               {{ message }}
               <v-btn color="warning" text @click="snackbar = false">Close</v-btn>
             </v-snackbar>
-            <v-spacer></v-spacer>
-            <v-btn color="success" :loading="loggingin" :disabled="loggingin" @click="submit">Login</v-btn>
+            <v-btn color="success" :loading="loggingin" :disabled="loggingin" @click="submit">Sign In</v-btn>
           </v-card-actions>
-        </v-card>
+          </v-card>
+       </v-card>
       </v-form>
     </v-dialog>
   </div>

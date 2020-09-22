@@ -507,12 +507,20 @@
           "valueString": "2030-01-01"
         },
         {
+          "name": "defaults:components:date-time:calendar",
+          "valueString": "Ethiopian"
+        },
+        {
           "name": "defaults:components:date:minValueDate",
           "valueString": "1920-01-01"
         },
         {
           "name": "defaults:components:date:maxValueDate",
           "valueString": "2030-01-01"
+        },
+        {
+          "name": "defaults:components:date:calendar",
+          "valueString": "Ethiopian"
         },
         {
           "name": "workflow:processor:endrole:file",
