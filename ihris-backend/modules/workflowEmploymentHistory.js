@@ -32,14 +32,15 @@ const workflowEmploymentHistory = {
                 && req.body.item[0].item[0].answer[0] 
                 && req.body.item[0].item[0].answer[0].valueString){
                 complexExt.push({ url: "organization",
-                valueString:req.body.item[0].item[0].answer[0].valueString })
+                valueString:req.body.item[0].item[0].answer[0].valueString
+               })
             }
             if ( req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                 && req.body.item[0].item[1].answer 
                 && req.body.item[0].item[1].answer[0] 
-                && req.body.item[0].item[1].answer[0].valueString){
+                && req.body.item[0].item[1].answer[0].valueText){
                 complexExt.push({ url: "address",
-                valueString: req.body.item[0].item[1].answer[0].valueString
+                valueString: req.body.item[0].item[1].answer[0].valueText
                             })
             }
             if ( req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
@@ -94,9 +95,9 @@ const workflowEmploymentHistory = {
             if ( req.body.item[0].item[9].linkId === "Basic.extension[0].extension[9]" 
                 && req.body.item[0].item[9].answer 
                 && req.body.item[0].item[9].answer[0] 
-                && req.body.item[0].item[9].answer[0].valueString){
+                && req.body.item[0].item[9].answer[0].valueText){
                 complexExt.push({ url: "responsibilities",
-                valueString:req.body.item[0].item[0].answer[9].valueString })
+                valueString: req.body.item[0].item[9].answer[0].valueText })
             }
             if ( req.body.item[0].item[10].linkId === "Basic.extension[0].extension[10]" 
                 && req.body.item[0].item[10].answer 
@@ -105,6 +106,7 @@ const workflowEmploymentHistory = {
                 complexExt.push({ url: "reasonLeaving",
                 valueString: req.body.item[0].item[10].answer[0].valueString
                             })
+                 winston.info(JSON.stringify( "Done reasonLeaving",null,2))
             }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-employment-history",

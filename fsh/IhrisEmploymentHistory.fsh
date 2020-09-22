@@ -146,7 +146,7 @@ Usage:          #definition
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
 * item[0].item[10].text = "Reason For Leaving"
-* item[0].item[10].type = #text
+* item[0].item[10].type = #string
 * item[0].item[10].required = true
 * item[0].item[10].repeats = false
 
