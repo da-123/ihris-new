@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-10T11:18:18.577Z",
+        "when": "2020-09-22T09:01:50.088Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "uOonpGkS9mHuh4JLiKBu+Q0W5kS8eXZsqKWGoL+NlehNzUHs5lrv+JuiTL8W+9vmWE1zDdu7WWZQ0nuATrcLbOXBc8/8aXLzaXd5H+/OYECpnOE0F2tT2HR9Wgj4AKxEAxrr61nDYswbAkqojGnEnYVCXSir4pzMd03nqH3LO74="
+        "data": "LM2KGL6AQ1Ad/Lv8w8z0brjPuD4B6/6SpOzYe+BpOuMdo1r5WzQOI1eTtlQP48qEgOC7V/9MIoJuyDfrBoTGDLCB0VlvS3iXgHSwmFCrlJrAeZCVLWFtI+QBJsGwTHy6a1WMXI9m11Ijn9Wx1AMaIy5/8E1GUhQtGS3wOEqRznc="
       }
     },
     {
@@ -569,6 +569,14 @@
         {
           "name": "workflow:questionnaire:performance:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-performance"
+        },
+        {
+          "name": "workflow:processor:employment:file",
+          "valueString": "../modules/workflowEmploymentHistory"
+        },
+        {
+          "name": "workflow:questionnaire:employment:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-employment-history"
         }
       ]
     }

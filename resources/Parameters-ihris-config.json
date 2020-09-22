@@ -553,6 +553,14 @@
         {
           "name": "workflow:questionnaire:performance:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-performance"
+        },
+        {
+          "name": "workflow:processor:employment:file",
+          "valueString": "../modules/workflowEmploymentHistory"
+        },
+        {
+          "name": "workflow:questionnaire:employment:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-employment-history"
         }
       ]
     }
