@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-22T17:42:40.797Z",
+        "when": "2020-09-24T09:01:05.612Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "adZigpRT/a7uTWM5ZM0ATlA/ydBxzcSK6Zs/yUS7swd16wV2ULq6nYkN8yqqLd4GqBnPZclIkeqD/cmp0ng6FDQQd/Qt4x6KwxUiMUKwRtoVFQovT05eXrrBvs4KPmJ86luIt2bExoOFrJXDOVZYzcRlyqPgg87GLzV6OkDJ5RQ="
+        "data": "RPkTpNq2giL76SqLOyVI5j4vMorIOrYUArZiFG+JMPGEerjNw9EDw2CwgFaWei+EcnYBfBnbzdHjiTqhiUnE/wiJWOtFeR2Np5M9Z2H4pBoH+iMzs7Nj4KsxIElmbgTsJEgKxsRqC1Ye23PT2MIOeiJPNVvkQIalSFgXZsx+Afs="
       }
     },
     {
@@ -57,26 +57,6 @@
         {
           "name": "site:auth:local:btn:text",
           "valueString": "Sign in with iHRIS"
-        },
-        {
-          "name": "site:auth:google:method",
-          "valueString": "get"
-        },
-        {
-          "name": "site:auth:google:link",
-          "valueString": "/auth/google"
-        },
-        {
-          "name": "site:auth:google:btn:image",
-          "valueString": "btn_google_signin_light_normal_web.png"
-        },
-        {
-          "name": "site:auth:google:btn:image2x",
-          "valueString": "btn_google_signin_dark_normal_web@2x.png"
-        },
-        {
-          "name": "site:auth:google:btn:text",
-          "valueString": "Sign in with Google"
         },
         {
           "name": "site:footer:links:about:text",
