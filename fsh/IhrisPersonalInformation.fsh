@@ -626,21 +626,6 @@ Usage:          #definition
 * item[0].item[5].required = true
 * item[0].item[5].repeats = false
 
-* item[0].item[6].linkId = "Practitioner.extension[1]"
-* item[0].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:nationality.value[x]:valueCoding"
-* item[0].item[6].text = "Nationality"
-* item[0].item[6].type = #choice
-* item[0].item[6].answerValueSet = "http://hl7.org/fhir/ValueSet/iso3166-1-2"
-* item[0].item[6].required = false
-* item[0].item[6].repeats = false
-
-* item[0].item[7].linkId = "Practitioner.extension[2]"
-* item[0].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:residence.value[x]:valueReference"
-* item[0].item[7].text = "Residence"
-* item[0].item[7].type = #reference
-* item[0].item[7].required = false
-* item[0].item[7].repeats = false
-
 * item[0].item[8].linkId = "__Practitioner:demographic"
 * item[0].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
 * item[0].item[8].text = "Demographic Information"
@@ -668,6 +653,29 @@ Usage:          #definition
 * item[0].item[8].item[2].answerValueSet = "http://hl7.org/fhir/ValueSet/marital-status"
 * item[0].item[8].item[2].required = false
 * item[0].item[8].item[2].repeats = false
+
+* item[0].item[8].item[3].linkId = "Practitioner.extension[1]"
+* item[0].item[8].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:nationality.value[x]:valueCoding"
+* item[0].item[8].item[3].text = "Nationality"
+* item[0].item[8].item[3].type = #choice
+* item[0].item[8].item[3].answerValueSet = "http://hl7.org/fhir/ValueSet/iso3166-1-2"
+* item[0].item[8].item[3].required = false
+* item[0].item[8].item[3].repeats = false
+
+* item[0].item[8].item[4].linkId = "Practitioner.extension[9]"
+* item[0].item[8].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethnicity.value[x]:valueCoding"
+* item[0].item[8].item[4].text = "Ethnicity"
+* item[0].item[8].item[4].type = #choice
+* item[0].item[8].item[4].answerValueSet = "http://hl7.org/fhir/ValueSet/ihris-Ethnicity-valueset"
+* item[0].item[8].item[4].required = false
+* item[0].item[8].item[4].repeats = false
+
+* item[0].item[8].item[5].linkId = "Practitioner.extension[2]"
+* item[0].item[8].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:residence.value[x]:valueReference"
+* item[0].item[8].item[5].text = "Residence"
+* item[0].item[8].item[5].type = #reference
+* item[0].item[8].item[5].required = false
+* item[0].item[8].item[5].repeats = false
 
 * item[0].item[9].linkId = "__Practitioner:identifier"
 * item[0].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"

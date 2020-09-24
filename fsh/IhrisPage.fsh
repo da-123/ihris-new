@@ -800,13 +800,13 @@ Usage:          #example
 * extension[section][0].extension[description].valueString = "Education History details"
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "extension:practitioner"
-* extension[section][0].extension[field][1].valueString = "extension:educationHistory.extension:institution.value[x]:valueReference"
+* extension[section][0].extension[field][1].valueString = "extension:educationHistory.extension:institution.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "extension:educationHistory.extension:degree.value[x]:valueCoding"
 * extension[section][0].extension[field][3].valueString = "extension:educationHistory.extension:level.value[x]:valueCoding"
 * extension[section][0].extension[field][4].valueString = "extension:educationHistory.extension:educationalMajor.value[x]:valueCoding"
 * extension[section][0].extension[field][5].valueString = "extension:educationHistory.extension:year.value[x]:valueDate"
 
-Instance:       ihris-page-institution
+/*Instance:       ihris-page-institution
 InstanceOf:     IhrisPage
 Title:          "iHRIS Institution Page"
 Usage:          #example
@@ -823,7 +823,7 @@ Usage:          #example
 * extension[section][0].extension[field][1].valueString = "Location.extension:institutionType.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "Location.telecom"
 * extension[section][0].extension[field][3].valueString = "Location.address"
-* extension[section][0].extension[field][4].valueString = "Location.partOf"
+* extension[section][0].extension[field][4].valueString = "Location.partOf"*/
 
 Instance:       ihris-page-degree
 InstanceOf:     IhrisPage

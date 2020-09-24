@@ -30,9 +30,9 @@ const workflowEducationHistory = {
             if ( req.body.item[0].item[0].linkId === "Basic.extension[0].extension[0]" 
                 && req.body.item[0].item[0].answer 
                 && req.body.item[0].item[0].answer[0] 
-                && req.body.item[0].item[0].answer[0].valueReference){
+                && req.body.item[0].item[0].answer[0].valueCoding){
                 complexExt.push({ url: "institution",
-                valueReference: { reference:req.body.item[0].item[0].answer[0].valueReference }})
+                valueCoding: req.body.item[0].item[0].answer[0].valueCoding })
             }
             if ( req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                 && req.body.item[0].item[1].answer 

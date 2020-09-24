@@ -7,8 +7,8 @@ Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisEducationHistory named educationHistory 1..1 MS
-* extension[educationHistory].extension[institution].valueReference MS
-* extension[educationHistory].extension[institution].valueReference ^label = "Institution"
+* extension[educationHistory].extension[institution].valueCoding MS
+* extension[educationHistory].extension[institution].valueCoding ^label = "Institution"
 * extension[educationHistory].extension[degree].valueCoding ^label = "Degree"
 * extension[educationHistory].extension[degree].valueCoding MS
 * extension[educationHistory].extension[level].valueCoding ^label = "Education Level"
@@ -27,9 +27,9 @@ Title:          "Education History details"
       level 0..1 MS and
       educationalMajor 0..1 MS and
       year 0..1 MS
-* extension[institution].value[x] only Reference
-* extension[institution].valueReference only Reference(IhrisInstitution)
-* extension[institution].valueReference ^label = "Institution"
+* extension[institution].value[x] only Coding
+* extension[institution].valueCoding from IhrisInstitutionValueSet
+* extension[institution].valueCoding ^label = "Institution"
 * extension[degree].value[x] only Coding
 * extension[degree].valueCoding ^label = "Degree"
 * extension[degree].valueCoding from IhrisDegreeValueSet (required)
@@ -66,9 +66,24 @@ Title:           "Education Level"
 ValueSet:         IhrisEducationLevelValueSet
 Id:               ihris-education-level-valueset
 Title:            "iHRIS Education Level ValueSet"
+* ^version = "0.2.0"
 * codes from system IhrisEducationLevel
 
-Profile:        IhrisInstitution
+CodeSystem:      IhrisInstitution
+Id:              ihris-institution
+Title:           "Institution"
+* ^version = "0.2.0"
+* ^property[0].code = #region
+* ^property[0].description = "Region"
+* ^property[0].type = #string
+
+ValueSet:         IhrisInstitutionValueSet
+Id:               ihris-institution-valueset
+Title:            "iHRIS Institution Value Set"
+* codes from system IhrisInstitution
+
+
+/*Profile:        IhrisInstitution
 Parent:         Location
 Id:             ihris-institution
 Title:          "Education Institution"
@@ -134,7 +149,7 @@ Title:           "Institution Type"
 ValueSet:         IhrisInstitutionTypeValueSet
 Id:               ihris-institution-type-valueset
 Title:            "iHRIS Institution Type Value Set"
-* codes from system IhrisInstitutionType
+* codes from system IhrisInstitutionType*/
 
 Instance:       IhrisPractitionerWorkflowEducationHistory
 InstanceOf:      Questionnaire
@@ -153,9 +168,9 @@ Usage:          #definition
 * item[0].type = #group
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
-* item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-basic-education-history#Basic.extenstion:education.extension:institution.value[x]:valueCoding"
+* item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-institution-valueset"
 * item[0].item[0].text = "Education Institution"
-* item[0].item[0].type = #reference
+* item[0].item[0].type = #choice
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
@@ -185,3 +200,22 @@ Usage:          #definition
 * item[0].item[4].type = #date
 * item[0].item[4].required = true
 * item[0].item[4].repeats = false
+
+Instance:       ihris-page-institution
+InstanceOf:     IhrisPage
+Title:          "iHRIS Institution CodeSystem Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-institution)
+* extension[display].extension[search][0].valueString = "Code|code"
+* extension[display].extension[search][1].valueString = "Display|display"
+* extension[display].extension[search][2].valueString = "Region|region"
+* extension[display].extension[field][0].extension[path].valueString = "CodeSystem.code"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Education Institution"
+* extension[section][0].extension[description].valueString = "Education Institution"
+* extension[section][0].extension[name].valueString = "CodeSystem"
+* extension[section][0].extension[field][0].valueString = "CodeSystem.code"
+* extension[section][0].extension[field][1].valueString = "CodeSystem.definition"
+* extension[section][0].extension[field][2].valueString = "CodeSystem.display"
+* extension[section][0].extension[field][3].valueString = "CodeSystem.region"
