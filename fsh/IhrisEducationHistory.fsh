@@ -80,6 +80,7 @@ Title:           "Institution"
 ValueSet:         IhrisInstitutionValueSet
 Id:               ihris-institution-valueset
 Title:            "iHRIS Institution Value Set"
+* ^version = "0.2.0"
 * codes from system IhrisInstitution
 
 
