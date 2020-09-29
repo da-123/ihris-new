@@ -171,12 +171,14 @@ Description:    "iHRIS extension for Job Description Salary Scale."
 CodeSystem:      IhrisSalaryScaleCodeSystem
 Id:              ihris-salary-scale-codesystem
 Title:           "Salary Scale"
-* ^version = "0.2.0"
+* ^date = "2020-09-29T08:41:04.362Z"
+* ^version = "0.3.0"
 
 ValueSet:         IhrisSalaryScaleValueSet
 Id:               ihris-salary-scale-valueset
 Title:            "iHRIS Salary Scale ValueSet"
-* ^version = "0.2.0"
+* ^date = "2020-09-29T08:41:04.362Z"
+* ^version = "0.3.0"
 * codes from system IhrisSalaryScaleCodeSystem
 
 Extension:      IhrisPractitionerRoleReasonDeparture
