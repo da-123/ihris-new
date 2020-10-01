@@ -23,8 +23,8 @@ router.post("/send-message", function (req, res, next) {
   let payload = []
   if (data.workflow) {
     payload.push({
-      contentAttachment: {
-        url: data.workflow
+      contentReference: {
+        reference: 'Basic/' + data.workflow
       }
     })
   } else if (data.sms) {
@@ -37,7 +37,7 @@ router.post("/send-message", function (req, res, next) {
     recipient: recipients,
     resourceType: "CommunicationRequest"
   };
-  if(data.cronExpression) {
+  if(data.frequency === 'recurring' || (data.frequency === 'once' && data.sendTimeCategory === 'later')) {
     if(!communicationReq.meta) {
       communicationReq.meta = {}
     }
@@ -48,9 +48,25 @@ router.post("/send-message", function (req, res, next) {
       communicationReq.extension = []
     }
     communicationReq.meta.profile.push("http://mhero.org/fhir/StructureDefinition/mhero-communication-request")
-    communicationReq.extension.push({
-      url: "http://mhero.org/fhir/StructureDefinition/recurrance-cron-expression",
+    let extension = []
+    let freq = {
+      url: 'frequency',
+      valueString: data.frequency
+    }
+    extension.push(freq)
+    if(data.sendTimeCategory) {
+      extension.push({
+        url: 'sendCategory',
+        valueString: data.sendTimeCategory
+      })
+    }
+    extension.push({
+      url: 'cronExpression',
       valueString: data.cronExpression
+    })
+    communicationReq.extension.push({
+      url: "http://mhero.org/fhir/StructureDefinition/sms-cron-expression-schedule",
+      extension
     })
   }
   let url = URI(nconf.get("emnutt:base")).segment('CommunicationRequest');
@@ -66,6 +82,22 @@ router.post("/send-message", function (req, res, next) {
     res.status(500).send(err);
   });
 });
+
+router.post('/cancel-message-schedule', (req, res) => {
+  let schedules = req.body.schedules
+  let url = URI(nconf.get("emnutt:base")).segment('cancelMessageSchedule');
+  axios.post(url.toString(), {schedules}, {
+    withCredentials: true,
+    auth: {
+      username: nconf.get("emnutt:username"),
+      password: nconf.get("emnutt:password")
+    }
+  }).then(response => {
+    res.status(201).json(response.data);
+  }).catch(err => {
+    res.status(500).send(err);
+  });
+})
 
 router.post('/subscribe-contact-groups', (req, res) => {
   let subscriptionsData = req.body
