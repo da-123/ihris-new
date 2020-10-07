@@ -750,7 +750,7 @@ Usage:          #definition
 * item[0].item[8].item[3].required = false
 * item[0].item[8].item[3].repeats = false
 
-* item[0].item[8].item[4].linkId = "Practitioner.extension[9]"
+* item[0].item[8].item[4].linkId = "Practitioner.extension[8]"
 * item[0].item[8].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethnicity.value[x]:valueCoding"
 * item[0].item[8].item[4].text = "Ethnicity"
 * item[0].item[8].item[4].type = #choice
@@ -986,52 +986,40 @@ Usage:          #definition
 
 * item[0].item[12].linkId = "__Practitioner:trainining"
 * item[0].item[12].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:educationalMajor"
-* item[0].item[12].text = "Training Details|Training and Professional License information"
+* item[0].item[12].text = "Training Details|Training information"
 * item[0].item[12].type = #group
 
-* item[0].item[12].item[0].linkId = "Practitioner:professionalLicenseCategory"
-* item[0].item[12].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory"
-* item[0].item[12].item[0].text = "License Details|Professional license category"
+* item[0].item[12].item[0].linkId = "Practitioner:specialTraining"
+* item[0].item[12].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining"
+* item[0].item[12].item[0].text = "Training Details|Special training information"
 * item[0].item[12].item[0].type = #group
 
 * item[0].item[12].item[0].item[0].linkId = "Practitioner.extension[4]"
-* item[0].item[12].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:professionalLicenseCategory.value[x]:valueString"
-* item[0].item[12].item[0].item[0].text = "Professional License Category"
+* item[0].item[12].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining.value[x]:valueString"
+* item[0].item[12].item[0].item[0].text = "Special Training"
 * item[0].item[12].item[0].item[0].type = #string
-* item[0].item[12].item[0].item[0].required = true
+* item[0].item[12].item[0].item[0].required = false
 * item[0].item[12].item[0].item[0].repeats = true
 
-* item[0].item[12].item[1].linkId = "Practitioner:specialTraining"
-* item[0].item[12].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining"
-* item[0].item[12].item[1].text = "Training Details|Special training information"
+* item[0].item[12].item[1].linkId = "Practitioner:category"
+* item[0].item[12].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
+* item[0].item[12].item[1].text = "Category Details|Category information"
 * item[0].item[12].item[1].type = #group
 
 * item[0].item[12].item[1].item[0].linkId = "Practitioner.extension[5]"
-* item[0].item[12].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining.value[x]:valueString"
-* item[0].item[12].item[1].item[0].text = "Special Training"
-* item[0].item[12].item[1].item[0].type = #string
+* item[0].item[12].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category.value[x]:valueCoding"
+* item[0].item[12].item[1].item[0].text = "Category"
+* item[0].item[12].item[1].item[0].type = #choice
+* item[0].item[12].item[1].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-category-valueset"
 * item[0].item[12].item[1].item[0].required = false
-* item[0].item[12].item[1].item[0].repeats = true
-
-* item[0].item[12].item[2].linkId = "Practitioner:category"
-* item[0].item[12].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
-* item[0].item[12].item[2].text = "Category Details|Category information"
-* item[0].item[12].item[2].type = #group
-
-* item[0].item[12].item[2].item[0].linkId = "Practitioner.extension[6]"
-* item[0].item[12].item[2].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category.value[x]:valueCoding"
-* item[0].item[12].item[2].item[0].text = "Category"
-* item[0].item[12].item[2].item[0].type = #choice
-* item[0].item[12].item[2].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-category-valueset"
-* item[0].item[12].item[2].item[0].required = false
-* item[0].item[12].item[2].item[0].repeats = false
+* item[0].item[12].item[1].item[0].repeats = false
 
 * item[0].item[13].linkId = "__Practitioner:remarkNote"
 * item[0].item[13].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote"
 * item[0].item[13].text = "Remarks|Remarks or notes"
 * item[0].item[13].type = #group
 
-* item[0].item[13].item[0].linkId = "Practitioner.extension[7]"
+* item[0].item[13].item[0].linkId = "Practitioner.extension[6]"
 * item[0].item[13].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote.value[x]:valueString"
 * item[0].item[13].item[0].text = "Remark Note"
 * item[0].item[13].item[0].type = #text
@@ -1043,7 +1031,7 @@ Usage:          #definition
 * item[0].item[14].text = "Photo|Person's Passport Photo"
 * item[0].item[14].type = #group
 
-* item[0].item[14].item[0].linkId = "Practitioner.extension[8]"
+* item[0].item[14].item[0].linkId = "Practitioner.extension[7]"
 * item[0].item[14].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
 * item[0].item[14].item[0].text = "Photo"
 * item[0].item[14].item[0].type = #attachment
