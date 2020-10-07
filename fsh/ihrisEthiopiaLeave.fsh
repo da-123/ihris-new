@@ -70,3 +70,85 @@ Id:               ihris-leave-type-valueset
 Title:            "iHRIS leave Type ValueSet"
 * ^version = "0.2.0"
 * codes from system IhrisLeaveTypeCodeSystem
+
+Instance:       IhrisPractitionerWorkflowLeaveEthiopia
+InstanceOf:      Questionnaire
+Usage:          #definition
+* title = "iHRIS Leave Workflow"
+* description = "iHRIS workflow to record a leave"
+* id = "ihris-leave-ethiopia"
+* url = "http://ihris.org/fhir/Questionnaire/ihris-leave-ethiopia"
+* name = "ihris-leave-ethiopia"
+* status = #active
+* date = 2020-08-20
+* purpose = "Workflow page for recording a leave information."
+
+* item[0].linkId = "Basic"
+* item[0].text = "Leave Details"
+* item[0].type = #group
+
+* item[0].item[0].linkId = "Basic.extension[0].extension[0]"
+* item[0].item[0].text = "Leave Type"
+* item[0].item[0].type = #choice
+* item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
+* item[0].item[0].required = true
+* item[0].item[0].repeats = false
+
+* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
+* item[0].item[1].text = "Start Date"
+* item[0].item[1].type = #dateTime
+* item[0].item[1].required = true
+* item[0].item[1].repeats = false
+
+* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
+* item[0].item[2].text = "End Date"
+* item[0].item[2].type = #dateTime
+* item[0].item[2].required = true
+* item[0].item[2].repeats = false
+
+/** item[0].item[3].linkId = "Basic.extension[0].extension[3]"
+* item[0].item[3].text = "Days Requested"
+* item[0].item[3].type = #integer
+* item[0].item[3].required = true
+* item[0].item[3].repeats = false*/
+
+* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
+* item[0].item[4].text = "Date Requested"
+* item[0].item[4].type = #date
+* item[0].item[4].required = true
+* item[0].item[4].repeats = false
+
+Instance:       ihris-page-basicleave
+InstanceOf:     IhrisPage
+Title:          "iHRIS Basic Leave Ethiopia Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-ethiopia-leave)
+* extension[display].extension[link][0].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][0].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link][0].extension[button].valueBoolean = true
+* extension[display].extension[link][0].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][0].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
+* extension[display].extension[link][1].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][1].extension[text].valueString = "Add Another"
+* extension[display].extension[link][1].extension[button].valueBoolean = true
+* extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-leave-ethiopia/practitioner?practitioner=FIELD"
+* extension[display].extension[search][0].valueString = "Leave Type|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='leave-type').valueCoding"
+* extension[display].extension[search][1].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.start"
+* extension[display].extension[search][2].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.end"
+* extension[display].extension[search][3].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[search][4].valueString = "Days Requested|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='daysRequested').valuePositiveInt"
+* extension[display].extension[search][5].valueString = "Date Requested|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='dateRequested').valueDate"
+* extension[display].extension[filter][0].valueString = "Leave Type|code|http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
+* extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Leave"
+* extension[section][0].extension[description].valueString = "Leave details"
+* extension[section][0].extension[name].valueString = "Basic"
+* extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
+* extension[section][0].extension[field][1].valueString = "Basic.extension:ethiopiaLeave.extension:leave-type.value[x]:valueCoding"
+* extension[section][0].extension[field][2].valueString = "Basic.extension:ethiopiaLeave.extension:daysRequested.value[x]:valueInteger"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod"
+/* extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod.end"*/
+* extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:dateRequested.value[x]:valueDate"

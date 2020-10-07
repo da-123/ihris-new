@@ -31,9 +31,10 @@ Description:    "iHRIS profile of Practitioner."
 * name.suffix 0..0
 /* name.suffix ^label = "Suffix" */
 * birthDate MS
-* birthDate ^label = "Birth Date"
+* birthDate ^label = "Date of Birth"
 * gender 1..1 MS
 * gender ^label = "Gender"
+* gender from IhrisEthiopiaGenderValueSet (required)
 * photo 0..1 MS
 * photo ^label = "Photo"
 * telecom MS
@@ -53,6 +54,8 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerProfessionalLicenseCategory named professionalLicenseCategory 0..* MS and
     IhrisPractitionerMaritalStatus named maritalStatus 0..1 MS and
     IhrisPractitionerDependents named dependents 0..* MS and
+    IhrisPractitionerEmergencyContact named emergencyContact 0..1 MS and
+    IhrisPractitionerCollateral named collateral 0..1 MS and
     IhrisPractitionerSpecialTraining named specialTraining 0..* MS and
     IhrisPractitionerRemarkNote named remarkNote 0..* MS and
     IhrisPractitionerResidence named residence 0..1 MS and
@@ -74,7 +77,17 @@ Description:    "iHRIS profile of Practitioner."
 * extension[dependents].extension[birthDate].valueDate MS
 * extension[dependents].extension[relationship].valueCoding MS
 * extension[dependents].extension[gender].valueCode MS
-* extension[maritalStatus].valueCoding MS
+* extension[emergencyContact] ^label = "Emergency Contact"
+* extension[emergencyContact].extension[name].valueString MS
+* extension[emergencyContact].extension[phone].valueString MS
+* extension[emergencyContact].extension[relation].valueCoding MS
+* extension[emergencyContact].extension[address].valueAddress MS
+* extension[collateral] ^label = "Collateral"
+* extension[collateral].extension[name].valueString MS
+* extension[collateral].extension[phone].valueString MS
+* extension[collateral].extension[relation].valueCoding MS
+* extension[collateral].extension[address].valueAddress MS
+* extension[maritalStatus].valueCoding MS  
 * extension[maritalStatus] ^label = "Marital Status"
 * extension[specialTraining].valueString  MS
 * extension[specialTraining] ^label = "Special Training"
@@ -366,7 +379,69 @@ Description:    "iHRIS extension for Practitioner marital status."
 * value[x] only Coding
 * valueCoding 1..1 MS
 * valueCoding ^label = "Marital Status"
-* valueCoding from http://hl7.org/fhir/ValueSet/marital-status (required)
+* valueCoding from IhrisEthiopiaMaritalStatusValueSet (required)
+
+CodeSystem:      IhrisEthiopiaMaritalStatusCodeSystem
+Id:              ihris-marital-status-codesystem
+Title:           "Marital Status"
+* #single "Single"
+* #married "Married"
+* #divorced "Divorced"
+* #widowed "Widowed"
+* #separated  "Separated"
+
+ValueSet:         IhrisEthiopiaMaritalStatusValueSet
+Id:               ihris-marital-status-valueset
+Title:            "iHRIS Marital ValueSet"
+* codes from system IhrisEthiopiaMaritalStatusCodeSystem
+
+Extension:      IhrisPractitionerEmergencyContact
+Id:             ihris-practitioner-emergencyContact
+Title:          "iHRIS Practitioner emergencyContact"
+Description:    "iHRIS extension for Practitioner emergencyContact."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains name 1..1 MS and
+    phone 1..1 MS and
+    relation 1..1 MS and
+    address 1..1 MS
+* extension[name].value[x] only string
+* extension[name].valueString 1..1 MS
+* extension[name].valueString ^label = "Name"
+* extension[phone].value[x] only string
+* extension[phone].valueString 1..1 MS
+* extension[phone].valueString ^label = "Phone Number"
+* extension[relation].value[x] only Coding
+* extension[relation].valueCoding 1..1 MS
+* extension[relation].valueCoding ^label = "Relation"
+* extension[relation].valueCoding from IhrisEthiopiaRelationValueSet (required)
+* extension[address].value[x] only Address
+* extension[address].valueAddress 1..1 MS
+* extension[address].valueAddress ^label = "Address"
+
+Extension:      IhrisPractitionerCollateral
+Id:             ihris-practitioner-collateral
+Title:          "iHRIS Practitioner Collateral"
+Description:    "iHRIS extension for Practitioner Collateral."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains name 1..1 MS and
+    phone 1..1 MS and
+    relation 1..1 MS and
+    address 1..1 MS
+* extension[name].value[x] only string
+* extension[name].valueString 1..1 MS
+* extension[name].valueString ^label = "Name"
+* extension[phone].value[x] only string
+* extension[phone].valueString 1..1 MS
+* extension[phone].valueString ^label = "Phone Number"
+* extension[relation].value[x] only Coding
+* extension[relation].valueCoding 1..1 MS
+* extension[relation].valueCoding ^label = "Relation"
+* extension[relation].valueCoding from IhrisEthiopiaRelationValueSet (required)
+* extension[address].value[x] only Address
+* extension[address].valueAddress 1..1 MS
+* extension[address].valueAddress ^label = "Address"
 
 Extension:      IhrisPractitionerDependents
 Id:             ihris-practitioner-dependents
@@ -390,7 +465,7 @@ Description:    "iHRIS extension for Practitioner dependents."
 * extension[relationship].valueCoding from IhrisEthiopiaRelationValueSet (required)
 * extension[gender].value[x] only code
 * extension[gender].valueCode 1..1 MS
-* extension[gender].valueCode from http://hl7.org/fhir/ValueSet/administrative-gender (required)
+* extension[gender].valueCode from IhrisEthiopiaGenderValueSet (required)
 * extension[gender].valueCode ^label = "Dependent's Gender"
 
 CodeSystem:      IhrisEthiopiaRelationCodesystem
@@ -408,6 +483,19 @@ Id:               ihris-relation-valueset
 Title:            "iHRIS Relationship ValueSet"
 * ^version = "0.2.0"
 * codes from system IhrisEthiopiaRelationCodesystem
+
+CodeSystem:      IhrisEthiopiaGenderCodesystem
+Id:              ihris-gender-codesystem
+Title:           "Gender"
+* ^version = "0.2.0"
+* #male "Male" "Male"
+* #female "Female" "Female"
+
+ValueSet:         IhrisEthiopiaGenderValueSet
+Id:               ihris-gender-valueset
+Title:            "iHRIS Gender ValueSet"
+* ^version = "0.2.0"
+* codes from system IhrisEthiopiaGenderCodesystem
 
 Extension:      IhrisPractitionerEthnicity
 Id:             ihris-practitioner-ethnicity
@@ -633,7 +721,7 @@ Usage:          #definition
 
 * item[0].item[8].item[0].linkId = "Practitioner.birthDate"
 * item[0].item[8].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.birthDate"
-* item[0].item[8].item[0].text = "Birth Date"
+* item[0].item[8].item[0].text = "Date of Birth"
 * item[0].item[8].item[0].type = #date
 * item[0].item[8].item[0].required = true
 * item[0].item[8].item[0].repeats = false
@@ -642,7 +730,7 @@ Usage:          #definition
 * item[0].item[8].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.gender"
 * item[0].item[8].item[1].text = "Gender"
 * item[0].item[8].item[1].type = #choice
-* item[0].item[8].item[1].answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
+* item[0].item[8].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-gender-valueset"
 * item[0].item[8].item[1].required = true
 * item[0].item[8].item[1].repeats = false
 
@@ -650,7 +738,7 @@ Usage:          #definition
 * item[0].item[8].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:maritalStatus.value[x]:valueCoding"
 * item[0].item[8].item[2].text = "Marital Status"
 * item[0].item[8].item[2].type = #choice
-* item[0].item[8].item[2].answerValueSet = "http://hl7.org/fhir/ValueSet/marital-status"
+* item[0].item[8].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-marital-status-valueset"
 * item[0].item[8].item[2].required = false
 * item[0].item[8].item[2].repeats = false
 
@@ -669,13 +757,6 @@ Usage:          #definition
 * item[0].item[8].item[4].answerValueSet = "http://hl7.org/fhir/ValueSet/ihris-Ethnicity-valueset"
 * item[0].item[8].item[4].required = false
 * item[0].item[8].item[4].repeats = false
-
-* item[0].item[8].item[5].linkId = "Practitioner.extension[2]"
-* item[0].item[8].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:residence.value[x]:valueReference"
-* item[0].item[8].item[5].text = "Residence"
-* item[0].item[8].item[5].type = #reference
-* item[0].item[8].item[5].required = false
-* item[0].item[8].item[5].repeats = false
 
 * item[0].item[9].linkId = "__Practitioner:identifier"
 * item[0].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
@@ -883,6 +964,13 @@ Usage:          #definition
 * item[0].item[10].item[1].item[2].required = true
 * item[0].item[10].item[1].item[2].repeats = false
 
+* item[0].item[10].item[2].linkId = "Practitioner.extension[2]"
+* item[0].item[10].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:residence.value[x]:valueReference"
+* item[0].item[10].item[2].text = "Residence"
+* item[0].item[10].item[2].type = #reference
+* item[0].item[10].item[2].required = false
+* item[0].item[10].item[2].repeats = false
+
 * item[0].item[11].linkId = "__Practitioner:communication"
 * item[0].item[11].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication"
 * item[0].item[11].text = "Language Details|Languages spoken"
@@ -898,7 +986,7 @@ Usage:          #definition
 
 * item[0].item[12].linkId = "__Practitioner:trainining"
 * item[0].item[12].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:educationalMajor"
-* item[0].item[12].text = "Education Details|Education, Training and License information"
+* item[0].item[12].text = "Training Details|Training and Professional License information"
 * item[0].item[12].type = #group
 
 * item[0].item[12].item[0].linkId = "Practitioner:professionalLicenseCategory"
@@ -1148,50 +1236,3 @@ Usage:          #definition
 * item[0].item[1].item[8].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
 * item[0].item[1].item[8].required = true
 * item[0].item[1].item[8].repeats = false
-
-Instance:       IhrisPractitionerWorkflowLeaveEthiopia
-InstanceOf:      Questionnaire
-Usage:          #definition
-* title = "iHRIS Leave Workflow"
-* description = "iHRIS workflow to record a leave"
-* id = "ihris-leave-ethiopia"
-* url = "http://ihris.org/fhir/Questionnaire/ihris-leave-ethiopia"
-* name = "ihris-leave-ethiopia"
-* status = #active
-* date = 2020-08-20
-* purpose = "Workflow page for recording a leave information."
-
-* item[0].linkId = "Basic"
-* item[0].text = "Leave Details"
-* item[0].type = #group
-
-* item[0].item[0].linkId = "Basic.extension[0].extension[0]"
-* item[0].item[0].text = "Leave Type"
-* item[0].item[0].type = #choice
-* item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
-* item[0].item[0].required = true
-* item[0].item[0].repeats = false
-
-* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
-* item[0].item[1].text = "Start Date"
-* item[0].item[1].type = #dateTime
-* item[0].item[1].required = true
-* item[0].item[1].repeats = false
-
-* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
-* item[0].item[2].text = "End Date"
-* item[0].item[2].type = #dateTime
-* item[0].item[2].required = true
-* item[0].item[2].repeats = false
-
-/** item[0].item[3].linkId = "Basic.extension[0].extension[3]"
-* item[0].item[3].text = "Days Requested"
-* item[0].item[3].type = #integer
-* item[0].item[3].required = true
-* item[0].item[3].repeats = false*/
-
-* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
-* item[0].item[4].text = "Date Requested"
-* item[0].item[4].type = #date
-* item[0].item[4].required = true
-* item[0].item[4].repeats = false

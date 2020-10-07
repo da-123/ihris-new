@@ -20,8 +20,8 @@ Description:    "iHRIS profile of Practitioner."
 * healthcareService 0..0
 * telecom 0..0
 * location 1..1 MS
-* location ^label = "Duty Post"
-* location.reference ^label = "Duty Post"
+* location ^label = "Place Of Work"
+* location.reference ^label = "Place Of Work"
 * code 1..1 MS
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)
@@ -657,6 +657,42 @@ Title:           "Job Title"
 * ^concept[35].display = "Public Health Professional Specialist IV"
 * ^concept[35].code = #PHPSIV
 
+Instance:       ihris-page-practitionerrole
+InstanceOf:     IhrisPage
+Title:          "iHRIS PractitionerRole Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-job-description)
+* extension[display].extension[link].extension[field].valueString = "PractitionerRole.practitioner.reference"
+* extension[display].extension[link].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link].extension[button].valueBoolean = true
+* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
+* extension[display].extension[search][0].valueString = "Job|PractitionerRole.code[0].coding[0]"
+* extension[display].extension[search][1].valueString = "Start Date|PractitionerRole.period.start"
+* extension[display].extension[search][2].valueString = "Practitioner|PractitionerRole.practitioner"
+* extension[display].extension[search][3].valueString = "Facility|PractitionerRole.location"
+* extension[display].extension[filter][0].valueString = "Job|code|http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
+* extension[display].extension[filter][1].valueString = "Facility|PractitionerRole.location:location"
+* extension[display].extension[filter][2].valueString = "Directorate|PractitionerRole.extension:directorate.value[x]:valueCoding|http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
+* extension[display].extension[filter][3].valueString = "Case Team|PractitionerRole.extension:caseteam.value[x]:valueCoding|http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
+* extension[display].extension[field][0].extension[path].valueString = "PractitionerRole.practitioner"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Position"
+* extension[section][0].extension[description].valueString = "Position details"
+* extension[section][0].extension[name].valueString = "PractitionerRole"
+* extension[section][0].extension[field][0].valueString = "PractitionerRole.code"
+* extension[section][0].extension[field][1].valueString = "PractitionerRole.practitioner"
+* extension[section][0].extension[field][2].valueString = "PractitionerRole.location"
+* extension[section][0].extension[field][3].valueString = "PractitionerRole.extension:directorate.value[x]:valueCoding.display"
+* extension[section][0].extension[field][4].valueString = "PractitionerRole.extension:caseteam.value[x]:valueCoding.display"
+* extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
+* extension[section][0].extension[field][6].valueString = "PractitionerRole.period"
+* extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding.display"
+* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:shift.value[x]:valueCoding.display"
+* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
+* extension[section][0].extension[field][10].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
+
 Instance:       IhrisPractitionerWorkflowEndRole
 InstanceOf:      Questionnaire
 Usage:          #definition
@@ -670,7 +706,7 @@ Usage:          #definition
 * purpose = "Workflow page for ending a role/job."
 
 * item[0].linkId = "PractitionerRole"
-* item[0].text = "Record Departure"
+* item[0].text = "Terminate Job Record"
 * item[0].type = #group
 
 * item[0].item[0].linkId = "period.end"

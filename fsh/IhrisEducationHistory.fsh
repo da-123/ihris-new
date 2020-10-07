@@ -208,6 +208,41 @@ Usage:          #definition
 * item[0].item[4].required = true
 * item[0].item[4].repeats = false
 
+Instance:       ihris-page-basic-education-history
+InstanceOf:     IhrisPage
+Title:          "Education History"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-education-history)
+* extension[display].extension[link][0].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][0].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link][0].extension[button].valueBoolean = true
+* extension[display].extension[link][0].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][0].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
+* extension[display].extension[link][1].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][1].extension[text].valueString = "Add Another"
+* extension[display].extension[link][1].extension[button].valueBoolean = true
+* extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-education-history/practitioner?practitioner=FIELD"
+* extension[display].extension[search][0].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[search][1].valueString = "Institution|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueReference.reference"
+* extension[display].extension[search][2].valueString = "Degree|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding.display"
+* extension[display].extension[search][3].valueString = "Level|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='level').valueCoding.display"
+* extension[display].extension[search][4].valueString = "Educational Major|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='educationalMajor').valueCoding.display"
+* extension[display].extension[search][5].valueString = "Year|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
+* extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Education History"
+* extension[section][0].extension[description].valueString = "Education History details"
+* extension[section][0].extension[name].valueString = "Basic"
+* extension[section][0].extension[field][0].valueString = "extension:practitioner"
+* extension[section][0].extension[field][1].valueString = "extension:educationHistory.extension:institution.value[x]:valueCoding"
+* extension[section][0].extension[field][2].valueString = "extension:educationHistory.extension:degree.value[x]:valueCoding"
+* extension[section][0].extension[field][3].valueString = "extension:educationHistory.extension:level.value[x]:valueCoding"
+* extension[section][0].extension[field][4].valueString = "extension:educationHistory.extension:educationalMajor.value[x]:valueCoding"
+* extension[section][0].extension[field][5].valueString = "extension:educationHistory.extension:year.value[x]:valueDate"
+
+
 Instance:       ihris-page-institution
 InstanceOf:     IhrisPage
 Title:          "iHRIS Institution CodeSystem Page"

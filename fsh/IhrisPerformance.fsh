@@ -99,11 +99,16 @@ Title:          "iHRIS Basic Performance Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-performance)
-* extension[display].extension[link].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
-* extension[display].extension[link].extension[text].valueString = "View Health Worker"
-* extension[display].extension[link].extension[button].valueBoolean = true
-* extension[display].extension[link].extension[icon].valueString = "mdi-account-arrow-right"
-* extension[display].extension[link].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
+* extension[display].extension[link][0].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][0].extension[text].valueString = "View Health Worker"
+* extension[display].extension[link][0].extension[button].valueBoolean = true
+* extension[display].extension[link][0].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][0].extension[url].valueUrl = "/resource/view/practitioner/FIELD"
+* extension[display].extension[link][1].extension[field].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[display].extension[link][1].extension[text].valueString = "Add Another"
+* extension[display].extension[link][1].extension[button].valueBoolean = true
+* extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-performance/practitioner?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.start"
 * extension[display].extension[search][1].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"

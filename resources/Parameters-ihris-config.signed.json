@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-09-24T09:01:05.612Z",
+        "when": "2020-10-07T08:24:42.892Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "RPkTpNq2giL76SqLOyVI5j4vMorIOrYUArZiFG+JMPGEerjNw9EDw2CwgFaWei+EcnYBfBnbzdHjiTqhiUnE/wiJWOtFeR2Np5M9Z2H4pBoH+iMzs7Nj4KsxIElmbgTsJEgKxsRqC1Ye23PT2MIOeiJPNVvkQIalSFgXZsx+Afs="
+        "data": "WExvz7sr/588XsC5NVd+n4PXEu+MYog2K37cAW1giZgOJc4Py/Jr4vn3la8wYhJM1vJBeU7LWE59LbS/ixQres5O1wg+O9g+gxI9hbBJvpB9O/ExQ0X8Q/WSoK62ZNNpjR3Za2nlMtaw1ss9MAjNS/TzG7g/gPSgsZNwmgnFJEM="
       }
     },
     {
@@ -427,6 +427,42 @@
           "valueString": "20"
         },
         {
+          "name": "site:nav:menu:database:menu:prefix:text",
+          "valueString": "Prefix"
+        },
+        {
+          "name": "site:nav:menu:database:menu:prefix:url",
+          "valueString": "/resource/search/prefix"
+        },
+        {
+          "name": "site:nav:menu:database:menu:prefix:order",
+          "valueString": "21"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:text",
+          "valueString": "Gender"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:url",
+          "valueString": "/resource/search/gender"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:order",
+          "valueString": "22"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:text",
+          "valueString": "Marital Status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:url",
+          "valueString": "/resource/search/marital-status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:order",
+          "valueString": "23"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
@@ -468,15 +504,19 @@
         },
         {
           "name": "shortname:Practitioner:format",
-          "valueString": "%s, %s"
+          "valueString": "%s, %s , %s"
         },
         {
           "name": "shortname:Practitioner:order",
-          "valueString": "family,given"
+          "valueString": "given,father,grandfather"
         },
         {
-          "name": "shortname:Practitioner:paths:family:fhirpath",
+          "name": "shortname:Practitioner:paths:father:fhirpath",
           "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='fathers').valueString"
+        },
+        {
+          "name": "shortname:Practitioner:paths:grandfather:fhirpath",
+          "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='grandfatherslastname').valueString"
         },
         {
           "name": "shortname:Practitioner:paths:given:fhirpath",

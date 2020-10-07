@@ -74,37 +74,23 @@ const workflowEmploymentHistory = {
             if ( req.body.item[0].item[6].linkId === "Basic.extension[0].extension[6]" 
                 && req.body.item[0].item[6].answer 
                 && req.body.item[0].item[6].answer[0] 
-                && req.body.item[0].item[6].answer[0].valueString){
-                complexExt.push({ url: "endingPosition",
-                valueString:req.body.item[0].item[6].answer[0].valueString })
+                && req.body.item[0].item[6].answer[0].valueDate){
+                complexExt.push({ url: "dateEnded",
+                valueDate:req.body.item[0].item[6].answer[0].valueDate })
             }
             if ( req.body.item[0].item[7].linkId === "Basic.extension[0].extension[7]" 
                 && req.body.item[0].item[7].answer 
                 && req.body.item[0].item[7].answer[0] 
-                && req.body.item[0].item[7].answer[0].valueString){
-                complexExt.push({ url: "endingSalary",
-                valueMoney:{value:req.body.item[0].item[7].answer[0].valueString} })
+                && req.body.item[0].item[7].answer[0].valueText){
+                complexExt.push({ url: "responsibilities",
+                valueString: req.body.item[0].item[7].answer[0].valueText })
             }
             if ( req.body.item[0].item[8].linkId === "Basic.extension[0].extension[8]" 
                 && req.body.item[0].item[8].answer 
                 && req.body.item[0].item[8].answer[0] 
-                && req.body.item[0].item[8].answer[0].valueDate){
-                complexExt.push({ url: "dateEnded",
-                valueDate:req.body.item[0].item[8].answer[0].valueDate })
-            }
-            if ( req.body.item[0].item[9].linkId === "Basic.extension[0].extension[9]" 
-                && req.body.item[0].item[9].answer 
-                && req.body.item[0].item[9].answer[0] 
-                && req.body.item[0].item[9].answer[0].valueText){
-                complexExt.push({ url: "responsibilities",
-                valueString: req.body.item[0].item[9].answer[0].valueText })
-            }
-            if ( req.body.item[0].item[10].linkId === "Basic.extension[0].extension[10]" 
-                && req.body.item[0].item[10].answer 
-                && req.body.item[0].item[10].answer[0] 
-                && req.body.item[0].item[10].answer[0].valueString){
+                && req.body.item[0].item[8].answer[0].valueString){
                 complexExt.push({ url: "reasonLeaving",
-                valueString: req.body.item[0].item[10].answer[0].valueString
+                valueString: req.body.item[0].item[8].answer[0].valueString
                             })
                  winston.info(JSON.stringify( "Done reasonLeaving",null,2))
             }
