@@ -28,6 +28,9 @@ Description:    "iHRIS profile of Practitioner."
 * name.extension contains IhrisPractitionerPrefix named ethiopiaPrefix 0..1 MS
 * name.extension[ethiopiaPrefix].valueCoding MS
 * name.extension[ethiopiaPrefix] ^label = "Prefix"
+* name.extension contains IhrisPractitionerGivenAltLang named givenAlternativeLang 0..1 MS
+* name.extension[givenAlternativeLang].valueString MS
+* name.extension[givenAlternativeLang] ^label = "First Name Alternative Language"
 * name.suffix 0..0
 /* name.suffix ^label = "Suffix" */
 * birthDate MS
@@ -54,8 +57,6 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerProfessionalLicenseCategory named professionalLicenseCategory 0..* MS and
     IhrisPractitionerMaritalStatus named maritalStatus 0..1 MS and
     IhrisPractitionerDependents named dependents 0..* MS and
-    IhrisPractitionerEmergencyContact named emergencyContact 0..1 MS and
-    IhrisPractitionerCollateral named collateral 0..1 MS and
     IhrisPractitionerSpecialTraining named specialTraining 0..* MS and
     IhrisPractitionerRemarkNote named remarkNote 0..* MS and
     IhrisPractitionerResidence named residence 0..1 MS and
@@ -66,6 +67,7 @@ Description:    "iHRIS profile of Practitioner."
 * extension[familyNames] ^label = "Family Names"
 * extension[familyNames].extension[fathers].valueString MS
 * extension[familyNames].extension[mothers].valueString MS
+* extension[familyNames].extension[mothersalternativelanguage].valueString MS
 * extension[familyNames].extension[fathersalternativelanguage].valueString MS
 * extension[familyNames].extension[grandfatherslastname].valueString MS
 * extension[familyNames].extension[grandfathersalternativelanguage].valueString MS
@@ -77,22 +79,10 @@ Description:    "iHRIS profile of Practitioner."
 * extension[dependents].extension[birthDate].valueDate MS
 * extension[dependents].extension[relationship].valueCoding MS
 * extension[dependents].extension[gender].valueCode MS
-* extension[emergencyContact] ^label = "Emergency Contact"
-* extension[emergencyContact].extension[name].valueString MS
-* extension[emergencyContact].extension[phone].valueString MS
-* extension[emergencyContact].extension[relation].valueCoding MS
-* extension[emergencyContact].extension[address].valueAddress MS
-* extension[collateral] ^label = "Collateral"
-* extension[collateral].extension[name].valueString MS
-* extension[collateral].extension[phone].valueString MS
-* extension[collateral].extension[relation].valueCoding MS
-* extension[collateral].extension[address].valueAddress MS
 * extension[maritalStatus].valueCoding MS  
 * extension[maritalStatus] ^label = "Marital Status"
 * extension[specialTraining].valueString  MS
 * extension[specialTraining] ^label = "Special Training"
-* extension[professionalLicenseCategory].valueString MS
-* extension[professionalLicenseCategory] ^label = "Professional License Category"
 * extension[category].valueCoding MS
 * extension[category] ^label = "Category"
 * extension[remarkNote].valueString MS
@@ -111,7 +101,8 @@ Description:    "iHRIS Family Names extension for Ethiopia."
       fathersalternativelanguage 0..1 MS and
       grandfatherslastname 0..1 MS and
       grandfathersalternativelanguage 0..1 MS and
-      mothers 0..1 MS
+      mothers 0..1 MS and
+      mothersalternativelanguage 0..1 MS
 * extension[fathers].value[x] only string
 * extension[fathers].valueString 0..1 MS
 * extension[fathers].valueString ^label = "Father's Name"
@@ -122,8 +113,12 @@ Description:    "iHRIS Family Names extension for Ethiopia."
 * extension[fathersalternativelanguage] ^label = "Father's Name Alternative Language"
 * extension[mothers].value[x] only string
 * extension[mothers].valueString 0..1 MS
-* extension[mothers].valueString ^label = "Mother's Name"
-* extension[mothers] ^label = "Mother's Name"
+* extension[mothers].valueString ^label = "Mother'sFull  Name"
+* extension[mothers] ^label = "Mother's Full Name"
+* extension[mothersalternativelanguage].value[x] only string
+* extension[mothersalternativelanguage].valueString 0..1 MS
+* extension[mothersalternativelanguage].valueString ^label = "Mother's Full Name Alternative Language"
+* extension[mothersalternativelanguage] ^label = "Mother's Full Name Alternative Language"
 * extension[grandfatherslastname].value[x] only string
 * extension[grandfatherslastname].valueString 0..1 MS
 * extension[grandfatherslastname].valueString ^label = "Grandfather's Lastname"
@@ -132,16 +127,6 @@ Description:    "iHRIS Family Names extension for Ethiopia."
 * extension[grandfathersalternativelanguage].valueString 0..1 MS
 * extension[grandfathersalternativelanguage].valueString ^label = "Grand Father's Name Alternative Language"
 * extension[grandfathersalternativelanguage] ^label = "Grand Father's Name Alternative Language"
-
-Extension:      IhrisPractitionerProfessionalLicenseCategory
-Id:             ihris-personal-information-professional-license-category
-Title:          "iHRIS Personal Information Professional License Category"
-Description:    "iHRIS extension for Professional License Category."
-* ^context.type = #element
-* ^context.expression = "Practitioner"
-* valueString ^label = "Professional License Category"
-* value[x] only string
-* valueString 1..1 MS
 
 Extension:      IhrisPractitionerSpecialTraining
 Id:             ihris-personal-information-special-training
@@ -286,6 +271,16 @@ Description:    "iHRIS extension for Personal Prefix."
 * valueCoding ^label = "Prefix"
 * valueCoding from IhrisEthiopiaPrefixValueSet (required)
 
+Extension:      IhrisPractitionerGivenAltLang
+Id:             ihris-practitioner-givenAltLang
+Title:          "iHRIS Personal Information Given Name Alternative Language"
+Description:    "iHRIS extension for Personal Given Name Alternative Language."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* value[x] only string
+* valueString 1..1 MS
+* valueString ^label = "First Name Alternative Language"
+
 ValueSet:         IhrisEthiopiaPrefixValueSet
 Id:               ihris-ethiopia-prefix-valueset
 Title:            "iHRIS Ethiopia Prefix ValueSet"
@@ -319,6 +314,7 @@ Title:            "Identifier Type"
 * #drivingLicenseId "Driving License"
 * #civilServiceId "Civil Service Id"
 * #licenseId "License Id"
+* #fileNo "File No"
 
 Extension:      IhrisPractitionerNationality
 Id:             ihris-practitioner-nationality
@@ -395,54 +391,6 @@ Id:               ihris-marital-status-valueset
 Title:            "iHRIS Marital ValueSet"
 * codes from system IhrisEthiopiaMaritalStatusCodeSystem
 
-Extension:      IhrisPractitionerEmergencyContact
-Id:             ihris-practitioner-emergencyContact
-Title:          "iHRIS Practitioner emergencyContact"
-Description:    "iHRIS extension for Practitioner emergencyContact."
-* ^context.type = #element
-* ^context.expression = "Practitioner"
-* extension contains name 1..1 MS and
-    phone 1..1 MS and
-    relation 1..1 MS and
-    address 1..1 MS
-* extension[name].value[x] only string
-* extension[name].valueString 1..1 MS
-* extension[name].valueString ^label = "Name"
-* extension[phone].value[x] only string
-* extension[phone].valueString 1..1 MS
-* extension[phone].valueString ^label = "Phone Number"
-* extension[relation].value[x] only Coding
-* extension[relation].valueCoding 1..1 MS
-* extension[relation].valueCoding ^label = "Relation"
-* extension[relation].valueCoding from IhrisEthiopiaRelationValueSet (required)
-* extension[address].value[x] only Address
-* extension[address].valueAddress 1..1 MS
-* extension[address].valueAddress ^label = "Address"
-
-Extension:      IhrisPractitionerCollateral
-Id:             ihris-practitioner-collateral
-Title:          "iHRIS Practitioner Collateral"
-Description:    "iHRIS extension for Practitioner Collateral."
-* ^context.type = #element
-* ^context.expression = "Practitioner"
-* extension contains name 1..1 MS and
-    phone 1..1 MS and
-    relation 1..1 MS and
-    address 1..1 MS
-* extension[name].value[x] only string
-* extension[name].valueString 1..1 MS
-* extension[name].valueString ^label = "Name"
-* extension[phone].value[x] only string
-* extension[phone].valueString 1..1 MS
-* extension[phone].valueString ^label = "Phone Number"
-* extension[relation].value[x] only Coding
-* extension[relation].valueCoding 1..1 MS
-* extension[relation].valueCoding ^label = "Relation"
-* extension[relation].valueCoding from IhrisEthiopiaRelationValueSet (required)
-* extension[address].value[x] only Address
-* extension[address].valueAddress 1..1 MS
-* extension[address].valueAddress ^label = "Address"
-
 Extension:      IhrisPractitionerDependents
 Id:             ihris-practitioner-dependents
 Title:          "iHRIS Practitioner Dependents"
@@ -475,7 +423,8 @@ Title:           "Relationship"
 * #spouse "Spouse" "Spouse"
 * #mother "Mother" "Mother"
 * #father "Father" "Father"
-* #child "Child" "Child"
+* #adoptedchild "Adopted Child" "Adopted Child"
+* #bilogicalChild "Biological Child" "Biological Child"
 * #other "other" "other"
 
 ValueSet:         IhrisEthiopiaRelationValueSet
@@ -679,6 +628,13 @@ Usage:          #definition
 * item[0].item[0].item[2].answerOption.valueCoding = http://hl7.org/fhir/name-use#official
 * item[0].item[0].item[2].answerOption.initialSelected = true
 
+* item[0].item[0].item[3].linkId = "Practitioner.name[0].extension[1]"
+* item[0].item[0].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.name.extension:givenAlternativeLang.value[x]:valueString"
+* item[0].item[0].item[3].text = "First Name Alternative Language"
+* item[0].item[0].item[3].type = #string
+* item[0].item[0].item[3].required = true
+* item[0].item[0].item[3].repeats = false
+
 * item[0].item[1].linkId = "Practitioner.extension[0].extension[0]"
 * item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:fathers.value[x]:valueString"
 * item[0].item[1].text = "Father's Name"
@@ -713,6 +669,13 @@ Usage:          #definition
 * item[0].item[5].type = #string
 * item[0].item[5].required = true
 * item[0].item[5].repeats = false
+
+* item[0].item[6].linkId = "Practitioner.extension[0].extension[5]"
+* item[0].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:mothersalternativelanguage.value[x]:valueString"
+* item[0].item[6].text = "Mother's Name Alternative Language"
+* item[0].item[6].type = #string
+* item[0].item[6].required = true
+* item[0].item[6].repeats = false
 
 * item[0].item[8].linkId = "__Practitioner:demographic"
 * item[0].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
@@ -894,6 +857,28 @@ Usage:          #definition
 * item[0].item[9].item[5].item[1].type = #string
 * item[0].item[9].item[5].item[1].required = false
 * item[0].item[9].item[5].item[1].repeats = false
+
+* item[0].item[9].item[6].linkId = "Practitioner.identifier[6]"
+* item[0].item[9].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
+* item[0].item[9].item[6].text = "File Number"
+* item[0].item[9].item[6].type = #group
+
+* item[0].item[9].item[6].item[0].linkId = "Practitioner.identifier[6].type"
+* item[0].item[9].item[6].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.type"
+* item[0].item[9].item[6].item[0].text = "Type"
+* item[0].item[9].item[6].item[0].type = #choice
+* item[0].item[9].item[6].item[0].required = false
+* item[0].item[9].item[6].item[0].repeats = false
+* item[0].item[9].item[6].item[0].readOnly = true
+* item[0].item[9].item[6].item[0].answerOption.valueCoding = http://ihris.org/fhir/CodeSystem/ihris-ethiopia-identifier#fileNo
+* item[0].item[9].item[6].item[0].answerOption.initialSelected = true
+
+* item[0].item[9].item[6].item[1].linkId = "Practitioner.identifier[6].value"
+* item[0].item[9].item[6].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.value"
+* item[0].item[9].item[6].item[1].text = "Value"
+* item[0].item[9].item[6].item[1].type = #string
+* item[0].item[9].item[6].item[1].required = false
+* item[0].item[9].item[6].item[1].repeats = false
 
 * item[0].item[10].linkId = "__Practitioner:telecom"
 * item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom"
