@@ -496,7 +496,7 @@ Usage:          #example
 * extension[section][19].extension[resource].extension[column][6].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='endDate').valueDate"
 * extension[section][19].extension[resource].extension[column][7].extension[header].valueString = "Actions"
 * extension[section][19].extension[resource].extension[column][7].extension[field].valueString = "_action"
-* extension[section][19].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-discipline/practitioner?practitioner=FHIRID"
+* extension[section][19].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-salary/practitioner?practitioner=FHIRID"
 * extension[section][19].extension[resource].extension[action][0].extension[text].valueString = "Add Salary Info"
 * extension[section][19].extension[resource].extension[action][0].extension[row].valueBoolean = false
 * extension[section][19].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
