@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-10-07T15:23:34.100Z",
+        "when": "2020-10-21T15:11:19.364Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "H93KRppAh5syqgCo4KKXX7ym5mjE4DQwM1OoQFze0arhbeCCEAeYljjKveRSmPgdxJoqOhK3V5CvdXcUFq15DVDfXrKHaCZes7ooKMnFp2lyXtX06Vv/1HP7of6miS0pRaXyWFuQ5xd+iniC/Y6SYp5MxPXpqAyZGC+jPCVnbjI="
+        "data": "Nb+VRWZ2jq94cWIvUXvIUc9BmY0Y6wzeNzJr7YsqpKdBdlpKjzSZjBhXBU2VHGjTZXU3tOZXNoQ+e6suN/8E66CYVlMGG/Wu8ehTc0P7cruigKAnWHNLDhbCGKXcyC5O5FL5WBmZgsZCHPu3xrsbmoCx/t9DMH0+fM98td2uBV4="
       }
     },
     {
@@ -475,6 +475,66 @@
           "valueString": "24"
         },
         {
+          "name": "site:nav:menu:database:menu:disciplineaction:text",
+          "valueString": "Discipline Action Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:disciplineaction:url",
+          "valueString": "/resource/search/discipline-action-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:disciplineaction:order",
+          "valueString": "25"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:text",
+          "valueString": "Pay Grade Ladders"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:url",
+          "valueString": "/resource/search/salary-ladder"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:order",
+          "valueString": "26"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:text",
+          "valueString": "Pay Grade Steps"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:url",
+          "valueString": "/resource/search/salary-step"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:order",
+          "valueString": "27"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:text",
+          "valueString": "Fund Source Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:url",
+          "valueString": "/resource/search/salary-source"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:order",
+          "valueString": "28"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:text",
+          "valueString": "Pay Frequency"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:url",
+          "valueString": "/resource/search/frequency"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:order",
+          "valueString": "29"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
@@ -625,6 +685,38 @@
         {
           "name": "workflow:questionnaire:professional:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-professional"
+        },
+        {
+          "name": "workflow:processor:emergency:file",
+          "valueString": "../modules/workflowEmergency"
+        },
+        {
+          "name": "workflow:questionnaire:emergency:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-emergency"
+        },
+        {
+          "name": "workflow:processor:collateral:file",
+          "valueString": "../modules/workflowCollateral"
+        },
+        {
+          "name": "workflow:questionnaire:collateral:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-collateral"
+        },
+        {
+          "name": "workflow:processor:discipline:file",
+          "valueString": "../modules/workflowDiscipline"
+        },
+        {
+          "name": "workflow:questionnaire:discipline:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-discipline"
+        },
+        {
+          "name": "workflow:processor:salary:file",
+          "valueString": "../modules/workflowSalary"
+        },
+        {
+          "name": "workflow:questionnaire:salary:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-salary"
         }
       ]
     }

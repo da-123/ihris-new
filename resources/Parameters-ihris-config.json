@@ -447,6 +447,114 @@
             "valueString": "20"
         },
         {
+          "name": "site:nav:menu:database:menu:prefix:text",
+          "valueString": "Prefix"
+        },
+        {
+          "name": "site:nav:menu:database:menu:prefix:url",
+          "valueString": "/resource/search/prefix"
+        },
+        {
+          "name": "site:nav:menu:database:menu:prefix:order",
+          "valueString": "21"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:text",
+          "valueString": "Gender"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:url",
+          "valueString": "/resource/search/gender"
+        },
+        {
+          "name": "site:nav:menu:database:menu:gender:order",
+          "valueString": "22"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:text",
+          "valueString": "Marital Status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:url",
+          "valueString": "/resource/search/marital-status"
+        },
+        {
+          "name": "site:nav:menu:database:menu:marital-status:order",
+          "valueString": "23"
+        },
+        {
+          "name": "site:nav:menu:database:menu:profession:text",
+          "valueString": "Professional License Category"
+        },
+        {
+          "name": "site:nav:menu:database:menu:profession:url",
+          "valueString": "/resource/search/profession"
+        },
+        {
+          "name": "site:nav:menu:database:menu:profession:order",
+          "valueString": "24"
+        },
+        {
+          "name": "site:nav:menu:database:menu:disciplineaction:text",
+          "valueString": "Discipline Action Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:disciplineaction:url",
+          "valueString": "/resource/search/discipline-action-type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:disciplineaction:order",
+          "valueString": "25"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:text",
+          "valueString": "Pay Grade Ladders"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:url",
+          "valueString": "/resource/search/salary-ladder"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salaryladder:order",
+          "valueString": "26"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:text",
+          "valueString": "Pay Grade Steps"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:url",
+          "valueString": "/resource/search/salary-step"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarystep:order",
+          "valueString": "27"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:text",
+          "valueString": "Fund Source Type"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:url",
+          "valueString": "/resource/search/salary-source"
+        },
+        {
+          "name": "site:nav:menu:database:menu:salarysource:order",
+          "valueString": "28"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:text",
+          "valueString": "Pay Frequency"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:url",
+          "valueString": "/resource/search/frequency"
+        },
+        {
+          "name": "site:nav:menu:database:menu:frequency:order",
+          "valueString": "29"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
@@ -569,6 +677,50 @@
         {
           "name": "workflow:questionnaire:employment:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-employment-history"
+        },
+        {
+          "name": "workflow:questionnaire:employment:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-employment-history"
+        },
+        {
+          "name": "workflow:processor:professional:file",
+          "valueString": "../modules/workflowProfessional"
+        },
+        {
+          "name": "workflow:questionnaire:professional:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-professional"
+        },
+        {
+          "name": "workflow:processor:emergency:file",
+          "valueString": "../modules/workflowEmergency"
+        },
+        {
+          "name": "workflow:questionnaire:emergency:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-emergency"
+        },
+        {
+          "name": "workflow:processor:collateral:file",
+          "valueString": "../modules/workflowCollateral"
+        },
+        {
+          "name": "workflow:questionnaire:collateral:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-collateral"
+        },
+        {
+          "name": "workflow:processor:discipline:file",
+          "valueString": "../modules/workflowDiscipline"
+        },
+        {
+          "name": "workflow:questionnaire:discipline:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-discipline"
+        },
+        {
+          "name": "workflow:processor:salary:file",
+          "valueString": "../modules/workflowSalary"
+        },
+        {
+          "name": "workflow:questionnaire:salary:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-salary"
         }
       ]
     }

@@ -474,6 +474,37 @@ Usage:          #example
 * extension[section][18].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][18].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][18].extension[resource].extension[action][1].extension[class].valueString = "primary"
+* extension[section][19].extension[title].valueString = "Employee Salary Information"
+* extension[section][19].extension[description].valueString = "Employee Salary Information for the Person"
+* extension[section][19].extension[name].valueString = "Employee Salary Information"
+* extension[section][19].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-salary)
+* extension[section][19].extension[resource].extension[searchfield].valueString = "practitioner"
+* extension[section][19].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[section][19].extension[resource].extension[column][0].extension[header].valueString = "Pay Grade"
+* extension[section][19].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='salaryScale').valueCoding.display"
+* extension[section][19].extension[resource].extension[column][1].extension[header].valueString = "Basic Salary"
+* extension[section][19].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='bsalary').valueString"
+* extension[section][19].extension[resource].extension[column][2].extension[header].valueString = "Allowances"
+* extension[section][19].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='allowance').valueString"
+* extension[section][19].extension[resource].extension[column][3].extension[header].valueString = "Benefits"
+* extension[section][19].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='benefits').valueString"
+* extension[section][19].extension[resource].extension[column][4].extension[header].valueString = "Total"
+* extension[section][19].extension[resource].extension[column][4].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='total').valueString"
+* extension[section][19].extension[resource].extension[column][5].extension[header].valueString = "Start Date"
+* extension[section][19].extension[resource].extension[column][5].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='startDate').valueDate"
+* extension[section][19].extension[resource].extension[column][6].extension[header].valueString = "End Date"
+* extension[section][19].extension[resource].extension[column][6].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-salary').extension.where(url='endDate').valueDate"
+* extension[section][19].extension[resource].extension[column][7].extension[header].valueString = "Actions"
+* extension[section][19].extension[resource].extension[column][7].extension[field].valueString = "_action"
+* extension[section][19].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-discipline/practitioner?practitioner=FHIRID"
+* extension[section][19].extension[resource].extension[action][0].extension[text].valueString = "Add Salary Info"
+* extension[section][19].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][19].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
+* extension[section][19].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][19].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/salary/ITEMID"
+* extension[section][19].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][19].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][19].extension[resource].extension[action][1].extension[class].valueString = "primary"
 
 Instance:       ihris-page-job
 InstanceOf:     IhrisPage
