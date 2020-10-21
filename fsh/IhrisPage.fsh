@@ -449,6 +449,31 @@ Usage:          #example
 * extension[section][17].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][17].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][17].extension[resource].extension[action][1].extension[class].valueString = "primary"
+* extension[section][18].extension[title].valueString = "Employee Discipline Information"
+* extension[section][18].extension[description].valueString = "Employee Discipline for the Person"
+* extension[section][18].extension[name].valueString = "Employee Discipline"
+* extension[section][18].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-discipline)
+* extension[section][18].extension[resource].extension[searchfield].valueString = "practitioner"
+* extension[section][18].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[section][18].extension[resource].extension[column][0].extension[header].valueString = "Discipline Action Type"
+* extension[section][18].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-discipline').extension.where(url='actionType').valueCoding.display"
+* extension[section][18].extension[resource].extension[column][1].extension[header].valueString = "Action Taken"
+* extension[section][18].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-discipline').extension.where(url='actionTaken').valueString"
+* extension[section][18].extension[resource].extension[column][2].extension[header].valueString = "Start Date"
+* extension[section][18].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-discipline').extension.where(url='startDate').valueDate"
+* extension[section][18].extension[resource].extension[column][3].extension[header].valueString = "End Date"
+* extension[section][18].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-discipline').extension.where(url='endDate').valueDate"
+* extension[section][18].extension[resource].extension[column][4].extension[header].valueString = "Actions"
+* extension[section][18].extension[resource].extension[column][4].extension[field].valueString = "_action"
+* extension[section][18].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-discipline/practitioner?practitioner=FHIRID"
+* extension[section][18].extension[resource].extension[action][0].extension[text].valueString = "Add Disciplinary Action"
+* extension[section][18].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][18].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
+* extension[section][18].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][18].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/discipline/ITEMID"
+* extension[section][18].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][18].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][18].extension[resource].extension[action][1].extension[class].valueString = "primary"
 
 Instance:       ihris-page-job
 InstanceOf:     IhrisPage

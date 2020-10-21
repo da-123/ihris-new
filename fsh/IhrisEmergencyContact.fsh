@@ -118,7 +118,7 @@ Usage:          #definition
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Relation"
-* item[0].item[2].type = #chioce
+* item[0].item[2].type = #choice
 * item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-relation-valueset"
 * item[0].item[2].required = true
 * item[0].item[2].repeats = false

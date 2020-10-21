@@ -54,7 +54,6 @@ Description:    "iHRIS profile of Practitioner."
 * communication.coding ^label = "Language"
 * communication from IhrisEthiopiaLanguageValueSet
 * extension contains
-    IhrisPractitionerProfessionalLicenseCategory named professionalLicenseCategory 0..* MS and
     IhrisPractitionerMaritalStatus named maritalStatus 0..1 MS and
     IhrisPractitionerDependents named dependents 0..* MS and
     IhrisPractitionerSpecialTraining named specialTraining 0..* MS and
