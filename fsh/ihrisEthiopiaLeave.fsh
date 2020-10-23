@@ -19,6 +19,7 @@ Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[dateRequested].valueDate MS
 * extension[ethiopiaLeave].extension[daysRequested].valueInteger MS
+* extension[ethiopiaLeave].extension[leaveSubType].valueCoding MS
     
 Extension:      IhrisEthiopiaLeave
 Id:             ihris-ethiopia-leave
@@ -27,7 +28,8 @@ Title:          "Leave details"
       leave-type 1..1 MS and
       period 1..1 MS and
       daysRequested 0..1 MS and
-      dateRequested 0..1 MS
+      dateRequested 0..1 MS and
+      leaveSubType 0..1 MS
 * extension[leave-type].value[x] only Coding
 * extension[leave-type].valueCoding from IhrisLeaveTypeValueSet (required)
 * extension[leave-type].valueCoding ^label = "Leave Type"
@@ -45,31 +47,50 @@ Title:          "Leave details"
 * extension[daysRequested].valueInteger ^label = "Days Requested"
 * extension[dateRequested].value[x] only date
 * extension[dateRequested].valueDate ^label = "Requested Date"
+* extension[leaveSubType].value[x] only Coding
+* extension[leaveSubType].valueCoding from IhrisLeaveSubTypeValueSet (required)
+* extension[leaveSubType].valueCoding ^label = "Leave Sub Type"
 
 CodeSystem:      IhrisLeaveTypeCodeSystem
 Id:              ihris-leave-type-codesystem
 Title:           "Leave Type"
+* ^date = "2020-10-20T08:41:04.362Z"
 * ^version = "0.2.0"
 * #annual "Annual Leave" "Annual Leave"
 * #maternity "Maternity Leave" "Maternity Leave"
 * #paternity "Paternity Leave" "Paternity Leave"
 * #sick  "Sick Leave" "Sick Leave"
 * #special  "Special Leave" "Special Leave"
-* #forced  "Forced Leave" "Forced Leave"
+* #forced  "Leave Without Pay" "Leave Without Pay"
 * #casual "Casual Leave" "Casual Leave"
-* #educational "Educational Leave" "Educational Leave"
-* #prenatal "Prenatal Leave" "Prenatal Leave"
-* #postnatal "Postnatal Leave" "Postnatal Leave"
-* #medical  "Medical Leave" "Medical Leave"
 * #mourning "Mourning Leave" "Mourning Leave"
-* #weeding "Weeding Leave" "Weeding Leave"
-* #exam "Exam" "Exam"
+* #wedding "Wedding Days" "Wedding Days"
+* #exam "Exam Leave" "Exam Leave"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
 Title:            "iHRIS leave Type ValueSet"
+* ^date = "2020-10-20T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisLeaveTypeCodeSystem
+
+CodeSystem:      IhrisLeaveSubTypeCodeSystem
+Id:              ihris-leave-sub-type-codesystem
+Title:           "Leave Sub Type"
+* ^date = "2020-10-20T08:41:04.362Z"
+* ^version = "0.2.0"
+* #FHDM "First half day: Morning"
+* #FHDA "First half day: Afternoon"
+* #EOD "Every other day"
+* #EODHDM "Every other day half day: Morning"
+* #EODHDA "Every other day half day: Afternoon" 
+
+ValueSet:         IhrisLeaveSubTypeValueSet
+Id:               ihris-leave-sub-type-valueset
+Title:            "iHRIS leave Sub Type ValueSet"
+* ^date = "2020-10-20T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisLeaveSubTypeCodeSystem
 
 Instance:       IhrisPractitionerWorkflowLeaveEthiopia
 InstanceOf:      Questionnaire
@@ -118,6 +139,13 @@ Usage:          #definition
 * item[0].item[4].required = true
 * item[0].item[4].repeats = false
 
+* item[0].item[5].linkId = "Basic.extension[0].extension[5]"
+* item[0].item[5].text = "Leave Sub Type"
+* item[0].item[5].type = #choice
+* item[0].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-sub-type-valueset"
+* item[0].item[5].required = true
+* item[0].item[5].repeats = false
+
 Instance:       ihris-page-basicleave
 InstanceOf:     IhrisPage
 Title:          "iHRIS Basic Leave Ethiopia Page"
@@ -152,3 +180,4 @@ Usage:          #example
 * extension[section][0].extension[field][3].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod"
 /* extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:period.value[x]:valuePeriod.end"*/
 * extension[section][0].extension[field][4].valueString = "Basic.extension:ethiopiaLeave.extension:dateRequested.value[x]:valueDate"
+* extension[section][0].extension[field][5].valueString = "Basic.extension:ethiopiaLeave.extension:leaveSubType.value[x]:valueCoding"
