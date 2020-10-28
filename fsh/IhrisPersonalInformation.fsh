@@ -1,3 +1,8 @@
+Invariant:      ihris-age-18
+Description:    "birthDate must be more than 18 years ago."
+Expression:     "birthDate < today() - 18 years"
+Severity:       #error
+
 Profile:        IhrisPersonalInformation
 Parent:         Practitioner
 Id:             ihris-personal-information
@@ -21,7 +26,7 @@ Description:    "iHRIS profile of Practitioner."
 * name.use ^label = "Use"
 * name.family 0..0
 /* name.family ^label = "Family"*/
-* name.given 0..1 MS
+* name.given 1..1 MS
 * name.given ^label = "First Name"
 * name.prefix 0..0
 * name.text 0..0
@@ -35,6 +40,13 @@ Description:    "iHRIS profile of Practitioner."
 /* name.suffix ^label = "Suffix" */
 * birthDate MS
 * birthDate ^label = "Date of Birth"
+* birthDate obeys ihris-age-18
+* birthDate ^minValueQuantity.system = "http://unitsofmeasure.org/"
+* birthDate ^minValueQuantity.code = #a
+* birthDate ^minValueQuantity.value = 60
+* birthDate ^maxValueQuantity.system = "http://unitsofmeasure.org/"
+* birthDate ^maxValueQuantity.code = #a
+* birthDate ^maxValueQuantity.value = -18
 * gender 1..1 MS
 * gender ^label = "Gender"
 * gender from IhrisEthiopiaGenderValueSet (required)

@@ -7,16 +7,16 @@ Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisEducationHistory named educationHistory 1..1 MS
-* extension[educationHistory].extension[institution].valueCoding MS
+* extension[educationHistory].extension[institution].valueCoding 1..1 MS
 * extension[educationHistory].extension[institution].valueCoding ^label = "Institution"
 * extension[educationHistory].extension[degree].valueCoding ^label = "Degree"
-* extension[educationHistory].extension[degree].valueCoding MS
+* extension[educationHistory].extension[degree].valueCoding 1..1 MS
 * extension[educationHistory].extension[level].valueCoding ^label = "Education Level"
-* extension[educationHistory].extension[level].valueCoding MS
+* extension[educationHistory].extension[level].valueCoding 1..1 MS
 * extension[educationHistory].extension[educationalMajor].valueCoding ^label = "Degree"
-* extension[educationHistory].extension[educationalMajor].valueCoding MS
+* extension[educationHistory].extension[educationalMajor].valueCoding 0..1 MS
 * extension[educationHistory].extension[year].valueDate ^label = "Year Of Graduation"
-* extension[educationHistory].extension[year].valueDate MS
+* extension[educationHistory].extension[year].valueDate 0..1 MS
     
 Extension:      IhrisEducationHistory
 Id:             ihris-education-history
@@ -24,7 +24,7 @@ Title:          "Education History details"
 * extension contains
       institution 1..1 MS and
       degree 1..1 MS and
-      level 0..1 MS and
+      level 1..1 MS and
       educationalMajor 0..1 MS and
       year 0..1 MS
 * extension[institution].value[x] only Coding
@@ -199,13 +199,13 @@ Usage:          #definition
 * item[0].item[3].text = "Education Major"
 * item[0].item[3].type = #choice
 * item[0].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-educational-major-valueset"
-* item[0].item[3].required = true
+* item[0].item[3].required = false
 * item[0].item[3].repeats = false
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]#year"
 * item[0].item[4].text = "Year Of Graduation"
 * item[0].item[4].type = #date
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 Instance:       ihris-page-basic-education-history

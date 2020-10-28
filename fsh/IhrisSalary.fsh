@@ -8,18 +8,18 @@ Description:    "iHRIS Profile of the Basic resource for Salary."
 * extension contains
     IhrisSalary named salary 1..1 MS
 * extension[salary] ^label = "Salary Information"
-* extension[salary].extension[salaryladder].valueCoding MS
-* extension[salary].extension[salaryScale].valueCoding MS
-* extension[salary].extension[salaryStep].valueCoding MS
+* extension[salary].extension[salaryladder].valueCoding 1..1 MS
+* extension[salary].extension[salaryScale].valueCoding 1..1 MS
+* extension[salary].extension[salaryStep].valueCoding 1..1 MS
 * extension[salary].extension[bsalary].valueString MS
 * extension[salary].extension[allowance].valueString MS
 * extension[salary].extension[benefits].valueString MS
 * extension[salary].extension[total].valueString MS
-* extension[salary].extension[startDate].valueDate MS
+* extension[salary].extension[startDate].valueDate 1..1 MS
 * extension[salary].extension[endDate].valueDate MS
 * extension[salary].extension[reviewed].valueBoolean MS
 * extension[salary].extension[remark].valueString MS
-* extension[salary].extension[salarySource].valueCoding MS
+* extension[salary].extension[salarySource].valueCoding 1..1 MS
 * extension[salary].extension[frequency].valueCoding MS
 * extension[salary].extension[current].valueBoolean MS
     
@@ -182,19 +182,19 @@ Usage:          #definition
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
 * item[0].item[3].text = "Basic Salary"
 * item[0].item[3].type = #string
-* item[0].item[3].required = true
+* item[0].item[3].required = false
 * item[0].item[3].repeats = false
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Allowance"
 * item[0].item[4].type = #string
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
 * item[0].item[5].text = "Benefits"
 * item[0].item[5].type = #string
-* item[0].item[5].required = true
+* item[0].item[5].required = false
 * item[0].item[5].repeats = false
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
@@ -206,19 +206,19 @@ Usage:          #definition
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "End Date"
 * item[0].item[7].type = #date
-* item[0].item[7].required = true
+* item[0].item[7].required = false
 * item[0].item[7].repeats = false
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Is Reviewed"
 * item[0].item[8].type = #boolean
-* item[0].item[8].required = true
+* item[0].item[8].required = false
 * item[0].item[8].repeats = false
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
 * item[0].item[9].text = "Remark"
 * item[0].item[9].type = #text
-* item[0].item[9].required = true
+* item[0].item[9].required = false
 * item[0].item[9].repeats = false
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
@@ -232,13 +232,13 @@ Usage:          #definition
 * item[0].item[11].text = "Pay Frequency"
 * item[0].item[11].type = #choice
 * item[0].item[11].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-frequency-valueset"
-* item[0].item[11].required = true
+* item[0].item[11].required = false
 * item[0].item[11].repeats = false
 
 * item[0].item[12].linkId = "Basic.extension[0].extension[12]"
 * item[0].item[12].text = "Is Current"
 * item[0].item[12].type = #boolean
-* item[0].item[12].required = true
+* item[0].item[12].required = false
 * item[0].item[12].repeats = false
 
 Instance:       ihris-page-salary

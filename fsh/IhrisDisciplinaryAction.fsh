@@ -8,14 +8,14 @@ Description:    "iHRIS Profile of the Basic resource for Discipline."
 * extension contains
     IhrisDiscipline named discipline 1..1 MS
 * extension[discipline] ^label = "Discipline Information"
-* extension[discipline].extension[actionType].valueCoding MS
-* extension[discipline].extension[givenDate].valueDate MS
+* extension[discipline].extension[actionType].valueCoding 1..1 MS
+* extension[discipline].extension[givenDate].valueDate 1..1 MS
 * extension[discipline].extension[givenBy].valueString MS
 * extension[discipline].extension[refNo].valueString MS
 * extension[discipline].extension[actionTaken].valueString MS
-* extension[discipline].extension[startDate].valueDate MS
-* extension[discipline].extension[endDate].valueDate MS
-* extension[discipline].extension[reason].valueString MS
+* extension[discipline].extension[startDate].valueDate 1..1 MS
+* extension[discipline].extension[endDate].valueDate 1..1 MS
+* extension[discipline].extension[reason].valueString 1..1 MS
 * extension[discipline].extension[remark].valueString MS
     
 Extension:      IhrisDiscipline
@@ -103,19 +103,19 @@ Usage:          #definition
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Given By"
 * item[0].item[2].type = #string
-* item[0].item[2].required = true
+* item[0].item[2].required = false
 * item[0].item[2].repeats = false
 
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
 * item[0].item[3].text = "Rerefence Number"
 * item[0].item[3].type = #string
-* item[0].item[3].required = true
+* item[0].item[3].required = false
 * item[0].item[3].repeats = false
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Action Taken"
 * item[0].item[4].type = #string
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
@@ -139,7 +139,7 @@ Usage:          #definition
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Remark"
 * item[0].item[8].type = #text
-* item[0].item[8].required = true
+* item[0].item[8].required = false
 * item[0].item[8].repeats = false
 
 Instance:       ihris-page-discipline

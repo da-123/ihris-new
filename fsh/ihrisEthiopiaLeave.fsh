@@ -143,7 +143,7 @@ Usage:          #definition
 * item[0].item[5].text = "Leave Sub Type"
 * item[0].item[5].type = #choice
 * item[0].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-sub-type-valueset"
-* item[0].item[5].required = true
+* item[0].item[5].required = false
 * item[0].item[5].repeats = false
 
 Instance:       ihris-page-basicleave

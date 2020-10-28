@@ -13,8 +13,11 @@
         item-text="display"
         item-value="code"
         :disabled="disabled"
+        :rules="rules"
         dense
-      ></v-select>
+      >
+        <template #label>{{display}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
+      </v-select>
     </template>
     <template #header>
       {{display}}
@@ -195,9 +198,23 @@ export default {
     }
   },
   computed: {
+    index: function() {
+      if ( this.slotProps && this.slotProps.input ) return this.slotProps.input.index
+      else return undefined
+    },
     display: function() {
       if ( this.slotProps && this.slotProps.input) return this.slotProps.input.label
       else return this.label
+    },
+    required: function() {
+      return (this.index || 0) < this.min
+    },
+    rules: function() {
+      if ( this.required ) {
+        return [ v => !!v || this.display+" is required" ]
+      } else {
+        return []
+      }
     }
     /*
     displayValue: function() {

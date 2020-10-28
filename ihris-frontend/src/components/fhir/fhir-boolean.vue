@@ -5,8 +5,10 @@
         v-model="value"
         :label="display+`: ${value.toString()}`"
         :disabled="disabled"
+        :rules="rules"
         dense
       >
+      <template #label>{{display}}: {{value.toString()}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
       </v-switch>
     </template>
     <template #header>
@@ -71,12 +73,22 @@ export default {
   },
   computed: {
     index: function() {
-      if ( this.slotProps ) return this.slotProps.input
+      if ( this.slotProps && this.slotProps.input ) return this.slotProps.input.index
       else return undefined
     },
     display: function() {
       if ( this.slotProps && this.slotProps.input) return this.slotProps.input.label
       else return this.label
+    },
+    required: function() {
+      return (this.index || 0) < this.min
+    },
+    rules: function() {
+      if ( this.required ) {
+        return [ v => !!v || this.display+" is required" ]
+      } else {
+        return []
+      }
     }
   }
 }

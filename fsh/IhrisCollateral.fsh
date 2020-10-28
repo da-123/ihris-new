@@ -8,9 +8,9 @@ Description:    "iHRIS Profile of the Basic resource for Collateral."
 * extension contains
     IhrisCollateral named collateral 1..1 MS
 * extension[collateral] ^label = "Collateral"
-* extension[collateral].extension[name].valueString MS
+* extension[collateral].extension[name].valueString 1..1 MS
 * extension[collateral].extension[altlangName].valueString MS
-* extension[collateral].extension[gender].valueCoding MS
+* extension[collateral].extension[gender].valueCoding 1..1 MS
 * extension[collateral].extension[birthdate].valueDate MS
 * extension[collateral].extension[phone].valueString MS
 * extension[collateral].extension[mobile].valueString MS
@@ -123,7 +123,7 @@ Usage:          #definition
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Alt Language Full Name"
 * item[0].item[1].type = #string
-* item[0].item[1].required = true
+* item[0].item[1].required = false
 * item[0].item[1].repeats = false
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
@@ -136,86 +136,86 @@ Usage:          #definition
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
 * item[0].item[3].text = "Date of Birth"
 * item[0].item[3].type = #date
-* item[0].item[3].required = true
+* item[0].item[3].required = false
 * item[0].item[3].repeats = false
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Home Phone"
 * item[0].item[4].type = #string
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
 * item[0].item[5].text = "Mobile Phone"
 * item[0].item[5].type = #string
-* item[0].item[5].required = true
+* item[0].item[5].required = false
 * item[0].item[5].repeats = false
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Work Phone"
 * item[0].item[6].type = #string
-* item[0].item[6].required = true
+* item[0].item[6].required = false
 * item[0].item[6].repeats = false
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "Other Phone"
 * item[0].item[7].type = #string
-* item[0].item[7].required = true
+* item[0].item[7].required = false
 * item[0].item[7].repeats = false
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Work Email"
 * item[0].item[8].type = #string
-* item[0].item[8].required = true
+* item[0].item[8].required = false
 * item[0].item[8].repeats = false
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
 * item[0].item[9].text = "Other Email"
 * item[0].item[9].type = #string
-* item[0].item[9].required = true
+* item[0].item[9].required = false
 * item[0].item[9].repeats = false
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
 * item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-basic-collateral#Basic.extension:collateral.extension:location.value[x]:valueReference"
 * item[0].item[10].text = "Location(Region/Zone/Woreda)"
 * item[0].item[10].type = #reference
-* item[0].item[10].required = true
+* item[0].item[10].required = false
 * item[0].item[10].repeats = false
 
 * item[0].item[11].linkId = "Basic.extension[0].extension[11]"
 * item[0].item[11].text = "City/Town"
 * item[0].item[11].type = #string
-* item[0].item[11].required = true
+* item[0].item[11].required = false
 * item[0].item[11].repeats = false
 
 * item[0].item[12].linkId = "Basic.extension[0].extension[12]"
 * item[0].item[12].text = "Kebele"
 * item[0].item[12].type = #string
-* item[0].item[12].required = true
+* item[0].item[12].required = false
 * item[0].item[12].repeats = false
 
 * item[0].item[13].linkId = "Basic.extension[0].extension[13]"
 * item[0].item[13].text = "House Number"
 * item[0].item[13].type = #string
-* item[0].item[13].required = true
+* item[0].item[13].required = false
 * item[0].item[13].repeats = false
 
 * item[0].item[14].linkId = "Basic.extension[0].extension[14]"
 * item[0].item[14].text = "P.O.BOX"
 * item[0].item[14].type = #text
-* item[0].item[14].required = true
+* item[0].item[14].required = false
 * item[0].item[14].repeats = false
 
 * item[0].item[15].linkId = "Basic.extension[0].extension[15]"
 * item[0].item[15].text = "Salary"
 * item[0].item[15].type = #string
-* item[0].item[15].required = true
+* item[0].item[15].required = false
 * item[0].item[15].repeats = false
 
 * item[0].item[16].linkId = "Basic.extension[0].extension[16]"
 * item[0].item[16].text = "Remark"
 * item[0].item[16].type = #text
-* item[0].item[16].required = true
+* item[0].item[16].required = false
 * item[0].item[16].repeats = false
 
 Instance:       ihris-page-collateral
