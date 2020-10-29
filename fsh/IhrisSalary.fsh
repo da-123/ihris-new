@@ -38,8 +38,8 @@ Title:          "Salary details"
     reviewed 0..1 MS and
     remark 0..1 MS and
     salarySource 1..1 MS and
-    frequency 1..1 MS and
-    current 1..1 MS
+    frequency 0..1 MS and
+    current 0..1 MS
 * extension[salaryladder].value[x] only Coding
 * extension[salaryladder].valueCoding 1..1 MS
 * extension[salaryladder].valueCoding ^label = "Pay Grade Ladder"
@@ -53,39 +53,39 @@ Title:          "Salary details"
 * extension[salaryStep].valueCoding ^label = "Pay Grade Step"
 * extension[salaryStep].valueCoding from IhrisEthiopiaSalaryStepValueSet (required)
 * extension[bsalary].value[x] only string
-* extension[bsalary].valueString 1..1 MS
+* extension[bsalary].valueString MS
 * extension[bsalary].valueString ^label = "Basic Salary"
 * extension[allowance].value[x] only string
-* extension[allowance].valueString 1..1 MS
+* extension[allowance].valueString MS
 * extension[allowance].valueString ^label = "Allowance"
 * extension[benefits].value[x] only string
-* extension[benefits].valueString 1..1 MS
+* extension[benefits].valueString MS
 * extension[benefits].valueString ^label = "Benefits"
 * extension[total].value[x] only string
-* extension[total].valueString 1..1 MS
+* extension[total].valueString MS
 * extension[total].valueString ^label = "Total"
 * extension[startDate].value[x] only date
 * extension[startDate].valueDate 1..1 MS
 * extension[startDate].valueDate ^label = "Effective Start Date"
 * extension[endDate].value[x] only date
-* extension[endDate].valueDate 1..1 MS
+* extension[endDate].valueDate MS
 * extension[endDate].valueDate ^label = "End Date"
 * extension[reviewed].value[x] only boolean
-* extension[reviewed].valueBoolean 1..1 MS
+* extension[reviewed].valueBoolean MS
 * extension[reviewed].valueBoolean ^label = "Is Reviewed"
 * extension[remark].value[x] only string
-* extension[remark].valueString 1..1 MS
+* extension[remark].valueString MS
 * extension[remark].valueString ^label = "Remark"
 * extension[salarySource].value[x] only Coding
 * extension[salarySource].valueCoding 1..1 MS
 * extension[salarySource].valueCoding ^label = "Salary Fund Source Type"
 * extension[salarySource].valueCoding from IhrisEthiopiaSalarySourceValueSet (required)
 * extension[frequency].value[x] only Coding
-* extension[frequency].valueCoding 1..1 MS
+* extension[frequency].valueCoding MS
 * extension[frequency].valueCoding ^label = "Pay Frequency"
 * extension[frequency].valueCoding from IhrisEthiopiaFrequencyValueSet (required)
 * extension[current].value[x] only boolean
-* extension[current].valueBoolean 1..1 MS
+* extension[current].valueBoolean MS
 * extension[current].valueBoolean ^label = "Is Current"
 
 CodeSystem:      IhrisEthiopiaSalaryLadder

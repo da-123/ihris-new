@@ -23,9 +23,11 @@ Description:    "iHRIS profile of Location."
 * type 0..1 MS
 * type ^label = "Facility Type"
 * type.coding 1..1 MS
+* type.coding ^label = "Facility Type"
 * physicalType MS
 * physicalType ^label = "Location Type"
 * physicalType.coding 1..1 MS
+* physicalType.coding ^label = "Location Type"
 * position 0..1 MS
 * position ^label = "Geo-Coordinates"
 * position.longitude 1..1 MS

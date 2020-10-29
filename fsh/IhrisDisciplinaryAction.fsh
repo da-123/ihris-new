@@ -38,13 +38,13 @@ Title:          "Discipline details"
 * extension[givenDate].valueDate 1..1 MS
 * extension[givenDate].valueDate ^label = "Given Date"
 * extension[givenBy].value[x] only string
-* extension[givenBy].valueString 1..1 MS
+* extension[givenBy].valueString MS
 * extension[givenBy].valueString ^label = "Given By"
 * extension[refNo].value[x] only string
-* extension[refNo].valueString 1..1 MS
+* extension[refNo].valueString MS
 * extension[refNo].valueString ^label = "Reference No"
 * extension[actionTaken].value[x] only string
-* extension[actionTaken].valueString 1..1 MS
+* extension[actionTaken].valueString MS
 * extension[actionTaken].valueString ^label = "Action Taken"
 * extension[startDate].value[x] only date
 * extension[startDate].valueDate 1..1 MS
@@ -56,7 +56,7 @@ Title:          "Discipline details"
 * extension[reason].valueString 1..1 MS
 * extension[reason].valueString ^label = "Reason"
 * extension[remark].value[x] only string
-* extension[remark].valueString 1..1 MS
+* extension[remark].valueString MS
 * extension[remark].valueString ^label = "Remark"
 
 CodeSystem:      IhrisDisciplinaryActionType

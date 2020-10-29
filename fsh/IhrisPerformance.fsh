@@ -7,15 +7,15 @@ Description:    "iHRIS Profile of the Basic resource for Performance."
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisPerformance named performance 1..1 MS
-* extension[performance].extension[evaluator].valueString MS
+* extension[performance].extension[evaluator].valueString 1..1 MS
 * extension[performance].extension[evaluator].valueString ^label = "Evaluator's Name"
 * extension[performance].extension[period].valuePeriod MS
-* extension[performance].extension[period].valuePeriod.start MS
+* extension[performance].extension[period].valuePeriod.start 1..1 MS
 * extension[performance].extension[period].valuePeriod.start ^label = "Evaluation Period Start Date"
-* extension[performance].extension[period].valuePeriod.end MS
+* extension[performance].extension[period].valuePeriod.end 1..1 MS
 * extension[performance].extension[period].valuePeriod.end ^label = "Evaluation Period End Date"
-* extension[performance].extension[score].valueCoding ^label = "Score Attained"
-* extension[performance].extension[score].valueCoding MS
+* extension[performance].extension[score].valueString ^label = "Score Attained"
+* extension[performance].extension[score].valueString 1..1 MS
     
 Extension:      IhrisPerformance
 Id:             ihris-performance
@@ -26,9 +26,8 @@ Title:          "Performance details"
       score 1..1 MS 
 * extension[evaluator].value[x] only string
 * extension[evaluator].valueString ^label = "Evaluator's Name"
-* extension[score].value[x] only Coding
-* extension[score].valueCoding ^label = "Score Attained"
-* extension[score].valueCoding from IhrisPerformanceScoreValueSet (required)
+* extension[score].value[x] only string
+* extension[score].valueString ^label = "Score Attained"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod ^label = "Evaluation Period"
 * extension[period].valuePeriod.start 1..1 MS
@@ -88,8 +87,7 @@ Usage:          #definition
 
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
 * item[0].item[3].text = "Score Attained"
-* item[0].item[3].type = #choice
-* item[0].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-performance-score-valueset"
+* item[0].item[3].type = #string
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false
 
@@ -119,4 +117,4 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:performance.extension:evaluator.value[x]:valueString"
 * extension[section][0].extension[field][2].valueString = "Basic.extension:performance.extension:period.value[x]:valuePeriod"
-* extension[section][0].extension[field][3].valueString = "Basic.extension:performance.extension:score.value[x]:valueCoding"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:performance.extension:score.value[x]:valueString"

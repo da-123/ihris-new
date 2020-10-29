@@ -372,7 +372,7 @@ Usage:          #example
 * extension[section][14].extension[resource].extension[column][4].extension[header].valueString = "Actions"
 * extension[section][14].extension[resource].extension[column][4].extension[field].valueString = "_action"
 * extension[section][14].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-employment-history/practitioner?practitioner=FHIRID"
-* extension[section][14].extension[resource].extension[action][0].extension[text].valueString = "Add Employment History Evaluation"
+* extension[section][14].extension[resource].extension[action][0].extension[text].valueString = "Add Employment History"
 * extension[section][14].extension[resource].extension[action][0].extension[row].valueBoolean = false
 * extension[section][14].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
 * extension[section][14].extension[resource].extension[action][0].extension[class].valueString = "primary"

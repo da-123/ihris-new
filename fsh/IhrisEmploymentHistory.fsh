@@ -7,22 +7,22 @@ Description:    "iHRIS Profile of the Basic resource for Employment History."
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisEmploymentHistory named employmentHistory 1..1 MS
-* extension[employmentHistory].extension[organization].valueString MS
+* extension[employmentHistory].extension[organization].valueString 1..1 MS
 * extension[employmentHistory].extension[organization] ^label = "Organization Name"
 * extension[employmentHistory].extension[address].valueString MS
 * extension[employmentHistory].extension[address] ^label = "Organization Address"
 * extension[employmentHistory].extension[telephone].valueString MS
 * extension[employmentHistory].extension[telephone] ^label = "Organization Telephone"
-* extension[employmentHistory].extension[startingPosition].valueString MS
+* extension[employmentHistory].extension[startingPosition].valueString 1..1  MS
 * extension[employmentHistory].extension[startingPosition] ^label = "Starting Position"
 * extension[employmentHistory].extension[startingSalary].valueMoney MS
 * extension[employmentHistory].extension[startingSalary] ^label = "Starting Salary"
-* extension[employmentHistory].extension[dateStarted].valueDate MS
+* extension[employmentHistory].extension[dateStarted].valueDate 1..1 MS
 * extension[employmentHistory].extension[dateStarted] ^label = "Date Started"
 * extension[employmentHistory].extension[dateEnded].valueDate MS
 * extension[employmentHistory].extension[dateEnded] ^label = "Date Ended"
 * extension[employmentHistory].extension[responsibilities].valueString MS
-* extension[employmentHistory].extension[responsibilities] ^label = "Job Responsibilities"
+* extension[employmentHistory].extension[responsibilities] ^label = "Job Description"
 * extension[employmentHistory].extension[reasonLeaving].valueString MS
 * extension[employmentHistory].extension[reasonLeaving] ^label = "Reason For Leaving"
 
@@ -83,13 +83,13 @@ Usage:          #definition
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Organization Address"
 * item[0].item[1].type = #text
-* item[0].item[1].required = true
+* item[0].item[1].required = false
 * item[0].item[1].repeats = false
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Organization Telephone"
 * item[0].item[2].type = #string
-* item[0].item[2].required = true
+* item[0].item[2].required = false
 * item[0].item[2].repeats = false
 
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
@@ -101,7 +101,7 @@ Usage:          #definition
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Salary"
 * item[0].item[4].type = #string
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
@@ -113,19 +113,19 @@ Usage:          #definition
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Date Ended"
 * item[0].item[6].type = #date
-* item[0].item[6].required = true
+* item[0].item[6].required = false
 * item[0].item[6].repeats = false
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "Job Description"
 * item[0].item[7].type = #text
-* item[0].item[7].required = true
+* item[0].item[7].required = false
 * item[0].item[7].repeats = false
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Reason For Leaving"
 * item[0].item[8].type = #string
-* item[0].item[8].required = true
+* item[0].item[8].required = false
 * item[0].item[8].repeats = false
 
 Instance:       ihris-page-employment-history

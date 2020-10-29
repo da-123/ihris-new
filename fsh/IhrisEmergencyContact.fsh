@@ -46,46 +46,46 @@ Title:          "Emergency details"
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Full Name"
 * extension[altlangName].value[x] only string
-* extension[altlangName].valueString 1..1 MS
+* extension[altlangName].valueString 0..1 MS
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
 * extension[relation].value[x] only Coding
 * extension[relation].valueCoding 1..1 MS
 * extension[relation].valueCoding ^label = "Relationship"
 * extension[relation].valueCoding from IhrisEthiopiaRelationValueSet (required)
 * extension[phone].value[x] only string
-* extension[phone].valueString 1..1 MS
+* extension[phone].valueString 0..1 MS
 * extension[phone].valueString ^label = "Home Phone"
 * extension[mobile].value[x] only string
 * extension[mobile].valueString 1..1 MS
 * extension[mobile].valueString ^label = "Mobile Phone"
 * extension[workPhone].value[x] only string
-* extension[workPhone].valueString 1..1 MS
+* extension[workPhone].valueString 0..1 MS
 * extension[workPhone].valueString ^label = "Work Phone"
 * extension[otherPhone].value[x] only string
-* extension[otherPhone].valueString 1..1 MS
+* extension[otherPhone].valueString 0..1 MS
 * extension[otherPhone].valueString ^label = "Other Phone"
 * extension[workEmail].value[x] only string
-* extension[workEmail].valueString 1..1 MS
+* extension[workEmail].valueString 0..1 MS
 * extension[workEmail].valueString ^label = "Work Email"
 * extension[otherEmail].value[x] only string
-* extension[otherEmail].valueString 1..1 MS
+* extension[otherEmail].valueString 0..1 MS
 * extension[otherEmail].valueString ^label = "Other Email"
 * extension[location].value[x] only Reference
-* extension[location].valueReference 1..1 MS
+* extension[location].valueReference 0..1 MS
 * extension[location].valueReference ^label = "Location(Region/Zone/Woreda)"
 * extension[location].valueReference.reference ^label = "Location(Region/Zone/Woreda)"
 * extension[location].valueReference only Reference(Location)
 * extension[address].value[x] only string
-* extension[address].valueString 1..1 MS
+* extension[address].valueString 0..1 MS
 * extension[address].valueString ^label = "P.O.BOX"
 * extension[city].value[x] only string
-* extension[city].valueString 1..1 MS
+* extension[city].valueString 0..1 MS
 * extension[city].valueString ^label = "City/Town"
 * extension[kebele].value[x] only string
-* extension[kebele].valueString 1..1 MS
+* extension[kebele].valueString 0..1 MS
 * extension[kebele].valueString ^label = "Kebele"
 * extension[houseNumber].value[x] only string
-* extension[houseNumber].valueString 1..1 MS
+* extension[houseNumber].valueString 0..1 MS
 * extension[houseNumber].valueString ^label = "House Number"
 
 Instance:       IhrisPractitionerWorkflowEmergency
