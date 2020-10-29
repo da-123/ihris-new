@@ -12,7 +12,7 @@ Description:    "iHRIS profile of Practitioner."
 * identifier.type MS
 * identifier.type ^label = "Type"
 * identifier.type.coding 1..1 MS*/
-* active 1..1 MS
+* active 0..1 MS
 * active ^label = "Status"
 * practitioner MS
 * practitioner ^label = "Health Worker"
@@ -78,12 +78,16 @@ Description:    "iHRIS extension for Job Description Shift."
 CodeSystem:      IhrisShiftCodeSystem
 Id:              ihris-shift-codesystem
 Title:           "Shift"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * #duty "Duty" "Duty"
 * #work "Work" "Work"
 
 ValueSet:         IhrisShiftValueSet
 Id:               ihris-shift-valueset
 Title:            "iHRIS Shift Value Set"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * codes from system IhrisShiftCodeSystem
 
 Extension:      IhrisPractitionerRoleDirectorate
@@ -120,6 +124,8 @@ Description:    "iHRIS extension for Job Description Employment Status."
 CodeSystem:      IhrisEmploymentStatusCodeSystem
 Id:              ihris-employment-status-codesystem
 Title:           "Employment Status"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * #contract "Contract" "Contract"
 * #permanent "Permanent" "Permanent"
 * #LTA "Long Term Absence" "Long Term Absence"
@@ -129,6 +135,8 @@ Title:           "Employment Status"
 ValueSet:         IhrisEmploymentStatusValueSet
 Id:               ihris-employment-status-valueset
 Title:            "iHRIS Employment Status ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * codes from system IhrisEmploymentStatusCodeSystem
 
 Extension:      IhrisPractitionerRoleJobType
@@ -145,6 +153,8 @@ Description:    "iHRIS extension for Job Description Job Type."
 CodeSystem:      IhrisJobTypeCodeSystem
 Id:              ihris-job-type-codesystem
 Title:           "Job Type"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * #NewHire "New Hire" "New Hire"
 * #Transfered "Transfered" "Transfered"
 * #Promoted "Promoted" "Promoted"
@@ -155,6 +165,8 @@ Title:           "Job Type"
 ValueSet:         IhrisJobTypeValueSet
 Id:               ihris-job-type-valueset
 Title:            "iHRIS Job Type ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
 * codes from system IhrisJobTypeCodeSystem
 
 Extension:      IhrisPractitionerRoleSalaryScale
@@ -188,16 +200,19 @@ Description:    "iHRIS extension for Job Description Reason for Departure."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only Coding
-* valueCoding 1..1 MS
-* valueCoding ^label = "Reason for Departure"
+* valueCoding 0..1 MS
+* valueCoding ^label = "Reason for Change/Departure"
 * valueCoding from IhrisReasonDepartureValueSet (required)
 
 CodeSystem:      IhrisReasonDepartureCodeSystem
 Id:              ihris-reason-departure-codesystem
-Title:           "Reason For Departure"
+Title:           "Reason For Change/Departure"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * #transfer "Transfer" "Transfer"
-* #promotion "Promotion" "Promotion"
+* #promotionCarrierStructure "Promotion-Carrier structure" "Promotion-Carrier structure"
+* #promotionAdmin "Promotion-Admin" "Promotion-Admin"
+* #demotion "Demotion" "Demotion"
 * #redeployment  "Redeployment" "Redeployment"
 * #death "Death" "Death"
 * #mandatoryRetirement "Mandatory Retirement" "Mandatory Retirement"
@@ -210,6 +225,7 @@ Title:           "Reason For Departure"
 ValueSet:         IhrisReasonDepartureValueSet
 Id:               ihris-reason-departure-valueset
 Title:            "iHRIS Reason Departure ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisReasonDepartureCodeSystem
 
@@ -220,7 +236,7 @@ Description:    "iHRIS extension for First Employment Date."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only date
-* valueDate 1..1 MS
+* valueDate 0..1 MS
 * valueDate ^label = "First Employment Date"
 
 Extension:      IhrisPractitionerRoleJobInformationRemark
@@ -230,7 +246,7 @@ Description:    "iHRIS extension for Job Information Remark."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only string
-* valueString 1..1 MS
+* valueString 0..1 MS
 * valueString ^label = "Job Information Remark"
 
 Extension:      IhrisPractitionerRoleSalary
@@ -240,7 +256,7 @@ Description:    "iHRIS extension for Job Information Salary."
 * ^context.type = #element
 * ^context.expression = "PractitionerRole"
 * value[x] only Money
-* valueMoney 1..1 MS
+* valueMoney 0..1 MS
 * valueMoney ^label = "Salary"
 
 Extension:      IhrisPractitionerRoleCaseTeam
@@ -257,6 +273,7 @@ Description:    "iHRIS extension for Job Description Case Team."
 CodeSystem:      IhrisCaseTeamCodeSystem
 Id:              ihris-caseteam-codesystem
 Title:           "Case Team"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.3.0"
 * #RMT "Resource Mobilization Team" "Resource Mobilization Team"
 * #PT "Purchasing Team" "Purchasing Team"
@@ -313,12 +330,14 @@ Title:           "Case Team"
 ValueSet:         IhrisCaseTeamValueSet
 Id:               ihris-caseteam-valueset
 Title:            "iHRIS Case Team ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisCaseTeamCodeSystem
 
 CodeSystem:      IhrisDirectorateCodeSystem
 Id:              ihris-directorate-codesystem
 Title:           "Directorate"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * ^concept[0].designation[0].language = #urn:ietf:bcp:47#am
 * ^concept[0].designation[0].value = "ዳይሬክተር ጄኔራል (የሚኒስተሩ ጽ/ቤት ኃላፊ )"
@@ -488,6 +507,7 @@ Title:           "Directorate"
 ValueSet:         IhrisDirectorateValueSet
 Id:               ihris-directorate-valueset
 Title:            "iHRIS Directorate ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisDirectorateCodeSystem
 
@@ -506,10 +526,12 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "Start Date|PractitionerRole.period.start"
 * extension[display].extension[search][2].valueString = "Practitioner|PractitionerRole.practitioner"
 * extension[display].extension[search][3].valueString = "Facility|PractitionerRole.location"
-* extension[display].extension[filter][0].valueString = "Job|code|http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
+* extension[display].extension[search][4].valueString = "Status|PractitionerRole.active"
+* extension[display].extension[filter][0].valueString = "Job|code[0].coding[0]|http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
 * extension[display].extension[filter][1].valueString = "Facility|PractitionerRole.location:location"
 * extension[display].extension[filter][2].valueString = "Directorate|PractitionerRole.extension:directorate.value[x]:valueCoding|http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
 * extension[display].extension[filter][3].valueString = "Case Team|PractitionerRole.extension:caseteam.value[x]:valueCoding|http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
+* extension[display].extension[filter][4].valueString = "Status|active"
 * extension[display].extension[field][0].extension[path].valueString = "PractitionerRole.practitioner"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[section][0].extension[title].valueString = "Position"
