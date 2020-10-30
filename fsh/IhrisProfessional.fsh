@@ -9,15 +9,20 @@ Description:    "iHRIS Profile of the Basic resource for Professional."
     IhrisProfessional named professional 1..1 MS
 * extension[professional].extension[profession].valueCoding ^label = "Professional License Category"
 * extension[professional].extension[profession].valueCoding MS
+* extension[professional].extension[other].valueString 1..1 MS
+* extension[professional].extension[other].valueString ^label = "Other"
     
 Extension:      IhrisProfessional
 Id:             ihris-professional
 Title:          "Professional details"
 * extension contains
-      profession 1..1 MS 
+      profession 1..1 MS and
+      other 0..* MS
 * extension[profession].value[x] only Coding
 * extension[profession].valueCoding ^label = "Profession Attained"
 * extension[profession].valueCoding from IhrisProfessionValueSet (required)
+* extension[other].value[x] only string
+* extension[other].valueString ^label = "Other"
 
 CodeSystem:      IhrisProfessionCodesystem
 Id:              ihris-profession-codesystem
@@ -53,6 +58,12 @@ Usage:          #definition
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
+* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
+* item[0].item[1].text = "Other"
+* item[0].item[1].type = #string
+* item[0].item[1].required = false
+* item[0].item[1].repeats = true
+
 Instance:       ihris-page-professional
 InstanceOf:     IhrisPage
 Title:          "iHRIS Basic Professional Page"
@@ -68,7 +79,7 @@ Usage:          #example
 * extension[display].extension[link][1].extension[text].valueString = "Add Another"
 * extension[display].extension[link][1].extension[button].valueBoolean = true
 * extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
-* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-professional/practitioner?practitioner=FIELD"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-professional/professional?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Professional License Category|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='profession').valueCoding.display"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
@@ -77,6 +88,7 @@ Usage:          #example
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:professional.extension:profession.value[x]:valueCoding"
+* extension[section][0].extension[field][1].valueString = "Basic.extension:professional.extension:other.value[x]:valueString"
 
 Instance:       ihris-page-profession
 InstanceOf:     IhrisPage

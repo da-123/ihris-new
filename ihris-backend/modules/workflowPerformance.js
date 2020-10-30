@@ -84,6 +84,16 @@ const workflowPerformance = {
         reject(err)
       } )
     } )
+  },
+  postProcess: ( req, results ) => {
+    return new Promise( (resolve, reject) => {
+        if ( results.entry && results.entry.length > 0 && results.entry[0].response.location ) {
+          if ( !req.body.meta ) req.body.meta = {}
+          if ( !req.body.meta.tag ) req.body.meta.tag = []
+          req.body.meta.tag.push( { system: "http://ihris.org/fhir/tags/resource", code: results.entry[0].response.location } )
+          resolve( req )
+        }
+    })
   }
 }
  

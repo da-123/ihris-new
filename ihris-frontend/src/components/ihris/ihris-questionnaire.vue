@@ -27,20 +27,17 @@
         <v-list class="white--text">
           <v-list-item>
             <v-btn dark class="accent darken-1" @click="$router.go(-1)" v-if="isEdit">
-            <v-icon light>mdi-content-save</v-icon>
-            <span>Back</span>
+              <v-icon light>mdi-content-save</v-icon>
+              <span>Back</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn dark class="success darken-1" @click="processFHIR()" :disabled="!valid">
-            <v-icon light>mdi-content-save</v-icon>
-            <span>Save</span>
+            <v-btn v-if="valid" dark class="success darken-1" @click="processFHIR()" :disabled="!valid">
+              <v-icon light>mdi-content-save</v-icon>
+              <span>Save</span>
             </v-btn>
-          </v-list-item>
-          <v-list-item>
-            <v-spacer/>
-            <v-btn dark class="accent" @click="$refs.form.validate()" v-if="edit">
-              <v-icon light>mdi-account-check</v-icon>
-              <span>Validate</span>
+            <v-btn v-else dark class="warning" @click="$refs.form.validate()">
+              <v-icon light>mdi-content-save</v-icon>
+              <span>Save</span>
             </v-btn>
           </v-list-item>
           <v-divider color="white"></v-divider>
@@ -63,14 +60,15 @@
 const querystring = require('querystring')
 export default {
   name: "ihris-questionnaire",
-  props: ["id", "url", "title", "description", "purpose", "section-menu", "view-page", "edit"],
+  props: ["id", "url", "title", "description", "purpose", "section-menu", "view-page", "edit", "constraints"],
   data: function() {
     return {
       fhir: {},
       loading: false,
       overlay: false,
       isEdit: false,
-      valid: true
+      valid: true,
+      advancedValid: true
     }
   },
   created: function() {
@@ -80,8 +78,78 @@ export default {
     processFHIR: function() {
       this.$refs.form.validate()
       if ( !this.valid ) return
+      this.advancedValid = true
       this.overlay = true
       this.loading = true
+
+      const processChildren = ( obj, children, itemMap ) => {
+        //console.log("called on "+parent)
+        if ( !itemMap ) itemMap = {}
+
+        children.forEach( child => {
+
+          let next = obj
+          let myItemMap = {}
+
+          if ( child.isArray ) {
+            //console.log("ARRAY", child.path)
+          } else if ( child.isQuestionnaireGroup ) {
+            //console.log("GROUP", child.path)
+            let section = { linkId: child.path, text: child.label, item: [] } 
+            next.push( section )
+            next = section.item
+          } else if ( child.qField ) {
+            //console.log("PROCESS",path,child.qField,child.value)
+            let item
+            if ( itemMap.hasOwnProperty( child.path ) ) {
+              item = itemMap[ child.path ]
+            } else {
+              item = { linkId: child.path, answer: [] }
+              itemMap[child.path] = item
+              next.push( item )
+            }
+            let answer = {}
+            answer[child.qField] = child.value
+            item.answer.push( answer )
+            if ( child.constraints ) {
+              child.errors = []
+              let constraints = child.constraints.split(",")
+              for( let constraint of constraints ) {
+                if ( this.constraints[constraint] ) {
+                  let results = this.$fhirpath.evaluate(child.value, this.constraints[constraint].expression)
+                  if ( !results.every(Boolean) ) {
+                    child.errors.push( this.constraints[constraint].human )
+                    this.advancedValid = false
+                  }
+                }
+              }
+            }
+          }
+
+          if ( child.$children ) {
+            //console.log("PROCESSING CHILDREN OF",child.path)
+            processChildren( next, child.$children, myItemMap )
+          } 
+          if ( child.isQuestionnaireGroup && child.constraints ) {
+            child.errors = []
+            let constraints = child.constraints.split(",")
+            for( let constraint of constraints ) {
+              if ( this.constraints[constraint] ) {
+                let results = this.$fhirpath.evaluate(next, this.constraints[constraint].expression)
+                if ( !results.every(Boolean) ) {
+                  child.errors.push( this.constraints[constraint].human )
+                  this.advancedValid = false
+                }
+              }
+            }
+          }
+
+
+        } )
+
+      }
+
+
       //console.log(this.field)
       this.fhir = { 
         resourceType: "QuestionnaireResponse",
@@ -91,6 +159,12 @@ export default {
       }
       //console.log(this)
       processChildren( this.fhir.item, this.$children )
+      if ( !this.advancedValid ) {
+        this.overlay = false
+        this.loading = false
+        this.$store.commit('setMessage', { type: 'error', text: 'There were errors on the form.' })
+        return
+      }
       console.log("SAVE",this.fhir)
       fetch( "/fhir/QuestionnaireResponse?"+querystring.stringify( this.$route.query ), {
         method: "POST",
@@ -106,15 +180,28 @@ export default {
           response.json().then(data => {
             this.overlay = false
             this.loading = false
-            if ( this.viewPage && data.subject && data.subject.reference ) {
-              let subject = data.subject.reference.split('/')
-              if ( subject[1] ) {
-                subject = subject[1]
-              } else {
+            let subject
+            if ( this.viewPage ) {
+              if ( data.meta.tag ) {
+                let redirect = data.meta.tag.find( tag => tag.system === "http://ihris.org/fhir/tags/resource" )
+                if ( redirect && redirect.code ) {
+                  subject = redirect.code
+                }
+              } 
+              if ( !subject && data.subject && data.subject.reference ) {
                 subject = data.subject.reference
               }
-              this.$router.push({ name:"resource_view", params: {page: this.viewPage, id: subject } })
-            } else {
+              if ( subject ) {
+                let viewPageId = subject.split('/')
+                if ( viewPageId[1] ) {
+                  viewPageId = viewPageId[1]
+                } else {
+                  viewPageId = subject
+                }
+                this.$router.push({ name:"resource_view", params: {page: this.viewPage, id: viewPageId } })
+              }
+            }
+            if ( !subject ) {
               this.$router.push({ name:"home" })
             }
             //console.log(data)
@@ -135,46 +222,6 @@ export default {
       */
     }
   }
-}
-
-const processChildren = function( obj, children, itemMap ) {
-  //console.log("called on "+parent)
-  if ( !itemMap ) itemMap = {}
-
-  children.forEach( child => {
-
-    let next = obj
-    let myItemMap = {}
-
-    if ( child.isArray ) {
-      //console.log("ARRAY", child.path)
-    } else if ( child.isQuestionnaireGroup ) {
-      //console.log("GROUP", child.path)
-      let section = { linkId: child.path, text: child.label, item: [] } 
-      next.push( section )
-      next = section.item
-    } else if ( child.qField ) {
-      //console.log("PROCESS",path,child.qField,child.value)
-      let item
-      if ( itemMap.hasOwnProperty( child.path ) ) {
-        item = itemMap[ child.path ]
-      } else {
-        item = { linkId: child.path, answer: [] }
-        itemMap[child.path] = item
-        next.push( item )
-      }
-      let answer = {}
-      answer[child.qField] = child.value
-      item.answer.push( answer )
-    }
-
-    if ( child.$children ) {
-      //console.log("PROCESSING CHILDREN OF",child.path)
-      processChildren( next, child.$children, myItemMap )
-    } 
-
-  } )
-
 }
 
 

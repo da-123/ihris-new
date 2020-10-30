@@ -13,8 +13,9 @@ Description:    "iHRIS Profile of the Basic resource for Discipline."
 * extension[discipline].extension[givenBy].valueString MS
 * extension[discipline].extension[refNo].valueString MS
 * extension[discipline].extension[actionTaken].valueString MS
-* extension[discipline].extension[startDate].valueDate 1..1 MS
-* extension[discipline].extension[endDate].valueDate 1..1 MS
+* extension[discipline].extension[period].valuePeriod MS
+* extension[discipline].extension[period].valuePeriod.start 1..1 MS 
+* extension[discipline].extension[period].valuePeriod.end 1..1 MS
 * extension[discipline].extension[reason].valueString 1..1 MS
 * extension[discipline].extension[remark].valueString MS
     
@@ -26,8 +27,7 @@ Title:          "Discipline details"
     givenDate 1..1 MS and
     givenBy 0..1 MS and
     refNo 0..1 MS and
-    startDate 1..1 MS and
-    endDate 1..1 MS and
+    period 1..1 MS and
     reason 1..1 MS and
     remark 0..1 MS
 * extension[actionType].value[x] only Coding
@@ -46,12 +46,16 @@ Title:          "Discipline details"
 * extension[actionTaken].value[x] only string
 * extension[actionTaken].valueString MS
 * extension[actionTaken].valueString ^label = "Action Taken"
-* extension[startDate].value[x] only date
-* extension[startDate].valueDate 1..1 MS
-* extension[startDate].valueDate ^label = "Effective Start Date"
-* extension[endDate].value[x] only date
-* extension[endDate].valueDate 1..1 MS
-* extension[endDate].valueDate ^label = "Effective End Date"
+* extension[period].value[x] only Period
+* extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
+* extension[period].valuePeriod ^constraint[0].severity = #error
+* extension[period].valuePeriod ^constraint[0].human = "The end date must be after the start date"
+* extension[period].valuePeriod ^constraint[0].expression = "end.empty() or end = '' or end >= start"
+* extension[period].valuePeriod ^label = "Evaluation Period"
+* extension[period].valuePeriod.start 1..1 MS
+* extension[period].valuePeriod.start ^label = "Effective Start Date"
+* extension[period].valuePeriod.end 1..1 MS
+* extension[period].valuePeriod.end ^label = "Effective End Date"
 * extension[reason].value[x] only string
 * extension[reason].valueString 1..1 MS
 * extension[reason].valueString ^label = "Reason"
@@ -86,6 +90,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Discipline"
 * item[0].type = #group
+/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date-discipline"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDate"
+* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."*/
+
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Discipline Action Type"
@@ -157,7 +166,7 @@ Usage:          #example
 * extension[display].extension[link][1].extension[text].valueString = "Add Another"
 * extension[display].extension[link][1].extension[button].valueBoolean = true
 * extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
-* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-discipline/practitioner?practitioner=FIELD"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-discipline/discipline?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Discipline|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-discipline').extension.where(url='actionType').valueString"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
@@ -170,10 +179,9 @@ Usage:          #example
 * extension[section][0].extension[field][3].valueString = "Basic.extension:discipline.extension:givenBy.value[x]:valueString"
 * extension[section][0].extension[field][4].valueString = "Basic.extension:discipline.extension:refNo.value[x]:valueString"
 * extension[section][0].extension[field][5].valueString = "Basic.extension:discipline.extension:actionTaken.value[x]:valueString"
-* extension[section][0].extension[field][6].valueString = "Basic.extension:discipline.extension:startDate.value[x]:valueDate"
-* extension[section][0].extension[field][7].valueString = "Basic.extension:discipline.extension:endDate.value[x]:valueDate"
-* extension[section][0].extension[field][8].valueString = "Basic.extension:discipline.extension:reason.value[x]:valueString"
-* extension[section][0].extension[field][9].valueString = "Basic.extension:discipline.extension:remark.value[x]:valueString"
+* extension[section][0].extension[field][6].valueString = "Basic.extension:discipline.extension:period.value[x]:valuePeriod"
+* extension[section][0].extension[field][7].valueString = "Basic.extension:discipline.extension:reason.value[x]:valueString"
+* extension[section][0].extension[field][8].valueString = "Basic.extension:discipline.extension:remark.value[x]:valueString"
 
 Instance:       ihris-page-discipline-action-type
 InstanceOf:     IhrisPage

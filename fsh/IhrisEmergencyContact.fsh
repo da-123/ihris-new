@@ -45,6 +45,10 @@ Title:          "Emergency details"
 * extension[name].value[x] only string
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Full Name"
+* extension[name].valueString ^constraint[0].key = "ihris-name-check"
+* extension[name].valueString ^constraint[0].severity = #error
+* extension[name].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
+* extension[name].valueString ^constraint[0].human = "Name must be only text."
 * extension[altlangName].value[x] only string
 * extension[altlangName].valueString 0..1 MS
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
@@ -103,6 +107,10 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Emergency"
 * item[0].type = #group
+/* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint].extension[human].valueString = "Name must be only text."*/
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Full Name"

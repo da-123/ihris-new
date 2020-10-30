@@ -43,6 +43,10 @@ Title:          "Leave details"
 * extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[period].valuePeriod.end ^label = "Leave End Date"
 * extension[period].valuePeriod.end 1..1 MS
+* extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
+* extension[period].valuePeriod ^constraint[0].severity = #error
+* extension[period].valuePeriod ^constraint[0].human = "The end date must be after the start date"
+* extension[period].valuePeriod ^constraint[0].expression = "end.empty() or end = '' or end >= start"
 * extension[daysRequested].value[x] only integer
 * extension[daysRequested].valueInteger ^label = "Days Requested"
 * extension[dateRequested].value[x] only date
@@ -107,7 +111,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Leave Details"
 * item[0].type = #group
-
+/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
+* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
+*/
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Leave Type"
 * item[0].item[0].type = #choice
@@ -161,13 +169,9 @@ Usage:          #example
 * extension[display].extension[link][1].extension[text].valueString = "Add Another"
 * extension[display].extension[link][1].extension[button].valueBoolean = true
 * extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
-* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-leave-ethiopia/practitioner?practitioner=FIELD"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-leave-ethiopia/basicleave?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Leave Type|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='leave-type').valueCoding"
-* extension[display].extension[search][1].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.start"
-* extension[display].extension[search][2].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='period').valuePeriod.end"
-* extension[display].extension[search][3].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
-* extension[display].extension[search][4].valueString = "Days Requested|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='daysRequested').valuePositiveInt"
-* extension[display].extension[search][5].valueString = "Date Requested|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave').extension.where(url='dateRequested').valueDate"
+* extension[display].extension[search][1].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[display].extension[filter][0].valueString = "Leave Type|code|http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true

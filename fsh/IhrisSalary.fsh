@@ -15,8 +15,9 @@ Description:    "iHRIS Profile of the Basic resource for Salary."
 * extension[salary].extension[allowance].valueString MS
 * extension[salary].extension[benefits].valueString MS
 * extension[salary].extension[total].valueString MS
-* extension[salary].extension[startDate].valueDate 1..1 MS
-* extension[salary].extension[endDate].valueDate MS
+* extension[salary].extension[period].valuePeriod MS
+* extension[salary].extension[period].valuePeriod.start 1..1 MS
+* extension[salary].extension[period].valuePeriod.end MS
 * extension[salary].extension[reviewed].valueBoolean MS
 * extension[salary].extension[remark].valueString MS
 * extension[salary].extension[salarySource].valueCoding 1..1 MS
@@ -33,8 +34,7 @@ Title:          "Salary details"
     allowance 0..1 MS and
     benefits 0..1 MS and
     total 0..1 MS and
-    startDate 1..1 MS and
-    endDate 0..1 MS and
+    period 1..1 MS and
     reviewed 0..1 MS and
     remark 0..1 MS and
     salarySource 1..1 MS and
@@ -64,12 +64,16 @@ Title:          "Salary details"
 * extension[total].value[x] only string
 * extension[total].valueString MS
 * extension[total].valueString ^label = "Total"
-* extension[startDate].value[x] only date
-* extension[startDate].valueDate 1..1 MS
-* extension[startDate].valueDate ^label = "Effective Start Date"
-* extension[endDate].value[x] only date
-* extension[endDate].valueDate MS
-* extension[endDate].valueDate ^label = "End Date"
+* extension[period].value[x] only Period
+* extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
+* extension[period].valuePeriod ^constraint[0].severity = #error
+* extension[period].valuePeriod ^constraint[0].human = "The end date must be after the start date"
+* extension[period].valuePeriod ^constraint[0].expression = "end.empty() or end = '' or end >= start"
+* extension[period].valuePeriod ^label = "Effective Period"
+* extension[period].valuePeriod.start 1..1 MS
+* extension[period].valuePeriod.start ^label = "Effective Start Date"
+* extension[period].valuePeriod.end MS
+* extension[period].valuePeriod.end ^label = "End Date"
 * extension[reviewed].value[x] only boolean
 * extension[reviewed].valueBoolean MS
 * extension[reviewed].valueBoolean ^label = "Is Reviewed"
@@ -157,7 +161,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Salary Information"
 * item[0].type = #group
-
+/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[7]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[7]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate"
+* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
+*/
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Pay Grade Ladder"
 * item[0].item[0].type = #choice
@@ -266,13 +274,12 @@ Usage:          #example
 * extension[section][0].extension[field][5].valueString = "Basic.extension:salary.extension:allowance.value[x]:valueString"
 * extension[section][0].extension[field][6].valueString = "Basic.extension:salary.extension:benefits.value[x]:valueString"
 * extension[section][0].extension[field][7].valueString = "Basic.extension:salary.extension:total.value[x]:valueString"
-* extension[section][0].extension[field][8].valueString = "Basic.extension:salary.extension:startDate.value[x]:valueDate"
-* extension[section][0].extension[field][9].valueString = "Basic.extension:salary.extension:endDate.value[x]:valueDate"
-* extension[section][0].extension[field][10].valueString = "Basic.extension:salary.extension:reviewed.value[x]:valueBoolean"
-* extension[section][0].extension[field][11].valueString = "Basic.extension:salary.extension:remark.value[x]:valueString"
-* extension[section][0].extension[field][12].valueString = "Basic.extension:salary.extension:salarySource.value[x]:valueCoding"
-* extension[section][0].extension[field][13].valueString = "Basic.extension:salary.extension:frequency.value[x]:valueCoding"
-* extension[section][0].extension[field][14].valueString = "Basic.extension:salary.extension:current.value[x]:valueBoolean"
+* extension[section][0].extension[field][8].valueString = "Basic.extension:salary.extension:period.value[x]:valuePeriod"
+* extension[section][0].extension[field][9].valueString = "Basic.extension:salary.extension:reviewed.value[x]:valueBoolean"
+* extension[section][0].extension[field][10].valueString = "Basic.extension:salary.extension:remark.value[x]:valueString"
+* extension[section][0].extension[field][11].valueString = "Basic.extension:salary.extension:salarySource.value[x]:valueCoding"
+* extension[section][0].extension[field][12].valueString = "Basic.extension:salary.extension:frequency.value[x]:valueCoding"
+* extension[section][0].extension[field][13].valueString = "Basic.extension:salary.extension:current.value[x]:valueBoolean"
 
 Instance:       ihris-page-salary-ladder
 InstanceOf:     IhrisPage

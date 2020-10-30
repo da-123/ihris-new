@@ -79,19 +79,19 @@ const workflowSalary = {
                 complexExt.push({ url: "total",
                 valueString: (total + '') })
             }
-            if ( req.body.item[0].item[6].linkId === "Basic.extension[0].extension[6]" 
+            if ( (req.body.item[0].item[6].linkId === "Basic.extension[0].extension[5]" 
                 && req.body.item[0].item[6].answer 
                 && req.body.item[0].item[6].answer[0] 
-                && req.body.item[0].item[6].answer[0].valueDate){
-                complexExt.push({ url: "startDate",
-                valueDate:req.body.item[0].item[6].answer[0].valueDate })
-            }
-            if ( req.body.item[0].item[7].linkId === "Basic.extension[0].extension[7]" 
+                && req.body.item[0].item[6].answer[0].valueDate)||(
+                req.body.item[0].item[7].linkId === "Basic.extension[0].extension[7]" 
                 && req.body.item[0].item[7].answer 
                 && req.body.item[0].item[7].answer[0] 
-                && req.body.item[0].item[7].answer[0].valueDate){
-                complexExt.push({ url: "endDate",
-                valueDate:req.body.item[0].item[7].answer[0].valueDate })
+                && req.body.item[0].item[7].answer[0].valueDate
+                )){
+                complexExt.push({ url: "period",
+                valuePeriod:{ start:req.body.item[0].item[5].answer[0].valueDate,
+                              end:req.body.item[0].item[6].answer[0].valueDate}
+                             })
             }
             if ( req.body.item[0].item[8].linkId === "Basic.extension[0].extension[8]" 
                 && req.body.item[0].item[8].answer 

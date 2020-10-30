@@ -8,13 +8,13 @@
         :items="items" 
         outlined 
         hide-details="auto" 
-        :error-messages="err_messages"
-        :error="error"
+        :error-messages="errors"
         item-text="display"
         item-value="code"
         :disabled="disabled"
         :rules="rules"
         dense
+        @change="errors = []"
       >
         <template #label>{{display}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
       </v-select>
@@ -38,7 +38,7 @@ const itemSort = (a,b) => {
 */
 export default {
   name: "fhir-code",
-  props: ["field","min","max","base-min","base-max","label","binding","slotProps","path","edit","sliceName","readOnlyIfSet"],
+  props: ["field","min","max","base-min","base-max","label","binding","slotProps","path","edit","sliceName","readOnlyIfSet","constraints"],
   components: {
     IhrisElement
   },
@@ -46,11 +46,12 @@ export default {
     return {
       value: "",
       loading: true,
-      err_messages: null,
-      error: false,
+      errors: [],
+      //error: false,
       items: [],
       source: { path: "", data: {}, binding: this.binding },
-      disabled: false
+      disabled: false,
+      lockWatch: false
     }
   },
   created: function() {
@@ -60,7 +61,9 @@ export default {
     slotProps: {
       handler() {
         //console.log("WATCH CODE",this.field,this.path,this.slotProps)
-        this.setupData()
+        if ( !this.lockWatch ) {
+          this.setupData()
+        }
       },
       deep: true
     }
@@ -72,6 +75,7 @@ export default {
         if ( this.slotProps.source.fromArray ) {
           this.source.data = this.slotProps.source.data
           this.value = this.source.data
+          this.lockWatch = true
           //console.log("SET value to ", this.source.data, this.slotProps.input)
         } else {
           let expression = this.$fhirutils.pathFieldExpression( this.field )
@@ -79,6 +83,7 @@ export default {
           //console.log("STR FHIRPATH", this.slotProps.source.data, this.field)
           if ( this.source.data.length == 1 ) {
             this.value = this.source.data[0]
+            this.lockWatch = true
           }
         }
         this.disabled = this.readOnlyIfSet && (!!this.value)
@@ -90,8 +95,8 @@ export default {
         this.loading = false
       } ).catch( err => {
         console.log(err)
-        this.error = true
-        this.err_messages = err.message
+        //this.error = true
+        this.errors.push( err.message )
         this.loading = false
       } )
     }

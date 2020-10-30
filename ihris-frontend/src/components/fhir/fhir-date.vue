@@ -10,6 +10,8 @@
         :min="minYear" 
         :max="maxYear" 
         :rules="rules" 
+        :error-messages="errors"
+        @change="errors = []"
         dense
       >
         <template #label>{{label}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
@@ -33,6 +35,7 @@
             outlined
             hide-details="auto"
             :rules="rules"
+            :error-messages="errors"
             dense
           >
             <template #label>{{label}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
@@ -109,7 +112,7 @@
       {{label}}
     </template>
     <template #value>
-      {{value}}
+      {{displayValue}}
     </template>
   </ihris-element>
 </template>
@@ -122,7 +125,8 @@ import ethiopic from "ethiopic-calendar"
 export default {
   name: "fhir-date",
   props: ["field","min","max","base-min","base-max", "label", "slotProps", "path", "edit","sliceName", 
-    "minValueDate", "maxValueDate", "minValueQuantity", "maxValueQuantity", "displayType","readOnlyIfSet", "calendar"],
+    "minValueDate", "maxValueDate", "minValueQuantity", "maxValueQuantity", "displayType","readOnlyIfSet", "calendar",
+    "constraints" ],
   components: {
     IhrisElement,
     VEthiopianDatePicker
@@ -136,7 +140,9 @@ export default {
       qField: "valueDate",
       pickerType: "date",
       disabled: false,
-      showGregorian: false
+      showGregorian: false,
+      errors: [],
+      lockWatch: false
     }
   },
   created: function() {
@@ -226,7 +232,9 @@ export default {
     slotProps: {
       handler() {
         //console.log("WATCH STRING",this.field,this.path,this.slotProps)
-        this.setupData()
+        if ( !this.lockWatch ) {
+          this.setupData()
+        }
       },
       deep: true
     },
@@ -292,6 +300,7 @@ export default {
         if ( this.slotProps.source.fromArray ) {
           this.source.data = this.slotProps.source.data
           this.value = this.source.data
+          this.lockWatch = true
           //console.log("SET value to ", this.source.data, this.slotProps.input)
         } else {
           let expression = this.$fhirutils.pathFieldExpression( this.field )
@@ -299,6 +308,7 @@ export default {
           //console.log("STR FHIRPATH", this.slotProps.source.data, this.field)
           if ( this.source.data.length == 1 ) {
             this.value = this.source.data[0]
+            this.lockWatch = true
           }
         }
         this.disabled = this.readOnlyIfSet && (!!this.value)
@@ -306,6 +316,7 @@ export default {
       }
     },
     save (date) {
+      this.errors = []
       this.$refs.menu.save(date)
     }
   }

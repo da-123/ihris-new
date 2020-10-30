@@ -29,6 +29,10 @@ Title:          "Performance details"
 * extension[score].value[x] only string
 * extension[score].valueString ^label = "Score Attained"
 * extension[period].value[x] only Period
+* extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
+* extension[period].valuePeriod ^constraint[0].severity = #error
+* extension[period].valuePeriod ^constraint[0].human = "The end date must be after the start date"
+* extension[period].valuePeriod ^constraint[0].expression = "end.empty() or end = '' or end >= start"
 * extension[period].valuePeriod ^label = "Evaluation Period"
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.start ^label = "Evaluation Period Start Date"
@@ -52,7 +56,7 @@ Title:            "iHRIS Performance Score ValueSet"
 * codes from system IhrisPerformanceScore
 
 Instance:       IhrisPractitionerWorkflowPerformance
-InstanceOf:      Questionnaire
+InstanceOf:      IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Performance Workflow"
 * description = "iHRIS workflow to record a Performance"
@@ -66,6 +70,10 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Performance"
 * item[0].type = #group
+* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDate"
+* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Evaluator's Name"
@@ -106,7 +114,7 @@ Usage:          #example
 * extension[display].extension[link][1].extension[text].valueString = "Add Another"
 * extension[display].extension[link][1].extension[button].valueBoolean = true
 * extension[display].extension[link][1].extension[icon].valueString = "mdi-account-arrow-right"
-* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-performance/practitioner?practitioner=FIELD"
+* extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-performance/performance?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Start Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.start"
 * extension[display].extension[search][1].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"

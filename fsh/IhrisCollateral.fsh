@@ -49,9 +49,17 @@ Title:          "Collateral details"
 * extension[name].value[x] only string
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Full Name"
+* extension[name].valueString ^constraint[0].key = "ihris-name-check"
+* extension[name].valueString ^constraint[0].severity = #error
+* extension[name].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
+* extension[name].valueString ^constraint[0].human = "Name must be only text."
 * extension[altlangName].value[x] only string
 * extension[altlangName].valueString 1..1 MS
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
+* extension[altlangName].valueString ^constraint[0].key = "ihris-name-check"
+* extension[altlangName].valueString ^constraint[0].severity = #error
+* extension[altlangName].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
+* extension[altlangName].valueString ^constraint[0].human = "Name must be only text."
 * extension[gender].value[x] only Coding
 * extension[gender].valueCoding 1..1 MS
 * extension[gender].valueCoding ^label = "Gender"

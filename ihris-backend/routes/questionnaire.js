@@ -43,11 +43,20 @@ router.post("/QuestionnaireResponse", (req, res, next) => {
           fhirFilter.filterBundle( "write", bundle, req.user )
 
           fhirAxios.create( bundle ).then ( (results) => {
-            next()
+            if ( module.postProcess ) {
+              module.postProcess( req, results ).then( () => {
+                next()
+              } ).catch( (err) => {
+                winston.error(err.message)
+                return res.status( 400 ).json( { err: err.message } )
+              } )
+            } else {
+              next()
+            }
           } ).catch( (err) => {
-            winston.error(err)
-            winston.error(JSON.stringify(err.response.data,null,2))
-            return res.status( err.response.status ).json( err.response.data )
+            winston.error(err.message)
+            //return res.status( err.response.status ).json( err.response.data )
+            return res.status( 400 ).json( { err: err.message } )
           } )
 
         } ).catch( (err) => {
@@ -78,9 +87,9 @@ router.post("/QuestionnaireResponse", (req, res, next) => {
         }
         next()
       } ).catch( (err) => {
-        winston.error(err)
-        winston.error(JSON.stringify(err.response.data,null,2))
-        return res.status( err.response.status ).json( err.response.data )
+        winston.error(err.message)
+        //return res.status( err.response.status ).json( err.response.data )
+        return res.status( 400 ).json( { err: err.message } )
       } )
 
     } ).catch( (err) => {
