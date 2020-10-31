@@ -84,7 +84,8 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerNationality named nationality 0..1 MS and
     IhrisPractitionerCategory named category 0..1 MS and
     IhrisPractitionerEthnicity named ethnicity 0..1 MS and
-    IhrisPractitionerFamilyNames named familyNames 0..1 MS
+    IhrisPractitionerFamilyNames named familyNames 0..1 MS and
+    IhrisPractitionerDrivingLicense named drivingLicense 0..1 MS
 * extension[familyNames] ^label = "Family Names"
 * extension[familyNames].extension[fathers].valueString MS
 * extension[familyNames].extension[mothers].valueString MS
@@ -110,6 +111,11 @@ Description:    "iHRIS profile of Practitioner."
 * extension[remarkNote] ^label = "Remark Note"
 * extension[ethnicity].valueCoding MS
 * extension[ethnicity] ^label = "Ethnicity"
+* extension[drivingLicense] ^label = "Driving License"
+* extension[drivingLicense].extension[license].valueString MS
+* extension[drivingLicense].extension[License] ^label = "Driving Licence ID"
+* extension[drivingLicense].extension[licenseType].valueCoding MS
+* extension[drivingLicense].extension[licenseType] ^label = "Driving Licence Type"
 
 Extension:      IhrisPractitionerLanguageProficiency
  Id:             ihris-practitioner-language-proficiency
@@ -363,7 +369,6 @@ Title:            "Identifier Type"
 * #employeeId "Employee Id"
 * #pensionNumber "Pension Number"
 * #tinNumber "Tin Number"
-* #drivingLicenseId "Driving License"
 * #civilServiceId "Civil Service Id"
 * #licenseId "License Id"
 * #fileNo "File No"
@@ -475,6 +480,7 @@ Description:    "iHRIS extension for Practitioner dependents."
 CodeSystem:      IhrisEthiopiaRelationCodesystem
 Id:              ihris-relation-codesystem
 Title:           "Relationship"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * #spouse "Spouse" "Spouse"
 * #mother "Mother" "Mother"
@@ -486,12 +492,14 @@ Title:           "Relationship"
 ValueSet:         IhrisEthiopiaRelationValueSet
 Id:               ihris-relation-valueset
 Title:            "iHRIS Relationship ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisEthiopiaRelationCodesystem
 
 CodeSystem:      IhrisEthiopiaGenderCodesystem
 Id:              ihris-gender-codesystem
 Title:           "Gender"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * #male "Male" "Male"
 * #female "Female" "Female"
@@ -499,6 +507,7 @@ Title:           "Gender"
 ValueSet:         IhrisEthiopiaGenderValueSet
 Id:               ihris-gender-valueset
 Title:            "iHRIS Gender ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisEthiopiaGenderCodesystem
 
@@ -516,6 +525,7 @@ Description:    "iHRIS extension for Personal Information Ethnicity."
 CodeSystem:      IhrisEthnicityCodeSystem
 Id:              ihris-Ethnicity-codesystem
 Title:           "Ethnicity"
+* ^date = "2020-10-29T08:41:04.362Z"
 * #bench "Bench" "Bench"
 * #berta "Berta" "Berta"
 * #betaIsrael "Beta Israel" "Beta Israel"
@@ -601,22 +611,26 @@ Title:           "Ethnicity"
 ValueSet:         IhrisEthnicityValueSet
 Id:               ihris-Ethnicity-valueset
 Title:            "iHRIS Ethnicity ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * codes from system IhrisEthnicityCodeSystem
 
 CodeSystem:      IhrisTrainingTypeCodeSystem
 Id:              ihris-training-type-codesystem
 Title:           "Training Type"
+* ^date = "2020-10-29T08:41:04.362Z"
 * #inService "In-Service Training" "In-Service Training"
 * #preService "Pre-Service Training" "Pre-Service Training"
 
 ValueSet:         IhrisTrainingTypeValueSet
 Id:               ihris-training-type-valueset
 Title:            "iHRIS Training Type ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * codes from system IhrisTrainingTypeCodeSystem
 
 CodeSystem:      IhrisSkillCodeSystem
 Id:              ihris-skill-codesystem
 Title:           "Skill"
+* ^date = "2020-10-29T08:41:04.362Z"
 * #ActiveListening "Active Listening" "Active Listening"
 * #Adaptability "Adaptability" "Adaptability"
 * #Communication "Communication" "Communication"
@@ -635,7 +649,43 @@ Title:           "Skill"
 ValueSet:         IhrisSkillValueSet
 Id:               ihris-skill-valueset
 Title:            "iHRIS Skill ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
 * codes from system IhrisSkillCodeSystem
+
+Extension:      IhrisPractitionerDrivingLicense
+Id:             ihris-practitioner-driving-license
+Title:          "iHRIS Practitioner Driving License"
+Description:    "iHRIS extension for Practitioner Driving License."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains license 1..1 MS and
+    licenseType 1..1 MS
+* extension[license].value[x] only string
+* extension[license].valueString 1..1 MS
+* extension[license].valueString ^label = "Driving License ID"
+* extension[licenseType].value[x] only Coding
+* extension[licenseType].valueCoding 1..1 MS
+* extension[licenseType].valueCoding ^label = "Driving License Type"
+* extension[licenseType].valueCoding from IhrisEthiopiaDrivingLicenseTypeValueSet (required)
+
+CodeSystem:      IhrisEthiopiaRelationCodesystem
+Id:              ihris-relation-codesystem
+Title:           "Relationship"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* #automobile "Automobile" 
+* #PI "Public I"
+* #PII "Public II"
+* #special "Special"
+* #D1 "Dry 1"
+* #D2 "Dry 2"
+
+ValueSet:         IhrisEthiopiaDrivingLicenseTypeValueSet
+Id:               ihris-driving-license-type-valueset
+Title:            "iHRIS Driving License Type ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisEthiopiaDrivingLicenseTypeCodesystem
 
 Instance:       IhrisPractitionerEthiopiaQuestionnaire
 InstanceOf:     Questionnaire
@@ -853,24 +903,22 @@ Usage:          #definition
 * item[2].item[2].item[1].required = false
 * item[2].item[2].item[1].repeats = false
 
-* item[2].item[3].linkId = "Practitioner.identifier[3]"
+* item[2].item[3].linkId = "Practitioner.extension[9]"
 * item[2].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
 * item[2].item[3].text = "Driving License"
 * item[2].item[3].type = #group
 
-* item[2].item[3].item[0].linkId = "Practitioner.identifier[3].type"
-* item[2].item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.type"
-* item[2].item[3].item[0].text = "Type"
+* item[2].item[3].item[0].linkId = "Practitioner.extension[9].extension[0]"
+* item[2].item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:drivingLicense.extension:licenseType.value[x]:valueString"
+* item[2].item[3].item[0].text = "TyDriving Licence Typepe"
 * item[2].item[3].item[0].type = #choice
+* item[2].item[3].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-driving-license-type-valueset"
 * item[2].item[3].item[0].required = false
 * item[2].item[3].item[0].repeats = false
-* item[2].item[3].item[0].readOnly = true
-* item[2].item[3].item[0].answerOption.valueCoding = http://ihris.org/fhir/CodeSystem/ihris-ethiopia-identifier#drivingLicenseId
-* item[2].item[3].item[0].answerOption.initialSelected = true
 
-* item[2].item[3].item[1].linkId = "Practitioner.identifier[3].value"
-* item[2].item[3].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.value"
-* item[2].item[3].item[1].text = "Value"
+* item[2].item[3].item[1].linkId = "Practitioner.extension[0].extension[1]"
+* item[2].item[3].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:drivingLicense.extension:license.value[x]:valueString"
+* item[2].item[3].item[1].text = "Driving Licence ID"
 * item[2].item[3].item[1].type = #string
 * item[2].item[3].item[1].required = false
 * item[2].item[3].item[1].repeats = false
