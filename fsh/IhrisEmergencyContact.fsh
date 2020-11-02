@@ -93,7 +93,7 @@ Title:          "Emergency details"
 * extension[houseNumber].valueString ^label = "House Number"
 
 Instance:       IhrisPractitionerWorkflowEmergency
-InstanceOf:      Questionnaire
+InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Emergency Workflow"
 * description = "iHRIS workflow to record a Emergency"
@@ -107,10 +107,10 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Emergency"
 * item[0].type = #group
-/* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].extension[constraint].extension[severity].valueCode = #error
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
-* item[0].extension[constraint].extension[human].valueString = "Name must be only text."*/
+* item[0].extension[constraint].extension[human].valueString = "Name must be only text."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Full Name"

@@ -704,7 +704,7 @@ Title:           "Jurisdiction(Country/Region/Zone/Woreda)"
 * #woreda "Woreda" "Woreda"
 
 Instance:       IhrisPractitionerEthiopiaQuestionnaire
-InstanceOf:     Questionnaire
+InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Practitioner Ethiopia Questionnaire"
 * description = "iHRIS Practitioner Ethiopia initial data entry questionnaire."
@@ -719,11 +719,10 @@ Usage:          #definition
 * item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
 * item[0].text = "Basic Information|Basic health worker details"
 * item[0].type = #group
-/* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].extension[constraint].extension[severity].valueCode = #error
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.name[0].given[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
 * item[0].extension[constraint].extension[human].valueString = "Name must be only text."
-*/
 
 * item[0].item[0].linkId = "Practitioner.name[0]"
 * item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.name"
@@ -920,13 +919,13 @@ Usage:          #definition
 * item[2].item[2].item[1].repeats = false
 
 * item[2].item[3].linkId = "Practitioner.extension[9]"
-* item[2].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
+* item[2].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.extension:drivingLicense"
 * item[2].item[3].text = "Driving License"
 * item[2].item[3].type = #group
 
 * item[2].item[3].item[0].linkId = "Practitioner.extension[9].extension[0]"
-* item[2].item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:drivingLicense.extension:licenseType.value[x]:valueString"
-* item[2].item[3].item[0].text = "TyDriving Licence Typepe"
+* item[2].item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:drivingLicense.extension:licenseType.value[x]:valueCoding"
+* item[2].item[3].item[0].text = "Driving Licence Type"
 * item[2].item[3].item[0].type = #choice
 * item[2].item[3].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-driving-license-type-valueset"
 * item[2].item[3].item[0].required = false

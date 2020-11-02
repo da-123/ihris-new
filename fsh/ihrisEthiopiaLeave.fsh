@@ -97,7 +97,7 @@ Title:            "iHRIS leave Sub Type ValueSet"
 * codes from system IhrisLeaveSubTypeCodeSystem
 
 Instance:       IhrisPractitionerWorkflowLeaveEthiopia
-InstanceOf:      Questionnaire
+InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Leave Workflow"
 * description = "iHRIS workflow to record a leave"
@@ -111,11 +111,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Leave Details"
 * item[0].type = #group
-/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint].extension[severity].valueCode = #error
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
 * item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
-*/
+
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Leave Type"
 * item[0].item[0].type = #choice

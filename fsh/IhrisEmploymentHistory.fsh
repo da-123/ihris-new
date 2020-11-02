@@ -65,7 +65,7 @@ Title:          "Employment History details"
 * extension[reasonLeaving].valueString ^label = "Reason For Leaving"
 
 Instance:       IhrisPractitionerWorkflowEmploymentHistory
-InstanceOf:      Questionnaire
+InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Employment History Workflow"
 * description = "iHRIS workflow to record a Employment History"
@@ -79,11 +79,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Employment History"
 * item[0].type = #group
-/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint].extension[severity].valueCode = #error
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDate"
 * item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
-*/
+
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Organization Name"
