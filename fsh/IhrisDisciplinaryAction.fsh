@@ -76,7 +76,7 @@ Title:            "iHRIS Disciplinary Action Type ValueSet"
 * codes from system IhrisDisciplinaryActionType
 
 Instance:       IhrisPractitionerWorkflowDiscipline
-InstanceOf:      Questionnaire
+InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
 * title = "iHRIS Discipline Workflow"
 * description = "iHRIS workflow to record a Discipline"
@@ -90,10 +90,10 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Discipline"
 * item[0].type = #group
-/* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date-discipline"
+* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date-discipline"
 * item[0].extension[constraint].extension[severity].valueCode = #error
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDate"
-* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."*/
+* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
 
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"

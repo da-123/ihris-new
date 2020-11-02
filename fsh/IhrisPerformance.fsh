@@ -70,10 +70,14 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Performance"
 * item[0].type = #group
-* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
-* item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDate"
-* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
+* item[0].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint][0].extension[severity].valueCode = #error
+* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDate"
+* item[0].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
+* item[0].extension[constraint][1].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint][1].extension[severity].valueCode = #error
+* item[0].extension[constraint][1].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint][1].extension[human].valueString = "Name must be only text."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Evaluator's Name"

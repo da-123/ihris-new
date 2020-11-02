@@ -719,10 +719,34 @@ Usage:          #definition
 * item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
 * item[0].text = "Basic Information|Basic health worker details"
 * item[0].type = #group
-* item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
-* item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.name[0].given[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
-* item[0].extension[constraint].extension[human].valueString = "Name must be only text."
+* item[0].extension[constraint][0].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint][0].extension[severity].valueCode = #error
+* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Practitioner.name[0].given[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint][0].extension[human].valueString = "First Name must be only text."
+* item[0].extension[constraint][1].extension[key].valueId = "ihris-fathers-name-check"
+* item[0].extension[constraint][1].extension[severity].valueCode = #error
+* item[0].extension[constraint][1].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint][1].extension[human].valueString = "Father's Name must be only text."
+* item[0].extension[constraint][2].extension[key].valueId = "ihris-grandfather-name-check"
+* item[0].extension[constraint][2].extension[severity].valueCode = #error
+* item[0].extension[constraint][2].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[2]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint][2].extension[human].valueString = "Grandfather's Name must be only text."
+* item[0].extension[constraint][3].extension[key].valueId = "ihris-given-name-check"
+* item[0].extension[constraint][3].extension[severity].valueCode = #error
+* item[0].extension[constraint][3].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[4]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].extension[constraint][3].extension[human].valueString = "Mother's Name must be only text."
+* item[0].extension[constraint][4].extension[key].valueId = "ihris-age-18-check"
+* item[0].extension[constraint][4].extension[severity].valueCode = #error
+* item[0].extension[constraint][4].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[4]').answer.first().valueDate < today() - 18 years"
+* item[0].extension[constraint][4].extension[human].valueString = "BirthDate must be more than 18 years ago."
+* item[0].extension[constraint][5].extension[key].valueId = "ihris-phone-check"
+* item[0].extension[constraint][5].extension[severity].valueCode = #error
+* item[0].extension[constraint][5].extension[expression].valueString = "where(linkId='Practitioner.telecom[0].value').answer.first().valueString.matches('(\\+\\s*2\\s*5\\s*1\\s*9\\s*(([0-9]\\s*){8}\\s*))|(0\\s*9\\s*(([0-9]\\s*){8}))')"
+* item[0].extension[constraint][5].extension[human].valueString = "Phone Number is not properly formatted."
+* item[0].extension[constraint][6].extension[key].valueId = "ihris-email-check"
+* item[0].extension[constraint][6].extension[severity].valueCode = #error
+* item[0].extension[constraint][6].extension[expression].valueString = "where(linkId='Practitioner.telecom[1].value').answer.first().valueString.matches('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')"
+* item[0].extension[constraint][6].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[0].linkId = "Practitioner.name[0]"
 * item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.name"
@@ -1181,11 +1205,15 @@ Usage:          #definition
 * item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description"
 * item[8].text = "Position Informatiom|Health worker position informatiom"
 * item[8].type = #group
-/* item[8].extension[constraint].extension[key].valueId = "ihris-start-end-date"
-* item[8].extension[constraint].extension[severity].valueCode = #error
-* item[8].extension[constraint].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime >= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
-* item[8].extension[constraint].extension[human].valueString = "The end date must be after the start date."
-*/
+* item[8].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
+* item[8].extension[constraint][0].extension[severity].valueCode = #error
+* item[8].extension[constraint][0].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime >= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
+* item[8].extension[constraint][1].extension[key].valueId = "ihris-first-emp-date"
+* item[8].extension[constraint][1].extension[severity].valueCode = #error
+* item[8].extension[constraint][1].extension[expression].valueString = "where(linkId='PractitionerRole.extension[3]').answer.first().valueDate.empty() <= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][1].extension[human].valueString = "The end date must be after the start date."
+
 
 * item[8].item[0].linkId = "PractitionerRole.code"
 * item[8].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.code"
