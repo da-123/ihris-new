@@ -113,7 +113,7 @@ Description:    "iHRIS profile of Practitioner."
 * extension[ethnicity] ^label = "Ethnicity"
 * extension[drivingLicense] ^label = "Driving License"
 * extension[drivingLicense].extension[license].valueString MS
-* extension[drivingLicense].extension[License] ^label = "Driving Licence ID"
+* extension[drivingLicense].extension[license] ^label = "Driving Licence ID"
 * extension[drivingLicense].extension[licenseType].valueCoding MS
 * extension[drivingLicense].extension[licenseType] ^label = "Driving Licence Type"
 
@@ -668,8 +668,8 @@ Description:    "iHRIS extension for Practitioner Driving License."
 * extension[licenseType].valueCoding ^label = "Driving License Type"
 * extension[licenseType].valueCoding from IhrisEthiopiaDrivingLicenseTypeValueSet (required)
 
-CodeSystem:      IhrisEthiopiaRelationCodesystem
-Id:              ihris-relation-codesystem
+CodeSystem:      IhrisEthiopiaDrivingLicenseTypeCodesystem
+Id:              ihris-driving-license-type-codesystem
 Title:           "Relationship"
 * ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
@@ -686,6 +686,22 @@ Title:            "iHRIS Driving License Type ValueSet"
 * ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisEthiopiaDrivingLicenseTypeCodesystem
+
+ValueSet:         IhrisJurisdiction
+Id:               ihris-jurisdiction
+Title:            "iHRIS Degree ValueSet"
+* ^date = "2020-09-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisDegree
+
+CodeSystem:      IhrisJurisdiction
+Id:              ihris-jurisdiction
+Title:           "Jurisdiction(Country/Region/Zone/Woreda)"
+* ^date = "2020-09-29T08:41:04.362Z"
+* #country "Country" "Country"
+* #region "Region" "Region"
+* #zone "Zone" "Zone"
+* #woreda "Woreda" "Woreda"
 
 Instance:       IhrisPractitionerEthiopiaQuestionnaire
 InstanceOf:     Questionnaire

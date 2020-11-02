@@ -21,9 +21,9 @@ Description:    "iHRIS profile of Location."
 * description MS
 * description ^label = "Description"
 * type 0..1 MS
-* type ^label = "Facility Type"
+* type ^label = "Location/Facility Type"
 * type.coding 1..1 MS
-* type.coding ^label = "Facility Type"
+* type.coding ^label = "Location/Facility Type"
 * physicalType MS
 * physicalType ^label = "Location Type"
 * physicalType.coding 1..1 MS

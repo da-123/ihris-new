@@ -1,0 +1,446 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R1",
+        "name": "Addis Ababa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R2",
+        "name": "Afar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R3",
+        "name": "Amhara",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R4",
+        "name": "Benishangul-Gumuz",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R5",
+        "name": "Dire Dawa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R5"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R6",
+        "name": "Gambella",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R7",
+        "name": "Harari",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R7"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R8",
+        "name": "Oromia",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R8"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R9",
+        "name": "Somali",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R9"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R10",
+        "name": "Tigray",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11",
+        "name": "SNNP",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "region"
+              }
+            ],
+            "text": "Region"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11"
+      }
+    }
+  ]
+}

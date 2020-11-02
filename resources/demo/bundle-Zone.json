@@ -1,0 +1,5326 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z1",
+        "name": "Zone 1",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z2",
+        "name": "Zone 2",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z3",
+        "name": "Zone 3",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z4",
+        "name": "Zone 4",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z5",
+        "name": "Zone 5",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z5"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z6",
+        "name": "Awi",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z7",
+        "name": "Central Gondar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z7"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z8",
+        "name": "East Gojjam",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z8"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z9",
+        "name": "North Gondar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z9"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z10",
+        "name": "North Shewa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z11",
+        "name": "North Wollo",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z11"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z12",
+        "name": "Oromia Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z13",
+        "name": "South Gondar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z13"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z14",
+        "name": "South Wollo",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z15",
+        "name": "Waghimera",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z16",
+        "name": "West Gojjam",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z16"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z17",
+        "name": "West Gondar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z17"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z18",
+        "name": "Bahirdar Town Woreda",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z18"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z19",
+        "name": "Dessie Town Woreda",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z19"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z20",
+        "name": "Gondar Town Woreda",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z20"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z21",
+        "name": "Assosa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z21"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z22",
+        "name": "Kamashi",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z22"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z23",
+        "name": "Mao Komo Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z23"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z24",
+        "name": "Metekel",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z24"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z25",
+        "name": "Agniwa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z25"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z26",
+        "name": "Majang",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z26"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z27",
+        "name": "Nuer",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z27"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z28",
+        "name": "Gambella Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z28"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z29",
+        "name": "Itang Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z29"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z30",
+        "name": "Adama Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z30"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z31",
+        "name": "Ambo Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z31"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z32",
+        "name": "Arsi",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z32"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z33",
+        "name": "Asalla Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z33"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z34",
+        "name": "Bale",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z34"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z35",
+        "name": "Batu Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z35"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z36",
+        "name": "Bishan Guracha Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z36"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z37",
+        "name": "Bishoft Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z37"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z38",
+        "name": "Borena",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z38"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z39",
+        "name": "Buno Bedele",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z39"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z40",
+        "name": "Burayu Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z40"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z41",
+        "name": "Dukem Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z41"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z42",
+        "name": "East Hararge",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z42"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z43",
+        "name": "East Shewa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z43"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z44",
+        "name": "East Wellega",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z44"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z45",
+        "name": "Finifine Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z45"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z46",
+        "name": "Gelan Town Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z46"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z47",
+        "name": "Guji",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z47"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z48",
+        "name": "Holota Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z48"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z49",
+        "name": "Horo Gudru Wellega",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z49"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z50",
+        "name": "Ilu Aba Bora",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z50"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z51",
+        "name": "Jimma Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z51"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z52",
+        "name": "Jimma",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z52"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z53",
+        "name": "Kelem Wellega",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z53"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z54",
+        "name": "Lega Tafo Lega Dadhi Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z54"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z55",
+        "name": "Mojo Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z55"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z56",
+        "name": "Nekemte Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z56"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z57",
+        "name": "North Shewaa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z57"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z58",
+        "name": "Robe Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z58"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z59",
+        "name": "Sebeta Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z59"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z60",
+        "name": "Shashemene Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z60"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z61",
+        "name": "South West Shewa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z61"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z62",
+        "name": "Sululta Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z62"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z63",
+        "name": "West Arsi",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z63"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z64",
+        "name": "West Guji",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z64"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z65",
+        "name": "West Hararge",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z65"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z66",
+        "name": "West Shewa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z66"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z67",
+        "name": "West Wellega",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z67"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z68",
+        "name": "Woliso Town",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z68"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z69",
+        "name": "Afder",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z69"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z70",
+        "name": "Dawa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z70"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z71",
+        "name": "Dollo",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z71"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z72",
+        "name": "Erar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z72"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z73",
+        "name": "Fafan",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z73"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z74",
+        "name": "Jarar",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z74"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z75",
+        "name": "Korahay",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z75"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z76",
+        "name": "Liben",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z76"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z77",
+        "name": "Nogob",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z77"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z78",
+        "name": "Shebelle",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z78"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z79",
+        "name": "Sitti",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z79"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z80",
+        "name": "Central",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z80"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z81",
+        "name": "Eastern",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z81"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z82",
+        "name": "Mekelle",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z82"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z83",
+        "name": "North Western",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z83"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z84",
+        "name": "South Eastern",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z84"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z85",
+        "name": "Southern",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z85"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z86",
+        "name": "Western",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z86"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z87",
+        "name": "Basketo Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z87"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z88",
+        "name": "Bench Maji",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z88"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z89",
+        "name": "Dawro",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z89"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z90",
+        "name": "Gamo Gofa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z90"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z91",
+        "name": "Gedeo",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z91"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z92",
+        "name": "Gurage",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z92"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z93",
+        "name": "Hadiya",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z93"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z94",
+        "name": "Halaba Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z94"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z95",
+        "name": "Hawassa City Administration",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z95"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z96",
+        "name": "Kaffa",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z96"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z97",
+        "name": "Kembata Tembaro",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z97"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z98",
+        "name": "Konta Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z98"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z99",
+        "name": "Segen",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z99"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z100",
+        "name": "Sheka",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z100"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z101",
+        "name": "Sidama",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z101"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z102",
+        "name": "Silte",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z102"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z103",
+        "name": "South Omo",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z103"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z104",
+        "name": "Wolayita",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z104"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z105",
+        "name": "Yem Special",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z105"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z106",
+        "name": "Addis Ketema Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z106"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z107",
+        "name": "Akaki Kality Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z107"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z108",
+        "name": "Bole Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z108"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z109",
+        "name": "Gulele Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z109"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z110",
+        "name": "Kirkos Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z110"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z111",
+        "name": "Kolfe Sub city",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z111"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z112",
+        "name": "Lideta Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z112"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z113",
+        "name": "Nifas Silk Lafto Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z113"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z114",
+        "name": "Yeka Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z114"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z115",
+        "name": "Arada Sub City",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z115"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z116",
+        "name": "Addis Ketema Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z116"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z117",
+        "name": "Biyoawale Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z117"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z118",
+        "name": "Dire Dawa Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z118"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z119",
+        "name": "Gende Kore Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z119"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z120",
+        "name": "Jeldessa Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z120"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z121",
+        "name": "Legehare Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z121"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z122",
+        "name": "Melkajebdu Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z122"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z123",
+        "name": "Sabian Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z123"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z124",
+        "name": "Wahil Operational",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z124"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z125",
+        "name": "Abadir",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z125"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z126",
+        "name": "Aboker",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z126"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z127",
+        "name": "Amir Nur",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z127"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z128",
+        "name": "Dire Teyara",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z128"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z129",
+        "name": "Erer",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z129"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z130",
+        "name": "Hakim",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z130"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z131",
+        "name": "Jinela",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z131"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z132",
+        "name": "Shenkor",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z132"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
+          ]
+        },
+        "id": "ET.R11.Z133",
+        "name": "Sofi",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "code": "zone"
+              }
+            ],
+            "text": "Zone"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "jdn"
+            }
+          ],
+          "text": "Jurisdiction"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z133"
+      }
+    }
+  ]
+}

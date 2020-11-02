@@ -205,7 +205,7 @@ Usage:          #example
 * extension[section][4].extension[field][1].valueString = "Practitioner.identifier.use"
 * extension[section][4].extension[field][2].valueString = "Practitioner.identifier.type"
 * extension[section][4].extension[field][3].valueString = "Practitioner.identifier.value"
-* extension[section][4].extension[field][6].valueString = "Practitioner.extension:drivingLicense"
+* extension[section][4].extension[field][4].valueString = "Practitioner.extension:drivingLicense"
 * extension[section][5].extension[title].valueString = "Contact Details"
 * extension[section][5].extension[description].valueString = "email, phone numbers"
 * extension[section][5].extension[name].valueString = "contact"
