@@ -26,7 +26,6 @@ RUN node load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhi
 RUN node load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ ../fsh/build/input/vocabulary/*
 RUN node load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ ../fsh/build/input/resources/*
 RUN node load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ ../resources/Parameters-ihris-config.signed.json #Only change this file if there is a change to in in the update
-RUN node load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ ../resources/Parameters-ihris-config.json
 
 RUN cp ../ihris-backend/config/baseConfig.json.example ../ihris-backend/config/baseConfig.json
 RUN cd ../ihris-backend
