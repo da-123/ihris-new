@@ -741,7 +741,7 @@ Usage:          #definition
 * item[0].item[0].item[1].repeats = false
 * item[0].item[0].item[1].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].item[0].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[0].item[1].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.name[0].given[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[0].item[1].extension[constraint].extension[human].valueString = "First Name must be only text."
 
 * item[0].item[0].item[2].linkId = "Practitioner.name[0].use"
@@ -758,7 +758,7 @@ Usage:          #definition
 * item[0].item[0].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.name.extension:givenAlternativeLang.value[x]:valueString"
 * item[0].item[0].item[3].text = "First Name Alternative Language"
 * item[0].item[0].item[3].type = #string
-* item[0].item[0].item[3].required = true
+* item[0].item[0].item[3].required = false
 * item[0].item[0].item[3].repeats = false
 
 * item[0].item[1].linkId = "Practitioner.extension[0].extension[0]"
@@ -769,14 +769,14 @@ Usage:          #definition
 * item[0].item[1].repeats = false
 * item[0].item[1].extension[constraint].extension[key].valueId = "ihris-fathers-name-check"
 * item[0].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[1].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[1].extension[constraint].extension[human].valueString = "Father's Name must be only text."
 
 * item[0].item[2].linkId = "Practitioner.extension[0].extension[1]"
 * item[0].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:fathersalternativelanguage.value[x]:valueString"
 * item[0].item[2].text = "Father's Name Alternative Language"
 * item[0].item[2].type = #string
-* item[0].item[2].required = true
+* item[0].item[2].required = false
 * item[0].item[2].repeats = false
 
 * item[0].item[3].linkId = "Practitioner.extension[0].extension[2]"
@@ -787,14 +787,14 @@ Usage:          #definition
 * item[0].item[3].repeats = false
 * item[0].item[3].extension[constraint].extension[key].valueId = "ihris-grandfather-name-check"
 * item[0].item[3].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[3].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[2]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[3].extension[constraint].extension[human].valueString = "Grandfather's Name must be only text."
 
 * item[0].item[4].linkId = "Practitioner.extension[0].extension[3]"
 * item[0].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:grandfathersalternativelanguage.value[x]:valueString"
 * item[0].item[4].text = "Grand Father's Name Alternative Language"
 * item[0].item[4].type = #string
-* item[0].item[4].required = true
+* item[0].item[4].required = false
 * item[0].item[4].repeats = false
 
 * item[0].item[5].linkId = "Practitioner.extension[0].extension[4]"
@@ -805,14 +805,14 @@ Usage:          #definition
 * item[0].item[5].repeats = false
 * item[0].item[5].extension[constraint].extension[key].valueId = "ihris-mothers-name-check"
 * item[0].item[5].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[5].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[4]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[5].extension[constraint].extension[human].valueString = "Mother's Name must be only text."
 
 * item[0].item[6].linkId = "Practitioner.extension[0].extension[5]"
 * item[0].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:mothersalternativelanguage.value[x]:valueString"
 * item[0].item[6].text = "Mother's Name Alternative Language"
 * item[0].item[6].type = #string
-* item[0].item[6].required = true
+* item[0].item[6].required = false
 * item[0].item[6].repeats = false
 
 * item[1].linkId = "Practitioner:demographic"
@@ -828,7 +828,7 @@ Usage:          #definition
 * item[1].item[0].repeats = false
 * item[1].item[0].extension[constraint].extension[key].valueId = "ihris-age-18-check"
 * item[1].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[1].item[0].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.extension[0].extension[4]').answer.first().valueDate < today() - 18 years"
+* item[1].item[0].extension[constraint].extension[expression].valueString = "$this < today() - 18 years"
 * item[1].item[0].extension[constraint].extension[human].valueString = "BirthDate must be more than 18 years ago."
 
 * item[1].item[1].linkId = "Practitioner.gender"
@@ -1058,7 +1058,7 @@ Usage:          #definition
 * item[3].item[0].item[2].repeats = false
 * item[3].item[0].item[2].extension[constraint].extension[key].valueId = "ihris-phone-check"
 * item[3].item[0].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[0].item[2].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.telecom[0].value').answer.first().valueString.matches('(\\+\\s*2\\s*5\\s*1\\s*9\\s*(([0-9]\\s*){8}\\s*))|(0\\s*9\\s*(([0-9]\\s*){8}))')"
+* item[3].item[0].item[2].extension[constraint].extension[expression].valueString = "matches('(\\+\\s*2\\s*5\\s*1\\s*9\\s*(([0-9]\\s*){8}\\s*))|(0\\s*9\\s*(([0-9]\\s*){8}))')"
 * item[3].item[0].item[2].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[3].item[1].linkId = "Practitioner.telecom[1]"
@@ -1094,7 +1094,7 @@ Usage:          #definition
 * item[3].item[1].item[2].repeats = false
 * item[3].item[1].item[2].extension[constraint].extension[key].valueId = "ihris-email-check"
 * item[3].item[1].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[1].item[2].extension[constraint].extension[expression].valueString = "where(linkId='Practitioner.telecom[1].value').answer.first().valueString.matches('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')"
+* item[3].item[1].item[2].extension[constraint].extension[expression].valueString = "matches('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')"
 * item[3].item[1].item[2].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[3].item[2].linkId = "Practitioner.extension[2]"

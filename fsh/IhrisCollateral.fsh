@@ -54,57 +54,56 @@ Title:          "Collateral details"
 * extension[name].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
 * extension[name].valueString ^constraint[0].human = "Name must be only text."
 * extension[altlangName].value[x] only string
-* extension[altlangName].valueString 1..1 MS
+* extension[altlangName].valueString 0..1 MS
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
-* extension[altlangName].valueString ^constraint[0].key = "ihris-name-check"
-* extension[altlangName].valueString ^constraint[0].severity = #error
-* extension[altlangName].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
-* extension[altlangName].valueString ^constraint[0].human = "Name must be only text."
 * extension[gender].value[x] only Coding
 * extension[gender].valueCoding 1..1 MS
 * extension[gender].valueCoding ^label = "Gender"
 * extension[gender].valueCoding from IhrisEthiopiaGenderValueSet (required)
 * extension[birthdate].value[x] only date
-* extension[birthdate].valueDate 1..1 MS
+* extension[birthdate].valueDate 0..1 MS
 * extension[birthdate].valueDate ^label = "Date of Birth"
 * extension[phone].value[x] only string
-* extension[phone].valueString 1..1 MS
+* extension[phone].valueString 0..1 MS
 * extension[phone].valueString ^label = "Home Phone"
 * extension[mobile].value[x] only string
-* extension[mobile].valueString 1..1 MS
+* extension[mobile].valueString 0..1 MS
 * extension[mobile].valueString ^label = "Mobile Phone"
 * extension[workPhone].value[x] only string
-* extension[workPhone].valueString 1..1 MS
+* extension[workPhone].valueString 0..1 MS
 * extension[workPhone].valueString ^label = "Work Phone"
 * extension[otherPhone].value[x] only string
-* extension[otherPhone].valueString 1..1 MS
+* extension[otherPhone].valueString 0..1 MS
 * extension[otherPhone].valueString ^label = "Other Phone"
 * extension[workEmail].value[x] only string
-* extension[workEmail].valueString 1..1 MS
+* extension[workEmail].valueString 0..1 MS
 * extension[workEmail].valueString ^label = "Work Email"
 * extension[otherEmail].value[x] only string
-* extension[otherEmail].valueString 1..1 MS
+* extension[otherEmail].valueString 0..1 MS
 * extension[otherEmail].valueString ^label = "Other Email"
 * extension[salary].value[x] only string
-* extension[salary].valueString 1..1 MS
+* extension[salary].valueString 0..1 MS
 * extension[salary].valueString ^label = "Salary"
 * extension[location].value[x] only Reference
-* extension[location].valueReference 1..1 MS
+* extension[location].valueReference 0..1 MS
 * extension[location].valueReference ^label = "Location(Region/Zone/Woreda)"
 * extension[location].valueReference.reference ^label = "Location(Region/Zone/Woreda)"
 * extension[location].valueReference only Reference(Location)
 * extension[address].value[x] only string
-* extension[address].valueString 1..1 MS
+* extension[address].valueString 0..1 MS
 * extension[address].valueString ^label = "P.O.BOX"
 * extension[city].value[x] only string
-* extension[city].valueString 1..1 MS
+* extension[city].valueString 0..1 MS
 * extension[city].valueString ^label = "City/Town"
 * extension[kebele].value[x] only string
-* extension[kebele].valueString 1..1 MS
+* extension[kebele].valueString 0..1 MS
 * extension[kebele].valueString ^label = "Kebele"
 * extension[houseNumber].value[x] only string
-* extension[houseNumber].valueString 1..1 MS
+* extension[houseNumber].valueString 0..1 MS
 * extension[houseNumber].valueString ^label = "House Number"
+* extension[remark].value[x] only string
+* extension[remark].valueString 0..1 MS
+* extension[remark].valueString ^label = "remark"
 
 Instance:       IhrisPractitionerWorkflowCollateral
 InstanceOf:     IhrisQuestionnaire
@@ -127,10 +126,10 @@ Usage:          #definition
 * item[0].item[0].type = #string
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
-* item[0].item[0].extension[constraint][0].extension[key].valueId = "ihris-given-name-check"
-* item[0].item[0].extension[constraint][0].extension[severity].valueCode = #error
-* item[0].item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
-* item[0].item[0].extension[constraint][0].extension[human].valueString = "Name must be only text."
+* item[0].item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
+* item[0].item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
+* item[0].item[0].extension[constraint].extension[human].valueString = "Name must be only text."
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Alt Language Full Name"

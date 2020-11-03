@@ -115,7 +115,7 @@ Usage:          #definition
 * item[0].item[0].repeats = false
 * item[0].item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[0]').answer.first().valueString.matches('^[A-Za-z ]*$')"
+* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[0].extension[constraint].extension[human].valueString = "Name must be only text."
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"

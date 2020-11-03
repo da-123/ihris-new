@@ -95,7 +95,6 @@ Usage:          #definition
 * item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDate"
 * item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
 
-
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Discipline Action Type"
 * item[0].item[0].type = #choice
