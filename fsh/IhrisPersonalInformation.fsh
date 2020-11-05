@@ -72,7 +72,7 @@ Description:    "iHRIS profile of Practitioner."
 * communication.extension contains
      IhrisPractitionerLanguageProficiency named proficiency 0..* MS
  * communication.extension[proficiency] MS
- * communication.extension[proficiency] ^label = "Language Proficiency"
+ * communication.extension[proficiency] ^label = "Proficiency"
  * communication.extension[proficiency].extension[level].valueCoding MS
  * communication.extension[proficiency].extension[type].valueCoding MS
 * extension contains
@@ -124,17 +124,18 @@ Extension:      IhrisPractitionerLanguageProficiency
  * ^context.type = #element
  * ^context.expression = "Practitioner"
  * extension contains 
-     level 0..1 MS and
+     level 0..* MS and
      type 0..* MS
- * extension[level].value[x] only Coding
- * extension[level].valueCoding 0..1 MS
- * extension[level].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityProficiency
- * extension[level].valueCoding ^label = "Proficiency Level"
- * extension[type] ^label = "Proficiency Type"
- * extension[type].value[x] only Coding
- * extension[type].valueCoding 0..1 MS
- * extension[type].valueCoding ^label = "Proficiency Type"
- * extension[type].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityMode
+* extension[level] ^label = "Proficiency Level"
+* extension[level].value[x] only Coding
+* extension[level].valueCoding 0..1 MS
+* extension[level].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityProficiency
+* extension[level].valueCoding ^label = "Proficiency Level"
+* extension[type] ^label = "Proficiency Type"
+* extension[type].value[x] only Coding
+* extension[type].valueCoding 0..1 MS
+* extension[type].valueCoding ^label = "Proficiency Type"
+* extension[type].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityMode
 
 Extension:      IhrisPractitionerFamilyNames
 Id:             ihris-practitioner-familynames
@@ -1058,7 +1059,7 @@ Usage:          #definition
 * item[3].item[0].item[2].repeats = false
 * item[3].item[0].item[2].extension[constraint].extension[key].valueId = "ihris-phone-check"
 * item[3].item[0].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[0].item[2].extension[constraint].extension[expression].valueString = "matches('(\\+\\s*2\\s*5\\s*1\\s*9\\s*(([0-9]\\s*){8}\\s*))|(0\\s*9\\s*(([0-9]\\s*){8}))')"
+* item[3].item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[3].item[0].item[2].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[3].item[1].linkId = "Practitioner.telecom[1]"
@@ -1094,7 +1095,7 @@ Usage:          #definition
 * item[3].item[1].item[2].repeats = false
 * item[3].item[1].item[2].extension[constraint].extension[key].valueId = "ihris-email-check"
 * item[3].item[1].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[1].item[2].extension[constraint].extension[expression].valueString = "matches('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')"
+* item[3].item[1].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
 * item[3].item[1].item[2].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[3].item[2].linkId = "Practitioner.extension[2]"
@@ -1113,7 +1114,6 @@ Usage:          #definition
 * item[4].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication"
 * item[4].item[0].text = "Language"
 * item[4].item[0].type = #group
-* item[4].item[0].required = false
 * item[4].item[0].repeats = true
 
 * item[4].item[0].item[0].linkId = "Practitioner.communication[0]"
@@ -1126,14 +1126,13 @@ Usage:          #definition
 
 * item[4].item[0].item[0].item[0].linkId = "Practitioner.communication[0].extension[0]"
 * item[4].item[0].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication.extension:proficiency"
-* item[4].item[0].item[0].item[0].text = "Language Proficiency"
+* item[4].item[0].item[0].item[0].text = "Proficiency"
 * item[4].item[0].item[0].item[0].type = #group
-* item[4].item[0].item[0].item[0].required = false
 * item[4].item[0].item[0].item[0].repeats = true
 
 * item[4].item[0].item[0].item[0].item[0].linkId = "Practitioner.communication[0].extension[0].extension[0]"
 * item[4].item[0].item[0].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication.extension:proficiency.extension:level"
-* item[4].item[0].item[0].item[0].item[0].text = "Language Proficiency Level"
+* item[4].item[0].item[0].item[0].item[0].text = "Proficiency Level"
 * item[4].item[0].item[0].item[0].item[0].type = #choice
 * item[4].item[0].item[0].item[0].item[0].answerValueSet = "http://terminology.hl7.org/ValueSet/v3-LanguageAbilityProficiency"
 * item[4].item[0].item[0].item[0].item[0].required = false
@@ -1141,7 +1140,7 @@ Usage:          #definition
 
 * item[4].item[0].item[0].item[0].item[1].linkId = "Practitioner.communication[0].extension[0].extension[1]"
 * item[4].item[0].item[0].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication.extension:proficiency.extension:type"
-* item[4].item[0].item[0].item[0].item[1].text = "Language Proficiency Type"
+* item[4].item[0].item[0].item[0].item[1].text = "Proficiency Type"
 * item[4].item[0].item[0].item[0].item[1].type = #choice
 * item[4].item[0].item[0].item[0].item[1].answerValueSet = "http://terminology.hl7.org/ValueSet/v3-LanguageAbilityMode"
 * item[4].item[0].item[0].item[0].item[1].required = false
@@ -1154,7 +1153,7 @@ Usage:          #definition
 
 * item[5].item[0].linkId = "Practitioner:specialTraining"
 * item[5].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:specialTraining"
-* item[5].item[0].text = "Training Details|Special training information"
+* item[5].item[0].text = "Special training information"
 * item[5].item[0].type = #group
 
 * item[5].item[0].item[0].linkId = "Practitioner.extension[4]"
@@ -1207,12 +1206,12 @@ Usage:          #definition
 * item[8].type = #group
 * item[8].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
 * item[8].extension[constraint][0].extension[severity].valueCode = #error
-* item[8].extension[constraint][0].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime >= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][0].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime > where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
 * item[8].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
 * item[8].extension[constraint][1].extension[key].valueId = "ihris-first-emp-date"
 * item[8].extension[constraint][1].extension[severity].valueCode = #error
-* item[8].extension[constraint][1].extension[expression].valueString = "where(linkId='PractitionerRole.extension[3]').answer.first().valueDate.empty() <= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
-* item[8].extension[constraint][1].extension[human].valueString = "The end date must be after the start date."
+* item[8].extension[constraint][1].extension[expression].valueString = "where(linkId='PractitionerRole.extension[3]').answer.first().valueDate <= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][1].extension[human].valueString = "The First Appointment Date must be before or Equal to the start date."
 
 
 * item[8].item[0].linkId = "PractitionerRole.code"
