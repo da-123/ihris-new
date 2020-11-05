@@ -11,6 +11,10 @@ Description:    "iHRIS profile of Practitioner."
 
 * identifier MS
 * identifier ^label = "Identifier"
+* identifier ^constraint[0].key = "ihris-search-identifier"
+* identifier ^constraint[0].severity = #error
+* identifier ^constraint[0].expression = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* identifier ^constraint[0].human = "The identifier must be unique and another record has this identifier"
 * identifier.use 0..0
 * identifier.system 0..0
 * identifier.value MS
@@ -129,13 +133,13 @@ Extension:      IhrisPractitionerLanguageProficiency
 * extension[level] ^label = "Proficiency Level"
 * extension[level].value[x] only Coding
 * extension[level].valueCoding 0..1 MS
-* extension[level].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityProficiency
+* extension[level].valueCoding from IhrisLanguageProficiencyValueSet (required)
 * extension[level].valueCoding ^label = "Proficiency Level"
 * extension[type] ^label = "Proficiency Type"
 * extension[type].value[x] only Coding
 * extension[type].valueCoding 0..1 MS
 * extension[type].valueCoding ^label = "Proficiency Type"
-* extension[type].valueCoding from http://terminology.hl7.org/ValueSet/v3-LanguageAbilityMode
+* extension[type].valueCoding from IhrisLanguageProficiencyTypeValueSet (required)
 
 Extension:      IhrisPractitionerFamilyNames
 Id:             ihris-practitioner-familynames
@@ -216,6 +220,10 @@ Description:    "iHRIS extension for Practitioner Residence."
 * value[x] only Reference
 * valueReference 1..1 MS
 * valueReference ^label = "Residence"
+* valueReference ^constraint[0].key = "ihris-location-residence"
+* valueReference ^constraint[0].severity = #warning
+* valueReference ^constraint[0].expression = "reference.matches('^Location/')"
+* valueReference ^constraint[0].human = "Must be a location"
 * valueReference only Reference(Location)
 * valueReference.reference 1..1 MS
 * valueReference.reference ^label = "Location"
@@ -688,6 +696,41 @@ Title:            "iHRIS Driving License Type ValueSet"
 * ^version = "0.2.0"
 * codes from system IhrisEthiopiaDrivingLicenseTypeCodesystem
 
+CodeSystem:      IhrisLanguageProficiencyCodesystem
+Id:              ihris-language-proficiency-codesystem
+Title:           "Language Proficiency"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* #elementary "Elementary" 
+* #Fluent "Fluent"
+* #fullprofessional "Full Professional"
+* #limitedworking "Limited Working"
+* #professionalworking "Professional Working"
+
+ValueSet:         IhrisLanguageProficiencyValueSet
+Id:               ihris-language-proficiency-valueset
+Title:            "iHRIS Language Proficiency ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisLanguageProficiencyCodesystem
+
+CodeSystem:      IhrisLanguageProficiencyTypeCodesystem
+Id:              ihris-language-proficiency-type-codesystem
+Title:           "Language Proficiency Type"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* #speaking "Speaking" 
+* #reading "Reading"
+* #writing "Writing"
+* #listening "Listening"
+
+ValueSet:         IhrisLanguageProficiencyTypeValueSet
+Id:               ihris-language-proficiency-type-valueset
+Title:            "iHRIS Language Proficiency Type ValueSet"
+* ^date = "2020-10-29T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisLanguageProficiencyTypeCodesystem
+
 ValueSet:         IhrisJurisdiction
 Id:               ihris-jurisdiction
 Title:            "iHRIS Degree ValueSet"
@@ -890,6 +933,10 @@ Usage:          #definition
 * item[2].item[0].item[1].type = #string
 * item[2].item[0].item[1].required = false
 * item[2].item[0].item[1].repeats = false
+* item[2].item[0].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[0].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[0].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[0].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[1].linkId = "Practitioner.identifier[1]"
 * item[2].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -912,6 +959,10 @@ Usage:          #definition
 * item[2].item[1].item[1].type = #string
 * item[2].item[1].item[1].required = false
 * item[2].item[1].item[1].repeats = false
+* item[2].item[1].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[1].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[1].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[1].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[2].linkId = "Practitioner.identifier[2]"
 * item[2].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -934,6 +985,10 @@ Usage:          #definition
 * item[2].item[2].item[1].type = #string
 * item[2].item[2].item[1].required = false
 * item[2].item[2].item[1].repeats = false
+* item[2].item[2].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[2].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[2].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[2].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[3].linkId = "Practitioner.extension[9]"
 * item[2].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier.extension:drivingLicense"
@@ -976,6 +1031,10 @@ Usage:          #definition
 * item[2].item[4].item[1].type = #string
 * item[2].item[4].item[1].required = false
 * item[2].item[4].item[1].repeats = false
+* item[2].item[4].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[4].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[4].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[4].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[5].linkId = "Practitioner.identifier[5]"
 * item[2].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -998,6 +1057,10 @@ Usage:          #definition
 * item[2].item[5].item[1].type = #string
 * item[2].item[5].item[1].required = false
 * item[2].item[5].item[1].repeats = false
+* item[2].item[5].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[5].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[5].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[5].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[6].linkId = "Practitioner.identifier[6]"
 * item[2].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.identifier"
@@ -1020,6 +1083,10 @@ Usage:          #definition
 * item[2].item[6].item[1].type = #string
 * item[2].item[6].item[1].required = false
 * item[2].item[6].item[1].repeats = false
+* item[2].item[6].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
+* item[2].item[6].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[2].item[6].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | if(system.exists(), system & '|' & value, value)"
+* item[2].item[6].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[3].linkId = "Practitioner:telecom"
 * item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom"
@@ -1132,9 +1199,9 @@ Usage:          #definition
 
 * item[4].item[0].item[0].item[0].item[0].linkId = "Practitioner.communication[0].extension[0].extension[0]"
 * item[4].item[0].item[0].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication.extension:proficiency.extension:level"
-* item[4].item[0].item[0].item[0].item[0].text = "Proficiency Level"
+* item[4].item[0].item[0].item[0].item[0].text = "Proficiency"
 * item[4].item[0].item[0].item[0].item[0].type = #choice
-* item[4].item[0].item[0].item[0].item[0].answerValueSet = "http://terminology.hl7.org/ValueSet/v3-LanguageAbilityProficiency"
+* item[4].item[0].item[0].item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-language-proficiency-valueset"
 * item[4].item[0].item[0].item[0].item[0].required = false
 * item[4].item[0].item[0].item[0].item[0].repeats = false
 
@@ -1142,7 +1209,7 @@ Usage:          #definition
 * item[4].item[0].item[0].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.communication.extension:proficiency.extension:type"
 * item[4].item[0].item[0].item[0].item[1].text = "Proficiency Type"
 * item[4].item[0].item[0].item[0].item[1].type = #choice
-* item[4].item[0].item[0].item[0].item[1].answerValueSet = "http://terminology.hl7.org/ValueSet/v3-LanguageAbilityMode"
+* item[4].item[0].item[0].item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-language-proficiency-type-valueset"
 * item[4].item[0].item[0].item[0].item[1].required = false
 * item[4].item[0].item[0].item[0].item[1].repeats = true
 
