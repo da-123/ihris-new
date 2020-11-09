@@ -8,28 +8,28 @@ Description:    "iHRIS Profile of the Basic resource for Salary."
 * extension contains
     IhrisSalary named salary 1..1 MS
 * extension[salary] ^label = "Salary Information"
-* extension[salary].extension[salaryladder].valueCoding 1..1 MS
-* extension[salary].extension[salaryScale].valueCoding 1..1 MS
-* extension[salary].extension[salaryStep].valueCoding 1..1 MS
+* extension[salary].extension[salaryladder].valueCoding MS
+* extension[salary].extension[salaryScale].valueCoding MS
+* extension[salary].extension[salaryStep].valueCoding MS
 * extension[salary].extension[bsalary].valueString MS
 * extension[salary].extension[allowance].valueString MS
 * extension[salary].extension[benefits].valueString MS
 * extension[salary].extension[total].valueString MS
 * extension[salary].extension[period].valuePeriod MS
-* extension[salary].extension[period].valuePeriod.start 1..1 MS
+* extension[salary].extension[period].valuePeriod.start MS
 * extension[salary].extension[period].valuePeriod.end MS
 * extension[salary].extension[reviewed].valueBoolean MS
 * extension[salary].extension[remark].valueString MS
-* extension[salary].extension[salarySource].valueCoding 1..1 MS
+* extension[salary].extension[salarySource].valueCoding MS
 * extension[salary].extension[frequency].valueCoding MS
 * extension[salary].extension[current].valueBoolean MS
     
 Extension:      IhrisSalary
 Id:             ihris-salary
 Title:          "Salary details"
-* extension contains salaryladder 1..1 MS and
-    salaryScale 1..1 MS and
-    salaryStep 1..1 MS and
+* extension contains salaryladder 0..1 MS and
+    salaryScale 0..1 MS and
+    salaryStep 0..1 MS and
     bsalary 0..1 MS and
     allowance 0..1 MS and
     benefits 0..1 MS and
@@ -37,19 +37,19 @@ Title:          "Salary details"
     period 1..1 MS and
     reviewed 0..1 MS and
     remark 0..1 MS and
-    salarySource 1..1 MS and
+    salarySource 0..1 MS and
     frequency 0..1 MS and
     current 0..1 MS
 * extension[salaryladder].value[x] only Coding
-* extension[salaryladder].valueCoding 1..1 MS
+* extension[salaryladder].valueCoding MS
 * extension[salaryladder].valueCoding ^label = "Pay Grade Ladder"
 * extension[salaryladder].valueCoding from IhrisEthiopiaSalaryLadderValueSet (required)
 * extension[salaryScale].value[x] only Coding
-* extension[salaryScale].valueCoding 1..1 MS
+* extension[salaryScale].valueCoding MS
 * extension[salaryScale].valueCoding ^label = "Pay Grade"
 * extension[salaryScale].valueCoding from IhrisSalaryScaleValueSet (required)
 * extension[salaryStep].value[x] only Coding
-* extension[salaryStep].valueCoding 1..1 MS
+* extension[salaryStep].valueCoding MS
 * extension[salaryStep].valueCoding ^label = "Pay Grade Step"
 * extension[salaryStep].valueCoding from IhrisEthiopiaSalaryStepValueSet (required)
 * extension[bsalary].value[x] only string
@@ -81,7 +81,7 @@ Title:          "Salary details"
 * extension[remark].valueString MS
 * extension[remark].valueString ^label = "Remark"
 * extension[salarySource].value[x] only Coding
-* extension[salarySource].valueCoding 1..1 MS
+* extension[salarySource].valueCoding MS
 * extension[salarySource].valueCoding ^label = "Salary Fund Source Type"
 * extension[salarySource].valueCoding from IhrisEthiopiaSalarySourceValueSet (required)
 * extension[frequency].value[x] only Coding
@@ -170,21 +170,21 @@ Usage:          #definition
 * item[0].item[0].text = "Pay Grade Ladder"
 * item[0].item[0].type = #choice
 * item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-ladder-valueset"
-* item[0].item[0].required = true
+* item[0].item[0].required = false
 * item[0].item[0].repeats = false
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Pay Grade"
 * item[0].item[1].type = #choice
 * item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-scale-valueset"
-* item[0].item[1].required = true
+* item[0].item[1].required = false
 * item[0].item[1].repeats = false
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Pay Grade Step"
 * item[0].item[2].type = #choice
 * item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-step-valueset"
-* item[0].item[2].required = true
+* item[0].item[2].required = false
 * item[0].item[2].repeats = false
 
 * item[0].item[3].linkId = "Basic.extension[0].extension[3]"
@@ -233,7 +233,7 @@ Usage:          #definition
 * item[0].item[10].text = "Salary Fund Source Type"
 * item[0].item[10].type = #choice
 * item[0].item[10].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-source-valueset"
-* item[0].item[10].required = true
+* item[0].item[10].required = false
 * item[0].item[10].repeats = false
 
 * item[0].item[11].linkId = "Basic.extension[0].extension[11]"

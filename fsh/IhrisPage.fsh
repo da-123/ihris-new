@@ -215,8 +215,6 @@ Usage:          #example
 * extension[section][6].extension[description].valueString = "Languages spoken"
 * extension[section][6].extension[name].valueString = "language"
 * extension[section][6].extension[field][0].valueString = "Practitioner.communication"
-* extension[section][6].extension[field][1].valueString = "Practitioner.communication.extension:proficiency.extension:type"
-* extension[section][6].extension[field][2].valueString = "Practitioner.communication.extension:proficiency.extension:level"
 * extension[section][7].extension[title].valueString = "Dependents Details"
 * extension[section][7].extension[description].valueString = "Dependents"
 * extension[section][7].extension[name].valueString = "dependents"

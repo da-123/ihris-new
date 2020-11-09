@@ -6,17 +6,17 @@ Description:    "iHRIS Profile of the Basic resource for Professional."
 * extension[practitioner].valueReference 1..1 MS
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
-    IhrisProfessional named professional 1..1 MS
+    IhrisProfessional named professional 0..1 MS
 * extension[professional].extension[profession].valueCoding ^label = "Professional License Category"
 * extension[professional].extension[profession].valueCoding MS
-* extension[professional].extension[other].valueString 1..1 MS
+* extension[professional].extension[other].valueString 0..1 MS
 * extension[professional].extension[other].valueString ^label = "Other"
     
 Extension:      IhrisProfessional
 Id:             ihris-professional
 Title:          "Professional details"
 * extension contains
-      profession 1..1 MS and
+      profession 0..1 MS and
       other 0..* MS
 * extension[profession].value[x] only Coding
 * extension[profession].valueCoding ^label = "Profession Attained"
@@ -55,7 +55,7 @@ Usage:          #definition
 * item[0].item[0].text = "Professional License Category"
 * item[0].item[0].type = #choice
 * item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-profession-valueset"
-* item[0].item[0].required = true
+* item[0].item[0].required = false
 * item[0].item[0].repeats = false
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
