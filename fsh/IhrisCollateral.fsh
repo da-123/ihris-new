@@ -25,6 +25,7 @@ Description:    "iHRIS Profile of the Basic resource for Collateral."
 * extension[collateral].extension[houseNumber].valueString MS
 * extension[collateral].extension[address].valueString MS
 * extension[collateral].extension[remark].valueString MS
+* extension[collateral].extension[attachment].valueAttachment MS
     
 Extension:      IhrisCollateral
 Id:             ihris-collateral
@@ -45,7 +46,8 @@ Title:          "Collateral details"
     kebele 0..1 MS and
     houseNumber 0..1 MS and
     address 0..1 MS and
-    remark 0..1 MS
+    remark 0..1 MS and
+    attachment 0..1 MS
 * extension[name].value[x] only string
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Full Name"
@@ -104,6 +106,9 @@ Title:          "Collateral details"
 * extension[remark].value[x] only string
 * extension[remark].valueString 0..1 MS
 * extension[remark].valueString ^label = "remark"
+* extension[attachment].value[x] only Attachment
+* extension[attachment].valueAttachment 0..1 MS
+* extension[attachment].valueAttachment ^label = "Attachment"
 
 Instance:       IhrisPractitionerWorkflowCollateral
 InstanceOf:     IhrisQuestionnaire
@@ -155,36 +160,60 @@ Usage:          #definition
 * item[0].item[4].type = #string
 * item[0].item[4].required = false
 * item[0].item[4].repeats = false
+* item[0].item[4].extension[constraint].extension[key].valueId = "ihris-home-phone-check"
+* item[0].item[4].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[4].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
 * item[0].item[5].text = "Mobile Phone"
 * item[0].item[5].type = #string
 * item[0].item[5].required = false
 * item[0].item[5].repeats = false
+* item[0].item[5].extension[constraint].extension[key].valueId = "ihris-mobile-phone-check"
+* item[0].item[5].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[5].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Work Phone"
 * item[0].item[6].type = #string
 * item[0].item[6].required = false
 * item[0].item[6].repeats = false
+* item[0].item[6].extension[constraint].extension[key].valueId = "ihris-work-phone-check"
+* item[0].item[6].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[6].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "Other Phone"
 * item[0].item[7].type = #string
 * item[0].item[7].required = false
 * item[0].item[7].repeats = false
+* item[0].item[7].extension[constraint].extension[key].valueId = "ihris-other-phone-check"
+* item[0].item[7].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[7].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Work Email"
 * item[0].item[8].type = #string
 * item[0].item[8].required = false
 * item[0].item[8].repeats = false
+* item[0].item[8].extension[constraint].extension[key].valueId = "ihris-work-email-check"
+* item[0].item[8].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[8].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
 * item[0].item[9].text = "Other Email"
 * item[0].item[9].type = #string
 * item[0].item[9].required = false
 * item[0].item[9].repeats = false
+* item[0].item[9].extension[constraint].extension[key].valueId = "ihris-other-email-check"
+* item[0].item[9].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[9].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
 * item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-basic-collateral#Basic.extension:collateral.extension:location.value[x]:valueReference"
@@ -228,6 +257,12 @@ Usage:          #definition
 * item[0].item[16].type = #text
 * item[0].item[16].required = false
 * item[0].item[16].repeats = false
+
+* item[0].item[17].linkId = "Basic.extension[0].extension[17]"
+* item[0].item[17].text = "Attachement"
+* item[0].item[17].type = #attachment
+* item[0].item[17].required = false
+* item[0].item[17].repeats = false
 
 Instance:       ihris-page-collateral
 InstanceOf:     IhrisPage

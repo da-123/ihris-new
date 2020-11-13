@@ -39,17 +39,17 @@ const workflowLeaveEthiopia = {
             if ( (req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                 && req.body.item[0].item[1].answer 
                 && req.body.item[0].item[1].answer[0] 
-                && req.body.item[0].item[1].answer[0].valueDate)||(
+                && req.body.item[0].item[1].answer[0].valueDateTime)||(
                 req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
                 && req.body.item[0].item[2].answer 
                 && req.body.item[0].item[2].answer[0] 
-                && req.body.item[0].item[2].answer[0].valueDate
+                && req.body.item[0].item[2].answer[0].valueDateTime
                 )){
                 complexExt.push({ url: "period",
-                valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDate,
-                              end:req.body.item[0].item[2].answer[0].valueDate}
+                valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDateTime,
+                              end:req.body.item[0].item[2].answer[0].valueDateTime}
                              })
-                let requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDate),new Date(req.body.item[0].item[1].answer[0].valueDate)) + 1
+                let requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
                 complexExt.push({ url: "daysRequested",
                 valueInteger:requestedDays})
             }
@@ -68,12 +68,12 @@ const workflowLeaveEthiopia = {
                 complexExt.push({ url: "dateRequested",
                 valueDate:req.body.item[0].item[3].answer[0].valueDate })
             }
-            if ( req.body.item[0].item[5].linkId === "Basic.extension[0].extension[5]" 
-                && req.body.item[0].item[5].answer 
-                && req.body.item[0].item[5].answer[0] 
-                && req.body.item[0].item[5].answer[0].valueCoding){
+            if ( req.body.item[0].item[4].linkId === "Basic.extension[0].extension[5]" 
+                && req.body.item[0].item[4].answer 
+                && req.body.item[0].item[4].answer[0] 
+                && req.body.item[0].item[4].answer[0].valueCoding){
                 complexExt.push({ url: "leaveSubType",
-                valueCoding:req.body.item[0].item[5].answer[0].valueCoding })
+                valueCoding:req.body.item[0].item[4].answer[0].valueCoding })
             }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave",

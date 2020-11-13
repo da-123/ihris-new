@@ -156,6 +156,14 @@ const workflowCollateral = {
                 valueString: req.body.item[0].item[16].answer[0].valueText
                             })
             }
+            if ( req.body.item[0].item[17].linkId === "Basic.extension[0].extension[17]" 
+                && req.body.item[0].item[17].answer 
+                && req.body.item[0].item[17].answer[0] 
+                && req.body.item[0].item[17].answer[0].valueAttachment){
+                complexExt.push({ url: "attachment",
+                valueAttachment: req.body.item[0].item[17].answer[0].valueAttachment
+                            })
+            }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-collateral",
                 extension: complexExt})

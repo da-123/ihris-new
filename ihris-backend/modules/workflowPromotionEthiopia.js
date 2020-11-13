@@ -20,7 +20,7 @@ const workflowPromotionEthiopia = {
           && req.body.item[0].item[1].item[0].linkId === "code" 
           && req.body.item[0].item[1].item[0].answer && req.body.item[0].item[1].item[0].answer[0] 
           && req.body.item[0].item[1].item[0].answer[0].valueCoding ) {
-          let reason = { url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure",
+          let reason = { url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-change",
               valueCoding: req.body.item[0].item[0].item[1].answer[0].valueCoding }
           resource.extension.push(reason)
           resource.period.end = req.body.item[0].item[0].item[0].answer[0].valueDateTime

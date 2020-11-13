@@ -67,15 +67,15 @@ const workflowEmploymentHistory = {
             if ( (req.body.item[0].item[5].linkId === "Basic.extension[0].extension[5]" 
                 && req.body.item[0].item[5].answer 
                 && req.body.item[0].item[5].answer[0] 
-                && req.body.item[0].item[5].answer[0].valueDate)||(
+                && req.body.item[0].item[5].answer[0].valueDateTime)||(
                 req.body.item[0].item[6].linkId === "Basic.extension[0].extension[6]" 
                 && req.body.item[0].item[6].answer 
                 && req.body.item[0].item[6].answer[0] 
-                && req.body.item[0].item[6].answer[0].valueDate
+                && req.body.item[0].item[6].answer[0].valueDateTime
                 )){
                 complexExt.push({ url: "period",
-                valuePeriod:{ start:req.body.item[0].item[5].answer[0].valueDate,
-                              end:req.body.item[0].item[6].answer[0].valueDate}
+                valuePeriod:{ start:req.body.item[0].item[5].answer[0].valueDateTime,
+                              end:req.body.item[0].item[6].answer[0].valueDateTime}
                              })
             }
             if ( req.body.item[0].item[7].linkId === "Basic.extension[0].extension[7]" 

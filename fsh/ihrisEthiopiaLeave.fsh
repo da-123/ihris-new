@@ -141,18 +141,18 @@ Usage:          #definition
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false*/
 
-* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
-* item[0].item[4].text = "Date Requested"
-* item[0].item[4].type = #date
-* item[0].item[4].required = true
-* item[0].item[4].repeats = false
+* item[0].item[3].linkId = "Basic.extension[0].extension[4]"
+* item[0].item[3].text = "Date Requested"
+* item[0].item[3].type = #date
+* item[0].item[3].required = true
+* item[0].item[3].repeats = false
 
-* item[0].item[5].linkId = "Basic.extension[0].extension[5]"
-* item[0].item[5].text = "Leave Sub Type"
-* item[0].item[5].type = #choice
-* item[0].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-sub-type-valueset"
-* item[0].item[5].required = false
-* item[0].item[5].repeats = false
+* item[0].item[4].linkId = "Basic.extension[0].extension[5]"
+* item[0].item[4].text = "Leave Sub Type"
+* item[0].item[4].type = #choice
+* item[0].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-leave-sub-type-valueset"
+* item[0].item[4].required = false
+* item[0].item[4].repeats = false
 
 Instance:       ihris-page-basicleave
 InstanceOf:     IhrisPage

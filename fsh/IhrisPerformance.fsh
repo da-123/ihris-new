@@ -72,7 +72,7 @@ Usage:          #definition
 * item[0].type = #group
 * item[0].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint][0].extension[severity].valueCode = #error
-* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDate"
+* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
 * item[0].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
@@ -87,13 +87,13 @@ Usage:          #definition
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
 * item[0].item[1].text = "Evaluation Period Start Date"
-* item[0].item[1].type = #date
+* item[0].item[1].type = #dateTime
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Evaluation Period End Date"
-* item[0].item[2].type = #date
+* item[0].item[2].type = #dateTime
 * item[0].item[2].required = true
 * item[0].item[2].repeats = false
 

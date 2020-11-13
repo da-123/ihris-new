@@ -66,13 +66,17 @@ Title:          "Discipline details"
 CodeSystem:      IhrisDisciplinaryActionType
 Id:              ihris-discipline-action-type-codesystem
 Title:           "Disciplinary Action Type"
-* ^date = "2020-10-20T08:41:04.362Z"
+* ^date = "2020-11-10T08:41:04.362Z"
+* ^version = "0.3.0"
+* #judicial "Judicial"
+* #administrative "Administrative"
+* #demotion "Demotion"
 
 ValueSet:         IhrisEthiopiaDisciplinaryActionTypeValueSet
 Id:               ihris-discipline-action-type-valueset
 Title:            "iHRIS Disciplinary Action Type ValueSet"
-* ^date = "2020-10-20T08:41:04.362Z"
-* ^version = "0.2.0"
+* ^date = "2020-11-10T08:41:04.362Z"
+* ^version = "0.3.0"
 * codes from system IhrisDisciplinaryActionType
 
 Instance:       IhrisPractitionerWorkflowDiscipline
@@ -92,7 +96,7 @@ Usage:          #definition
 * item[0].type = #group
 * item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date-discipline"
 * item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDate"
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[6]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[6]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[5]').answer.first().valueDateTime"
 * item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
@@ -128,13 +132,13 @@ Usage:          #definition
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
 * item[0].item[5].text = "Effective Start date"
-* item[0].item[5].type = #date
+* item[0].item[5].type = #dateTime
 * item[0].item[5].required = true
 * item[0].item[5].repeats = false
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Effective End Date"
-* item[0].item[6].type = #date
+* item[0].item[6].type = #dateTime
 * item[0].item[6].required = true
 * item[0].item[6].repeats = false
 

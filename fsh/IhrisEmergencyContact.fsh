@@ -23,6 +23,7 @@ Description:    "iHRIS Profile of the Basic resource for Emergency."
 * extension[emergency].extension[houseNumber].valueString MS
 * extension[emergency].extension[address].valueString MS
 * extension[emergency].extension[remark].valueString MS
+* extension[emergency].extension[attachment].valueAttachment MS
     
 Extension:      IhrisEmergency
 Id:             ihris-emergency
@@ -41,7 +42,8 @@ Title:          "Emergency details"
     kebele 0..1 MS and
     houseNumber 0..1 MS and
     address 0..1 MS and
-    remark 0..1 MS
+    remark 0..1 MS and
+    attachment 0..1 MS
 * extension[name].value[x] only string
 * extension[name].valueString 1..1 MS
 * extension[name].valueString ^label = "Full Name"
@@ -91,6 +93,9 @@ Title:          "Emergency details"
 * extension[houseNumber].value[x] only string
 * extension[houseNumber].valueString 0..1 MS
 * extension[houseNumber].valueString ^label = "House Number"
+* extension[attachment].value[x] only Attachment
+* extension[attachment].valueAttachment 0..1 MS
+* extension[attachment].valueAttachment ^label = "Attachment"
 
 Instance:       IhrisPractitionerWorkflowEmergency
 InstanceOf:     IhrisQuestionnaire
@@ -136,36 +141,60 @@ Usage:          #definition
 * item[0].item[3].type = #string
 * item[0].item[3].required = false
 * item[0].item[3].repeats = false
+* item[0].item[3].extension[constraint].extension[key].valueId = "ihris-home-phone-check"
+* item[0].item[3].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[3].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Mobile Phone"
 * item[0].item[4].type = #string
 * item[0].item[4].required = false
 * item[0].item[4].repeats = false
+* item[0].item[4].extension[constraint].extension[key].valueId = "ihris-mobile-phone-check"
+* item[0].item[4].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[4].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
 * item[0].item[5].text = "Work Phone"
 * item[0].item[5].type = #string
 * item[0].item[5].required = false
 * item[0].item[5].repeats = false
+* item[0].item[5].extension[constraint].extension[key].valueId = "ihris-work-phone-check"
+* item[0].item[5].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[5].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Other Phone"
 * item[0].item[6].type = #string
 * item[0].item[6].required = false
 * item[0].item[6].repeats = false
+* item[0].item[6].extension[constraint].extension[key].valueId = "ihris-other-phone-check"
+* item[0].item[6].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[6].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "Work Email"
 * item[0].item[7].type = #string
 * item[0].item[7].required = false
 * item[0].item[7].repeats = false
+* item[0].item[7].extension[constraint].extension[key].valueId = "ihris-work-email-check"
+* item[0].item[7].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[7].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
 * item[0].item[8].text = "Other Email"
 * item[0].item[8].type = #string
 * item[0].item[8].required = false
 * item[0].item[8].repeats = false
+* item[0].item[8].extension[constraint].extension[key].valueId = "ihris-other-email-check"
+* item[0].item[8].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[8].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
 * item[0].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-basic-emergency#Basic.extension:emergency.extension:location.value[x]:valueReference"
@@ -203,6 +232,12 @@ Usage:          #definition
 * item[0].item[14].type = #text
 * item[0].item[14].required = false
 * item[0].item[14].repeats = false
+
+* item[0].item[15].linkId = "Basic.extension[0].extension[15]"
+* item[0].item[15].text = "Attachement"
+* item[0].item[15].type = #attachment
+* item[0].item[15].required = false
+* item[0].item[15].repeats = false
 
 Instance:       ihris-page-emergency
 InstanceOf:     IhrisPage

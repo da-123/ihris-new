@@ -38,15 +38,15 @@ const workflowPerformance = {
             if ( (req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                 && req.body.item[0].item[1].answer 
                 && req.body.item[0].item[1].answer[0] 
-                && req.body.item[0].item[1].answer[0].valueDate)||(
+                && req.body.item[0].item[1].answer[0].valueDateTime)||(
                 req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
                 && req.body.item[0].item[2].answer 
                 && req.body.item[0].item[2].answer[0] 
-                && req.body.item[0].item[2].answer[0].valueDate
+                && req.body.item[0].item[2].answer[0].valueDateTime
                 )){
                 complexExt.push({ url: "period",
-                valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDate,
-                              end:req.body.item[0].item[2].answer[0].valueDate}
+                valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDateTime,
+                              end:req.body.item[0].item[2].answer[0].valueDateTime}
                              })
             }
             if ( req.body.item[0].item[3].linkId === "Basic.extension[0].extension[3]" 

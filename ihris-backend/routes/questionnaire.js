@@ -94,6 +94,7 @@ router.post("/QuestionnaireResponse", (req, res, next) => {
 
     } ).catch( (err) => {
       winston.error(err.message)
+      winston.error(err.stack)
       return res.status( 500 ).json( err )
     } )
 
