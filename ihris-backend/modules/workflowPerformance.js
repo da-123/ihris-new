@@ -56,6 +56,13 @@ const workflowPerformance = {
                 complexExt.push({ url: "score",
                 valueString:req.body.item[0].item[3].answer[0].valueString })
             }
+            if ( req.body.item[0].item[4].linkId === "Basic.extension[0].extension[4]" 
+                && req.body.item[0].item[4].answer 
+                && req.body.item[0].item[4].answer[0] 
+                && req.body.item[0].item[4].answer[0].valueCoding){
+                complexExt.push({ url: "performanceType",
+                valueCoding:req.body.item[0].item[4].answer[0].valueCoding })
+            }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-performance",
                 extension: complexExt})

@@ -1,3 +1,8 @@
+Invariant:      ihris-performance-period
+Description:    "Period Must be six months or less"
+Expression:     "end <= start + 6 months"
+Severity:       #error
+
 Profile:        IhrisBasicPerformance
 Parent:         IhrisPractitionerBasic
 Id:             ihris-basic-performance
@@ -7,9 +12,12 @@ Description:    "iHRIS Profile of the Basic resource for Performance."
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
     IhrisPerformance named performance 1..1 MS
+* extension[performance].extension[performanceType].valueCoding 1..1 MS
+* extension[performance].extension[performanceType].valueCoding ^label = "Performance Type"
 * extension[performance].extension[evaluator].valueString 1..1 MS
 * extension[performance].extension[evaluator].valueString ^label = "Evaluator's Name"
 * extension[performance].extension[period].valuePeriod MS
+* extension[performance].extension[period].valuePeriod obeys ihris-performance-period
 * extension[performance].extension[period].valuePeriod.start 1..1 MS
 * extension[performance].extension[period].valuePeriod.start ^label = "Evaluation Period Start Date"
 * extension[performance].extension[period].valuePeriod.end 1..1 MS
@@ -21,9 +29,14 @@ Extension:      IhrisPerformance
 Id:             ihris-performance
 Title:          "Performance details"
 * extension contains
+      performanceType 1..1 MS and
       evaluator 1..1 MS and
       period 1..1 MS and
       score 1..1 MS 
+* extension[performanceType].value[x] only Coding
+* extension[performanceType].valueCoding 1..1 MS
+* extension[performanceType].valueCoding ^label = "Performance Type"
+* extension[performanceType].valueCoding from IhrisPerformanceTypeValueSet (required)
 * extension[evaluator].value[x] only string
 * extension[evaluator].valueString ^label = "Evaluator's Name"
 * extension[score].value[x] only string
@@ -32,7 +45,11 @@ Title:          "Performance details"
 * extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
 * extension[period].valuePeriod ^constraint[0].severity = #error
 * extension[period].valuePeriod ^constraint[0].human = "The end date must be after the start date"
-* extension[period].valuePeriod ^constraint[0].expression = "end.empty() or end = '' or end >= start"
+* extension[period].valuePeriod ^constraint[0].expression = "end >= start"
+* extension[period].valuePeriod ^constraint[1].key = "ihris-period-start-end-diff"
+* extension[period].valuePeriod ^constraint[1].severity = #error
+* extension[period].valuePeriod ^constraint[1].human = "The difference between end date and start date must be max 6 moths"
+* extension[period].valuePeriod ^constraint[1].expression = "end <= start + 6 months"
 * extension[period].valuePeriod ^label = "Evaluation Period"
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.start ^label = "Evaluation Period Start Date"
@@ -42,6 +59,7 @@ Title:          "Performance details"
 CodeSystem:      IhrisPerformanceScore
 Id:              ihris-performance-score
 Title:           "Performance Score"
+* ^date = "2020-11-17T10:41:04.362Z"
 * ^version = "0.2.0"
 * #1 "Improvement Required" "Improvement Required"
 * #2 "Development Required" "Development Required"
@@ -52,8 +70,24 @@ Title:           "Performance Score"
 ValueSet:         IhrisPerformanceScoreValueSet
 Id:               ihris-performance-score-valueset
 Title:            "iHRIS Performance Score ValueSet"
+* ^date = "2020-11-17T10:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisPerformanceScore
+
+CodeSystem:      IhrisPerformanceType
+Id:              ihris-performance-type
+Title:           "Performance Score"
+* ^date = "2020-11-17T10:41:04.362Z"
+* ^version = "0.2.0"
+* #probation "Probation period" "Probation period"
+* #annual "Annual Performance Evaluation" "Annual Performance Evaluation"
+
+ValueSet:         IhrisPerformanceTypeValueSet
+Id:               ihris-performance-type-valueset
+Title:            "iHRIS Performance Score ValueSet"
+* ^date = "2020-11-10T10:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisPerformanceType
 
 Instance:       IhrisPractitionerWorkflowPerformance
 InstanceOf:      IhrisQuestionnaire
@@ -74,6 +108,10 @@ Usage:          #definition
 * item[0].extension[constraint][0].extension[severity].valueCode = #error
 * item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
 * item[0].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
+* item[0].extension[constraint][1].extension[key].valueId = "ihris-period-diff"
+* item[0].extension[constraint][1].extension[severity].valueCode = #error
+* item[0].extension[constraint][1].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime <= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime + 6 months"
+* item[0].extension[constraint][1].extension[human].valueString = "The Start and End date period must be six months or less."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Evaluator's Name"
@@ -102,6 +140,13 @@ Usage:          #definition
 * item[0].item[3].type = #string
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false
+
+* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
+* item[0].item[4].text = "Performance Type"
+* item[0].item[4].type = #choice
+* item[0].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-performance-type-valueset"
+* item[0].item[4].required = true
+* item[0].item[4].repeats = false
 
 Instance:       ihris-page-performance
 InstanceOf:     IhrisPage

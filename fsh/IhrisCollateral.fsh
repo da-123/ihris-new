@@ -141,6 +141,11 @@ Usage:          #definition
 * item[0].item[1].type = #string
 * item[0].item[1].required = false
 * item[0].item[1].repeats = false
+* item[0].item[1].extension[constraint].extension[key].valueId = "ihris-alt-name-check-alt"
+* item[0].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^[\\\\u1200-\\\\u137F]+(\\\\s+[\\\\u1200-\\\\u137F]+)*')"
+* item[0].item[1].extension[constraint].extension[human].valueString = "Alt Language Full Name must be only Amharic text."
+
 
 * item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Gender"
@@ -162,7 +167,7 @@ Usage:          #definition
 * item[0].item[4].repeats = false
 * item[0].item[4].extension[constraint].extension[key].valueId = "ihris-home-phone-check"
 * item[0].item[4].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
 * item[0].item[4].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
@@ -172,7 +177,7 @@ Usage:          #definition
 * item[0].item[5].repeats = false
 * item[0].item[5].extension[constraint].extension[key].valueId = "ihris-mobile-phone-check"
 * item[0].item[5].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
 * item[0].item[5].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
@@ -182,7 +187,7 @@ Usage:          #definition
 * item[0].item[6].repeats = false
 * item[0].item[6].extension[constraint].extension[key].valueId = "ihris-work-phone-check"
 * item[0].item[6].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
 * item[0].item[6].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
@@ -192,7 +197,7 @@ Usage:          #definition
 * item[0].item[7].repeats = false
 * item[0].item[7].extension[constraint].extension[key].valueId = "ihris-other-phone-check"
 * item[0].item[7].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
 * item[0].item[7].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
@@ -283,19 +288,20 @@ Usage:          #example
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:name.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:altlangName.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:gender.value[x]:valueCoding"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:birthdate.value[x]:valueDate"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:phone.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:mobile.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:workPhone.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:otherPhone.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:workEmail.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:otherEmail.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:salary.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:location.value[x]:valueReference"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:city.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:kebele.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:houseNumber.value[x]:valueString"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:address.value[x]:valueAddress"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:collateral.extension:remark.value[x]:valueString"
+* extension[section][0].extension[field][2].valueString = "Basic.extension:collateral.extension:altlangName.value[x]:valueString"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:collateral.extension:gender.value[x]:valueCoding"
+* extension[section][0].extension[field][4].valueString = "Basic.extension:collateral.extension:birthdate.value[x]:valueDate"
+* extension[section][0].extension[field][5].valueString = "Basic.extension:collateral.extension:phone.value[x]:valueString"
+* extension[section][0].extension[field][6].valueString = "Basic.extension:collateral.extension:mobile.value[x]:valueString"
+* extension[section][0].extension[field][7].valueString = "Basic.extension:collateral.extension:workPhone.value[x]:valueString"
+* extension[section][0].extension[field][8].valueString = "Basic.extension:collateral.extension:otherPhone.value[x]:valueString"
+* extension[section][0].extension[field][9].valueString = "Basic.extension:collateral.extension:workEmail.value[x]:valueString"
+* extension[section][0].extension[field][10].valueString = "Basic.extension:collateral.extension:otherEmail.value[x]:valueString"
+* extension[section][0].extension[field][11].valueString = "Basic.extension:collateral.extension:salary.value[x]:valueString"
+* extension[section][0].extension[field][12].valueString = "Basic.extension:collateral.extension:location.value[x]:valueReference"
+* extension[section][0].extension[field][13].valueString = "Basic.extension:collateral.extension:city.value[x]:valueString"
+* extension[section][0].extension[field][14].valueString = "Basic.extension:collateral.extension:kebele.value[x]:valueString"
+* extension[section][0].extension[field][15].valueString = "Basic.extension:collateral.extension:houseNumber.value[x]:valueString"
+* extension[section][0].extension[field][16].valueString = "Basic.extension:collateral.extension:address.value[x]:valueAddress"
+* extension[section][0].extension[field][17].valueString = "Basic.extension:collateral.extension:remark.value[x]:valueString"
+* extension[section][0].extension[field][18].valueString = "Basic.extension:collateral.extension:attachment.value[x]:valueAttachment"

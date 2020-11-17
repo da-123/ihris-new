@@ -9,8 +9,6 @@ Id:             ihris-personal-information
 Title:          "Health Worker Information"
 Description:    "iHRIS profile of Practitioner."
 
-* id MS
-* id ^label = "PIN ID"
 * identifier MS
 * identifier ^label = "Identifier"
 * identifier ^constraint[0].key = "ihris-search-identifier"
@@ -425,20 +423,20 @@ Title:            "iHRIS Educational Major ValueSet"
 * codes from system IhrisEducationalMajorCodeSystem
 
 Extension:      IhrisPractitionerCategory
-Id:             ihris-personal-Information-Category
+Id:             ihris-personal-Information-category
 Title:          "iHRIS Personal Information Category"
 Description:    "iHRIS extension for Personal Information Category."
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * value[x] only Coding
-* valueCoding 1..1 MS
+* valueCoding 0..1 MS
 * valueCoding ^label = "Category"
 * valueCoding from IhrisCategoryValueSet (required)
 
 CodeSystem:      IhrisCategoryCodeSystem
 Id:              ihris-category-codesystem
 Title:           "Category"
-* ^date = "2020-11-11T08:41:04.362Z"
+* ^date = "2020-11-16T08:30:04.362Z"
 * ^version = "0.3.0"
 * #professional "Health Professional" "Health Professional"
 * #administrative "Administrative" "Non Health Related Background"
@@ -447,7 +445,7 @@ Title:           "Category"
 ValueSet:         IhrisCategoryValueSet
 Id:               ihris-category-valueset
 Title:            "iHRIS Category ValueSet"
-* ^date = "2020-11-11T08:41:04.362Z"
+* ^date = "2020-11-16T08:30:04.362Z"
 * ^version = "0.3.0"
 * codes from system IhrisCategoryCodeSystem
 
@@ -465,7 +463,7 @@ Description:    "iHRIS extension for Practitioner marital status."
 CodeSystem:      IhrisEthiopiaMaritalStatusCodeSystem
 Id:              ihris-marital-status-codesystem
 Title:           "Marital Status"
-* ^date = "2020-11-11T08:41:04.362Z"
+* ^date = "2020-11-14T08:41:04.362Z"
 * ^version = "0.3.0"
 * #single "Single"
 * #married "Married"
@@ -476,7 +474,7 @@ Title:           "Marital Status"
 ValueSet:         IhrisEthiopiaMaritalStatusValueSet
 Id:               ihris-marital-status-valueset
 Title:            "iHRIS Marital ValueSet"
-* ^date = "2020-11-11T08:41:04.362Z"
+* ^date = "2020-11-14T08:41:04.362Z"
 * ^version = "0.3.0"
 * codes from system IhrisEthiopiaMaritalStatusCodeSystem
 
@@ -831,6 +829,10 @@ Usage:          #definition
 * item[0].item[0].item[3].type = #string
 * item[0].item[0].item[3].required = false
 * item[0].item[0].item[3].repeats = false
+* item[0].item[0].item[3].extension[constraint].extension[key].valueId = "ihris-given-name-check-alt"
+* item[0].item[0].item[3].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* item[0].item[0].item[3].extension[constraint].extension[human].valueString = "First Name Alternative must be only Amharic text."
 
 * item[0].item[1].linkId = "Practitioner.extension[0].extension[0]"
 * item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:fathers.value[x]:valueString"
@@ -849,6 +851,10 @@ Usage:          #definition
 * item[0].item[2].type = #string
 * item[0].item[2].required = false
 * item[0].item[2].repeats = false
+* item[0].item[2].extension[constraint].extension[key].valueId = "ihris-fathers-name-check-alt"
+* item[0].item[2].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* item[0].item[2].extension[constraint].extension[human].valueString = "Father's Name Alternative must be only Amharic text."
 
 * item[0].item[3].linkId = "Practitioner.extension[0].extension[2]"
 * item[0].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:grandfatherslastname.value[x]:valueString"
@@ -867,6 +873,10 @@ Usage:          #definition
 * item[0].item[4].type = #string
 * item[0].item[4].required = false
 * item[0].item[4].repeats = false
+* item[0].item[4].extension[constraint].extension[key].valueId = "ihris-grandfather-name-check-alt"
+* item[0].item[4].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* item[0].item[4].extension[constraint].extension[human].valueString = "Grand Father's Name Alternative must be only Amharic text."
 
 * item[0].item[5].linkId = "Practitioner.extension[0].extension[4]"
 * item[0].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:mothers.value[x]:valueString"
@@ -885,6 +895,10 @@ Usage:          #definition
 * item[0].item[6].type = #string
 * item[0].item[6].required = false
 * item[0].item[6].repeats = false
+* item[0].item[6].extension[constraint].extension[key].valueId = "ihris-mothers-name-check-alt"
+* item[0].item[6].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* item[0].item[6].extension[constraint].extension[human].valueString = "Mother's Name Alternative must be only Amharic text."
 
 * item[1].linkId = "Practitioner:demographic"
 * item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information"
