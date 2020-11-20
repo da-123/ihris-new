@@ -130,7 +130,7 @@ const fs = require('fs')
   const questionnaireRouter = require('./routes/questionnaire')
   const mheroRouter = require('./routes/mhero')
 
-  const limit = nconf.get("express:limit") || "50mb"
+  const limit = nconf.get("express:limit") || "200kb"
   app.use(express.json({
     type: ["application/json", "application/fhir+json"],
     limit: limit
