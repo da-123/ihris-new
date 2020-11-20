@@ -70,10 +70,10 @@ spec:
           serviceName: {{name}}
           servicePort: {{port}}
         path: /
-  #tls:
-  #- hosts:
-   # - {{dns}}
-   # secretName: {{dns}}-tls
+  tls:
+  - hosts:
+    - {{dns}}
+    secretName: {{dns}}-tls
 ---
 #hpa
 apiVersion: autoscaling/v2beta2
