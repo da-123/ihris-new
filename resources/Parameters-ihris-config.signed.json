@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-10-21T15:11:19.364Z",
+        "when": "2020-11-25T10:32:48.216Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "Nb+VRWZ2jq94cWIvUXvIUc9BmY0Y6wzeNzJr7YsqpKdBdlpKjzSZjBhXBU2VHGjTZXU3tOZXNoQ+e6suN/8E66CYVlMGG/Wu8ehTc0P7cruigKAnWHNLDhbCGKXcyC5O5FL5WBmZgsZCHPu3xrsbmoCx/t9DMH0+fM98td2uBV4="
+        "data": "kMJcihOiHiv5+Lu6d7KEd10KTeHOd1+kSG8859Wojs4KVYJD3Q5i+zUfrvq0eIYJMX4j3ffDX6LWK4vJUZum/EIkEwcrO8xxCIX/+OCO79ugJNCdH3sLc79XYA+llJaNtsbtqURbuk9GH7WtyRUP7SC8Dds5u5xKaAjaOj53KOQ="
       }
     },
     {
@@ -535,12 +535,36 @@
           "valueString": "29"
         },
         {
+          "name": "site:nav:menu:reports:text",
+          "valueString": "Reports"
+        },
+        {
+          "name": "site:nav:menu:reports:order",
+          "valueString": "5"
+        },
+        {
+          "name": "site:nav:menu:reports:icon",
+          "valueString": "mdi-poll-box"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:staff:text",
+          "valueString": "Staff Report"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:staff:url",
+          "valueString": "/report/ihris-es-report-ethiopia-staff"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:staff:order",
+          "valueString": "1"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
         {
           "name": "site:nav:menu:dashboard:order",
-          "valueString": "5"
+          "valueString": "6"
         },
         {
           "name": "site:nav:menu:dashboard:icon",

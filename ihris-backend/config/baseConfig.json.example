@@ -20,6 +20,10 @@
       "valueString": "10000/1m"
     },
     {
+      "name": "elasticsearch:max_scroll_context",
+      "valueString": "100000"
+    },
+    {
       "name": "elasticsearch:username",
       "valueString": "elastic"
     },
