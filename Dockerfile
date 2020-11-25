@@ -8,18 +8,18 @@ RUN tar xvzf redis-stable.tar.gz && \
     cd .. && \
     rm -r redis-stable && \
     npm install -g concurrently && \
-    npm install -g npm && \
-    npm install -g fsh-sushi
+    npm install -g npm
+    #npm install -g fsh-sushi
 
 WORKDIR /app
 
 COPY . /app
 
-RUN cd fsh
-RUN sushi -s .
-RUN ls
-RUN pwd
-RUN cd tools && npm install
+#RUN cd fsh
+#RUN sushi -s .
+#RUN ls
+#RUN pwd
+#RUN cd tools && npm install
 #RUN npm install
 #RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/profiles/*
 #RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/examples/*
