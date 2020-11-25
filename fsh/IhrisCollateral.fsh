@@ -58,6 +58,10 @@ Title:          "Collateral details"
 * extension[altlangName].value[x] only string
 * extension[altlangName].valueString 0..1 MS
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
+* extension[altlangName].valueString ^constraint[0].key = "ihris-altname-check"
+* extension[altlangName].valueString ^constraint[0].severity = #error
+* extension[altlangName].valueString ^constraint[0].expression = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* extension[altlangName].valueString ^constraint[0].human = "Alt Language Name must be only Amharic text."
 * extension[gender].value[x] only Coding
 * extension[gender].valueCoding 1..1 MS
 * extension[gender].valueCoding ^label = "Gender"
@@ -143,7 +147,7 @@ Usage:          #definition
 * item[0].item[1].repeats = false
 * item[0].item[1].extension[constraint].extension[key].valueId = "ihris-alt-name-check-alt"
 * item[0].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^[\\\\u1200-\\\\u137F]+(\\\\s+[\\\\u1200-\\\\u137F]+)*')"
+* item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
 * item[0].item[1].extension[constraint].extension[human].valueString = "Alt Language Full Name must be only Amharic text."
 
 

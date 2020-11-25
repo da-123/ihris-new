@@ -48,7 +48,6 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleSalary named salary 0..1 MS and
     IhrisPractitionerRoleDirectorate named directorate 0..1 MS and
     IhrisPractitionerRoleCaseTeam named caseteam 0..1 MS and
-    IhrisPractitionerRoleShift named shift 0..1 MS and
     IhrisPractitionerRoleEmploymentStatus named employmentStatus 0..1 MS and
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
@@ -64,8 +63,6 @@ Description:    "iHRIS profile of Practitioner."
 * extension[directorate] ^label = "Directorate"
 * extension[caseteam].valueCoding MS
 * extension[caseteam] ^label = "Case Team"
-* extension[shift].valueCoding MS
-* extension[shift] ^label = "Shift"
 * extension[employmentStatus].valueCoding MS
 * extension[employmentStatus] ^label = "Employment Status"
 * extension[jobType].valueCoding MS
@@ -588,9 +585,8 @@ Usage:          #example
 * extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
 * extension[section][0].extension[field][6].valueString = "PractitionerRole.period"
 * extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding.display"
-* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:shift.value[x]:valueCoding.display"
-* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
-* extension[section][0].extension[field][10].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
+* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
+* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
 
 Instance:       IhrisPractitionerWorkflowEndRole
 InstanceOf:     IhrisQuestionnaire
@@ -668,14 +664,14 @@ Usage:          #definition
 * item[0].item[1].item[0].required = true
 * item[0].item[1].item[0].repeats = false
 
-* item[0].item[1].item[1].linkId = "PractitionerRole.extension[5]"
+* item[0].item[1].item[1].linkId = "PractitionerRole.extension[4]"
 * item[0].item[1].item[1].text = "New Salary Scale"
 * item[0].item[1].item[1].type = #choice
 * item[0].item[1].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-salary-scale-valueset"
 * item[0].item[1].item[1].required = false
 * item[0].item[1].item[1].repeats = false
 
-* item[0].item[1].item[2].linkId = "PractitionerRole.extension[4]"
+* item[0].item[1].item[2].linkId = "PractitionerRole.extension[3]"
 * item[0].item[1].item[2].text = "New Salary"
 * item[0].item[1].item[2].type = #string
 * item[0].item[1].item[2].required = true
@@ -688,42 +684,42 @@ Usage:          #definition
 * item[0].item[1].item[3].required = true
 * item[0].item[1].item[3].repeats = false
 
-* item[0].item[1].item[4].linkId = "PractitionerRole.extension[1]"
+/* item[0].item[1].item[4].linkId = "PractitionerRole.extension[1]"
 * item[0].item[1].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:shift.value[x]:valueCoding"
 * item[0].item[1].item[4].text = "Shift"
 * item[0].item[1].item[4].type = #choice
 * item[0].item[1].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-shift-valueset"
 * item[0].item[1].item[4].required = true
+* item[0].item[1].item[4].repeats = false*/
+
+* item[0].item[1].item[4].linkId = "PractitionerRole.extension[1]"
+* item[0].item[1].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* item[0].item[1].item[4].text = "Employment Status"
+* item[0].item[1].item[4].type = #choice
+* item[0].item[1].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* item[0].item[1].item[4].required = true
 * item[0].item[1].item[4].repeats = false
 
 * item[0].item[1].item[5].linkId = "PractitionerRole.extension[2]"
-* item[0].item[1].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
-* item[0].item[1].item[5].text = "Employment Status"
+* item[0].item[1].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
+* item[0].item[1].item[5].text = "Job Type"
 * item[0].item[1].item[5].type = #choice
-* item[0].item[1].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* item[0].item[1].item[5].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
 * item[0].item[1].item[5].required = true
 * item[0].item[1].item[5].repeats = false
 
-* item[0].item[1].item[6].linkId = "PractitionerRole.extension[3]"
-* item[0].item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
-* item[0].item[1].item[6].text = "Job Type"
+* item[0].item[1].item[6].linkId = "PractitionerRole.extension[5]"
+* item[0].item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:directorate.value[x]:valueCoding"
+* item[0].item[1].item[6].text = "Directorate"
 * item[0].item[1].item[6].type = #choice
-* item[0].item[1].item[6].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
+* item[0].item[1].item[6].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
 * item[0].item[1].item[6].required = true
 * item[0].item[1].item[6].repeats = false
 
 * item[0].item[1].item[7].linkId = "PractitionerRole.extension[6]"
-* item[0].item[1].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:directorate.value[x]:valueCoding"
-* item[0].item[1].item[7].text = "Directorate"
+* item[0].item[1].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:caseteam.value[x]:valueCoding"
+* item[0].item[1].item[7].text = "Case Team"
 * item[0].item[1].item[7].type = #choice
-* item[0].item[1].item[7].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
+* item[0].item[1].item[7].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
 * item[0].item[1].item[7].required = true
 * item[0].item[1].item[7].repeats = false
-
-* item[0].item[1].item[8].linkId = "PractitionerRole.extension[7]"
-* item[0].item[1].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:caseteam.value[x]:valueCoding"
-* item[0].item[1].item[8].text = "Case Team"
-* item[0].item[1].item[8].type = #choice
-* item[0].item[1].item[8].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
-* item[0].item[1].item[8].required = true
-* item[0].item[1].item[8].repeats = false

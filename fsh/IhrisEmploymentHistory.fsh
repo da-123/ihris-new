@@ -57,6 +57,10 @@ Title:          "Employment History details"
 * extension[period].valuePeriod ^label = "Period"
 * extension[period].valuePeriod.start 1..1 MS
 * extension[period].valuePeriod.start ^label = "Date Started"
+* extension[period].valuePeriod.start ^constraint[0].key = "ihris-period-start-date-check"
+* extension[period].valuePeriod.start ^constraint[0].severity = #error
+* extension[period].valuePeriod.start ^constraint[0].human = "The end date must be less than now."
+* extension[period].valuePeriod.start ^constraint[0].expression = "$this < today() + 1 day"
 * extension[period].valuePeriod.end 1..1 MS
 * extension[period].valuePeriod.end ^label = "Date Ended"
 * extension[responsibilities].value[x] only string
@@ -119,6 +123,11 @@ Usage:          #definition
 * item[0].item[5].type = #dateTime
 * item[0].item[5].required = true
 * item[0].item[5].repeats = false
+* item[0].item[5].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
+* item[0].item[5].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[5].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
+* item[0].item[5].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
+
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Date Ended"

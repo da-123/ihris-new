@@ -50,9 +50,9 @@ Description:    "iHRIS profile of Practitioner."
 * birthDate MS
 * birthDate ^label = "Date of Birth"
 * birthDate obeys ihris-age-18
-* birthDate ^minValueQuantity.system = "http://unitsofmeasure.org/"
+/* birthDate ^minValueQuantity.system = "http://unitsofmeasure.org/"
 * birthDate ^minValueQuantity.code = #a
-* birthDate ^minValueQuantity.value = 60
+* birthDate ^minValueQuantity.value = 60*/
 * birthDate ^maxValueQuantity.system = "http://unitsofmeasure.org/"
 * birthDate ^maxValueQuantity.code = #a
 * birthDate ^maxValueQuantity.value = -18
@@ -61,14 +61,7 @@ Description:    "iHRIS profile of Practitioner."
 * gender from IhrisEthiopiaGenderValueSet (required)
 * photo 0..1 MS
 * photo ^label = "Photo"
-* telecom MS
-* telecom ^label = "Telecom"
-* telecom.system MS
-* telecom.system ^label = "Type"
-* telecom.value MS
-* telecom.value ^label = "Value"
-* telecom.use MS
-* telecom.use ^label = "Use"
+* telecom 0..0
 * communication 0..* MS
 * communication ^label = "Language"
 * communication.coding 1..1 MS
@@ -90,7 +83,10 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerCategory named category 0..1 MS and
     IhrisPractitionerEthnicity named ethnicity 0..1 MS and
     IhrisPractitionerFamilyNames named familyNames 0..1 MS and
-    IhrisPractitionerDrivingLicense named drivingLicense 0..1 MS
+    IhrisPractitionerDrivingLicense named drivingLicense 0..1 MS and
+    IhrisPractitionerEmail named ethiopiaEmail 0..1 MS and
+    IhrisPractitionerPhone named ethiopiaPhone 0..1 MS and
+    IhrisPractitionerWorkPhone named ethiopiaWorkPhone 0..1 MS
 * extension[familyNames] ^label = "Family Names"
 * extension[familyNames].extension[fathers].valueString MS
 * extension[familyNames].extension[mothers].valueString MS
@@ -121,6 +117,12 @@ Description:    "iHRIS profile of Practitioner."
 * extension[drivingLicense].extension[license] ^label = "Driving Licence ID"
 * extension[drivingLicense].extension[licenseType].valueCoding MS
 * extension[drivingLicense].extension[licenseType] ^label = "Driving Licence Type"
+* extension[ethiopiaEmail].valueString MS
+* extension[ethiopiaEmail] ^label = "Email"
+* extension[ethiopiaPhone].valueString MS
+* extension[ethiopiaPhone] ^label = "Phone Number"
+* extension[ethiopiaWorkPhone].valueString MS
+* extension[ethiopiaWorkPhone] ^label = "Work Phone Number"
 
 Extension:      IhrisPractitionerLanguageProficiency
  Id:             ihris-practitioner-language-proficiency
@@ -156,7 +158,7 @@ Description:    "iHRIS Family Names extension for Ethiopia."
       mothers 0..1 MS and
       mothersalternativelanguage 0..1 MS
 * extension[fathers].value[x] only string
-* extension[fathers].valueString 0..1 MS
+* extension[fathers].valueString 1..1 MS
 * extension[fathers].valueString ^label = "Father's Name"
 * extension[fathers] ^label = "Father's Name"
 * extension[fathers].valueString ^constraint[0].key = "ihris-name-check"
@@ -180,7 +182,7 @@ Description:    "iHRIS Family Names extension for Ethiopia."
 * extension[mothersalternativelanguage].valueString ^label = "Mother's Full Name Alternative Language"
 * extension[mothersalternativelanguage] ^label = "Mother's Full Name Alternative Language"
 * extension[grandfatherslastname].value[x] only string
-* extension[grandfatherslastname].valueString 0..1 MS
+* extension[grandfatherslastname].valueString 1..1 MS
 * extension[grandfatherslastname].valueString ^label = "Grandfather's Lastname"
 * extension[grandfatherslastname] ^label = "Grandfather's Lastname"
 * extension[grandfatherslastname].valueString ^constraint[0].key = "ihris-name-check"
@@ -200,7 +202,7 @@ Description:    "iHRIS extension for Special Training."
 * ^context.expression = "Practitioner"
 * valueString ^label = "Special Training"
 * value[x] only string
-* valueString 1..1 MS
+* valueString 0..1 MS
 
 Extension:      IhrisPractitionerRemarkNote
 Id:             ihris-personal-information-remark-note
@@ -210,7 +212,49 @@ Description:    "iHRIS extension for Remark Note."
 * ^context.expression = "Practitioner"
 * value[x] only string
 * valueString ^label = "Remarks/Note"
-* valueString 1..1 MS
+* valueString 0..1 MS
+
+Extension:      IhrisPractitionerEmail
+Id:             ihris-personal-information-email
+Title:          "iHRIS Personal Information email"
+Description:    "iHRIS extension for Email."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* value[x] only string
+* valueString ^label = "Email"
+* valueString 0..1 MS
+* valueString ^constraint[0].key = "ihris-email-check"
+* valueString ^constraint[0].severity = #error
+* valueString ^constraint[0].expression = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
+
+Extension:      IhrisPractitionerPhone
+Id:             ihris-personal-information-phone
+Title:          "iHRIS Personal Information phone"
+Description:    "iHRIS extension for Email."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* value[x] only string
+* valueString ^label = "Phone Number"
+* valueString 0..1 MS
+* valueString ^constraint[0].key = "ihris-phone-check"
+* valueString ^constraint[0].severity = #error
+* valueString ^constraint[0].expression = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* valueString ^constraint[0].human = "Phone Number is not properly formatted."
+
+Extension:      IhrisPractitionerWorkPhone
+Id:             ihris-personal-information-workphone
+Title:          "iHRIS Personal Information Work phone"
+Description:    "iHRIS extension for Email."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* value[x] only string
+* valueString ^label = "Work Phone Number"
+* valueString 0..1 MS
+* valueString ^constraint[0].key = "ihris-workphone-check"
+* valueString ^constraint[0].severity = #error
+* valueString ^constraint[0].expression = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
 
 Extension:      IhrisPractitionerResidence
 Id:             ihris-practitioner-residence
@@ -346,7 +390,7 @@ Description:    "iHRIS extension for Personal Given Name Alternative Language."
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * value[x] only string
-* valueString 1..1 MS
+* valueString 0..1 MS
 * valueString ^label = "First Name Alternative Language"
 
 ValueSet:         IhrisEthiopiaPrefixValueSet
@@ -690,13 +734,13 @@ Title:          "iHRIS Practitioner Driving License"
 Description:    "iHRIS extension for Practitioner Driving License."
 * ^context.type = #element
 * ^context.expression = "Practitioner"
-* extension contains license 1..1 MS and
-    licenseType 1..1 MS
+* extension contains license 0..1 MS and
+    licenseType 0..1 MS
 * extension[license].value[x] only string
-* extension[license].valueString 1..1 MS
+* extension[license].valueString 0..1 MS
 * extension[license].valueString ^label = "Driving License ID"
 * extension[licenseType].value[x] only Coding
-* extension[licenseType].valueCoding 1..1 MS
+* extension[licenseType].valueCoding 0..1 MS
 * extension[licenseType].valueCoding ^label = "Driving License Type"
 * extension[licenseType].valueCoding from IhrisEthiopiaDrivingLicenseTypeValueSet (required)
 
@@ -939,6 +983,8 @@ Usage:          #definition
 * item[1].item[3].answerValueSet = "http://hl7.org/fhir/ValueSet/iso3166-1-2"
 * item[1].item[3].required = false
 * item[1].item[3].repeats = false
+* item[1].item[3].answerOption.valueCoding = urn:iso:std:iso:3166#ET
+* item[1].item[3].answerOption.initialSelected = true
 
 * item[1].item[4].linkId = "Practitioner.extension[5]"
 * item[1].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethnicity.value[x]:valueCoding"
@@ -1134,77 +1180,48 @@ Usage:          #definition
 * item[3].text = "Contacts|Person's Contact Information"
 * item[3].type = #group
 
-* item[3].item[0].linkId = "Practitioner.telecom[0]"
+* item[3].item[0].linkId = "Practitioner:phone"
 * item[3].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom"
-* item[3].item[0].text = "Mobile Phone"
+* item[3].item[0].text = "Phone"
 * item[3].item[0].type = #group
 
-* item[3].item[0].item[0].linkId = "Practitioner.telecom[0].use"
-* item[3].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.use"
-* item[3].item[0].item[0].text = "Telecom Use"
-* item[3].item[0].item[0].type = #choice
-* item[3].item[0].item[0].required = true
+* item[3].item[0].item[0].linkId = "Practitioner.extension[7]"
+* item[3].item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethiopiaPhone.value[x]:valueString"
+* item[3].item[0].item[0].text = "Mobile Phone"
+* item[3].item[0].item[0].type = #string
+* item[3].item[0].item[0].required = false
 * item[3].item[0].item[0].repeats = false
-* item[3].item[0].item[0].readOnly = true
-* item[3].item[0].item[0].answerOption.valueCoding = http://hl7.org/fhir/contact-point-use#mobile
-* item[3].item[0].item[0].answerOption.initialSelected = true
+* item[3].item[0].item[0].extension[constraint].extension[key].valueId = "ihris-phone-check"
+* item[3].item[0].item[0].extension[constraint].extension[severity].valueCode = #error
+* item[3].item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[3].item[0].item[0].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
-* item[3].item[0].item[1].linkId = "Practitioner.telecom[0].system"
-* item[3].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.system"
-* item[3].item[0].item[1].text = "Telecom System"
-* item[3].item[0].item[1].type = #choice
-* item[3].item[0].item[1].required = true
+* item[3].item[0].item[1].linkId = "Practitioner.extension[8]"
+* item[3].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethiopiaWorkPhone.value[x]:valueString"
+* item[3].item[0].item[1].text = "Work Phone"
+* item[3].item[0].item[1].type = #string
+* item[3].item[0].item[1].required = false
 * item[3].item[0].item[1].repeats = false
-* item[3].item[0].item[1].readOnly = true
-* item[3].item[0].item[1].answerOption.valueCoding = http://hl7.org/fhir/contact-point-system#phone
-* item[3].item[0].item[1].answerOption.initialSelected = true
+* item[3].item[0].item[1].extension[constraint].extension[key].valueId = "ihris-workphone-check"
+* item[3].item[0].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[3].item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[3].item[0].item[1].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
-* item[3].item[0].item[2].linkId = "Practitioner.telecom[0].value"
-* item[3].item[0].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.value"
-* item[3].item[0].item[2].text = "Mobile Phone"
-* item[3].item[0].item[2].type = #string
-* item[3].item[0].item[2].required = true
-* item[3].item[0].item[2].repeats = false
-* item[3].item[0].item[2].extension[constraint].extension[key].valueId = "ihris-phone-check"
-* item[3].item[0].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
-* item[3].item[0].item[2].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
-
-* item[3].item[1].linkId = "Practitioner.telecom[1]"
+* item[3].item[1].linkId = "Practitioner:email"
 * item[3].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom"
 * item[3].item[1].text = "Work Email"
 * item[3].item[1].type = #group
 
-* item[3].item[1].item[0].linkId = "Practitioner.telecom[1].use"
-* item[3].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.use"
-* item[3].item[1].item[0].text = "Telecom Use"
-* item[3].item[1].item[0].type = #choice
-* item[3].item[1].item[0].required = true
+* item[3].item[1].item[0].linkId = "Practitioner.extension[9]"
+* item[3].item[1].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:ethiopiaEmail.value[x]:valueString"
+* item[3].item[1].item[0].text = "Work Email"
+* item[3].item[1].item[0].type = #string
+* item[3].item[1].item[0].required = false
 * item[3].item[1].item[0].repeats = false
-* item[3].item[1].item[0].readOnly = true
-* item[3].item[1].item[0].answerOption.valueCoding = http://hl7.org/fhir/contact-point-use#work
-* item[3].item[1].item[0].answerOption.initialSelected = true
-
-* item[3].item[1].item[1].linkId = "Practitioner.telecom[1].system"
-* item[3].item[1].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.system"
-* item[3].item[1].item[1].text = "Telecom System"
-* item[3].item[1].item[1].type = #choice
-* item[3].item[1].item[1].required = true
-* item[3].item[1].item[1].repeats = false
-* item[3].item[1].item[1].readOnly = true
-* item[3].item[1].item[1].answerOption.valueCoding = http://hl7.org/fhir/contact-point-system#email
-* item[3].item[1].item[1].answerOption.initialSelected = true
-
-* item[3].item[1].item[2].linkId = "Practitioner.telecom[1].value"
-* item[3].item[1].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.telecom.value"
-* item[3].item[1].item[2].text = "Work Email"
-* item[3].item[1].item[2].type = #string
-* item[3].item[1].item[2].required = true
-* item[3].item[1].item[2].repeats = false
-* item[3].item[1].item[2].extension[constraint].extension[key].valueId = "ihris-email-check"
-* item[3].item[1].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[1].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
-* item[3].item[1].item[2].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
+* item[3].item[1].item[0].extension[constraint].extension[key].valueId = "ihris-email-check"
+* item[3].item[1].item[0].extension[constraint].extension[severity].valueCode = #error
+* item[3].item[1].item[0].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[3].item[1].item[0].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[3].item[2].linkId = "Practitioner.extension[2]"
 * item[3].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:residence.value[x]:valueReference"
@@ -1307,60 +1324,52 @@ Usage:          #definition
 * item[7].item[1].repeats = false
 
 * item[7].item[2].linkId = "PractitionerRole.extension[0]"
-* item[7].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:shift.value[x]:valueCoding"
-* item[7].item[2].text = "Shift"
+* item[7].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* item[7].item[2].text = "Employment Status"
 * item[7].item[2].type = #choice
-* item[7].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-shift-valueset"
+* item[7].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
 * item[7].item[2].required = true
 * item[7].item[2].repeats = false
 
 * item[7].item[3].linkId = "PractitionerRole.extension[1]"
-* item[7].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
-* item[7].item[3].text = "Employment Status"
+* item[7].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
+* item[7].item[3].text = "Job Type"
 * item[7].item[3].type = #choice
-* item[7].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* item[7].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
 * item[7].item[3].required = true
 * item[7].item[3].repeats = false
 
 * item[7].item[4].linkId = "PractitionerRole.extension[2]"
-* item[7].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
-* item[7].item[4].text = "Job Type"
-* item[7].item[4].type = #choice
-* item[7].item[4].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
+* item[7].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
+* item[7].item[4].text = "First Employment Date"
+* item[7].item[4].type = #date
 * item[7].item[4].required = true
 * item[7].item[4].repeats = false
 
-* item[7].item[5].linkId = "PractitionerRole.extension[3]"
-* item[7].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
-* item[7].item[5].text = "First Employment Date"
-* item[7].item[5].type = #date
+* item[7].item[5].linkId = "PractitionerRole.period.start"
+* item[7].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.start"
+* item[7].item[5].text = "Hire Date"
+* item[7].item[5].type = #dateTime
 * item[7].item[5].required = true
 * item[7].item[5].repeats = false
+* item[7].item[5].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
+* item[7].item[5].extension[constraint].extension[severity].valueCode = #error
+* item[7].item[5].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
+* item[7].item[5].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
 
-* item[7].item[6].linkId = "PractitionerRole.period.start"
-* item[7].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.start"
-* item[7].item[6].text = "Hire Date"
+* item[7].item[6].linkId = "PractitionerRole.period.end"
+* item[7].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
+* item[7].item[6].text = "End Date"
 * item[7].item[6].type = #dateTime
-* item[7].item[6].required = true
+* item[7].item[6].required = false
 * item[7].item[6].repeats = false
-* item[7].item[6].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
-* item[7].item[6].extension[constraint].extension[severity].valueCode = #error
-* item[7].item[6].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
-* item[7].item[6].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
 
-* item[7].item[7].linkId = "PractitionerRole.period.end"
-* item[7].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
-* item[7].item[7].text = "End Date"
-* item[7].item[7].type = #dateTime
+* item[7].item[7].linkId = "PractitionerRole.extension[3]"
+* item[7].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
+* item[7].item[7].text = "Remark"
+* item[7].item[7].type = #text
 * item[7].item[7].required = false
 * item[7].item[7].repeats = false
-
-* item[7].item[8].linkId = "PractitionerRole.extension[4]"
-* item[7].item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
-* item[7].item[8].text = "Remark"
-* item[7].item[8].type = #text
-* item[7].item[8].required = false
-* item[7].item[8].repeats = false
 
 * item[7].item[9].linkId = "PractitionerRole.practitioner"
 * item[7].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.practitioner"
