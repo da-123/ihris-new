@@ -21,7 +21,7 @@ spec:
                 cpu: "1000m"
             requests:
                 memory: "100Mi"
-                cpu: "100m"
+                cpu: "50m"
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
@@ -94,11 +94,11 @@ spec:
         target:
           #name: cpu-percent
           type: Utilization
-          averageUtilization: 200
+          averageUtilization: 400
     - type: Resource
       resource:
         name: memory
         target:
           #name: memory-percent
           type: Utilization
-          averageUtilization: 200
+          averageUtilization: 400
