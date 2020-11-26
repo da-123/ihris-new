@@ -1271,112 +1271,125 @@ Usage:          #definition
 * item[4].item[0].item[1].item[1].required = false
 * item[4].item[0].item[1].item[1].repeats = true 
 
-* item[5].linkId = "__Practitioner:remarkNote"
-* item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote"
-* item[5].text = "Remarks|Remarks or notes"
+* item[5].linkId = "__Practitioner:Category"
+* item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
+* item[5].text = "Profession Category|Employee profession Category"
 * item[5].type = #group
 
-* item[5].item[0].linkId = "Practitioner.extension[4]"
-* item[5].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote.value[x]:valueString"
-* item[5].item[0].text = "Remark Note"
-* item[5].item[0].type = #text
+* item[5].item[0].linkId = "Practitioner.extension[10]"
+* item[5].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category.value[x]:valueCoding"
+* item[5].item[0].text = "Profession Category"
+* item[5].item[0].type = #choice
+* item[5].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-category-valueset"
 * item[5].item[0].required = false
-* item[5].item[0].repeats = true
+* item[5].item[0].repeats = false
 
-* item[6].linkId = "__Practitioner:photo"
-* item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
-* item[6].text = "Photo|Person's Passport Photo"
+* item[6].linkId = "__Practitioner:remarkNote"
+* item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote"
+* item[6].text = "Remarks|Remarks or notes"
 * item[6].type = #group
 
-* item[6].item[0].linkId = "Practitioner.photo[0]"
-* item[6].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
-* item[6].item[0].text = "Photo"
-* item[6].item[0].type = #attachment
+* item[6].item[0].linkId = "Practitioner.extension[4]"
+* item[6].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:remarkNote.value[x]:valueString"
+* item[6].item[0].text = "Remark Note"
+* item[6].item[0].type = #text
 * item[6].item[0].required = false
-* item[6].item[0].repeats = false
+* item[6].item[0].repeats = true
 
-* item[7].linkId = "PractitionerRole"
-* item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description"
-* item[7].text = "Position Informatiom|Health worker position informatiom"
+* item[7].linkId = "__Practitioner:photo"
+* item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
+* item[7].text = "Photo|Person's Passport Photo"
 * item[7].type = #group
-* item[7].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
-* item[7].extension[constraint][0].extension[severity].valueCode = #error
-* item[7].extension[constraint][0].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime > where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
-* item[7].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
-* item[7].extension[constraint][1].extension[key].valueId = "ihris-first-emp-date"
-* item[7].extension[constraint][1].extension[severity].valueCode = #error
-* item[7].extension[constraint][1].extension[expression].valueString = "where(linkId='PractitionerRole.extension[3]').answer.first().valueDate <= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
-* item[7].extension[constraint][1].extension[human].valueString = "The First Appointment Date must be before or Equal to the start date."
 
-* item[7].item[0].linkId = "PractitionerRole.code"
-* item[7].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.code"
-* item[7].item[0].text = "Job Title"
-* item[7].item[0].type = #choice
-* item[7].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
-* item[7].item[0].required = true
+* item[7].item[0].linkId = "Practitioner.photo[0]"
+* item[7].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"
+* item[7].item[0].text = "Photo"
+* item[7].item[0].type = #attachment
+* item[7].item[0].required = false
 * item[7].item[0].repeats = false
 
-* item[7].item[1].linkId = "PractitionerRole.location"
-* item[7].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
-* item[7].item[1].text = "Place Of Work"
-* item[7].item[1].type = #reference
-* item[7].item[1].required = false
-* item[7].item[1].repeats = false
+* item[8].linkId = "PractitionerRole"
+* item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description"
+* item[8].text = "Position Informatiom|Health worker position informatiom"
+* item[8].type = #group
+* item[8].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
+* item[8].extension[constraint][0].extension[severity].valueCode = #error
+* item[8].extension[constraint][0].extension[expression].valueString = "where(linkId='PractitionerRole.period.end').answer.first().valueDateTime.empty() or where(linkId='PractitionerRole.period.end').answer.first().valueDateTime > where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
+* item[8].extension[constraint][1].extension[key].valueId = "ihris-first-emp-date"
+* item[8].extension[constraint][1].extension[severity].valueCode = #error
+* item[8].extension[constraint][1].extension[expression].valueString = "where(linkId='PractitionerRole.extension[3]').answer.first().valueDate <= where(linkId='PractitionerRole.period.start').answer.first().valueDateTime"
+* item[8].extension[constraint][1].extension[human].valueString = "The First Appointment Date must be before or Equal to the start date."
 
-* item[7].item[2].linkId = "PractitionerRole.extension[0]"
-* item[7].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
-* item[7].item[2].text = "Employment Status"
-* item[7].item[2].type = #choice
-* item[7].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
-* item[7].item[2].required = true
-* item[7].item[2].repeats = false
+* item[8].item[0].linkId = "PractitionerRole.code"
+* item[8].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.code"
+* item[8].item[0].text = "Job Title"
+* item[8].item[0].type = #choice
+* item[8].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
+* item[8].item[0].required = true
+* item[8].item[0].repeats = false
 
-* item[7].item[3].linkId = "PractitionerRole.extension[1]"
-* item[7].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
-* item[7].item[3].text = "Job Type"
-* item[7].item[3].type = #choice
-* item[7].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
-* item[7].item[3].required = true
-* item[7].item[3].repeats = false
+* item[8].item[1].linkId = "PractitionerRole.location"
+* item[8].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
+* item[8].item[1].text = "Place Of Work"
+* item[8].item[1].type = #reference
+* item[8].item[1].required = false
+* item[8].item[1].repeats = false
 
-* item[7].item[4].linkId = "PractitionerRole.extension[2]"
-* item[7].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
-* item[7].item[4].text = "First Employment Date"
-* item[7].item[4].type = #date
-* item[7].item[4].required = true
-* item[7].item[4].repeats = false
+* item[8].item[2].linkId = "PractitionerRole.extension[0]"
+* item[8].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:employmentStatus.value[x]:valueCoding"
+* item[8].item[2].text = "Employment Status"
+* item[8].item[2].type = #choice
+* item[8].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* item[8].item[2].required = true
+* item[8].item[2].repeats = false
 
-* item[7].item[5].linkId = "PractitionerRole.period.start"
-* item[7].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.start"
-* item[7].item[5].text = "Hire Date"
-* item[7].item[5].type = #dateTime
-* item[7].item[5].required = true
-* item[7].item[5].repeats = false
-* item[7].item[5].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
-* item[7].item[5].extension[constraint].extension[severity].valueCode = #error
-* item[7].item[5].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
-* item[7].item[5].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
+* item[8].item[3].linkId = "PractitionerRole.extension[1]"
+* item[8].item[3].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobType.value[x]:valueCoding"
+* item[8].item[3].text = "Job Type"
+* item[8].item[3].type = #choice
+* item[8].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-job-type-valueset"
+* item[8].item[3].required = true
+* item[8].item[3].repeats = false
 
-* item[7].item[6].linkId = "PractitionerRole.period.end"
-* item[7].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
-* item[7].item[6].text = "End Date"
-* item[7].item[6].type = #dateTime
-* item[7].item[6].required = false
-* item[7].item[6].repeats = false
+* item[8].item[4].linkId = "PractitionerRole.extension[2]"
+* item[8].item[4].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
+* item[8].item[4].text = "First Employment Date"
+* item[8].item[4].type = #date
+* item[8].item[4].required = true
+* item[8].item[4].repeats = false
 
-* item[7].item[7].linkId = "PractitionerRole.extension[3]"
-* item[7].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
-* item[7].item[7].text = "Remark"
-* item[7].item[7].type = #text
-* item[7].item[7].required = false
-* item[7].item[7].repeats = false
+* item[8].item[5].linkId = "PractitionerRole.period.start"
+* item[8].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.start"
+* item[8].item[5].text = "Hire Date"
+* item[8].item[5].type = #dateTime
+* item[8].item[5].required = true
+* item[8].item[5].repeats = false
+* item[8].item[5].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
+* item[8].item[5].extension[constraint].extension[severity].valueCode = #error
+* item[8].item[5].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
+* item[8].item[5].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
 
-* item[7].item[9].linkId = "PractitionerRole.practitioner"
-* item[7].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.practitioner"
-* item[7].item[9].text = "Practitioner"
-* item[7].item[9].type = #string
-* item[7].item[9].required = true
-* item[7].item[9].repeats = false
-* item[7].item[9].readOnly = true
-* item[7].item[9].answerOption.valueString = "__REPLACE__Practitioner"
-* item[7].item[9].answerOption.initialSelected = true
+* item[8].item[6].linkId = "PractitionerRole.period.end"
+* item[8].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
+* item[8].item[6].text = "End Date"
+* item[8].item[6].type = #dateTime
+* item[8].item[6].required = false
+* item[8].item[6].repeats = false
+
+* item[8].item[7].linkId = "PractitionerRole.extension[3]"
+* item[8].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
+* item[8].item[7].text = "Remark"
+* item[8].item[7].type = #text
+* item[8].item[7].required = false
+* item[8].item[7].repeats = false
+
+* item[8].item[9].linkId = "PractitionerRole.practitioner"
+* item[8].item[9].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.practitioner"
+* item[8].item[9].text = "Practitioner"
+* item[8].item[9].type = #string
+* item[8].item[9].required = true
+* item[8].item[9].repeats = false
+* item[8].item[9].readOnly = true
+* item[8].item[9].answerOption.valueString = "__REPLACE__Practitioner"
+* item[8].item[9].answerOption.initialSelected = true
