@@ -9,7 +9,7 @@
   "parameter": [
     {
       "name": "fhir:base",
-      "valueString": "https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir"
+      "valueString": "https://fhir.sandboxaddis.com/fhir"
     },
     {
       "name": "elasticsearch:base",
