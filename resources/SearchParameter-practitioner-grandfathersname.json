@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "practitioner-grandfathersname",
+  "url": "http://ihris.org/fhir/SearchParameter/practitioner-grandfathersname",
+  "name": "Search Parameter on a practitioner extension for Grand Father's name",
+  "status": "active",
+  "description": "Search by Father's name for a Practitioner resource.",
+  "code": "grandfathersname",
+  "base": [
+    "Practitioner"
+  ],
+  "type": "string",
+  "expression": "Practitioner.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='grandfatherslastname')",
+  "xpath": "f:Practitioner/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames']/f:extension[@url='grandfatherslastname']",
+  "xpathUsage": "normal"
+}
