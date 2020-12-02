@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-11-25T10:32:48.216Z",
+        "when": "2020-12-02T07:53:02.542Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "kMJcihOiHiv5+Lu6d7KEd10KTeHOd1+kSG8859Wojs4KVYJD3Q5i+zUfrvq0eIYJMX4j3ffDX6LWK4vJUZum/EIkEwcrO8xxCIX/+OCO79ugJNCdH3sLc79XYA+llJaNtsbtqURbuk9GH7WtyRUP7SC8Dds5u5xKaAjaOj53KOQ="
+        "data": "ogOgm0nf7c5AXqs+cbIxYHEdm9fbn80Un9BMiggvscjB5owaAdMgcfVozED5F4pk9oTovpHkrmP6wRX2CrqQAbzIgecWUW/p+6I0vtGhAuwfVohKcnNKX4j9BlnHTj0Y7+vDFnp4WCQ+AN+xYls3j9SZJe5WQ9f3JiCxjG01YOk="
       }
     },
     {
@@ -559,6 +559,18 @@
           "valueString": "1"
         },
         {
+          "name": "site:nav:menu:reports:menu:performance:text",
+          "valueString": "Performance Report"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:performance:url",
+          "valueString": "/report/ihris-es-performance-report-ethiopia-staff"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:performance:order",
+          "valueString": "2"
+        },
+        {
           "name": "site:nav:menu:dashboard:text",
           "valueString": "Dashboard"
         },
@@ -677,6 +689,14 @@
         {
           "name": "workflow:questionnaire:leave:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-leave-ethiopia"
+        },
+        {
+          "name": "workflow:processor:leavestock:file",
+          "valueString": "../modules/workflowLeaveStockEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:leavestock:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-leave-stock-ethiopia"
         },
         {
           "name": "workflow:processor:education:file",
