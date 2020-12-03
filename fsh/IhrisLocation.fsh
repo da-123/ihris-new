@@ -24,6 +24,7 @@ Description:    "iHRIS profile of Location."
 * type ^label = "Location/Facility Type"
 * type.coding 1..1 MS
 * type.coding ^label = "Location/Facility Type"
+* type.coding from IhrisJurisdiction (required)
 * physicalType MS
 * physicalType ^label = "Location Type"
 * physicalType.coding 1..1 MS
