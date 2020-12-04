@@ -112,10 +112,10 @@ Usage:          #definition
 * item[0].extension[constraint][0].extension[severity].valueCode = #error
 * item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
 * item[0].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
-* item[0].extension[constraint][1].extension[key].valueId = "ihris-period-diff"
+/* item[0].extension[constraint][1].extension[key].valueId = "ihris-period-diff"
 * item[0].extension[constraint][1].extension[severity].valueCode = #error
 * item[0].extension[constraint][1].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime <= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime + 6 months"
-* item[0].extension[constraint][1].extension[human].valueString = "The Start and End date period must be six months or less."
+* item[0].extension[constraint][1].extension[human].valueString = "The Start and End date period must be six months or less."*/
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Evaluator's Name"
@@ -143,11 +143,11 @@ Usage:          #definition
 * item[0].item[3].text = "Score Attained"
 * item[0].item[3].type = #string
 * item[0].item[3].required = true
-* item[0].item[3].repeats = true
-* item[0].item[0].extension[constraint].extension[key].valueId = "ihris-score-check"
-* item[0].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9]?$|^100$')"
-* item[0].item[0].extension[constraint].extension[human].valueString = "Score has to be a number from 0 to 100."
+* item[0].item[3].repeats = false
+* item[0].item[3].extension[constraint].extension[key].valueId = "ihris-score-check"
+* item[0].item[3].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9]?$|^100$')"
+* item[0].item[3].extension[constraint].extension[human].valueString = "Score has to be a number from 0 to 100."
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[4].text = "Performance Type"

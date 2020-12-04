@@ -565,7 +565,7 @@ InstanceOf:     IhrisPage
 Title:          "iHRIS Location Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
-* extension[display].extension[resource].valueReference = Reference(StructureDefinition/Location)
+* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-location)
 * extension[display].extension[search][0].valueString = "Location Name|name"
 * extension[display].extension[search][1].valueString = "Location Type|type.coding[0]"
 * extension[display].extension[search][2].valueString = "Location Physical Type|physicalType.coding[0]"
