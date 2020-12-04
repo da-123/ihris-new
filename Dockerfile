@@ -9,6 +9,7 @@ RUN tar xvzf redis-stable.tar.gz && \
     rm -r redis-stable && \
     npm install -g concurrently && \
     npm install -g npm
+    npm install -g date-fns
     #npm install -g fsh-sushi
 
 WORKDIR /app
@@ -30,6 +31,7 @@ COPY . /app
 #RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/resources/Parameters-ihris-config.signed.json #Only change this file if there is a change to in in the update
 
 RUN cp /app/ihris-backend/config/baseConfig.json.example /app/ihris-backend/config/baseConfig.json
+RUN cp /app/ihris-backend && npm install -g date-fns
 RUN cd /app/ihris-backend && npm install
 
 WORKDIR /app/ihris-backend
