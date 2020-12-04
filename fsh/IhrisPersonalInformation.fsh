@@ -1188,7 +1188,7 @@ Usage:          #definition
 * item[3].item[0].item[0].repeats = false
 * item[3].item[0].item[0].extension[constraint].extension[key].valueId = "ihris-phone-check"
 * item[3].item[0].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[3].item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[3].item[0].item[0].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[3].item[0].item[1].linkId = "Practitioner.extension[8]"
@@ -1199,7 +1199,7 @@ Usage:          #definition
 * item[3].item[0].item[1].repeats = false
 * item[3].item[0].item[1].extension[constraint].extension[key].valueId = "ihris-workphone-check"
 * item[3].item[0].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* item[3].item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^$|(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[3].item[0].item[1].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[3].item[1].linkId = "Practitioner:email"
@@ -1215,7 +1215,7 @@ Usage:          #definition
 * item[3].item[1].item[0].repeats = false
 * item[3].item[1].item[0].extension[constraint].extension[key].valueId = "ihris-email-check"
 * item[3].item[1].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[3].item[1].item[0].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[3].item[1].item[0].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
 * item[3].item[1].item[0].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[3].item[2].linkId = "Practitioner.extension[2]"
@@ -1268,7 +1268,7 @@ Usage:          #definition
 
 * item[5].linkId = "__Practitioner:Category"
 * item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:category"
-* item[5].text = "Profession Category|Employee profession Category"
+* item[5].text = "Category|Employee Category"
 * item[5].type = #group
 
 * item[5].item[0].linkId = "Practitioner.extension[10]"

@@ -35,13 +35,6 @@ const workflowProfessional = {
                 complexExt.push({ url: "profession",
                 valueCoding:req.body.item[0].item[0].answer[0].valueCoding })
             }
-            if ( req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
-                && req.body.item[0].item[1].answer 
-                && req.body.item[0].item[1].answer[0] 
-                && req.body.item[0].item[1].answer[0].valueString){
-                complexExt.push({ url: "other",
-                valueString:req.body.item[0].item[1].answer[0].valueString })
-            }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-professional",
                 extension: complexExt})

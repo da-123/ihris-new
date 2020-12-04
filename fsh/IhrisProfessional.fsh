@@ -9,29 +9,26 @@ Description:    "iHRIS Profile of the Basic resource for Professional."
     IhrisProfessional named professional 0..1 MS
 * extension[professional].extension[profession].valueCoding ^label = "Professional License Category"
 * extension[professional].extension[profession].valueCoding MS
-* extension[professional].extension[other].valueString 0..1 MS
-* extension[professional].extension[other].valueString ^label = "Other"
     
 Extension:      IhrisProfessional
 Id:             ihris-professional
 Title:          "Professional details"
 * extension contains
-      profession 0..1 MS and
-      other 0..* MS
+      profession 0..1 MS
 * extension[profession].value[x] only Coding
 * extension[profession].valueCoding ^label = "Profession Attained"
 * extension[profession].valueCoding from IhrisProfessionValueSet (required)
-* extension[other].value[x] only string
-* extension[other].valueString ^label = "Other"
 
 CodeSystem:      IhrisProfessionCodesystem
 Id:              ihris-profession-codesystem
 Title:           "Professional License Category"
+* ^date = "2020-12-04T08:41:04.362Z"
 * ^version = "0.2.0"
 
 ValueSet:         IhrisProfessionValueSet
 Id:               ihris-profession-valueset
 Title:            "iHRISProfession ValueSet"
+* ^date = "2020-12-04T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisProfessionCodesystem
 
@@ -55,14 +52,9 @@ Usage:          #definition
 * item[0].item[0].text = "Professional License Category"
 * item[0].item[0].type = #choice
 * item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-profession-valueset"
-* item[0].item[0].required = false
+* item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
-* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
-* item[0].item[1].text = "Other"
-* item[0].item[1].type = #string
-* item[0].item[1].required = false
-* item[0].item[1].repeats = true
 
 Instance:       ihris-page-professional
 InstanceOf:     IhrisPage
@@ -88,7 +80,6 @@ Usage:          #example
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:professional.extension:profession.value[x]:valueCoding"
-* extension[section][0].extension[field][1].valueString = "Basic.extension:professional.extension:other.value[x]:valueString"
 
 Instance:       ihris-page-profession
 InstanceOf:     IhrisPage
