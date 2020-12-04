@@ -9,7 +9,6 @@ RUN tar xvzf redis-stable.tar.gz && \
     rm -r redis-stable && \
     npm install -g concurrently && \
     npm install -g npm
-    npm install -g date-fns
     #npm install -g fsh-sushi
 
 WORKDIR /app
