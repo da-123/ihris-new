@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "directorate-search",
+  "url": "http://ihris.org/fhir/SearchParameter/directorate-search",
+  "name": "Search Parameter for a practitionerRole directorate",
+  "status": "active",
+  "description": "Search for a practitionerRole directorate.",
+  "code": "directorate",
+  "base": [
+    "PractitionerRole"
+  ],
+  "type": "token",
+  "expression": "PractitionerRole.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-directorate')",
+  "xpath": "f:PractitionerRole/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-directorate']",
+  "xpathUsage": "normal"
+}

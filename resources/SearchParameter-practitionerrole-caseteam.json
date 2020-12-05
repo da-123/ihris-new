@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "caseteam-search",
+  "url": "http://ihris.org/fhir/SearchParameter/caseteam-search",
+  "name": "Search Parameter for a practitionerRole caseteam",
+  "status": "active",
+  "description": "Search for a practitionerRole caseteam.",
+  "code": "caseteam",
+  "base": [
+    "PractitionerRole"
+  ],
+  "type": "token",
+  "expression": "PractitionerRole.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-caseteam')",
+  "xpath": "f:PractitionerRole/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-caseteam']",
+  "xpathUsage": "normal"
+}

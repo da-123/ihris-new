@@ -1,0 +1,210 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+          ]
+        },
+        "id": "ET.R11.Z110.F1",
+        "name": "Tikur Anbesa Hospital",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11.Z110"
+        },
+        "managingOrganization": "",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:mcsd:2019:facility"
+              }
+            ],
+            "text": "Facility"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HOSP"
+              }
+            ],
+            "text": "HOSP"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "bu"
+            }
+          ],
+          "text": "Building"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z110.F1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+          ]
+        },
+        "id": "ET.R11.Z108.F1",
+        "name": "Addis Ababa Health Bureau",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11.Z108"
+        },
+        "managingOrganization": "",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:mcsd:2019:facility"
+              }
+            ],
+            "text": "Facility"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HOSP"
+              }
+            ],
+            "text": "HOSP"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "bu"
+            }
+          ],
+          "text": "Building"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z108.F1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+          ]
+        },
+        "id": "ET.R11.Z108.F2",
+        "name": "Ethiopian Food and Drug Administration",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11.Z108"
+        },
+        "managingOrganization": "",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:mcsd:2019:facility"
+              }
+            ],
+            "text": "Facility"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HOSP"
+              }
+            ],
+            "text": "HOSP"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "bu"
+            }
+          ],
+          "text": "Building"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z108.F2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+          ]
+        },
+        "id": "ET.R11.Z110.F2",
+        "name": "Federal Ministry of Health",
+        "status": "active",
+        "partOf": {
+          "reference": "Location/ET.R11.Z110"
+        },
+        "managingOrganization": "",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "urn:ietf:rfc:3986",
+                "code": "urn:ihe:iti:mcsd:2019:facility"
+              }
+            ],
+            "text": "Facility"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HOSP"
+              }
+            ],
+            "text": "HOSP"
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/codesystem-location-physical-type.html",
+              "code": "bu"
+            }
+          ],
+          "text": "Building"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Location/ET.R11.Z110.F2"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "leavestock-search",
+  "url": "http://ihris.org/fhir/SearchParameter/leavestock-search",
+  "name": "Search Parameter for a practitioner's Leave Stock",
+  "status": "active",
+  "description": "Search for a practitioner's Leave Stock.",
+  "code": "leavestock",
+  "base": [
+    "Basic"
+  ],
+  "type": "token",
+  "expression": "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock').extension.where(url='leave-type')",
+  "xpath": "f:Basic/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock']/f:extension[@url='leave-type']",
+  "xpathUsage": "normal"
+}

@@ -70,6 +70,7 @@ Title:           "Leave Type"
 * #mourning "Mourning Leave" "Mourning Leave"
 * #wedding "Wedding Days" "Wedding Days"
 * #exam "Exam Leave" "Exam Leave"
+* #medical "Medical Leave" "Medical Leave"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
@@ -255,7 +256,7 @@ Usage:          #definition
 * item[0].item[2].repeats = false
 * item[0].item[2].extension[constraint].extension[key].valueId = "ihris-num-check"
 * item[0].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9]?$|^100$')"
+* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9][0-9]?$')"
 * item[0].item[2].extension[constraint].extension[human].valueString = "Should be a Number."
 
 Instance:       ihris-page-leavestock
