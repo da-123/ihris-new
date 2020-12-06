@@ -60,7 +60,7 @@ Title:          "Collateral details"
 * extension[altlangName].valueString ^label = "Alt Language Full Name"
 * extension[altlangName].valueString ^constraint[0].key = "ihris-altname-check"
 * extension[altlangName].valueString ^constraint[0].severity = #error
-* extension[altlangName].valueString ^constraint[0].expression = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*)')"
+* extension[altlangName].valueString ^constraint[0].expression = "matches('^$|^([\\\\u1200-\\\\u137Fa-zA-Z]+(\\\\s+[\\\\u1200-\\\\u137Fa-zA-Z]+)*$)')"
 * extension[altlangName].valueString ^constraint[0].human = "Alt Language Name must be only Amharic text."
 * extension[gender].value[x] only Coding
 * extension[gender].valueCoding 1..1 MS
@@ -211,7 +211,7 @@ Usage:          #definition
 * item[0].item[8].repeats = false
 * item[0].item[8].extension[constraint].extension[key].valueId = "ihris-work-email-check"
 * item[0].item[8].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4})$')"
 * item[0].item[8].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
@@ -221,7 +221,7 @@ Usage:          #definition
 * item[0].item[9].repeats = false
 * item[0].item[9].extension[constraint].extension[key].valueId = "ihris-other-email-check"
 * item[0].item[9].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4})$')"
 * item[0].item[9].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"

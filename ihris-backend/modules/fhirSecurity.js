@@ -287,6 +287,7 @@ const fhirSecurityPractitioner = {
    */
   getLocationsForPractitioner: (practitioner) => {
     return new Promise( (resolve, reject) => {
+      if ( !practitioner ) resolve( [] )
       let now = new Date()
       let nowsplit = now.toISOString().split('T')
       let params = new URLSearchParams()
@@ -320,7 +321,7 @@ const fhirSecurityPractitioner = {
     let reference 
     if ( resource.resourceType === "Practitioner" && resource.id ) {
       reference = "Practitioner/"+resource.id
-    } else if ( resource.resourceType === "PractitionerRole" ) {
+    } else if ( resource.resourceType === "PractitionerRole" && resource.practitioner && resource.practitioner.reference ) {
       reference = resource.practitioner.reference
     } else if ( resource.resourceType === "Basic" ) {
       try {
@@ -354,6 +355,7 @@ const fhirSecurityPractitioner = {
    * reset location security for all resources matching the practitioner security metadata
    */
   resetLocationSecurityByPractitioner: (practitioner) => {
+    if ( !practitioner ) return
     const processPractitionerSecurity = ( bundle, locations ) => {
       if ( bundle.entry ) {
         bundle.entry.forEach( (other) => {
@@ -447,7 +449,7 @@ const fhirSecurityPractitioner = {
       Promise.all( promises ).then( (locationLists) => {
         let locations = []
         for( let list of locationLists ) {
-          locations.concat( list )
+          locations = locations.concat( list )
         }
         for( let entry of bundle.entry ) {
           if ( fhirSecurityPractitioner.resourceTypes.includes( entry.resource.resourceType ) ) {
@@ -477,7 +479,8 @@ const fhirSecurityPractitioner = {
 
             fhirAxios.read( parts[0], parts[1] ).then( async (resource) => {
               let practitioner = fhirSecurityPractitioner.getPractitionerReference( resource )
-              fhirSecurityPractitioner.setPractitionerSecurityOnResource( resource )
+              fhirSecurityPractitioner.resetPractitionerSecurityOnResource( resource )
+              /* Location was set on pre process so no need to re-add
               if ( !locationCache.hasOwnProperty( practitioner ) ) {
                 try {
                   locationCache[practitioner] = await fhirSecurityPractitioner.getLocationsForPractitioner(practitioner)
@@ -487,6 +490,7 @@ const fhirSecurityPractitioner = {
                 }
               }
               fhirSecurityLocation.resetLocationSecurityOnResource( resource, locationCache[practitioner] )
+              */
               fhirAxios.update( resource ).catch( (err) => {
                 winston.error("Failed to update "+resource.resourceType+"/"+resource.id+" security for practitioner "
                   +practitioner+" "+err.message)
@@ -537,12 +541,19 @@ const fhirSecurityPractitioner = {
           ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference" 
         ) ) { 
         return true
+      } else if ( resource.resourceType === "Bundle" && resource.type === "transaction" ) {
+        if ( resource.entry && resource.entry.find( entry => entry.resource.resourceType === "Practitioner" || entry.resource.resourceType === "PractitionerRole" ) ) {
+          return true
+        } else {
+          return false
+        }
       } else {
         return false
       }
     } else {
       if ( resource.resourceType === "PractitionerRole" ) {
-        if ( resource.practitioner.reference !== previous.practitioner.reference 
+        if ( resource.practitioner 
+          && resource.practitioner.reference !== (previous.practitioner ? previous.practitioner.reference : undefined)
           || !compareLocations( resource.location, previous.location )
           || resource.active !== previous.active
           || (resource.period && resource.period.end)
@@ -563,13 +574,7 @@ const fhirSecurityPractitioner = {
         } catch( err ) {
           return false
         }
-      } else if ( resource.resourceType === "Bundle" && resource.type === "transaction" ) {
-        if ( resource.entry && resource.entry.find( entry => entry.resource.resourceType === "Practitioner" || entry.resource.resourceType === "PractitionerRole" ) ) {
-          return true
-        } else {
-          return false
-        }
-      } else {
+     } else {
         return false
       }
     }
@@ -681,11 +686,11 @@ const fhirSecurityPractitioner = {
             return reject(err)
           } )
         }
-      } else if ( resource.resourceType === "PractitionerRole" ) {
+      } else if ( resource.resourceType === "PractitionerRole" && resource.practitioner ) {
         fhirSecurityPractitioner.resetLocationSecurityByPractitioner(resource.practitioner.reference)
         return resolve( true )
       } else if ( resource.resourceType === "Bundle" ) {
-        fhirSecurityPractitioner.addPractitionerSecurityOnBundleResponse(bundle)
+        fhirSecurityPractitioner.addPractitionerSecurityOnBundleResponse(resource)
         return resolve( true )
       } else {
         return resolve( true )
