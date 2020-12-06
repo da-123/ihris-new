@@ -113,7 +113,7 @@
         },
         {
           "url": "instance",
-          "valueString": "ihris-page-practitioner"
+          "valueId": "ihris-page-practitioner"
         }
       ]
     },
@@ -130,7 +130,20 @@
         },
         {
           "url": "instance",
-          "valueString": "ihris-personal-information"
+          "valueId": "ihris-personal-information"
+        }
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "write"
+        },
+        {
+          "url": "resource",
+          "valueCode": "QuestionnaireResponse"
         }
       ]
     },
