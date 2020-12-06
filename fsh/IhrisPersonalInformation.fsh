@@ -225,7 +225,7 @@ Description:    "iHRIS extension for Email."
 * valueString 0..1 MS
 * valueString ^constraint[0].key = "ihris-email-check"
 * valueString ^constraint[0].severity = #error
-* valueString ^constraint[0].expression = "matches('^[0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$')"
+* valueString ^constraint[0].expression = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
 * valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
 
 Extension:      IhrisPractitionerPhone
@@ -239,7 +239,7 @@ Description:    "iHRIS extension for Email."
 * valueString 0..1 MS
 * valueString ^constraint[0].key = "ihris-phone-check"
 * valueString ^constraint[0].severity = #error
-* valueString ^constraint[0].expression = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * valueString ^constraint[0].human = "Phone Number is not properly formatted."
 
 Extension:      IhrisPractitionerWorkPhone

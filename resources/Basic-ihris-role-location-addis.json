@@ -1,6 +1,6 @@
 {
   "resourceType": "Basic",
-  "id": "ihris-role-location-addis",
+  "id": "ihris-role-addis",
   "meta": {
     "profile": [
       "http://ihris.org/fhir/StructureDefinition/ihris-role"
@@ -20,6 +20,20 @@
       "valueBoolean": true
     },
     {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "read"
+        },
+        {
+          "url": "resource",
+          "valueCode": "Location"
+        }
+      ]
+    },
+     {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
       "extension": [
         {
           "url": "permission",
@@ -30,11 +44,95 @@
           "valueCode": "*"
         },
         {
-        "url": "constraint",
-        "valueString": "meta.security.exists( system = 'http://ihris.org/fhir/security/location' and code = 'Location/ET.R1' )"
+          "url": "constraint",
+          "valueString": "extension.where(url = 'http://ihris.org/fhir/StructureDefinition/ihris-related-group' ).extension.exists( url = 'location' and valueString = 'Location/ET.R1' )"
         }
-      ],
-      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task"
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "filter"
+        },
+        {
+          "url": "resource",
+          "valueCode": "Practitioner"
+        },
+        {
+          "url": "constraint",
+          "valueString": "related-location=Location/ET.R1"
+        }
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "filter"
+        },
+        {
+          "url": "resource",
+          "valueCode": "PractitionerRole"
+        },
+        {
+          "url": "constraint",
+          "valueString": "related-location=Location/ET.R1"
+        }
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "filter"
+        },
+        {
+          "url": "resource",
+          "valueCode": "Location"
+        },
+        {
+          "url": "constraint",
+          "valueString": "related-location=Location/ET.R1"
+        }
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "read"
+        },
+        {
+          "url": "resource",
+          "valueCode": "Basic"
+        },
+        {
+          "url": "instance",
+          "valueString": "ihris-page-practitioner"
+        }
+      ]
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+      "extension": [
+        {
+          "url": "permission",
+          "valueCode": "read"
+        },
+        {
+          "url": "resource",
+          "valueCode": "Questionnaire"
+        },
+        {
+          "url": "instance",
+          "valueString": "ihris-personal-information"
+        }
+      ]
     },
     {
       "url": "http://ihris.org/fhir/StructureDefinition/ihris-assign-role",
