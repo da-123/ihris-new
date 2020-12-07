@@ -176,7 +176,7 @@ Usage:          #example
 * extension[display].extension[filter][0].valueString = "First Name|name:contains"
 * extension[display].extension[filter][1].valueString = "Father's Name|fathersname:contains"
 * extension[display].extension[filter][2].valueString = "Grand Father's Name|grandfathersname:contains"
-* extension[display].extension[filter][3].valueString = "Employee ID|identifier.where(type.coding.code='employeeId'):text"
+* extension[display].extension[filter][3].valueString = "Employee ID|employeeid"
 * extension[display].extension[filter][4].valueString = "PIN ID|_id"
 * extension[display].extension[field][0].extension[path].valueString = "Practitioner.id"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true

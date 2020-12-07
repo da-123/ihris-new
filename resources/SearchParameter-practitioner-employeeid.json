@@ -1,0 +1,15 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "practitioner-employeeid",
+  "url": "http://ihris.org/fhir/SearchParameter/practitioner-employeeid",
+  "name": "Search Parameter on  employee id for practitioner",
+  "status": "active",
+  "description": "Search by employee ID for a practitioner resource.",
+  "code": "employeeid",
+  "base": [
+    "Practitioner"
+  ],
+  "type": "string",
+  "expression": "Practitioner.identifier.where(type.coding.code='employeeId').value",
+  "xpathUsage": "normal"
+}
