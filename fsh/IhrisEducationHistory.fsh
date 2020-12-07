@@ -386,6 +386,8 @@ Usage:          #example
 * extension[display].extension[search][5].valueString = "Year|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[display].extension[field][1].extension[path].valueString = "Basic.extension:educationHistory.extension:year.value[x]:valueDate"
+* extension[display].extension[field][1].extension[type].valueString = "year"
 * extension[section][0].extension[title].valueString = "Education History"
 * extension[section][0].extension[description].valueString = "Education History details"
 * extension[section][0].extension[name].valueString = "Basic"

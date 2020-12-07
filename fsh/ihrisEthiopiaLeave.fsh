@@ -243,7 +243,7 @@ Usage:          #definition
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
-* item[0].item[1].linkId = "Basic.extension[0].extension[1]"
+* item[0].item[1].linkId = "Basic.extension[0].extension[1]#year"
 * item[0].item[1].text = "Year"
 * item[0].item[1].type = #date
 * item[0].item[1].required = true
@@ -280,6 +280,8 @@ Usage:          #example
 * extension[display].extension[filter][0].valueString = "Leave Type|code|http://ihris.org/fhir/ValueSet/ihris-leave-type-valueset"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[display].extension[field][1].extension[path].valueString = "Basic.extension:ethiopiaLeaveStock.extension:year.value[x]:valueDate"
+* extension[display].extension[field][1].extension[type].valueString = "year"
 * extension[section][0].extension[title].valueString = "Leave Stock"
 * extension[section][0].extension[description].valueString = "Leave Stock details"
 * extension[section][0].extension[name].valueString = "Basic"
