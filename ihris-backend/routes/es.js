@@ -1,6 +1,7 @@
 const axios = require('axios')
 const URI = require('urijs');
 const async = require('async')
+const winston = require('winston')
 const express = require('express')
 const router = express.Router()
 const nconf = require('../modules/config')

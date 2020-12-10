@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-12-02T07:53:02.542Z",
+        "when": "2020-12-10T13:53:06.670Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "ogOgm0nf7c5AXqs+cbIxYHEdm9fbn80Un9BMiggvscjB5owaAdMgcfVozED5F4pk9oTovpHkrmP6wRX2CrqQAbzIgecWUW/p+6I0vtGhAuwfVohKcnNKX4j9BlnHTj0Y7+vDFnp4WCQ+AN+xYls3j9SZJe5WQ9f3JiCxjG01YOk="
+        "data": "dqyQogrItsF8w/xcRUFrpWUCBkGvKCEluyRYBobKyJsZyLsRS+yeMY/gzpbgSbjx6Wr1l5APVV4TrW2iNUzXqAuFICXsAO/nGUrVWkhkGPbfBXePCJiF7jOixuNxPwUB2pwIQa6hd9eskE6T4lJOHTa5MX1YxBUcjtYwWrMkMQM="
       }
     },
     {
@@ -641,6 +641,18 @@
         {
           "name": "shortname:Location:paths:name:fhirpath",
           "valueString": "name"
+        },
+        {
+          "name": "shortname:Basic:format",
+          "valueString": "%s"
+        },
+        {
+          "name": "shortname:Basic:order",
+          "valueString": "name"
+        },
+        {
+          "name": "shortname:Basic:paths:name:fhirpath",
+          "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-basic-name').valueString"
         },
         {
           "name": "defaults:components:date-time:minValueDateTime",
