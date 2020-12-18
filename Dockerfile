@@ -32,6 +32,7 @@ COPY . /app
 RUN cp /app/ihris-backend/config/baseConfig.json.example /app/ihris-backend/config/baseConfig.json
 RUN cd /app/ihris-backend && npm install -g date-fns
 RUN cd /app/ihris-backend && npm install
+RUN cd /app/ihris-backend && npm install date-fns@^2.0.0
 
 WORKDIR /app/ihris-backend
 
