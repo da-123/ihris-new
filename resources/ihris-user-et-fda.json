@@ -1,0 +1,42 @@
+{
+  "resourceType": "Person",
+  "id": "ihris-user-et-fda",
+  "meta": {
+    "profile": [
+      "http://ihris.org/fhir/StructureDefinition/ihris-person-user"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-user-role",
+      "valueReference": {
+        "reference": "Basic/ihris-role-et-fda"
+      }
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-password",
+      "extension": [
+        {
+          "url": "password",
+          "valueString": "fb2a5835ef781d4eaee62d3d153f3cd052e41f7621c00b2b95a9914c4bb571bb72128ef12e455b008fd1d975c445c41ecb43cb0378f95b86ac64a2a686bba95a"
+        },
+        {
+          "url": "salt",
+          "valueString": "b6a2e98c7b9d948f32260b0869f57229"
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "text": "Ethiopian Food and Drug Administration"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "efda@ihris.org"
+    }
+  ]
+}

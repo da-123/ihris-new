@@ -1,0 +1,42 @@
+{
+  "resourceType": "Person",
+  "id": "ihris-user-tikur-anbesa",
+  "meta": {
+    "profile": [
+      "http://ihris.org/fhir/StructureDefinition/ihris-person-user"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-user-role",
+      "valueReference": {
+        "reference": "Basic/ihris-role-tikur-anbesa"
+      }
+    },
+    {
+      "url": "http://ihris.org/fhir/StructureDefinition/ihris-password",
+      "extension": [
+        {
+          "url": "password",
+          "valueString": "1b84752b046e3caeeb4fe8e11db7600e9f25b94f0ac782a45098758aa85dfb77f48f620c61c44429e35079e0d5676f2255cebaa07e822eff905329692130db16"
+        },
+        {
+          "url": "salt",
+          "valueString": "48d7344216da7093d0e5934166039fbd"
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "text": "Tikur Anbesa Hospital"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "tikuranbesa@ihris.org"
+    }
+  ]
+}
