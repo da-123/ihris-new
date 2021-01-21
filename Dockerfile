@@ -32,8 +32,6 @@ COPY . /app
 RUN cp /app/ihris-backend/config/baseConfig.json.example /app/ihris-backend/config/baseConfig.json
 RUN cd /app/ihris-backend && npm install
 RUN cd /app/ihris-backend && npm install date-fns@^2.0.0
-RUN cd /app/ihris-backend && npm install fhir2es@^3.0.0
-RUN cd /app/ihris-backend && npm install grunt@^0.4.0
 
 WORKDIR /app/ihris-backend
 
