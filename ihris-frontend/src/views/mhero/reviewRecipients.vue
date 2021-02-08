@@ -1,14 +1,19 @@
 <template>
   <v-container>
+    <mheroprogress
+      :title="progressTitle"
+      :requestIDs="requestIDs"
+      :progressDialog="progressDialog"
+      @closeProgressDialog="progressDialog = false"
+    />
     <v-dialog
       persistent
       v-model="statusDialog.enable"
-      max-width="300"
+      max-width="400"
     >
       <v-card>
         <v-toolbar
           :color="statusDialog.color"
-          dark
         >
           <v-toolbar-title>
             <v-icon v-text="statusDialog.icon"></v-icon>
@@ -23,9 +28,11 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-toolbar>
+        <center>
         <v-card-text>
           <b>{{statusDialog.description}}</b>
         </v-card-text>
+        </center>
         <v-card-actions>
           <v-spacer />
           <v-btn
@@ -237,6 +244,7 @@
 </template>
 
 <script>
+import mheroprogress from "../../components/mhero/progress"
 import ihrisReport from "@/views/es-report";
 import VueCronEditorBuefy from 'vue-cron-editor-buefy';
 export default {
@@ -260,6 +268,10 @@ export default {
     frequency: false,
     sendTimeCategory: '',
     sendTime: null,
+    sendStatus: {},
+    progressTitle: '',
+    requestIDs: {},
+    progressDialog: false,
     timeMenu: false,
     dateMenu: false,
     sendDate: new Date().toISOString().substr(0, 10),
@@ -279,6 +291,8 @@ export default {
       this.chars = this.sms.length
     },
     send() {
+      this.progressData = {}
+      this.sendStatus = {}
       let practitioners = [];
       this.practitioners.forEach(practitioner => {
         let id = practitioner.mheropractitioner.split('/')
@@ -289,7 +303,6 @@ export default {
         }
         practitioners.push(id);
       });
-
       let data = {
         practitioners: practitioners,
         workflow: this.workflow.id,
@@ -321,38 +334,50 @@ export default {
       };
       this.$store.state.progress.enabled = true
       this.$store.state.progress.title = "Processing request..."
-      fetch(url, opts).then((response) => {
+      fetch(url, opts)
+      .then(response => {
         this.$store.state.progress.enabled = false
-        this.statusDialog.enable = true
+        this.progressDialog = true
+        if(this.communicationType == 'flow') {
+          this.progressTitle = 'Workflow'
+        }
+        if(this.frequency === 'recurring' || (this.frequency === 'once' && this.sendTimeCategory === 'later')) {
+          this.progressTitle += ' Scheduling'
+        } else {
+          this.progressTitle += ' Starting'
+        }
+        this.progressTitle += ' Progress'
+        // this.statusDialog.enable = true
         if(response.status >= 200 && response.status <= 299) {
           this.statusDialog.color = 'success'
-          this.statusDialog.title = 'Success'
+          this.statusDialog.title = 'Done'
           if(this.communicationType === "sms") {
-            this.statusDialog.description = 'Message Sent Successfully'
+            this.statusDialog.description = 'Message Processed Successfully'
           } else {
-            this.statusDialog.description = 'Workflow Started Successfully'
+            this.statusDialog.description = 'Workflow Processed Successfully'
           }
         } else {
           this.$store.state.progress.enabled = false
           this.statusDialog.color = 'error'
           this.statusDialog.title = 'Error'
           if(this.communicationType === "sms") {
-            this.statusDialog.description = 'Failed to send Message'
+            this.statusDialog.description = 'Some errors occured while sending message'
           } else {
-            this.statusDialog.description = 'Failed to start a workflow'
+            this.statusDialog.description = 'Some errors occured while starting a workflow'
           }
         }
-      }).catch(err => {
+        return response.json()
+      })
+      .then(respData => {
+        this.requestIDs = respData
+      })
+      .catch(err => {
+        console.log(err)
         this.$store.state.progress.enabled = false
         this.statusDialog.enable = true
-        this.statusDialog.color = 'error'
-        this.statusDialog.title = 'Error'
-        if(this.communicationType === "sms") {
-          this.statusDialog.description = 'Failed to send Message'
-        } else {
-          this.statusDialog.description = 'Failed to start a workflow'
-        }
-        console.log(err);
+        this.statusDialog.color = 'yellow'
+        this.statusDialog.title = 'Warning'
+        this.statusDialog.description = 'Processing is taking longer to complete. Server is still processing the request'
       });
     }
   },
@@ -435,7 +460,8 @@ export default {
   },
   components: {
     VueCronEditorBuefy,
-    ihrisReport: ihrisReport
+    ihrisReport: ihrisReport,
+    mheroprogress
   },
 };
 </script>

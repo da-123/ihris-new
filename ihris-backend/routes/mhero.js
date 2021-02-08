@@ -5,6 +5,7 @@ const axios = require("axios");
 const winston = require("winston");
 const lodash = require("lodash")
 const URI = require("urijs");
+const { v4: uuidv4 } = require('uuid')
 const es = require("../modules/es")
 const nconf = require('../modules/config')
 const fhirReports = require('../modules/fhirReports')
@@ -32,35 +33,47 @@ router.post("/send-message", function (req, res) {
         errorOccured = true
         return resolve()
       }
-      if(!practs.hits || !practs.hits.hits || !Array.isArray(practs.hits.hits) || practs.hits.hits.length === 0) {
+      if(!Array.isArray(practs) || practs.length === 0) {
         errorOccured = true
         return resolve()
       }
-      practitioners = practs.hits.hits
+      practitioners = practs
       resolve()
     })
   })
 
+  let parentReqId = uuidv4()
+  let meta = {
+    tag: [{
+      system: "parentReqId",
+      code: parentReqId
+    }]
+  }
   preparePractitioners.then(() => {
     if(errorOccured) {
       return res.status(500).send()
     }
+    let messageKey
     let payload = []
     if (data.workflow) {
+      messageKey = data.workflow
       payload.push({
         contentReference: {
           reference: 'Basic/' + data.workflow
         }
       })
     } else if (data.sms) {
+      messageKey = data.sms
       payload.push({
         contentString: data.sms
       })
     }
     let communicationReq = {
+      meta,
       payload,
       recipient: [],
-      resourceType: "CommunicationRequest"
+      resourceType: "CommunicationRequest",
+      id: uuidv4()
     };
     if(data.frequency === 'recurring' || (data.frequency === 'once' && data.sendTimeCategory === 'later')) {
       if(!communicationReq.meta) {
@@ -94,8 +107,8 @@ router.post("/send-message", function (req, res) {
         extension
       })
     }
-
     let recipients = [];
+    let childrenReqIDs = [];
     async.each(practitioners, (practitioner, nxt) => {
       if(data.sendToMatchingTerms) {
         practitioner = practitioner._source[data.reportData.indexName].split('/')
@@ -110,16 +123,18 @@ router.post("/send-message", function (req, res) {
       });
       if(recipients.length > 10000) {
         let tmpRecipients = lodash.cloneDeep(recipients)
-        communicationReq.recipient = tmpRecipients
+        let tmpCommunicationReq = lodash.cloneDeep(communicationReq)
+        tmpCommunicationReq.recipient = tmpRecipients
         recipients = []
         let url = URI(nconf.get("emnutt:base")).segment('CommunicationRequest');
-        axios.post(url.toString(), communicationReq, {
+        axios.post(url.toString(), tmpCommunicationReq, {
           withCredentials: true,
           auth: {
             username: nconf.get("emnutt:username"),
             password: nconf.get("emnutt:password")
           }
-        }).then(() => {
+        }).then((sendStatus) => {
+          childrenReqIDs.push(sendStatus.data.reqID)
           return nxt()
         }).catch(err => {
           winston.error(err.message)
@@ -139,20 +154,21 @@ router.post("/send-message", function (req, res) {
             username: nconf.get("emnutt:username"),
             password: nconf.get("emnutt:password")
           }
-        }).then((response) => {
+        }).then((sendStatus) => {
+          childrenReqIDs.push(sendStatus.data.reqID)
           if(errorOccured) {
-            return res.status(500).send(errorOccured)
+            return res.status(500).json({childrenReqIDs, parentReqId})
           }
-          res.status(201).json(response.data);
+          res.status(201).json({childrenReqIDs, parentReqId})
         }).catch(err => {
           winston.error(err.message)
-          return res.status(500).send(errorOccured)
+          return res.status(500).json({childrenReqIDs, parentReqId})
         });
       } else {
         if(errorOccured) {
-          return res.status(500).send(errorOccured)
+          return res.status(500).json({childrenReqIDs, parentReqId})
         }
-        res.status(201).json(response.data);
+        res.status(201).json({childrenReqIDs, parentReqId});
       }
     })
   })
@@ -215,6 +231,46 @@ router.post("/send-message", function (req, res) {
   }
 });
 
+router.get('/getProgress', (req, res) => {
+  let url = URI(nconf.get("emnutt:base")).segment('getProgress').toString();
+  axios({
+    url,
+    params: {
+      requestIDs: req.query.requestIDs
+    },
+    withCredentials: true,
+    auth: {
+      username: nconf.get("emnutt:username"),
+      password: nconf.get("emnutt:password")
+    }
+  }).then((resp) => {
+    return res.json(resp.data)
+  }).catch((err) => {
+    console.log(err);
+    return res.status(500).send()
+  })
+});
+
+router.get('/clearProgress', (req, res) => {
+  let url = URI(nconf.get("emnutt:base")).segment('clearProgress').toString();
+  axios({
+    url,
+    params: {
+      requestIDs: req.query.requestIDs
+    },
+    withCredentials: true,
+    auth: {
+      username: nconf.get("emnutt:username"),
+      password: nconf.get("emnutt:password")
+    }
+  }).then((resp) => {
+    return res.json(resp.data)
+  }).catch((err) => {
+    console.log(err);
+    return res.status(500).send()
+  })
+});
+
 router.post('/cancel-message-schedule', (req, res) => {
   let schedules = req.body.schedules
   let url = URI(nconf.get("emnutt:base")).segment('cancelMessageSchedule');
@@ -225,7 +281,7 @@ router.post('/cancel-message-schedule', (req, res) => {
       password: nconf.get("emnutt:password")
     }
   }).then(response => {
-    res.status(201).json(response.data);
+    res.status(200).json({childrenReqIDs: [response.data.reqID]});
   }).catch(err => {
     res.status(500).send(err);
   });
