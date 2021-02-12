@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2020-12-10T13:53:06.670Z",
+        "when": "2021-02-12T08:02:46.494Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "dqyQogrItsF8w/xcRUFrpWUCBkGvKCEluyRYBobKyJsZyLsRS+yeMY/gzpbgSbjx6Wr1l5APVV4TrW2iNUzXqAuFICXsAO/nGUrVWkhkGPbfBXePCJiF7jOixuNxPwUB2pwIQa6hd9eskE6T4lJOHTa5MX1YxBUcjtYwWrMkMQM="
+        "data": "fSwVi9o9ELV9lQjujGwiIN+A178hIjrwyTuqc0qRMEzKq2N0TxFLFVTt9KX/kl4Y931QMlgtUEdOV06+P6VVsPQ5VqCEq7q7IPTpJAaQ6JhQMi6zFSfTkqH6n/YVIYM9kwesINXIpjPzH5o4T2dBsDf0eAkhg1EQcDlJjj6avFo="
       }
     },
     {
@@ -773,6 +773,14 @@
         {
           "name": "workflow:questionnaire:salary:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-salary"
+        },
+        {
+          "name": "workflow:processor:award:file",
+          "valueString": "../modules/workflowAward"
+        },
+        {
+          "name": "workflow:questionnaire:award:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-award"
         }
       ]
     }

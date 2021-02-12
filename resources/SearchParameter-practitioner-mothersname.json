@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "practitioner-mothersname",
+  "url": "http://ihris.org/fhir/SearchParameter/practitioner-mothersname",
+  "name": "Search Parameter on a practitioner extension for Mother's name",
+  "status": "active",
+  "description": "Search by Mother's name for a Practitioner resource.",
+  "code": "mothersname",
+  "base": [
+    "Practitioner"
+  ],
+  "type": "string",
+  "expression": "Practitioner.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames').extension.where(url='mothers')",
+  "xpath": "f:Practitioner/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames']/f:extension[@url='mothers']",
+  "xpathUsage": "normal"
+}

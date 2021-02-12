@@ -921,7 +921,7 @@ Usage:          #definition
 * item[0].item[5].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.extension:familyNames.extension:mothers.value[x]:valueString"
 * item[0].item[5].text = "Mother's Full Name"
 * item[0].item[5].type = #string
-* item[0].item[5].required = true
+* item[0].item[5].required = false
 * item[0].item[5].repeats = false
 * item[0].item[5].extension[constraint].extension[key].valueId = "ihris-mothers-name-check"
 * item[0].item[5].extension[constraint].extension[severity].valueCode = #error
@@ -1324,7 +1324,7 @@ Usage:          #definition
 * item[8].item[0].required = true
 * item[8].item[0].repeats = false
 
-* item[8].item[1].linkId = "PractitionerRole.location"
+* item[8].item[1].linkId = "PractitionerRole.location[0]"
 * item[8].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.location"
 * item[8].item[1].text = "Place Of Work"
 * item[8].item[1].type = #reference

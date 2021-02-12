@@ -176,8 +176,9 @@ Usage:          #example
 * extension[display].extension[filter][0].valueString = "First Name|name:contains"
 * extension[display].extension[filter][1].valueString = "Father's Name|fathersname:contains"
 * extension[display].extension[filter][2].valueString = "Grand Father's Name|grandfathersname:contains"
-* extension[display].extension[filter][3].valueString = "Employee ID|employeeid"
-* extension[display].extension[filter][4].valueString = "PIN ID|_id"
+* extension[display].extension[filter][3].valueString = "Mother's Name|mothersname:contains"
+* extension[display].extension[filter][4].valueString = "Employee ID|employeeid"
+* extension[display].extension[filter][5].valueString = "PIN ID|_id"
 * extension[display].extension[field][0].extension[path].valueString = "Practitioner.id"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-personal-information/practitioner"
@@ -535,6 +536,31 @@ Usage:          #example
 * extension[section][20].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][20].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][20].extension[resource].extension[action][1].extension[class].valueString = "primary"
+* extension[section][21].extension[title].valueString = "Employee Award Information"
+* extension[section][21].extension[description].valueString = "Employee Award for the Person"
+* extension[section][21].extension[name].valueString = "Employee Award"
+* extension[section][21].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-award)
+* extension[section][21].extension[resource].extension[searchfield].valueString = "practitioner"
+* extension[section][21].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[section][21].extension[resource].extension[column][0].extension[header].valueString = "Title Of Ward"
+* extension[section][21].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='award').valueString"
+* extension[section][21].extension[resource].extension[column][1].extension[header].valueString = "Date of Award"
+* extension[section][21].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='date').valueDate"
+* extension[section][21].extension[resource].extension[column][2].extension[header].valueString = "Organization"
+* extension[section][21].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='organization').valueString"
+* extension[section][21].extension[resource].extension[column][3].extension[header].valueString = "Remarks"
+* extension[section][21].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='remark').valueString"
+* extension[section][21].extension[resource].extension[column][4].extension[header].valueString = "Actions"
+* extension[section][21].extension[resource].extension[column][4].extension[field].valueString = "_action"
+* extension[section][21].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-award/award?practitioner=FHIRID"
+* extension[section][21].extension[resource].extension[action][0].extension[text].valueString = "Add Award"
+* extension[section][21].extension[resource].extension[action][0].extension[row].valueBoolean = false
+* extension[section][21].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
+* extension[section][21].extension[resource].extension[action][0].extension[class].valueString = "primary"
+* extension[section][21].extension[resource].extension[action][1].extension[link].valueString = "/resource/view/award/ITEMID"
+* extension[section][21].extension[resource].extension[action][1].extension[text].valueString = "View"
+* extension[section][21].extension[resource].extension[action][1].extension[row].valueBoolean = true
+* extension[section][21].extension[resource].extension[action][1].extension[class].valueString = "primary"
 
 Instance:       ihris-page-job
 InstanceOf:     IhrisPage
@@ -557,8 +583,8 @@ Usage:          #example
 * extension[section][0].extension[field][3].valueString = "CodeSystem.cadre"
 * extension[section][0].extension[field][4].valueString = "CodeSystem.classification"
 * extension[section][0].extension[field][5].valueString = "CodeSystem.salary-grade"
-* extension[section][0].extension[field][6].valueString = "CodeSystem.designation[0].language"
-* extension[section][0].extension[field][7].valueString = "CodeSystem.designation[0].value"
+/* extension[section][0].extension[field][6].valueString = "CodeSystem.designation[0].language"
+* extension[section][0].extension[field][7].valueString = "CodeSystem.designation[0].value"*/
 
 Instance:       ihris-page-location
 InstanceOf:     IhrisPage
