@@ -72,21 +72,45 @@ Title:          "Collateral details"
 * extension[phone].value[x] only string
 * extension[phone].valueString 0..1 MS
 * extension[phone].valueString ^label = "Home Phone"
+* extension[phone].valueString ^constraint[0].key = "ihris-phone-check"
+* extension[phone].valueString ^constraint[0].severity = #error
+* extension[phone].valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* extension[phone].valueString ^constraint[0].human = "home Phone Number is not properly formatted."
 * extension[mobile].value[x] only string
 * extension[mobile].valueString 0..1 MS
 * extension[mobile].valueString ^label = "Mobile Phone"
+* extension[mobile].valueString ^constraint[0].key = "ihris-phone-check"
+* extension[mobile].valueString ^constraint[0].severity = #error
+* extension[mobile].valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* extension[mobile].valueString ^constraint[0].human = "Mobile Phone Number is not properly formatted."
 * extension[workPhone].value[x] only string
 * extension[workPhone].valueString 0..1 MS
 * extension[workPhone].valueString ^label = "Work Phone"
+* extension[workPhone].valueString ^constraint[0].key = "ihris-phone-check"
+* extension[workPhone].valueString ^constraint[0].severity = #error
+* extension[workPhone].valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* extension[workPhone].valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
 * extension[otherPhone].value[x] only string
 * extension[otherPhone].valueString 0..1 MS
 * extension[otherPhone].valueString ^label = "Other Phone"
+* extension[otherPhone].valueString ^constraint[0].key = "ihris-phone-check"
+* extension[otherPhone].valueString ^constraint[0].severity = #error
+* extension[otherPhone].valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* extension[otherPhone].valueString ^constraint[0].human = "Phone Number is not properly formatted."
 * extension[workEmail].value[x] only string
 * extension[workEmail].valueString 0..1 MS
 * extension[workEmail].valueString ^label = "Work Email"
+* extension[workEmail].valueString ^constraint[0].key = "ihris-email-check"
+* extension[workEmail].valueString ^constraint[0].severity = #error
+* extension[workEmail].valueString ^constraint[0].expression = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
+* extension[workEmail].valueString ^constraint[0].human = "Work Email is not properly formatted."
 * extension[otherEmail].value[x] only string
 * extension[otherEmail].valueString 0..1 MS
 * extension[otherEmail].valueString ^label = "Other Email"
+* extension[otherEmail].valueString ^constraint[0].key = "ihris-email-check"
+* extension[otherEmail].valueString ^constraint[0].severity = #error
+* extension[otherEmail].valueString ^constraint[0].expression = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
+* extension[otherEmail].valueString ^constraint[0].human = "Other Email is not properly formatted."
 * extension[salary].value[x] only string
 * extension[salary].valueString 0..1 MS
 * extension[salary].valueString ^label = "Salary"
@@ -171,7 +195,7 @@ Usage:          #definition
 * item[0].item[4].repeats = false
 * item[0].item[4].extension[constraint].extension[key].valueId = "ihris-home-phone-check"
 * item[0].item[4].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
+* item[0].item[4].extension[constraint].extension[expression].valueString = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[0].item[4].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[5].linkId = "Basic.extension[0].extension[5]"
@@ -181,7 +205,7 @@ Usage:          #definition
 * item[0].item[5].repeats = false
 * item[0].item[5].extension[constraint].extension[key].valueId = "ihris-mobile-phone-check"
 * item[0].item[5].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
+* item[0].item[5].extension[constraint].extension[expression].valueString = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[0].item[5].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
@@ -191,7 +215,7 @@ Usage:          #definition
 * item[0].item[6].repeats = false
 * item[0].item[6].extension[constraint].extension[key].valueId = "ihris-work-phone-check"
 * item[0].item[6].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[0].item[6].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
@@ -201,7 +225,7 @@ Usage:          #definition
 * item[0].item[7].repeats = false
 * item[0].item[7].extension[constraint].extension[key].valueId = "ihris-other-phone-check"
 * item[0].item[7].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8})|$)')"
+* item[0].item[7].extension[constraint].extension[expression].valueString = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * item[0].item[7].extension[constraint].extension[human].valueString = "Phone Number is not properly formatted."
 
 * item[0].item[8].linkId = "Basic.extension[0].extension[8]"
@@ -211,7 +235,7 @@ Usage:          #definition
 * item[0].item[8].repeats = false
 * item[0].item[8].extension[constraint].extension[key].valueId = "ihris-work-email-check"
 * item[0].item[8].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4})$')"
+* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)'"
 * item[0].item[8].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
@@ -221,7 +245,7 @@ Usage:          #definition
 * item[0].item[9].repeats = false
 * item[0].item[9].extension[constraint].extension[key].valueId = "ihris-other-email-check"
 * item[0].item[9].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4})$')"
+* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)'"
 * item[0].item[9].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
