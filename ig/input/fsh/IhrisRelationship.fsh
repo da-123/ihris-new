@@ -1,6 +1,6 @@
 Profile:        IhrisRelationship
 Parent:         Basic
-Id:             ihris-relationship
+Id:             iHRISRelationship
 Title:          "iHRIS Resources Relationship Profile"
 Description:    "iHRIS Resources Relationship Profile"
 
@@ -9,7 +9,7 @@ Description:    "iHRIS Resources Relationship Profile"
       IhrisReportLink named reportlink 0..* MS
 
 Extension:      IhrisReportDetails
-Id:             ihris-report-details
+Id:             iHRISReportDetails
 Title:          "Details of a report"
 Description:    "Defines the primary resource of the relationship"
 * ^context.type = #element
@@ -35,11 +35,11 @@ Description:    "Defines the primary resource of the relationship"
 * extension[query].valueString ^label = "FHIR path to limit instances of this resource"
 * extension[displayCheckbox].value[x] only boolean
 * extension[displayCheckbox].valueBoolean 1..1
-* extension[displayCheckbox].valueString ^label = "Whether rows of the report are selectable or not"
+* extension[displayCheckbox].valueBoolean ^label = "Whether rows of the report are selectable or not"
 
 
 Extension:      IhrisReportLink
-Id:             ihris-report-link
+Id:             iHRISReportLink
 Title:          "Links to the primary resource"
 Description:    "Links to the primary resource"
 * extension contains
@@ -72,7 +72,7 @@ Description:    "Links to the primary resource"
 
 
 Extension:      IhrisReportElement
-Id:             ihris-report-element
+Id:             iHRISReportElement
 Title:          "Resource Fields"
 Description:    "Lists fields of a resource to be displayed/cached"
 * extension contains

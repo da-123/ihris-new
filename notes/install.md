@@ -40,10 +40,58 @@ sudo apt install maven
 git clone https://github.com/hapifhir/hapi-fhir-jpaserver-starter.git
 cd hapi-fhir-jpaserver-starter
 ```
-Edit ```pom.xml``` and change the following line from hapi-fhir-jpaserver:
+Edit ```pom.xml``` and change the following line from hapi-fhir-jpaserver or ROOT (starting with version 5.1.0):
 ```xml
     <finalName>hapi</finalName>
 ```
+
+#### For versions starting with 5.2.0
+Things were streamlined a bit so the values to edit are simpler.
+Edit ```src/main/resources/application.yaml``` and update the following values:
+
+```
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/hapi'
+    username: hapi
+    password: PASS
+    driveClassName: org.postgresql.Driver
+
+hapi:
+  fhir:
+    tester:
+      id: home
+      name: iHRIS
+      server_address: http://localhost:8080/hapi/fhir/
+      refuse_to_fetch_third_party_urls: false
+      fhir_version: R4
+```
+
+#### For versions starting with 5.1.0 
+Edit ```src/main/resources/application.yaml``` and update the following values:
+
+```
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/hapi'
+    username: hapi
+    password: PASS
+    driveClassName: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      hibernate.search.default.indexBase=/var/lib/tomcat9/target/lucenefiles
+hapi:
+  fhir:
+    tester:
+      id: home
+      name: iHRIS
+      server_address: http://localhost:8080/hapi/fhir/
+      refuse_to_fetch_third_party_urls: false
+      fhir_version: R4
+```
+
+#### For versions prior to 5.1.0 use these instead of editing application.yaml
 Edit ```src/main/resources/hapi.properties``` and set the following:
 ```
 server_address=http://localhost:8080/hapi/fhir/
@@ -55,19 +103,35 @@ datasource.password=PASS
 
 hibernate.dialect=org.hibernate.dialect.PostgreSQL95Dialect
 
-hibernate.search.default.indexBase=/var/lib/tomcat9/webapps/hapi/target/lucenefiles
+hibernate.search.default.indexBase=/var/lib/tomcat9/target/lucenefiles
 ```
-Create war file
+
+#### Create war file
+
 ```bash
+sudo apt install default-jdk
 mvn clean install -DskipTests
-sudo mkdir /var/lib/tomcat9/target
-sudo chown tomcat:tomcat /var/lib/tomcat9/target
+sudo mkdir -p /var/lib/tomcat9/target/lucenefiles
+sudo chown -R tomcat:tomcat /var/lib/tomcat9/target
 sudo cp target/hapi.war /var/lib/tomcat9/webapps
+```
+
+#### Set paths in startup file
+Edit ```/etc/systemd/system/multi-user.target.wants/tomcat9.service```
+
+In the security section add the following directory with a ReadWritePath
+
+```
+ReadWritePaths=/var/lib/tomcat9/target/
 ```
 
 #### Load basic definitions
 Download and install hapi-fhir-cli:
 https://hapifhir.io/hapi-fhir/docs/tools/hapi_fhir_cli.html
+```bash
+wget https://github.com/hapifhir/hapi-fhir/releases/download/v5.2.0/hapi-fhir-5.2.0-cli.tar.bz2
+```
+Then load the basic definitions
 ```bash
 ./hapi-fhir-cli upload-definitions -v r4 -t http://localhost:8080/hapi/fhir/
 ```
@@ -75,17 +139,18 @@ https://hapifhir.io/hapi-fhir/docs/tools/hapi_fhir_cli.html
 ## SUSHI
 ```bash
 sudo npm install -g fsh-sushi
+sudo npm install -g antlr4
 ```
 
-You can make customizations for your own configurations in the fsh/ 
+You can make customizations for your own configurations in the ig/ 
 directory.  To get the default data, you can compile the FSH files with:
 ```bash
-cd fsh/
+cd ig/
 sushi -s .
 ```
 
 Any time you make changes to the FSH files you should rebuild them 
-this way.
+this way.  The FSH files are in ig/input/fsh/.
 
 ## Loading Resources
 
@@ -114,7 +179,7 @@ node load.js --server http://localhost:8080/hapi/fhir ../resources/*.json
 
 After building the FSH files, you can import them with the following:
 ```bash
-node load.js --server http://localhost:8080/hapi/fhir ../fsh/build/input/{profiles,extensions,examples,resources,vocabulary}/*.json
+node load.js --server http://localhost:8080/hapi/fhir ../ig/fsh-generated/resources/*.json
 ```
 
 ## ElasticSearch

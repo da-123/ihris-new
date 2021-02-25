@@ -13,16 +13,16 @@ Description:    "iHRIS profile of Practitioner."
 * identifier ^label = "Identifier"
 * identifier ^constraint[0].key = "ihris-search-identifier"
 * identifier ^constraint[0].severity = #error
-* identifier ^constraint[0].expression = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* identifier ^constraint[0].expression = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * identifier ^constraint[0].human = "The identifier must be unique and another record has this identifier"
 * identifier.use 0..0
-* identifier.system MS
-* identifier.system ^label = "System"
+/* identifier.system 
+* identifier.system ^label = "System"*/
 * identifier.value MS
 * identifier.value ^label = "Value"
 * identifier.type MS
 * identifier.type ^label = "Type"
-* identifier.type.coding 1..1 MS
+* identifier.type.coding MS
 * identifier.type.coding ^label = "Type"
 * identifier.type from IhrisEthiopiaIdentifierValueSet
 * name 1..1 MS
@@ -64,7 +64,7 @@ Description:    "iHRIS profile of Practitioner."
 * telecom 0..0
 * communication 0..* MS
 * communication ^label = "Language"
-* communication.coding 1..1 MS
+* communication.coding MS
 * communication.coding ^label = "Language"
 * communication from IhrisEthiopiaLanguageValueSet
 * communication.extension contains
@@ -226,7 +226,7 @@ Description:    "iHRIS extension for Email."
 * valueString ^constraint[0].key = "ihris-email-check"
 * valueString ^constraint[0].severity = #error
 * valueString ^constraint[0].expression = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
-* valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
+* valueString ^constraint[0].human = "Work Email is not properly formatted."
 
 Extension:      IhrisPractitionerPhone
 Id:             ihris-personal-information-phone
@@ -423,7 +423,7 @@ Title:            "iHRIS Ethiopia Identifier ValueSet"
 * ^version = "0.3.0"
 * codes from system IhrisEthiopiaIdentifierCodeSystem
 
-CodeSystem:         IhrisEthiopiaIdentifierCodeSystem
+CodeSystem:       IhrisEthiopiaIdentifierCodeSystem
 Id:               ihris-ethiopia-identifier
 Title:            "Identifier Type"
 * ^date = "2020-11-11T08:41:04.362Z"
@@ -761,14 +761,12 @@ Title:            "iHRIS Driving License Type ValueSet"
 CodeSystem:      IhrisLanguageProficiencyCodesystem
 Id:              ihris-language-proficiency-codesystem
 Title:           "Language Proficiency"
-* ^date = "2020-11-12T08:41:04.362Z"
-* ^version = "0.3.0"
-* #mothertongue "Mother Tongue"
-* #elementary "Elementary" 
-* #Fluent "Fluent"
-* #fullprofessional "Full Professional"
-* #limitedworking "Limited Working"
-* #professionalworking "Professional Working"
+* ^date = "2021-02-12T08:41:04.362Z"
+* ^version = "0.3.1"
+* #excellent "Excellent"
+* #verygood "Very Good" 
+* #good "Good"
+* #poor "Poor"
 
 ValueSet:         IhrisLanguageProficiencyValueSet
 Id:               ihris-language-proficiency-valueset
@@ -1017,7 +1015,7 @@ Usage:          #definition
 * item[2].item[0].item[1].repeats = false
 * item[2].item[0].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[0].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[0].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[0].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(Practitioner.identifier[0].type.exists(), type & '|' & value, value)"
 * item[2].item[0].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[1].linkId = "Practitioner.identifier[1]"
@@ -1043,7 +1041,7 @@ Usage:          #definition
 * item[2].item[1].item[1].repeats = false
 * item[2].item[1].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[1].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[1].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[1].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * item[2].item[1].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[2].linkId = "Practitioner.identifier[2]"
@@ -1069,7 +1067,7 @@ Usage:          #definition
 * item[2].item[2].item[1].repeats = false
 * item[2].item[2].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[2].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[2].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[2].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * item[2].item[2].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[3].linkId = "Practitioner.identifier[3]"
@@ -1095,7 +1093,7 @@ Usage:          #definition
 * item[2].item[3].item[1].repeats = false
 * item[2].item[3].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[3].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[3].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[3].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * item[2].item[3].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[4].linkId = "Practitioner.identifier[4]"
@@ -1121,7 +1119,7 @@ Usage:          #definition
 * item[2].item[4].item[1].repeats = false
 * item[2].item[4].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[4].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[4].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[4].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * item[2].item[4].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[5].linkId = "Practitioner.identifier[5]"
@@ -1147,7 +1145,7 @@ Usage:          #definition
 * item[2].item[5].item[1].repeats = false
 * item[2].item[5].item[1].extension[constraint].extension[key].valueId = "ihris-search-identifier"
 * item[2].item[5].item[1].extension[constraint].extension[severity].valueCode = #error
-* item[2].item[5].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(system.exists(), system & '|' & value, value)"
+* item[2].item[5].item[1].extension[constraint].extension[expression].valueString = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
 * item[2].item[5].item[1].extension[constraint].extension[human].valueString = "The identifier must be unique and another record has this identifier"
 
 * item[2].item[6].linkId = "Practitioner:License"
@@ -1241,7 +1239,7 @@ Usage:          #definition
 * item[4].item[0].item[0].text = "Language"
 * item[4].item[0].item[0].type = #choice
 * item[4].item[0].item[0].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-ethiopia-language-valueset"
-* item[4].item[0].item[0].required = true
+* item[4].item[0].item[0].required = false
 * item[4].item[0].item[0].repeats = false
 
 * item[4].item[0].item[1].linkId = "Practitioner.communication[0].extension[0]"
