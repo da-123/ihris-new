@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-02-23T12:08:07.451Z",
+        "when": "2021-03-04T08:32:37.370Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "GC1JkNoMXXn6LxmkDglHmop4L5IbRKscTxyuMxXHXpJ4A99xA6ShBGYTHiQdZ3fjicieFlX6Ltukza6tU/d9W3MAuNN1UZqcbUBUPpFxuvF0oPhzAaCk+IocMfqAK0JDJNw2edtv4RwQoP+fyL/mkLfgJO7TYgQEmFUKgF0nImQ="
+        "data": "vsr96OACH/rFeuNWQYiBc+6XPJ4CSwKaCfXHZeSYaYq4qQXXGsODtNZksO7F1TGYbTcb6mNUTCPLepi++/R1jzAxbGPZ1eDdRA4OPCcVLAz8wusRCU3ZZirKSDtnCSB1QCYq27jj+pMDV2Sy8ppO1rOVdNqTDSfB0OIGs3vtGcA="
       }
     },
     {
@@ -91,12 +91,32 @@
           "valueString": "person"
         },
         {
+          "name": "site:nav:menu:dashboard:text",
+          "valueString": "Dashboard"
+        },
+        {
+          "name": "site:nav:menu:dashboard:order",
+          "valueString": "1"
+        },
+        {
+          "name": "site:nav:menu:dashboard:icon",
+          "valueString": "mdi-poll-box"
+        },
+        {
+          "name": "site:nav:menu:dashboard:menu:staff:text",
+          "valueString": "Dashboard"
+        },
+        {
+          "name": "site:nav:menu:dashboard:menu:staff:url",
+          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+        },
+        {
           "name": "site:nav:menu:person:text",
           "valueString": "People"
         },
         {
           "name": "site:nav:menu:person:order",
-          "valueString": "1"
+          "valueString": "2"
         },
         {
           "name": "site:nav:menu:person:icon",
@@ -124,7 +144,7 @@
         },
         {
           "name": "site:nav:menu:position:order",
-          "valueString": "2"
+          "valueString": "3"
         },
         {
           "name": "site:nav:menu:position:icon",
@@ -148,11 +168,11 @@
         },
         {
           "name": "site:nav:menu:location:text",
-          "valueString": "Locations/Facilities"
+          "valueString": "Locations and Facilities"
         },
         {
           "name": "site:nav:menu:location:order",
-          "valueString": "3"
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:location:icon",
@@ -160,7 +180,7 @@
         },
         {
           "name": "site:nav:menu:location:menu:location_search:text",
-          "valueString": "Search Locations/Facilities"
+          "valueString": "Search Locations"
         },
         {
           "name": "site:nav:menu:location:menu:location_search:url",
@@ -168,11 +188,27 @@
         },
         {
           "name": "site:nav:menu:location:menu:location_add:text",
-          "valueString": "Add Location/Facility"
+          "valueString": "Add Location"
         },
         {
           "name": "site:nav:menu:location:menu:location_add:url",
           "valueString": "/resource/add/location"
+        },
+        {
+          "name": "site:nav:menu:location:menu:facility_search:text",
+          "valueString": "Search Facilities"
+        },
+        {
+          "name": "site:nav:menu:location:menu:facility_search:url",
+          "valueString": "/resource/search/facility"
+        },
+        {
+          "name": "site:nav:menu:location:menu:facility_add:text",
+          "valueString": "Add Facility"
+        },
+        {
+          "name": "site:nav:menu:location:menu:facility_add:url",
+          "valueString": "/resource/add/facility"
         },
         {
           "name": "site:nav:menu:database:text",
@@ -180,7 +216,7 @@
         },
         {
           "name": "site:nav:menu:database:order",
-          "valueString": "4"
+          "valueString": "5"
         },
         {
           "name": "site:nav:menu:database:icon",
@@ -612,7 +648,7 @@
         },
         {
           "name": "site:nav:menu:reports:order",
-          "valueString": "5"
+          "valueString": "6"
         },
         {
           "name": "site:nav:menu:reports:icon",
@@ -643,24 +679,28 @@
           "valueString": "2"
         },
         {
-          "name": "site:nav:menu:dashboard:text",
-          "valueString": "Dashboard"
+          "name": "site:nav:menu:reports:menu:departure:text",
+          "valueString": "Separated Employee Report"
         },
         {
-          "name": "site:nav:menu:dashboard:order",
-          "valueString": "6"
+          "name": "site:nav:menu:reports:menu:departure:url",
+          "valueString": "/report/ihris-es-departure-report-ethiopia-staff"
         },
         {
-          "name": "site:nav:menu:dashboard:icon",
-          "valueString": "mdi-poll-box"
+          "name": "site:nav:menu:reports:menu:departure:order",
+          "valueString": "3"
         },
         {
-          "name": "site:nav:menu:dashboard:menu:staff:text",
-          "valueString": "Dashboard"
+          "name": "site:nav:menu:reports:menu:retirement:text",
+          "valueString": "Retiring Employee Report"
         },
         {
-          "name": "site:nav:menu:dashboard:menu:staff:url",
-          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+          "name": "site:nav:menu:reports:menu:retirement:url",
+          "valueString": "/report/ihris-es-retirement-report-ethiopia-staff"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:retirement:order",
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:users:text",

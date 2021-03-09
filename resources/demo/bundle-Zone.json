@@ -7,8 +7,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z1",
         "name": "Zone 1",
@@ -20,7 +21,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -47,8 +48,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z2",
         "name": "Zone 2",
@@ -60,7 +62,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -87,8 +89,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z3",
         "name": "Zone 3",
@@ -100,7 +103,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -127,8 +130,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z4",
         "name": "Zone 4",
@@ -140,7 +144,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -167,8 +171,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z5",
         "name": "Zone 5",
@@ -180,7 +185,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -207,8 +212,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z6",
         "name": "Awi",
@@ -220,7 +226,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -247,8 +253,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z7",
         "name": "Central Gondar",
@@ -260,7 +267,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -287,8 +294,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z8",
         "name": "East Gojjam",
@@ -300,7 +308,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -327,8 +335,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z9",
         "name": "North Gondar",
@@ -340,7 +349,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -367,8 +376,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z10",
         "name": "North Shewa",
@@ -380,7 +390,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -407,8 +417,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z11",
         "name": "North Wollo",
@@ -420,7 +431,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -447,8 +458,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z12",
         "name": "Oromia Special",
@@ -460,7 +472,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -487,8 +499,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z13",
         "name": "South Gondar",
@@ -500,7 +513,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -527,8 +540,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z14",
         "name": "South Wollo",
@@ -540,7 +554,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -567,8 +581,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z15",
         "name": "Waghimera",
@@ -580,7 +595,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -607,8 +622,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z16",
         "name": "West Gojjam",
@@ -620,7 +636,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -647,8 +663,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z17",
         "name": "West Gondar",
@@ -660,7 +677,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -687,8 +704,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z18",
         "name": "Bahirdar Town Woreda",
@@ -700,7 +718,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -727,8 +745,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z19",
         "name": "Dessie Town Woreda",
@@ -740,7 +759,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -767,8 +786,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z20",
         "name": "Gondar Town Woreda",
@@ -780,7 +800,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -807,8 +827,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z21",
         "name": "Assosa",
@@ -820,7 +841,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -847,8 +868,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z22",
         "name": "Kamashi",
@@ -860,7 +882,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -887,8 +909,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z23",
         "name": "Mao Komo Special",
@@ -900,7 +923,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -927,8 +950,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z24",
         "name": "Metekel",
@@ -940,7 +964,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -967,8 +991,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z25",
         "name": "Agniwa",
@@ -980,7 +1005,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1007,8 +1032,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z26",
         "name": "Majang",
@@ -1020,7 +1046,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1047,8 +1073,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z27",
         "name": "Nuer",
@@ -1060,7 +1087,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1087,8 +1114,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z28",
         "name": "Gambella Town",
@@ -1100,7 +1128,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1127,8 +1155,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z29",
         "name": "Itang Special",
@@ -1140,7 +1169,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1167,8 +1196,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z30",
         "name": "Adama Special",
@@ -1180,7 +1210,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1207,8 +1237,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z31",
         "name": "Ambo Town",
@@ -1220,7 +1251,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1247,8 +1278,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z32",
         "name": "Arsi",
@@ -1260,7 +1292,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1287,8 +1319,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z33",
         "name": "Asalla Town",
@@ -1300,7 +1333,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1327,8 +1360,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z34",
         "name": "Bale",
@@ -1340,7 +1374,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1367,8 +1401,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z35",
         "name": "Batu Town",
@@ -1380,7 +1415,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1407,8 +1442,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z36",
         "name": "Bishan Guracha Town",
@@ -1420,7 +1456,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1447,8 +1483,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z37",
         "name": "Bishoft Town",
@@ -1460,7 +1497,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1487,8 +1524,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z38",
         "name": "Borena",
@@ -1500,7 +1538,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1527,8 +1565,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z39",
         "name": "Buno Bedele",
@@ -1540,7 +1579,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1567,8 +1606,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z40",
         "name": "Burayu Town",
@@ -1580,7 +1620,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1607,8 +1647,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z41",
         "name": "Dukem Special",
@@ -1620,7 +1661,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1647,8 +1688,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z42",
         "name": "East Hararge",
@@ -1660,7 +1702,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1687,8 +1729,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z43",
         "name": "East Shewa",
@@ -1700,7 +1743,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1727,8 +1770,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z44",
         "name": "East Wellega",
@@ -1740,7 +1784,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1767,8 +1811,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z45",
         "name": "Finifine Special",
@@ -1780,7 +1825,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1807,8 +1852,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z46",
         "name": "Gelan Town Special",
@@ -1820,7 +1866,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1847,8 +1893,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z47",
         "name": "Guji",
@@ -1860,7 +1907,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1887,8 +1934,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z48",
         "name": "Holota Town",
@@ -1900,7 +1948,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1927,8 +1975,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z49",
         "name": "Horo Gudru Wellega",
@@ -1940,7 +1989,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -1967,8 +2016,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z50",
         "name": "Ilu Aba Bora",
@@ -1980,7 +2030,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2007,8 +2057,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z51",
         "name": "Jimma Special",
@@ -2020,7 +2071,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2047,8 +2098,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z52",
         "name": "Jimma",
@@ -2060,7 +2112,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2087,8 +2139,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z53",
         "name": "Kelem Wellega",
@@ -2100,7 +2153,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2127,8 +2180,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z54",
         "name": "Lega Tafo Lega Dadhi Town",
@@ -2140,7 +2194,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2167,8 +2221,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z55",
         "name": "Mojo Town",
@@ -2180,7 +2235,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2207,8 +2262,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z56",
         "name": "Nekemte Town",
@@ -2220,7 +2276,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2247,8 +2303,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z57",
         "name": "North Shewaa",
@@ -2260,7 +2317,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2287,8 +2344,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z58",
         "name": "Robe Town",
@@ -2300,7 +2358,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2327,8 +2385,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z59",
         "name": "Sebeta Town",
@@ -2340,7 +2399,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2367,8 +2426,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z60",
         "name": "Shashemene Town",
@@ -2380,7 +2440,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2407,8 +2467,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z61",
         "name": "South West Shewa",
@@ -2420,7 +2481,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2447,8 +2508,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z62",
         "name": "Sululta Town",
@@ -2460,7 +2522,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2487,8 +2549,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z63",
         "name": "West Arsi",
@@ -2500,7 +2563,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2527,8 +2590,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z64",
         "name": "West Guji",
@@ -2540,7 +2604,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2567,8 +2631,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z65",
         "name": "West Hararge",
@@ -2580,7 +2645,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2607,8 +2672,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z66",
         "name": "West Shewa",
@@ -2620,7 +2686,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2647,8 +2713,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z67",
         "name": "West Wellega",
@@ -2660,7 +2727,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2687,8 +2754,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z68",
         "name": "Woliso Town",
@@ -2700,7 +2768,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2727,8 +2795,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z69",
         "name": "Afder",
@@ -2740,7 +2809,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2767,8 +2836,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z70",
         "name": "Dawa",
@@ -2780,7 +2850,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2807,8 +2877,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z71",
         "name": "Dollo",
@@ -2820,7 +2891,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2847,8 +2918,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z72",
         "name": "Erar",
@@ -2860,7 +2932,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2887,8 +2959,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z73",
         "name": "Fafan",
@@ -2900,7 +2973,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2927,8 +3000,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z74",
         "name": "Jarar",
@@ -2940,7 +3014,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -2967,8 +3041,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z75",
         "name": "Korahay",
@@ -2980,7 +3055,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3007,8 +3082,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z76",
         "name": "Liben",
@@ -3020,7 +3096,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3047,8 +3123,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z77",
         "name": "Nogob",
@@ -3060,7 +3137,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3087,8 +3164,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z78",
         "name": "Shebelle",
@@ -3100,7 +3178,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3127,8 +3205,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z79",
         "name": "Sitti",
@@ -3140,7 +3219,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3167,8 +3246,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z80",
         "name": "Central",
@@ -3180,7 +3260,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3207,8 +3287,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z81",
         "name": "Eastern",
@@ -3220,7 +3301,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3247,8 +3328,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z82",
         "name": "Mekelle",
@@ -3260,7 +3342,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3287,8 +3369,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z83",
         "name": "North Western",
@@ -3300,7 +3383,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3327,8 +3410,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z84",
         "name": "South Eastern",
@@ -3340,7 +3424,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3367,8 +3451,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z85",
         "name": "Southern",
@@ -3380,7 +3465,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3407,8 +3492,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z86",
         "name": "Western",
@@ -3420,7 +3506,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3447,8 +3533,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z87",
         "name": "Basketo Special",
@@ -3460,7 +3547,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3487,8 +3574,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z88",
         "name": "Bench Maji",
@@ -3500,7 +3588,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3527,8 +3615,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z89",
         "name": "Dawro",
@@ -3540,7 +3629,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3567,8 +3656,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z90",
         "name": "Gamo Gofa",
@@ -3580,7 +3670,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3607,8 +3697,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z91",
         "name": "Gedeo",
@@ -3620,7 +3711,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3647,8 +3738,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z92",
         "name": "Gurage",
@@ -3660,7 +3752,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3687,8 +3779,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z93",
         "name": "Hadiya",
@@ -3700,7 +3793,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3727,8 +3820,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z94",
         "name": "Halaba Special",
@@ -3740,7 +3834,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3767,8 +3861,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z95",
         "name": "Hawassa City Administration",
@@ -3780,7 +3875,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3807,8 +3902,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z96",
         "name": "Kaffa",
@@ -3820,7 +3916,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3847,8 +3943,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z97",
         "name": "Kembata Tembaro",
@@ -3860,7 +3957,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3887,8 +3984,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z98",
         "name": "Konta Special",
@@ -3900,7 +3998,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3927,8 +4025,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z99",
         "name": "Segen",
@@ -3940,7 +4039,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -3967,8 +4066,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z100",
         "name": "Sheka",
@@ -3980,7 +4080,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4007,8 +4107,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z101",
         "name": "Sidama",
@@ -4020,7 +4121,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4047,8 +4148,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z102",
         "name": "Silte",
@@ -4060,7 +4162,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4087,8 +4189,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z103",
         "name": "South Omo",
@@ -4100,7 +4203,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4127,8 +4230,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z104",
         "name": "Wolayita",
@@ -4140,7 +4244,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4167,8 +4271,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z105",
         "name": "Yem Special",
@@ -4180,7 +4285,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4207,8 +4312,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z106",
         "name": "Addis Ketema Sub City",
@@ -4220,7 +4326,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4247,8 +4353,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z107",
         "name": "Akaki Kality Sub City",
@@ -4260,7 +4367,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4287,8 +4394,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z108",
         "name": "Bole Sub City",
@@ -4300,7 +4408,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4327,8 +4435,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z109",
         "name": "Gulele Sub City",
@@ -4340,7 +4449,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4367,8 +4476,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z110",
         "name": "Kirkos Sub City",
@@ -4380,7 +4490,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4407,8 +4517,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z111",
         "name": "Kolfe Sub city",
@@ -4420,7 +4531,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4447,8 +4558,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z112",
         "name": "Lideta Sub City",
@@ -4460,7 +4572,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4487,8 +4599,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z113",
         "name": "Nifas Silk Lafto Sub City",
@@ -4500,7 +4613,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4527,8 +4640,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z114",
         "name": "Yeka Sub City",
@@ -4540,7 +4654,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4567,8 +4681,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z115",
         "name": "Arada Sub City",
@@ -4580,7 +4695,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4607,8 +4722,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z116",
         "name": "Addis Ketema Operational",
@@ -4620,7 +4736,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4647,8 +4763,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z117",
         "name": "Biyoawale Operational",
@@ -4660,7 +4777,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4687,8 +4804,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z118",
         "name": "Dire Dawa Operational",
@@ -4700,7 +4818,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4727,8 +4845,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z119",
         "name": "Gende Kore Operational",
@@ -4740,7 +4859,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4767,8 +4886,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z120",
         "name": "Jeldessa Operational",
@@ -4780,7 +4900,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4807,8 +4927,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z121",
         "name": "Legehare Operational",
@@ -4820,7 +4941,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4847,8 +4968,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z122",
         "name": "Melkajebdu Operational",
@@ -4860,7 +4982,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4887,8 +5009,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z123",
         "name": "Sabian Operational",
@@ -4900,7 +5023,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4927,8 +5050,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z124",
         "name": "Wahil Operational",
@@ -4940,7 +5064,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -4967,8 +5091,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z125",
         "name": "Abadir",
@@ -4980,7 +5105,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5007,8 +5132,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z126",
         "name": "Aboker",
@@ -5020,7 +5146,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5047,8 +5173,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z127",
         "name": "Amir Nur",
@@ -5060,7 +5187,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5087,8 +5214,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z128",
         "name": "Dire Teyara",
@@ -5100,7 +5228,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5127,8 +5255,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z129",
         "name": "Erer",
@@ -5140,7 +5269,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5167,8 +5296,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z130",
         "name": "Hakim",
@@ -5180,7 +5310,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5207,8 +5337,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z131",
         "name": "Jinela",
@@ -5220,7 +5351,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5247,8 +5378,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z132",
         "name": "Shenkor",
@@ -5260,7 +5392,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],
@@ -5287,8 +5419,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET.R11.Z133",
         "name": "Sofi",
@@ -5300,7 +5433,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "zone"
               }
             ],

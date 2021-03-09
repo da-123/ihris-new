@@ -340,16 +340,16 @@ Usage:          #example
 * extension[section][13].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[section][13].extension[resource].extension[column][0].extension[header].valueString = "Education Institution"
 * extension[section][13].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueReference.reference"
-* extension[section][13].extension[resource].extension[column][1].extension[header].valueString = "Degree"
-* extension[section][13].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding"
-* extension[section][13].extension[resource].extension[column][2].extension[header].valueString = "level"
-* extension[section][13].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='level').valueCoding"
-* extension[section][13].extension[resource].extension[column][3].extension[header].valueString = "Educational Major"
-* extension[section][13].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='educationalMajor').valueCoding"
-* extension[section][13].extension[resource].extension[column][4].extension[header].valueString = "Year"
-* extension[section][13].extension[resource].extension[column][4].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
-* extension[section][13].extension[resource].extension[column][5].extension[header].valueString = "Actions"
-* extension[section][13].extension[resource].extension[column][5].extension[field].valueString = "_action"
+/* extension[section][13].extension[resource].extension[column][1].extension[header].valueString = "Degree"
+* extension[section][13].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding"*/
+* extension[section][13].extension[resource].extension[column][1].extension[header].valueString = "level"
+* extension[section][13].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='level').valueCoding"
+* extension[section][13].extension[resource].extension[column][2].extension[header].valueString = "Educational Major"
+* extension[section][13].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='educationalMajor').valueCoding"
+* extension[section][13].extension[resource].extension[column][3].extension[header].valueString = "Year"
+* extension[section][13].extension[resource].extension[column][3].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
+* extension[section][13].extension[resource].extension[column][4].extension[header].valueString = "Actions"
+* extension[section][13].extension[resource].extension[column][4].extension[field].valueString = "_action"
 * extension[section][13].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-education-history/basic-education-history?practitioner=FHIRID"
 * extension[section][13].extension[resource].extension[action][0].extension[text].valueString = "Add Education History"
 * extension[section][13].extension[resource].extension[action][0].extension[row].valueBoolean = false
@@ -593,41 +593,6 @@ Usage:          #example
 * extension[section][0].extension[field][5].valueString = "CodeSystem.salary-grade"
 /* extension[section][0].extension[field][6].valueString = "CodeSystem.designation[0].language"
 * extension[section][0].extension[field][7].valueString = "CodeSystem.designation[0].value"*/
-
-Instance:       ihris-page-location
-InstanceOf:     IhrisPage
-Title:          "iHRIS Location Page"
-Usage:          #example
-* code = IhrisResourceCodeSystem#page
-* extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-location)
-* extension[display].extension[search][0].valueString = "Location Name|name"
-* extension[display].extension[search][1].valueString = "Location Type|type.coding[0]"
-* extension[display].extension[search][2].valueString = "Location Physical Type|physicalType.coding[0]"
-/* extension[display].extension[search][3].valueString = "Longitute|position.longitude"
-* extension[display].extension[search][4].valueString = "Latitude|position.latitude"*/
-* extension[display].extension[filter][0].valueString = "Name|name:contains"
-* extension[display].extension[filter][1].valueString = "Location Type|type|http://ihris.org/fhir/ValueSet/ihris-jurisdiction"
-* extension[display].extension[filter][2].valueString = "Location Physical Type|physicalType|http://hl7.org/fhir/ValueSet/location-physical-type"
-* extension[section][0].extension[title].valueString = "Location/Facility"
-* extension[section][0].extension[description].valueString = "Location and Duty Post details"
-* extension[section][0].extension[name].valueString = "Location"
-* extension[section][0].extension[field][0].valueString = "Location.name"
-* extension[section][0].extension[field][1].valueString = "Location.description"
-* extension[section][0].extension[field][2].valueString = "Location.type"
-* extension[section][0].extension[field][3].valueString = "Location.physicalType"
-/* extension[section][1].extension[title].valueString = "Geographic location"
-* extension[section][1].extension[description].valueString = "Geo-Coordinates for this Locatio"
-* extension[section][1].extension[name].valueString = "coordinates"
-* extension[section][1].extension[field][0].valueString = "Location.position.longitude"
-* extension[section][1].extension[field][1].valueString = "Location.position.latitude"*/
-* extension[section][1].extension[title].valueString = "Contact Details"
-* extension[section][1].extension[description].valueString = "email, phone numbers"
-* extension[section][1].extension[name].valueString = "contact"
-* extension[section][1].extension[field][0].valueString = "Location.telecom"
-* extension[section][2].extension[title].valueString = "Location"
-* extension[section][2].extension[description].valueString = "Location this Location is partOf"
-* extension[section][2].extension[name].valueString = "location"
-* extension[section][2].extension[field][0].valueString = "Location.partOf"
 
 Instance:       ihris-page-identifier
 InstanceOf:     IhrisPage

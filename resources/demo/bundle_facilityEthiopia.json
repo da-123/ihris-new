@@ -7,8 +7,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.FacilityLocation",
+            "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
         "id": "ET.R11.Z110.F1",
@@ -58,8 +59,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.FacilityLocation",
+            "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
         "id": "ET.R11.Z108.F1",
@@ -109,8 +111,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.FacilityLocation",
+            "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
         "id": "ET.R11.Z108.F2",
@@ -160,8 +163,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location",
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation"
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.FacilityLocation",
+            "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
         "id": "ET.R11.Z110.F2",

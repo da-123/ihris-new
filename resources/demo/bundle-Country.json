@@ -7,8 +7,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AD",
         "name": "Andorra",
@@ -24,7 +25,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -51,8 +52,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AE",
         "name": "United Arab Emirates",
@@ -68,7 +70,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -95,8 +97,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AF",
         "name": "Afghanistan",
@@ -112,7 +115,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -139,8 +142,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AG",
         "name": "Antigua And Barbuda",
@@ -156,7 +160,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -183,8 +187,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AI",
         "name": "Anguilla",
@@ -200,7 +205,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -227,8 +232,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AL",
         "name": "Albania",
@@ -244,7 +250,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -271,8 +277,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AM",
         "name": "Armenia",
@@ -288,7 +295,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -315,8 +322,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AN",
         "name": "Netherlands Antilles",
@@ -332,7 +340,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -359,8 +367,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AO",
         "name": "Angola",
@@ -376,7 +385,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -403,8 +412,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AQ",
         "name": "Antarctica",
@@ -420,7 +430,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -447,8 +457,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AR",
         "name": "Argentina",
@@ -464,7 +475,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -491,8 +502,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AS",
         "name": "American Samoa",
@@ -508,7 +520,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -535,8 +547,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AT",
         "name": "Austria",
@@ -552,7 +565,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -579,8 +592,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AU",
         "name": "Australia",
@@ -596,7 +610,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -623,8 +637,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AW",
         "name": "Aruba",
@@ -640,7 +655,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -667,8 +682,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AX",
         "name": "Åland Islands",
@@ -684,7 +700,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -711,8 +727,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "AZ",
         "name": "Azerbaijan",
@@ -728,7 +745,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -755,8 +772,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BA",
         "name": "Bosnia And Herzegovina",
@@ -772,7 +790,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -799,8 +817,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BB",
         "name": "Barbados",
@@ -816,7 +835,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -843,8 +862,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BD",
         "name": "Bangladesh",
@@ -860,7 +880,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -887,8 +907,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BE",
         "name": "Belgium",
@@ -904,7 +925,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -931,8 +952,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BF",
         "name": "Burkina Faso",
@@ -948,7 +970,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -975,8 +997,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BG",
         "name": "Bulgaria",
@@ -992,7 +1015,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1019,8 +1042,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BH",
         "name": "Bahrain",
@@ -1036,7 +1060,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1063,8 +1087,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BI",
         "name": "Burundi",
@@ -1080,7 +1105,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1107,8 +1132,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BJ",
         "name": "Benin",
@@ -1124,7 +1150,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1151,8 +1177,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BL",
         "name": "Saint BarthÉlemy",
@@ -1168,7 +1195,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1195,8 +1222,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BM",
         "name": "Bermuda",
@@ -1212,7 +1240,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1239,8 +1267,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BN",
         "name": "Brunei Darussalam",
@@ -1256,7 +1285,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1283,8 +1312,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BO",
         "name": "Bolivia",
@@ -1300,7 +1330,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1327,8 +1357,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BR",
         "name": "Brazil",
@@ -1344,7 +1375,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1371,8 +1402,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BS",
         "name": "Bahamas",
@@ -1388,7 +1420,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1415,8 +1447,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BT",
         "name": "Bhutan",
@@ -1432,7 +1465,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1459,8 +1492,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BV",
         "name": "Bouvet Island",
@@ -1476,7 +1510,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1503,8 +1537,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BW",
         "name": "Botswana",
@@ -1520,7 +1555,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1547,8 +1582,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BY",
         "name": "Belarus",
@@ -1564,7 +1600,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1591,8 +1627,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "BZ",
         "name": "Belize",
@@ -1608,7 +1645,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1635,8 +1672,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CA",
         "name": "Canada",
@@ -1652,7 +1690,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1679,8 +1717,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CC",
         "name": "Cocos (keeling) Islands",
@@ -1696,7 +1735,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1723,8 +1762,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CD",
         "name": "Congo, The Democratic Republic Of The",
@@ -1740,7 +1780,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1767,8 +1807,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CF",
         "name": "Central African Republic",
@@ -1784,7 +1825,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1811,8 +1852,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CG",
         "name": "Congo",
@@ -1828,7 +1870,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1855,8 +1897,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CH",
         "name": "Switzerland",
@@ -1872,7 +1915,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1899,8 +1942,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CI",
         "name": "CÔte D'ivoire",
@@ -1916,7 +1960,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1943,8 +1987,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CK",
         "name": "Cook Islands",
@@ -1960,7 +2005,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -1987,8 +2032,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CL",
         "name": "Chile",
@@ -2004,7 +2050,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2031,8 +2077,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CM",
         "name": "Cameroon",
@@ -2048,7 +2095,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2075,8 +2122,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CN",
         "name": "China",
@@ -2092,7 +2140,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2119,8 +2167,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CO",
         "name": "Colombia",
@@ -2136,7 +2185,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2163,8 +2212,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CR",
         "name": "Costa Rica",
@@ -2180,7 +2230,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2207,8 +2257,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CU",
         "name": "Cuba",
@@ -2224,7 +2275,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2251,8 +2302,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CV",
         "name": "Cape Verde",
@@ -2268,7 +2320,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2295,8 +2347,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CX",
         "name": "Christmas Island",
@@ -2312,7 +2365,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2339,8 +2392,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CY",
         "name": "Cyprus",
@@ -2356,7 +2410,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2383,8 +2437,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "CZ",
         "name": "Czech Republic",
@@ -2400,7 +2455,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2427,8 +2482,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DE",
         "name": "Germany",
@@ -2444,7 +2500,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2471,8 +2527,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DJ",
         "name": "Djibouti",
@@ -2488,7 +2545,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2515,8 +2572,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DK",
         "name": "Denmark",
@@ -2532,7 +2590,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2559,8 +2617,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DM",
         "name": "Dominica",
@@ -2576,7 +2635,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2603,8 +2662,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DO",
         "name": "Dominican Republic",
@@ -2620,7 +2680,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2647,8 +2707,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "DZ",
         "name": "Algeria",
@@ -2664,7 +2725,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2691,8 +2752,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "EC",
         "name": "Ecuador",
@@ -2708,7 +2770,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2735,8 +2797,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "EE",
         "name": "Estonia",
@@ -2752,7 +2815,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2779,8 +2842,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "EG",
         "name": "Egypt",
@@ -2796,7 +2860,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2823,8 +2887,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "EH",
         "name": "Western Sahara",
@@ -2840,7 +2905,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2867,8 +2932,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ER",
         "name": "Eritrea",
@@ -2884,7 +2950,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2911,8 +2977,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ES",
         "name": "Spain",
@@ -2928,7 +2995,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2955,8 +3022,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ET",
         "name": "Ethiopia",
@@ -2972,7 +3040,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -2999,8 +3067,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FI",
         "name": "Finland",
@@ -3016,7 +3085,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3043,8 +3112,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FJ",
         "name": "Fiji",
@@ -3060,7 +3130,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3087,8 +3157,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FK",
         "name": "Falkland Islands (malvinas)",
@@ -3104,7 +3175,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3131,8 +3202,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FM",
         "name": "Micronesia, Federated States Of",
@@ -3148,7 +3220,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3175,8 +3247,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FO",
         "name": "Faroe Islands",
@@ -3192,7 +3265,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3219,8 +3292,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "FR",
         "name": "France",
@@ -3236,7 +3310,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3263,8 +3337,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GA",
         "name": "Gabon",
@@ -3280,7 +3355,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3307,8 +3382,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GB",
         "name": "United Kingdom",
@@ -3324,7 +3400,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3351,8 +3427,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GD",
         "name": "Grenada",
@@ -3368,7 +3445,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3395,8 +3472,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GE",
         "name": "Georgia",
@@ -3412,7 +3490,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3439,8 +3517,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GF",
         "name": "French Guiana",
@@ -3456,7 +3535,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3483,8 +3562,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GG",
         "name": "Guernsey",
@@ -3500,7 +3580,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3527,8 +3607,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GH",
         "name": "Ghana",
@@ -3544,7 +3625,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3571,8 +3652,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GI",
         "name": "Gibraltar",
@@ -3588,7 +3670,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3615,8 +3697,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GL",
         "name": "Greenland",
@@ -3632,7 +3715,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3659,8 +3742,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GM",
         "name": "Gambia",
@@ -3676,7 +3760,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3703,8 +3787,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GN",
         "name": "Guinea",
@@ -3720,7 +3805,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3747,8 +3832,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GP",
         "name": "Guadeloupe",
@@ -3764,7 +3850,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3791,8 +3877,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GQ",
         "name": "Equatorial Guinea",
@@ -3808,7 +3895,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3835,8 +3922,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GR",
         "name": "Greece",
@@ -3852,7 +3940,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3879,8 +3967,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GS",
         "name": "South Georgia And The South Sandwich Islands",
@@ -3896,7 +3985,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3923,8 +4012,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GT",
         "name": "Guatemala",
@@ -3940,7 +4030,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -3967,8 +4057,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GU",
         "name": "Guam",
@@ -3984,7 +4075,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4011,8 +4102,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GW",
         "name": "Guinea-bissau",
@@ -4028,7 +4120,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4055,8 +4147,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "GY",
         "name": "Guyana",
@@ -4072,7 +4165,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4099,8 +4192,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HK",
         "name": "Hong Kong",
@@ -4116,7 +4210,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4143,8 +4237,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HM",
         "name": "Heard Island And Mcdonald Islands",
@@ -4160,7 +4255,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4187,8 +4282,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HN",
         "name": "Honduras",
@@ -4204,7 +4300,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4231,8 +4327,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HR",
         "name": "Croatia",
@@ -4248,7 +4345,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4275,8 +4372,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HT",
         "name": "Haiti",
@@ -4292,7 +4390,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4319,8 +4417,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "HU",
         "name": "Hungary",
@@ -4336,7 +4435,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4363,8 +4462,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ID",
         "name": "Indonesia",
@@ -4380,7 +4480,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4407,8 +4507,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IE",
         "name": "Ireland",
@@ -4424,7 +4525,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4451,8 +4552,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IL",
         "name": "Israel",
@@ -4468,7 +4570,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4495,8 +4597,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IM",
         "name": "Isle Of Man",
@@ -4512,7 +4615,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4539,8 +4642,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IN",
         "name": "India",
@@ -4556,7 +4660,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4583,8 +4687,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IO",
         "name": "British Indian Ocean Territory",
@@ -4600,7 +4705,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4627,8 +4732,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IQ",
         "name": "Iraq",
@@ -4644,7 +4750,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4671,8 +4777,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IR",
         "name": "Iran, Islamic Republic Of",
@@ -4688,7 +4795,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4715,8 +4822,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IS",
         "name": "Iceland",
@@ -4732,7 +4840,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4759,8 +4867,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "IT",
         "name": "Italy",
@@ -4776,7 +4885,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4803,8 +4912,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "JE",
         "name": "Jersey",
@@ -4820,7 +4930,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4847,8 +4957,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "JM",
         "name": "Jamaica",
@@ -4864,7 +4975,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4891,8 +5002,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "JO",
         "name": "Jordan",
@@ -4908,7 +5020,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4935,8 +5047,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "JP",
         "name": "Japan",
@@ -4952,7 +5065,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -4979,8 +5092,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KE",
         "name": "Kenya",
@@ -4996,7 +5110,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5023,8 +5137,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KG",
         "name": "Kyrgyzstan",
@@ -5040,7 +5155,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5067,8 +5182,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KH",
         "name": "Cambodia",
@@ -5084,7 +5200,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5111,8 +5227,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KI",
         "name": "Kiribati",
@@ -5128,7 +5245,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5155,8 +5272,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KM",
         "name": "Comoros",
@@ -5172,7 +5290,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5199,8 +5317,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KN",
         "name": "Saint Kitts And Nevis",
@@ -5216,7 +5335,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5243,8 +5362,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KP",
         "name": "Korea, Democratic People's Republic Of",
@@ -5260,7 +5380,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5287,8 +5407,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KR",
         "name": "Korea, Republic Of",
@@ -5304,7 +5425,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5331,8 +5452,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KW",
         "name": "Kuwait",
@@ -5348,7 +5470,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5375,8 +5497,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KY",
         "name": "Cayman Islands",
@@ -5392,7 +5515,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5419,8 +5542,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "KZ",
         "name": "Kazakhstan",
@@ -5436,7 +5560,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5463,8 +5587,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LA",
         "name": "Lao People's Democratic Republic",
@@ -5480,7 +5605,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5507,8 +5632,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LB",
         "name": "Lebanon",
@@ -5524,7 +5650,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5551,8 +5677,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LC",
         "name": "Saint Lucia",
@@ -5568,7 +5695,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5595,8 +5722,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LI",
         "name": "Liechtenstein",
@@ -5612,7 +5740,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5639,8 +5767,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LK",
         "name": "Sri Lanka",
@@ -5656,7 +5785,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5683,8 +5812,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LR",
         "name": "Liberia",
@@ -5700,7 +5830,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5727,8 +5857,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LS",
         "name": "Lesotho",
@@ -5744,7 +5875,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5771,8 +5902,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LT",
         "name": "Lithuania",
@@ -5788,7 +5920,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5815,8 +5947,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LU",
         "name": "Luxembourg",
@@ -5832,7 +5965,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5859,8 +5992,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LV",
         "name": "Latvia",
@@ -5876,7 +6010,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5903,8 +6037,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "LY",
         "name": "Libyan Arab Jamahiriya",
@@ -5920,7 +6055,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5947,8 +6082,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MA",
         "name": "Morocco",
@@ -5964,7 +6100,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -5991,8 +6127,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MC",
         "name": "Monaco",
@@ -6008,7 +6145,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6035,8 +6172,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MD",
         "name": "Moldova, Republic Of",
@@ -6052,7 +6190,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6079,8 +6217,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ME",
         "name": "Montenegro",
@@ -6096,7 +6235,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6123,8 +6262,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MF",
         "name": "Saint Martin",
@@ -6140,7 +6280,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6167,8 +6307,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MG",
         "name": "Madagascar",
@@ -6184,7 +6325,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6211,8 +6352,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MH",
         "name": "Marshall Islands",
@@ -6228,7 +6370,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6255,8 +6397,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MK",
         "name": "Macedonia, The Former Yugoslav Republic Of",
@@ -6272,7 +6415,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6299,8 +6442,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ML",
         "name": "Mali",
@@ -6316,7 +6460,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6343,8 +6487,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MM",
         "name": "Myanmar",
@@ -6360,7 +6505,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6387,8 +6532,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MN",
         "name": "Mongolia",
@@ -6404,7 +6550,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6431,8 +6577,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MO",
         "name": "Macao",
@@ -6448,7 +6595,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6475,8 +6622,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MP",
         "name": "Northern Mariana Islands",
@@ -6492,7 +6640,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6519,8 +6667,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MQ",
         "name": "Martinique",
@@ -6536,7 +6685,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6563,8 +6712,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MR",
         "name": "Mauritania",
@@ -6580,7 +6730,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6607,8 +6757,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MS",
         "name": "Montserrat",
@@ -6624,7 +6775,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6651,8 +6802,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MT",
         "name": "Malta",
@@ -6668,7 +6820,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6695,8 +6847,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MU",
         "name": "Mauritius",
@@ -6712,7 +6865,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6739,8 +6892,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MV",
         "name": "Maldives",
@@ -6756,7 +6910,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6783,8 +6937,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MW",
         "name": "Malawi",
@@ -6800,7 +6955,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6827,8 +6982,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MX",
         "name": "Mexico",
@@ -6844,7 +7000,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6871,8 +7027,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MY",
         "name": "Malaysia",
@@ -6888,7 +7045,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6915,8 +7072,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "MZ",
         "name": "Mozambique",
@@ -6932,7 +7090,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -6959,8 +7117,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NA",
         "name": "Namibia",
@@ -6976,7 +7135,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7003,8 +7162,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NC",
         "name": "New Caledonia",
@@ -7020,7 +7180,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7047,8 +7207,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NE",
         "name": "Niger",
@@ -7064,7 +7225,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7091,8 +7252,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NF",
         "name": "Norfolk Island",
@@ -7108,7 +7270,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7135,8 +7297,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NG",
         "name": "Nigeria",
@@ -7152,7 +7315,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7179,8 +7342,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NI",
         "name": "Nicaragua",
@@ -7196,7 +7360,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7223,8 +7387,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NL",
         "name": "Netherlands",
@@ -7240,7 +7405,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7267,8 +7432,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NO",
         "name": "Norway",
@@ -7284,7 +7450,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7311,8 +7477,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NP",
         "name": "Nepal",
@@ -7328,7 +7495,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7355,8 +7522,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NR",
         "name": "Nauru",
@@ -7372,7 +7540,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7399,8 +7567,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NU",
         "name": "Niue",
@@ -7416,7 +7585,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7443,8 +7612,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "NZ",
         "name": "New Zealand",
@@ -7460,7 +7630,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7487,8 +7657,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "OM",
         "name": "Oman",
@@ -7504,7 +7675,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7531,8 +7702,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PA",
         "name": "Panama",
@@ -7548,7 +7720,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7575,8 +7747,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PE",
         "name": "Peru",
@@ -7592,7 +7765,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7619,8 +7792,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PF",
         "name": "French Polynesia",
@@ -7636,7 +7810,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7663,8 +7837,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PG",
         "name": "Papua New Guinea",
@@ -7680,7 +7855,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7707,8 +7882,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PH",
         "name": "Philippines",
@@ -7724,7 +7900,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7751,8 +7927,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PK",
         "name": "Pakistan",
@@ -7768,7 +7945,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7795,8 +7972,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PL",
         "name": "Poland",
@@ -7812,7 +7990,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7839,8 +8017,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PM",
         "name": "Saint Pierre And Miquelon",
@@ -7856,7 +8035,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7883,8 +8062,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PN",
         "name": "Pitcairn",
@@ -7900,7 +8080,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7927,8 +8107,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PR",
         "name": "Puerto Rico",
@@ -7944,7 +8125,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -7971,8 +8152,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PS",
         "name": "Palestinian Territory, Occupied",
@@ -7988,7 +8170,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8015,8 +8197,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PT",
         "name": "Portugal",
@@ -8032,7 +8215,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8059,8 +8242,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PW",
         "name": "Palau",
@@ -8076,7 +8260,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8103,8 +8287,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "PY",
         "name": "Paraguay",
@@ -8120,7 +8305,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8147,8 +8332,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "QA",
         "name": "Qatar",
@@ -8164,7 +8350,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8191,8 +8377,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "RE",
         "name": "RÉunion",
@@ -8208,7 +8395,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8235,8 +8422,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "RO",
         "name": "Romania",
@@ -8252,7 +8440,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8279,8 +8467,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "RS",
         "name": "Serbia",
@@ -8296,7 +8485,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8323,8 +8512,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "RU",
         "name": "Russian Federation",
@@ -8340,7 +8530,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8367,8 +8557,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "RW",
         "name": "Rwanda",
@@ -8384,7 +8575,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8411,8 +8602,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SA",
         "name": "Saudi Arabia",
@@ -8428,7 +8620,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8455,8 +8647,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SB",
         "name": "Solomon Islands",
@@ -8472,7 +8665,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8499,8 +8692,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SC",
         "name": "Seychelles",
@@ -8516,7 +8710,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8543,8 +8737,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SD",
         "name": "Sudan",
@@ -8560,7 +8755,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8587,8 +8782,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SDN",
         "name": "Sudan",
@@ -8604,7 +8800,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8631,8 +8827,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SE",
         "name": "Sweden",
@@ -8648,7 +8845,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8675,8 +8872,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SG",
         "name": "Singapore",
@@ -8692,7 +8890,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8719,8 +8917,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SH",
         "name": "Saint Helena, Ascension And Tristan Da Cunha",
@@ -8736,7 +8935,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8763,8 +8962,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SI",
         "name": "Slovenia",
@@ -8780,7 +8980,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8807,8 +9007,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SJ",
         "name": "Svalbard And Jan Mayen",
@@ -8824,7 +9025,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8851,8 +9052,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SK",
         "name": "Slovakia",
@@ -8868,7 +9070,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8895,8 +9097,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SL",
         "name": "Sierra Leone",
@@ -8912,7 +9115,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8939,8 +9142,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SM",
         "name": "San Marino",
@@ -8956,7 +9160,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -8983,8 +9187,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SN",
         "name": "Senegal",
@@ -9000,7 +9205,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9027,8 +9232,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SO",
         "name": "Somalia",
@@ -9044,7 +9250,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9071,8 +9277,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SR",
         "name": "Suriname",
@@ -9088,7 +9295,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9115,8 +9322,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ST",
         "name": "São Tome And Principe",
@@ -9132,7 +9340,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9159,8 +9367,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SV",
         "name": "El Salvador",
@@ -9176,7 +9385,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9203,8 +9412,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SY",
         "name": "Syrian Arab Republic",
@@ -9220,7 +9430,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9247,8 +9457,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "SZ",
         "name": "Swaziland",
@@ -9264,7 +9475,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9291,8 +9502,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TC",
         "name": "Turks And Caicos Islands",
@@ -9308,7 +9520,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9335,8 +9547,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TD",
         "name": "Chad",
@@ -9352,7 +9565,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9379,8 +9592,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TF",
         "name": "Taifafeki",
@@ -9396,7 +9610,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9423,8 +9637,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TG",
         "name": "Togo",
@@ -9440,7 +9655,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9467,8 +9682,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TH",
         "name": "Thailand",
@@ -9484,7 +9700,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9511,8 +9727,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TJ",
         "name": "Tajikistan",
@@ -9528,7 +9745,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9555,8 +9772,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TK",
         "name": "Tokelau",
@@ -9572,7 +9790,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9599,8 +9817,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TL",
         "name": "Timor-leste",
@@ -9616,7 +9835,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9643,8 +9862,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TM",
         "name": "Turkmenistan",
@@ -9660,7 +9880,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9687,8 +9907,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TN",
         "name": "Tunisia",
@@ -9704,7 +9925,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9731,8 +9952,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TO",
         "name": "Tonga",
@@ -9748,7 +9970,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9775,8 +9997,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TR",
         "name": "Turkey",
@@ -9792,7 +10015,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9819,8 +10042,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TT",
         "name": "Trinidad And Tobago",
@@ -9836,7 +10060,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9863,8 +10087,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TV",
         "name": "Tuvalu",
@@ -9880,7 +10105,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9907,8 +10132,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TW",
         "name": "Taiwan, Province Of China",
@@ -9924,7 +10150,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9951,8 +10177,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "TZ",
         "name": "Tanzania, United Republic Of",
@@ -9968,7 +10195,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -9995,8 +10222,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "UA",
         "name": "Ukraine",
@@ -10012,7 +10240,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10039,8 +10267,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "UG",
         "name": "Uganda",
@@ -10056,7 +10285,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10083,8 +10312,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "UM",
         "name": "United States Minor Outlying Islands",
@@ -10100,7 +10330,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10127,8 +10357,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "US",
         "name": "United States",
@@ -10144,7 +10375,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10171,8 +10402,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "UY",
         "name": "Uruguay",
@@ -10188,7 +10420,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10215,8 +10447,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "UZ",
         "name": "Uzbekistan",
@@ -10232,7 +10465,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10259,8 +10492,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VA",
         "name": "Holy See (vatican City State)",
@@ -10276,7 +10510,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10303,8 +10537,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VC",
         "name": "Saint Vincent And The Grenadines",
@@ -10320,7 +10555,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10347,8 +10582,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VE",
         "name": "Venezuela",
@@ -10364,7 +10600,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10391,8 +10627,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VG",
         "name": "Virgin Islands, British",
@@ -10408,7 +10645,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10435,8 +10672,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VI",
         "name": "Virgin Islands, U.s.",
@@ -10452,7 +10690,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10479,8 +10717,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VN",
         "name": "Viet Nam",
@@ -10496,7 +10735,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10523,8 +10762,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "VU",
         "name": "Vanuatu",
@@ -10540,7 +10780,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10567,8 +10807,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "WF",
         "name": "Wallis And Futuna",
@@ -10584,7 +10825,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10611,8 +10852,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "WS",
         "name": "Samoa",
@@ -10628,7 +10870,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10655,8 +10897,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "YE",
         "name": "Yemen",
@@ -10672,7 +10915,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10699,8 +10942,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "YT",
         "name": "Mayotte",
@@ -10716,7 +10960,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10743,8 +10987,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ZA",
         "name": "South Africa",
@@ -10760,7 +11005,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10787,8 +11032,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ZM",
         "name": "Zambia",
@@ -10804,7 +11050,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],
@@ -10831,8 +11077,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location"
-          ]
+    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+  ]
         },
         "id": "ZW",
         "name": "Zimbabwe",
@@ -10848,7 +11095,7 @@
           {
             "coding": [
               {
-                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction",
+                "system": "http://ihris.org/fhir/CodeSystem/ihris-jurisdiction-type",
                 "code": "country"
               }
             ],

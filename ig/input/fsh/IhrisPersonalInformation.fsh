@@ -25,6 +25,8 @@ Description:    "iHRIS profile of Practitioner."
 * identifier.type.coding MS
 * identifier.type.coding ^label = "Type"
 * identifier.type from IhrisEthiopiaIdentifierValueSet
+* active 0..1 MS
+* active ^label = "Active"
 * name 1..1 MS
 * name ^label = "Name"
 * name.use MS
@@ -269,7 +271,7 @@ Description:    "iHRIS extension for Practitioner Residence."
 * valueReference ^constraint[0].severity = #warning
 * valueReference ^constraint[0].expression = "reference.matches('^Location/')"
 * valueReference ^constraint[0].human = "Must be a location"
-* valueReference only Reference(Location)
+* valueReference only Reference(IhrisJurisdiction)
 * valueReference.reference 1..1 MS
 * valueReference.reference ^label = "Location"
 * valueReference.type 0..0
@@ -792,23 +794,6 @@ Title:            "iHRIS Language Proficiency Type ValueSet"
 * ^version = "0.3.0"
 * codes from system IhrisLanguageProficiencyTypeCodesystem
 
-ValueSet:         IhrisJurisdiction
-Id:               ihris-jurisdiction
-Title:            "iHRIS Degree ValueSet"
-* ^date = "2020-11-12T08:41:04.362Z"
-* ^version = "0.3.0"
-* codes from system IhrisJurisdiction
-
-CodeSystem:      IhrisJurisdiction
-Id:              ihris-jurisdiction
-Title:           "Jurisdiction(Country/Region/Zone/Woreda)"
-* ^date = "2020-11-12T08:41:04.362Z"
-* ^version = "0.3.0"
-* #country "Country" "Country"
-* #region "Region" "Region"
-* #zone "Zone" "Zone"
-* #woreda "Woreda" "Woreda"
-
 Instance:       IhrisPractitionerEthiopiaQuestionnaire
 InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
@@ -1288,6 +1273,16 @@ Usage:          #definition
 * item[6].item[0].type = #text
 * item[6].item[0].required = false
 * item[6].item[0].repeats = true
+
+* item[6].item[1].linkId = "Practitioner.active"
+* item[6].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.active"
+* item[6].item[1].text = "Active?"
+* item[6].item[1].type = #boolean
+* item[6].item[1].required = true
+* item[6].item[1].repeats = false
+* item[6].item[1].readOnly = true
+* item[6].item[1].answerOption.valueString = "true"
+* item[6].item[1].answerOption.initialSelected = true
 
 * item[7].linkId = "__Practitioner:photo"
 * item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-personal-information#Practitioner.photo"

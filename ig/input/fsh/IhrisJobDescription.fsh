@@ -30,8 +30,9 @@ Description:    "iHRIS profile of Practitioner."
 * healthcareService 0..0
 * telecom 0..0
 * location 1..1 MS
-* location ^label = "Place Of Work"
-* location.reference ^label = "Place Of Work"
+* location ^label = "Facility/Place Of Work"
+* location only Reference(IhrisFacility)
+* location.reference ^label = "Facility/Place Of Work"
 * code 1..1 MS
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)
