@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-04T08:32:37.370Z",
+        "when": "2021-03-09T08:36:25.968Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "vsr96OACH/rFeuNWQYiBc+6XPJ4CSwKaCfXHZeSYaYq4qQXXGsODtNZksO7F1TGYbTcb6mNUTCPLepi++/R1jzAxbGPZ1eDdRA4OPCcVLAz8wusRCU3ZZirKSDtnCSB1QCYq27jj+pMDV2Sy8ppO1rOVdNqTDSfB0OIGs3vtGcA="
+        "data": "uzWdX1o1nscq6Sbwc3MXA7WYMCvkIWw1ou6298M1pWtEQPQuRdA4W6SrY7KdyJLTR4T+7N0ZsKeq6lOjXNm7W/nkwPddFii4nEJx7+RAM0c1aYPejIkFKi+S0kyHARHMprAwdNAaX2cUGqjmP7tJP1aWlnvAiffpRTkxWbtOREM="
       }
     },
     {
@@ -789,6 +789,26 @@
         {
           "name": "defaults:components:date:calendar",
           "valueString": "Ethiopian"
+        },
+        {
+          "name": "defaults:fields:PractitionerRole.location:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:PractitionerRole.location:user_filter:regex",
+          "valueString": "related-location=(.+)"
+        },
+        {
+          "name": "defaults:fields:PractitionerRole.location:user_filter:replace",
+          "valueString": "$1"
+        },
+        {
+          "name": "defaults:fields:Practitioner.extension:residence.value[x]:valueReference:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Practitioner.extension:residence.value[x]:valueReference:initialValue",
+          "valueString": "Location/ET"
         },
         {
           "name": "workflow:processor:endrole:file",
