@@ -70,6 +70,18 @@
       "url": "instance",
       "valueId": "ihris-page-practitioner"
     } ]
+  },{
+    "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+    "extension": [ {
+      "url": "permission",
+      "valueCode": "read"
+    }, {
+      "url": "resource",
+      "valueCode": "Basic"
+    }, {
+      "url": "instance",
+      "valueId": "ihris-page-practitionerrole"
+    } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
     "extension": [ {
@@ -78,9 +90,6 @@
     }, {
       "url": "resource",
       "valueCode": "Questionnaire"
-    }, {
-      "url": "instance",
-      "valueId": "ihris-personal-information"
     } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",

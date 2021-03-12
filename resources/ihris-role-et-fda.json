@@ -32,7 +32,7 @@
       "valueCode": "*"
     }, {
       "url": "constraint",
-      "valueString": "extension.where(url = 'http://ihris.org/fhir/StructureDefinition/ihris-related-group' ).extension.exists( url = 'location' and valueString = 'Location/ET.R11.Z108.F2' )"
+      "valueString": "extension.where(url = 'http://ihris.org/fhir/StructureDefinition/ihris-related-group' ).extension.exists( url = 'location' and valueString = 'Location/ET.R1.Z108.F2' )"
     } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
@@ -44,7 +44,7 @@
       "valueCode": "Practitioner"
     }, {
       "url": "constraint",
-      "valueString": "related-location=Location/ET.R11.Z108.F2"
+      "valueString": "related-location=Location/ET.R1.Z108.F2"
     } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
@@ -56,7 +56,7 @@
       "valueCode": "PractitionerRole"
     }, {
       "url": "constraint",
-      "valueString": "related-location=Location/ET.R11.Z108.F2"
+      "valueString": "related-location=Location/ET.R1.Z108.F2"
     } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
@@ -70,6 +70,18 @@
       "url": "instance",
       "valueId": "ihris-page-practitioner"
     } ]
+  },{
+    "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
+    "extension": [ {
+      "url": "permission",
+      "valueCode": "read"
+    }, {
+      "url": "resource",
+      "valueCode": "Basic"
+    }, {
+      "url": "instance",
+      "valueId": "ihris-page-practitionerrole"
+    } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",
     "extension": [ {
@@ -78,9 +90,6 @@
     }, {
       "url": "resource",
       "valueCode": "Questionnaire"
-    }, {
-      "url": "instance",
-      "valueId": "ihris-personal-information"
     } ]
   }, {
     "url": "http://ihris.org/fhir/StructureDefinition/ihris-task",

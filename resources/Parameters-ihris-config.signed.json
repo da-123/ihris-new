@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-09T08:36:25.968Z",
+        "when": "2021-03-10T08:45:48.204Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "uzWdX1o1nscq6Sbwc3MXA7WYMCvkIWw1ou6298M1pWtEQPQuRdA4W6SrY7KdyJLTR4T+7N0ZsKeq6lOjXNm7W/nkwPddFii4nEJx7+RAM0c1aYPejIkFKi+S0kyHARHMprAwdNAaX2cUGqjmP7tJP1aWlnvAiffpRTkxWbtOREM="
+        "data": "b4kLhQRA4rF97CnhG9mtHwii4odurUSttdLlLcA1YXsSL09oAPIRpUgMtmMz1So91qkOJsV8EDjoaUYH/8uTr7/4tGQQNc36sJCvYzEm7hVr7qbPLRtkt210hCye3oTOqXTkROFt/l3LS6ApzxQ/JjHYurxaBQw2/cbKjmfDuBY="
       }
     },
     {
@@ -795,6 +795,10 @@
           "valueString": "tree"
         },
         {
+          "name": "defaults:fields:PractitionerRole.location:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
           "name": "defaults:fields:PractitionerRole.location:user_filter:regex",
           "valueString": "related-location=(.+)"
         },
@@ -809,6 +813,22 @@
         {
           "name": "defaults:fields:Practitioner.extension:residence.value[x]:valueReference:initialValue",
           "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:user_filter:regex",
+          "valueString": "related-location=(.+)"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:user_filter:replace",
+          "valueString": "$1"
         },
         {
           "name": "workflow:processor:endrole:file",

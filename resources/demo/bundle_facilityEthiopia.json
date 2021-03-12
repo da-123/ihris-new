@@ -12,11 +12,11 @@
             "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
-        "id": "ET.R11.Z110.F1",
+        "id": "ET.R1.Z110.F1",
         "name": "Tikur Anbesa Hospital",
         "status": "active",
         "partOf": {
-          "reference": "Location/ET.R11.Z110"
+          "reference": "Location/ET.R1.Z110"
         },
         "managingOrganization": "",
         "type": [
@@ -51,7 +51,7 @@
       },
       "request": {
         "method": "PUT",
-        "url": "Location/ET.R11.Z110.F1"
+        "url": "Location/ET.R1.Z110.F1"
       }
     },
     {
@@ -64,11 +64,11 @@
             "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
-        "id": "ET.R11.Z108.F1",
+        "id": "ET.R1.Z108.F1",
         "name": "Addis Ababa Health Bureau",
         "status": "active",
         "partOf": {
-          "reference": "Location/ET.R11.Z108"
+          "reference": "Location/ET.R1.Z108"
         },
         "managingOrganization": "",
         "type": [
@@ -103,7 +103,7 @@
       },
       "request": {
         "method": "PUT",
-        "url": "Location/ET.R11.Z108.F1"
+        "url": "Location/ET.R1.Z108.F1"
       }
     },
     {
@@ -116,11 +116,11 @@
             "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
-        "id": "ET.R11.Z108.F2",
+        "id": "ET.R1.Z108.F2",
         "name": "Ethiopian Food and Drug Administration",
         "status": "active",
         "partOf": {
-          "reference": "Location/ET.R11.Z108"
+          "reference": "Location/ET.R1.Z108"
         },
         "managingOrganization": "",
         "type": [
@@ -155,7 +155,7 @@
       },
       "request": {
         "method": "PUT",
-        "url": "Location/ET.R11.Z108.F2"
+        "url": "Location/ET.R1.Z108.F2"
       }
     },
     {
@@ -168,11 +168,11 @@
             "http://ihris.org/fhir/StructureDefinition/ihris-facility"
           ]
         },
-        "id": "ET.R11.Z110.F2",
+        "id": "ET.R1.Z110.F2",
         "name": "Federal Ministry of Health",
         "status": "active",
         "partOf": {
-          "reference": "Location/ET.R11.Z110"
+          "reference": "Location/ET.R1.Z110"
         },
         "managingOrganization": "",
         "type": [
@@ -207,7 +207,7 @@
       },
       "request": {
         "method": "PUT",
-        "url": "Location/ET.R11.Z110.F2"
+        "url": "Location/ET.R1.Z110.F2"
       }
     }
   ]

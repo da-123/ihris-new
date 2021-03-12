@@ -7,9 +7,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R1",
         "name": "Addis Ababa",
@@ -48,9 +48,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R2",
         "name": "Afar",
@@ -89,9 +89,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R3",
         "name": "Amhara",
@@ -130,9 +130,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R4",
         "name": "Benishangul-Gumuz",
@@ -171,9 +171,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R5",
         "name": "Dire Dawa",
@@ -212,9 +212,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R6",
         "name": "Gambella",
@@ -253,9 +253,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R7",
         "name": "Harari",
@@ -294,9 +294,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R8",
         "name": "Oromia",
@@ -335,9 +335,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R9",
         "name": "Somali",
@@ -376,9 +376,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R10",
         "name": "Tigray",
@@ -417,9 +417,9 @@
         "resourceType": "Location",
         "meta": {
           "profile": [
-    "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
-    "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
-  ]
+            "http://ihe.net/fhir/StructureDefinition/IHE.mCSD.Location",
+            "http://ihris.org/fhir/StructureDefinition/ihris-jurisdiction"
+          ]
         },
         "id": "ET.R11",
         "name": "SNNP",
