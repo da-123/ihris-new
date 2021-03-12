@@ -1,5 +1,4 @@
-{
-  "resourceType": "Parameters",
+{  "resourceType": "Parameters",
   "id": "ihris-config",
   "meta": {
     "profile": [
@@ -16,11 +15,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-10T08:45:48.204Z",
+        "when": "2021-03-12T08:29:48.323Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "b4kLhQRA4rF97CnhG9mtHwii4odurUSttdLlLcA1YXsSL09oAPIRpUgMtmMz1So91qkOJsV8EDjoaUYH/8uTr7/4tGQQNc36sJCvYzEm7hVr7qbPLRtkt210hCye3oTOqXTkROFt/l3LS6ApzxQ/JjHYurxaBQw2/cbKjmfDuBY="
+        "data": "WwqiEYc6T1lEU+M4hAJeGgrScX0sEjsbCFG3nUV9+tZpT/zCoGYJ6Wi+HRe/P5lNCsx/2nqUoqe8gVkhfZIkuqvSUsqoHMBECQWfJQoiDK+CfhSF3w4h1Wx0ip685fwPmHaYyPPmuUkqsMMYCisWe5NIWlDWHQ8eM9SS76wiy3I="
       }
     },
     {
@@ -84,7 +83,7 @@
         },
         {
           "name": "site:nav:home",
-          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+          "valueString": "/dashboard/b8a724e0-830c-11eb-9fd3-476627971ab7"
         },
         {
           "name": "site:nav:active",
@@ -108,7 +107,7 @@
         },
         {
           "name": "site:nav:menu:dashboard:menu:staff:url",
-          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+          "valueString": "/dashboard/b8a724e0-830c-11eb-9fd3-476627971ab7"
         },
         {
           "name": "site:nav:menu:person:text",
