@@ -66,7 +66,7 @@ Description:    "iHRIS profile of Practitioner."
 * telecom 0..0
 * communication 0..* MS
 * communication ^label = "Language"
-* communication.coding MS
+* communication.coding 0..* MS
 * communication.coding ^label = "Language"
 * communication from IhrisEthiopiaLanguageValueSet
 * communication.extension contains
@@ -88,7 +88,8 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerDrivingLicense named drivingLicense 0..1 MS and
     IhrisPractitionerEmail named ethiopiaEmail 0..1 MS and
     IhrisPractitionerPhone named ethiopiaPhone 0..1 MS and
-    IhrisPractitionerWorkPhone named ethiopiaWorkPhone 0..1 MS
+    IhrisPractitionerWorkPhone named ethiopiaWorkPhone 0..1 MS and
+    IhrisPractitionerDisability named disability 0..* MS
 * extension[familyNames] ^label = "Family Names"
 * extension[familyNames].extension[fathers].valueString MS
 * extension[familyNames].extension[mothers].valueString MS
@@ -125,6 +126,8 @@ Description:    "iHRIS profile of Practitioner."
 * extension[ethiopiaPhone] ^label = "Phone Number"
 * extension[ethiopiaWorkPhone].valueString MS
 * extension[ethiopiaWorkPhone] ^label = "Work Phone Number"
+* extension[disability].valueCoding MS  
+* extension[disability] ^label = "Disability( If exists)"
 
 Extension:      IhrisPractitionerLanguageProficiency
  Id:             ihris-practitioner-language-proficiency
@@ -495,6 +498,17 @@ Title:            "iHRIS Category ValueSet"
 * ^version = "0.3.0"
 * codes from system IhrisCategoryCodeSystem
 
+Extension:      IhrisPractitionerDisability
+Id:             ihris-practitioner-disability
+Title:          "iHRIS Practitioner Disability"
+Description:    "iHRIS extension for Practitioner Disability."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* value[x] only Coding
+* valueCoding 0..1 MS
+* valueCoding ^label = "Disability (If exists)"
+* valueCoding from http://terminology.hl7.org/CodeSystem/v3-PersonDisabilityType (required)
+
 Extension:      IhrisPractitionerMaritalStatus
 Id:             ihris-practitioner-marital-status
 Title:          "iHRIS Practitioner Marital Status"
@@ -763,8 +777,8 @@ Title:            "iHRIS Driving License Type ValueSet"
 CodeSystem:      IhrisLanguageProficiencyCodesystem
 Id:              ihris-language-proficiency-codesystem
 Title:           "Language Proficiency"
-* ^date = "2021-02-12T08:41:04.362Z"
-* ^version = "0.3.1"
+* ^date = "2021-03-12T08:41:04.362Z"
+* ^version = "0.3.2"
 * #excellent "Excellent"
 * #verygood "Very Good" 
 * #good "Good"
@@ -773,8 +787,8 @@ Title:           "Language Proficiency"
 ValueSet:         IhrisLanguageProficiencyValueSet
 Id:               ihris-language-proficiency-valueset
 Title:            "iHRIS Language Proficiency ValueSet"
-* ^date = "2020-11-10T08:41:04.362Z"
-* ^version = "0.3.0"
+* ^date = "2021-03-12T08:41:04.362Z"
+* ^version = "0.3.2"
 * codes from system IhrisLanguageProficiencyCodesystem
 
 CodeSystem:      IhrisLanguageProficiencyTypeCodesystem
