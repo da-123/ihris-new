@@ -16,7 +16,7 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-09T08:36:25.968Z",
+        "when": "2021-03-18T07:49:23.861Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
@@ -84,7 +84,7 @@
         },
         {
           "name": "site:nav:home",
-          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+          "valueString": "/dashboard/b8a724e0-830c-11eb-9fd3-476627971ab7"
         },
         {
           "name": "site:nav:active",
@@ -108,7 +108,7 @@
         },
         {
           "name": "site:nav:menu:dashboard:menu:staff:url",
-          "valueString": "/dashboard/462f6a40-ee23-11ea-a3e2-2bb6a03e200d"
+          "valueString": "/dashboard/b8a724e0-830c-11eb-9fd3-476627971ab7"
         },
         {
           "name": "site:nav:menu:person:text",
@@ -720,7 +720,7 @@
         },
         {
           "name": "site:nav:menu:users:menu:users_search:url",
-          "valueString": "/resource/search/users"
+          "valueString": "/resource/search/user"
         },
         {
           "name": "shortname:Practitioner:format",
@@ -795,6 +795,10 @@
           "valueString": "tree"
         },
         {
+          "name": "defaults:fields:PractitionerRole.location:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
           "name": "defaults:fields:PractitionerRole.location:user_filter:regex",
           "valueString": "related-location=(.+)"
         },
@@ -809,6 +813,38 @@
         {
           "name": "defaults:fields:Practitioner.extension:residence.value[x]:valueReference:initialValue",
           "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:user_filter:regex",
+          "valueString": "related-location=(.+)"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:user_filter:replace",
+          "valueString": "$1"
+        },
+        {
+          "name": "defaults:fields:Person.extension:location.value[x]:valueReference:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Person.extension:location.value[x]:valueReference:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Person.extension:location.value[x]:valueReference:user_filter:regex",
+          "valueString": "related-location=(.+)"
+        },
+        {
+          "name": "defaults:fields:Person.extension:location.value[x]:valueReference:user_filter:replace",
+          "valueString": "$1"
         },
         {
           "name": "workflow:processor:endrole:file",
@@ -913,6 +949,14 @@
         {
           "name": "workflow:questionnaire:award:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-award"
+        },
+        {
+          "name": "workflow:processor:user:file",
+          "valueString": "../modules/workflowUser"
+        },
+        {
+          "name": "workflow:questionnaire:user:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-user"
         }
       ]
     }
