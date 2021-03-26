@@ -11,10 +11,10 @@ Description:    "iHRIS profile of Practitioner."
 
 * identifier MS
 * identifier ^label = "Identifier"
-* identifier ^constraint[0].key = "ihris-search-identifier"
+/* identifier ^constraint[0].key = "ihris-search-identifier"
 * identifier ^constraint[0].severity = #error
-* identifier ^constraint[0].expression = "'Practitioner' | 'identifier' | iif(type.exists(), type & '|' & value, value)"
-* identifier ^constraint[0].human = "The identifier must be unique and another record has this identifier"
+* identifier ^constraint[0].expression = "'Practitioner' | 'identifier' | iif(type.exists(), type.coding.code & '|' & value, value)"
+* identifier ^constraint[0].human = "The identifier must be unique and another record has this identifier"*/
 * identifier.use 0..0
 /* identifier.system 
 * identifier.system ^label = "System"*/
@@ -24,6 +24,7 @@ Description:    "iHRIS profile of Practitioner."
 * identifier.type ^label = "Type"
 * identifier.type.coding MS
 * identifier.type.coding ^label = "Type"
+* identifier.type.coding from IhrisEthiopiaIdentifierValueSet
 * identifier.type from IhrisEthiopiaIdentifierValueSet
 * active 0..1 MS
 * active ^label = "Active"
@@ -68,6 +69,7 @@ Description:    "iHRIS profile of Practitioner."
 * communication ^label = "Language"
 * communication.coding 0..* MS
 * communication.coding ^label = "Language"
+* communication.coding from IhrisEthiopiaLanguageValueSet
 * communication from IhrisEthiopiaLanguageValueSet
 * communication.extension contains
      IhrisPractitionerLanguageProficiency named proficiency 0..* MS
@@ -89,7 +91,8 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerEmail named ethiopiaEmail 0..1 MS and
     IhrisPractitionerPhone named ethiopiaPhone 0..1 MS and
     IhrisPractitionerWorkPhone named ethiopiaWorkPhone 0..1 MS and
-    IhrisPractitionerDisability named disability 0..* MS
+    IhrisPractitionerDisability named disability 0..* MS and
+    IhrisPractitionerAttachments named attachments 0..* MS
 * extension[familyNames] ^label = "Family Names"
 * extension[familyNames].extension[fathers].valueString MS
 * extension[familyNames].extension[mothers].valueString MS
@@ -128,6 +131,9 @@ Description:    "iHRIS profile of Practitioner."
 * extension[ethiopiaWorkPhone] ^label = "Work Phone Number"
 * extension[disability].valueCoding MS  
 * extension[disability] ^label = "Disability( If exists)"
+* extension[attachments] ^label = "Attachments"
+* extension[attachments].extension[details].valueString MS
+* extension[attachments].extension[documents].valueAttachment MS
 
 Extension:      IhrisPractitionerLanguageProficiency
  Id:             ihris-practitioner-language-proficiency
@@ -258,7 +264,7 @@ Description:    "iHRIS extension for Email."
 * valueString 0..1 MS
 * valueString ^constraint[0].key = "ihris-workphone-check"
 * valueString ^constraint[0].severity = #error
-* valueString ^constraint[0].expression = "matches('^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
+* valueString ^constraint[0].expression = "matches('^$|^(([+][2][5][1][1-9][0-9]{8})|([0][1-9][0-9]{8}))')"
 * valueString ^constraint[0].human = "Work Phone Number is not properly formatted."
 
 Extension:      IhrisPractitionerResidence
@@ -537,6 +543,21 @@ Title:            "iHRIS Marital ValueSet"
 * ^date = "2020-11-14T08:41:04.362Z"
 * ^version = "0.3.0"
 * codes from system IhrisEthiopiaMaritalStatusCodeSystem
+
+Extension:      IhrisPractitionerAttachments
+Id:             ihris-practitioner-attachments
+Title:          "iHRIS Practitioner Attachments"
+Description:    "iHRIS extension for Practitioner Attachments."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains documents 0..1 MS and
+    details 0..1 MS
+* extension[details].value[x] only string
+* extension[details].valueString 0..1 MS
+* extension[details].valueString ^label = "Document Name/Details"
+* extension[documents].value[x] only Attachment
+* extension[documents].valueAttachment 0..1 MS
+* extension[documents].valueAttachment ^label = "Document"
 
 Extension:      IhrisPractitionerDependents
 Id:             ihris-practitioner-dependents

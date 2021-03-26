@@ -71,6 +71,20 @@ Title:            "iHRIS leave Type ValueSet"
 * ^version = "0.2.0"
 * codes from system IhrisLeaveTypeCodeSystem
 
+CodeSystem:      IhrisHolidaysCodeSystem
+Id:              ihris-holidays-codesystem
+Title:           "Public Holidays"
+* ^version = "0.2.0"
+* ^property[0].code = #date
+* ^property[0].description = "Date"
+* ^property[0].type = #dateTime
+
+ValueSet:         IhrisHolidaysValueSet
+Id:               ihris-holidays-valueset
+Title:            "Holiday"
+* ^version = "0.2.0"
+* codes from system IhrisHolidaysCodeSystem
+
 Instance:       IhrisPractitionerWorkflowLeave
 InstanceOf:      Questionnaire
 Usage:          #definition
@@ -138,3 +152,22 @@ Usage:          #example
 * extension[section][0].extension[field][2].valueString = "Basic.extension:leave.extension:daysRequested.value[x]:valueInteger"
 * extension[section][0].extension[field][3].valueString = "Basic.extension:leave.extension:period.value[x]:valuePeriod"
 * extension[section][0].extension[field][4].valueString = "Basic.extension:leave.extension:dateRequested.value[x]:valueDate"
+
+Instance:       ihris-page-holidays
+InstanceOf:     IhrisPage
+Title:          "iHRIS Holidays CodeSystem Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-holidays-codesystem)
+* extension[display].extension[search][0].valueString = "Code|code"
+* extension[display].extension[search][1].valueString = "Display|display"
+* extension[display].extension[search][2].valueString = "Date|date"
+* extension[display].extension[field][0].extension[path].valueString = "CodeSystem.code"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Holidays"
+* extension[section][0].extension[description].valueString = "Public Holidays"
+* extension[section][0].extension[name].valueString = "CodeSystem"
+* extension[section][0].extension[field][0].valueString = "CodeSystem.display"
+* extension[section][0].extension[field][1].valueString = "CodeSystem.code"
+* extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+* extension[section][0].extension[field][3].valueString = "CodeSystem.date"

@@ -33,6 +33,11 @@ Description:    "iHRIS profile of Practitioner."
 * location ^label = "Facility/Place Of Work"
 * location only Reference(IhrisFacility)
 * location.reference ^label = "Facility/Place Of Work"
+* organization 0..1 MS
+* organization ^label = "Department/CaseTeam"
+* organization only Reference(IhrisOrganization)
+* organization.reference 0..1
+* organization.reference ^label = "Department/CaseTeam"
 * code 1..1 MS
 * code ^label = "Job"
 * code from IhrisJobEthiopiaValueset (required)
@@ -47,23 +52,23 @@ Description:    "iHRIS profile of Practitioner."
 * period.end obeys ihris-enddate-lessthan-start
 * extension contains
     IhrisPractitionerRoleSalary named salary 0..1 MS and
-    IhrisPractitionerRoleDirectorate named directorate 0..1 MS and
-    IhrisPractitionerRoleCaseTeam named caseteam 0..1 MS and
+    /*IhrisPractitionerRoleDirectorate named directorate 0..1 MS and
+    IhrisPractitionerRoleCaseTeam named caseteam 0..1 MS and*/
     IhrisPractitionerRoleEmploymentStatus named employmentStatus 0..1 MS and
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
     IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS and
     IhrisPractitionerRoleReasonChange named reasonForChange 0..1 MS and
-    IhrisPractitionerRoleSalaryScale named salaryScale 0..1 MS
+    IhrisPractitionerRoleSalaryScale named salaryScale 0..1 MS 
 * extension[salary].valueMoney MS
 * extension[salary] ^label = "Salary"
 * extension[salaryScale].valueCoding MS
 * extension[salaryScale] ^label = "Salary Scale"
-* extension[directorate].valueCoding MS
+/* extension[directorate].valueCoding MS
 * extension[directorate] ^label = "Directorate"
 * extension[caseteam].valueCoding MS
-* extension[caseteam] ^label = "Case Team"
+* extension[caseteam] ^label = "Case Team"*/
 * extension[employmentStatus].valueCoding MS
 * extension[employmentStatus] ^label = "Employment Status"
 * extension[jobType].valueCoding MS
@@ -567,12 +572,12 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "Start Date|PractitionerRole.period.start"
 * extension[display].extension[search][2].valueString = "Practitioner|PractitionerRole.practitioner"
 * extension[display].extension[search][3].valueString = "Facility|PractitionerRole.location"
-* extension[display].extension[search][4].valueString = "Status|PractitionerRole.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-employment-status').valueCoding.display"
+* extension[display].extension[search][4].valueString = "Department/CaseTeam|PractitionerRole.organization"
+* extension[display].extension[search][5].valueString = "Status|PractitionerRole.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-employment-status').valueCoding.display"
 * extension[display].extension[filter][0].valueString = "Job|job|http://ihris.org/fhir/ValueSet/ihris-job-ethiopia"
-* extension[display].extension[filter][1].valueString = "Facility|PractitionerRole.location:location"
-* extension[display].extension[filter][2].valueString = "Directorate|directorate|http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
-* extension[display].extension[filter][3].valueString = "Case Team|caseteam|http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
-* extension[display].extension[filter][4].valueString = "Status|employmentstatus|http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
+* extension[display].extension[filter][1].valueString = "Facility|location"
+* extension[display].extension[filter][2].valueString = "Department/CaseTeam|organization"
+* extension[display].extension[filter][3].valueString = "Status|employmentstatus|http://ihris.org/fhir/ValueSet/ihris-employment-status-valueset"
 * extension[display].extension[field][0].extension[path].valueString = "PractitionerRole.practitioner"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[section][0].extension[title].valueString = "Position"
@@ -581,13 +586,12 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "PractitionerRole.code"
 * extension[section][0].extension[field][1].valueString = "PractitionerRole.practitioner"
 * extension[section][0].extension[field][2].valueString = "PractitionerRole.location"
-* extension[section][0].extension[field][3].valueString = "PractitionerRole.extension:directorate.value[x]:valueCoding.display"
-* extension[section][0].extension[field][4].valueString = "PractitionerRole.extension:caseteam.value[x]:valueCoding.display"
-* extension[section][0].extension[field][5].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
-* extension[section][0].extension[field][6].valueString = "PractitionerRole.period"
-* extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding.display"
-* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
-* extension[section][0].extension[field][9].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
+* extension[section][0].extension[field][3].valueString = "PractitionerRole.organization"
+* extension[section][0].extension[field][4].valueString = "PractitionerRole.extension:firstEmploymentDate.value[x]:valueDate"
+* extension[section][0].extension[field][5].valueString = "PractitionerRole.period"
+* extension[section][0].extension[field][6].valueString = "PractitionerRole.extension:jobType.value[x]:valueCoding.display"
+* extension[section][0].extension[field][7].valueString = "PractitionerRole.extension:salaryScale.value[x]:valueCoding.display"
+* extension[section][0].extension[field][8].valueString = "PractitionerRole.extension:salary.value[x]:valueMoney.display"
 
 Instance:       IhrisPractitionerWorkflowEndRole
 InstanceOf:     IhrisQuestionnaire
@@ -709,18 +713,9 @@ Usage:          #definition
 * item[0].item[1].item[5].required = true
 * item[0].item[1].item[5].repeats = false
 
-* item[0].item[1].item[6].linkId = "PractitionerRole.extension[5]"
-* item[0].item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:directorate.value[x]:valueCoding"
-* item[0].item[1].item[6].text = "Directorate"
-* item[0].item[1].item[6].type = #choice
-* item[0].item[1].item[6].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-directorate-valueset"
-* item[0].item[1].item[6].required = true
+* item[0].item[1].item[6].linkId = "PractitionerRole.organization"
+* item[0].item[1].item[6].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.organization"
+* item[0].item[1].item[6].text = "Directorate/Department/CaseTeam"
+* item[0].item[1].item[6].type = #reference
+* item[0].item[1].item[6].required = false
 * item[0].item[1].item[6].repeats = false
-
-* item[0].item[1].item[7].linkId = "PractitionerRole.extension[6]"
-* item[0].item[1].item[7].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:caseteam.value[x]:valueCoding"
-* item[0].item[1].item[7].text = "Case Team"
-* item[0].item[1].item[7].type = #choice
-* item[0].item[1].item[7].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-caseteam-valueset"
-* item[0].item[1].item[7].required = true
-* item[0].item[1].item[7].repeats = false

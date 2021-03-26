@@ -242,6 +242,7 @@ Usage:          #example
 * extension[section][10].extension[description].valueString = "Remarks or Notes "
 * extension[section][10].extension[name].valueString = "remarks"
 * extension[section][10].extension[field][0].valueString = "Practitioner.extension:remarkNote"
+* extension[section][10].extension[field][1].valueString = "Practitioner.extension:attachments"
 * extension[section][11].extension[title].valueString = "Current Job Positions"
 * extension[section][11].extension[description].valueString = "Position the person holds"
 * extension[section][11].extension[name].valueString = "position"
@@ -582,8 +583,9 @@ Usage:          #example
 * extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-job-ethiopia)
 * extension[display].extension[search][0].valueString = "Code|code"
 * extension[display].extension[search][1].valueString = "Display|display"
-* extension[display].extension[search][2].valueString = "Cadre|cadre"
-* extension[display].extension[search][3].valueString = "Classification|classification"
+* extension[display].extension[search][2].valueString = "Display Amharic |amharic"
+* extension[display].extension[search][3].valueString = "Cadre|cadre"
+* extension[display].extension[search][4].valueString = "Classification|classification"
 * extension[display].extension[field][0].extension[path].valueString = "CodeSystem.code"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[section][0].extension[title].valueString = "Job"
@@ -592,11 +594,10 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "CodeSystem.code"
 * extension[section][0].extension[field][1].valueString = "CodeSystem.definition"
 * extension[section][0].extension[field][2].valueString = "CodeSystem.display"
-* extension[section][0].extension[field][3].valueString = "CodeSystem.cadre"
-* extension[section][0].extension[field][4].valueString = "CodeSystem.classification"
-* extension[section][0].extension[field][5].valueString = "CodeSystem.salary-grade"
-/* extension[section][0].extension[field][6].valueString = "CodeSystem.designation[0].language"
-* extension[section][0].extension[field][7].valueString = "CodeSystem.designation[0].value"*/
+* extension[section][0].extension[field][3].valueString = "CodeSystem.amharic"
+* extension[section][0].extension[field][4].valueString = "CodeSystem.cadre"
+* extension[section][0].extension[field][5].valueString = "CodeSystem.classification"
+* extension[section][0].extension[field][6].valueString = "CodeSystem.salary-grade"
 
 Instance:       ihris-page-identifier
 InstanceOf:     IhrisPage

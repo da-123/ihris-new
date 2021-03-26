@@ -16,7 +16,7 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-18T07:49:23.861Z",
+        "when": "2021-03-26T10:01:45.360Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
@@ -180,35 +180,27 @@
         },
         {
           "name": "site:nav:menu:location:menu:location_search:text",
-          "valueString": "Search Locations"
+          "valueString": "Locations"
         },
         {
           "name": "site:nav:menu:location:menu:location_search:url",
           "valueString": "/resource/search/location"
         },
         {
-          "name": "site:nav:menu:location:menu:location_add:text",
-          "valueString": "Add Location"
-        },
-        {
-          "name": "site:nav:menu:location:menu:location_add:url",
-          "valueString": "/resource/add/location"
-        },
-        {
           "name": "site:nav:menu:location:menu:facility_search:text",
-          "valueString": "Search Facilities"
+          "valueString": "Facilities"
         },
         {
           "name": "site:nav:menu:location:menu:facility_search:url",
           "valueString": "/resource/search/facility"
         },
         {
-          "name": "site:nav:menu:location:menu:facility_add:text",
-          "valueString": "Add Facility"
+          "name": "site:nav:menu:location:menu:organization_search:text",
+          "valueString": "Departments/CaseTeams"
         },
         {
-          "name": "site:nav:menu:location:menu:facility_add:url",
-          "valueString": "/resource/add/facility"
+          "name": "site:nav:menu:location:menu:organization_search:url",
+          "valueString": "/resource/search/organization"
         },
         {
           "name": "site:nav:menu:database:text",
@@ -295,30 +287,6 @@
           "valueString": "6"
         },
         {
-          "name": "site:nav:menu:database:menu:directorate:text",
-          "valueString": "Directorates"
-        },
-        {
-          "name": "site:nav:menu:database:menu:directorate:url",
-          "valueString": "/resource/search/directorate"
-        },
-        {
-          "name": "site:nav:menu:database:menu:directorate:order",
-          "valueString": "7"
-        },
-        {
-          "name": "site:nav:menu:database:menu:caseteam:text",
-          "valueString": "Case Teams"
-        },
-        {
-          "name": "site:nav:menu:database:menu:caseteam:url",
-          "valueString": "/resource/search/caseteam"
-        },
-        {
-          "name": "site:nav:menu:database:menu:caseteam:order",
-          "valueString": "8"
-        },
-        {
           "name": "site:nav:menu:database:menu:job-type:text",
           "valueString": "Job Type"
         },
@@ -328,7 +296,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job-type:order",
-          "valueString": "9"
+          "valueString": "7"
         },
         {
           "name": "site:nav:menu:database:menu:job:text",
@@ -340,7 +308,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:job:order",
-          "valueString": "10"
+          "valueString": "8"
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:text",
@@ -352,7 +320,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:employment-status:order",
-          "valueString": "11"
+          "valueString": "9"
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:text",
@@ -364,7 +332,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:reason-departure:order",
-          "valueString": "12"
+          "valueString": "10"
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:text",
@@ -376,7 +344,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:educational-major:order",
-          "valueString": "13"
+          "valueString": "11"
         },
         {
           "name": "site:nav:menu:database:menu:training-type:text",
@@ -388,7 +356,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:training-type:order",
-          "valueString": "14"
+          "valueString": "12"
         },
         {
           "name": "site:nav:menu:database:menu:skill:text",
@@ -400,7 +368,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:skill:order",
-          "valueString": "15"
+          "valueString": "13"
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:text",
@@ -412,7 +380,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:leave-type:order",
-          "valueString": "16"
+          "valueString": "14"
         },
         {
           "name": "site:nav:menu:database:menu:degree:text",
@@ -424,7 +392,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:degree:order",
-          "valueString": "17"
+          "valueString": "15"
         },
         {
           "name": "site:nav:menu:database:menu:education-level:text",
@@ -436,7 +404,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:education-level:order",
-          "valueString": "18"
+          "valueString": "16"
         },
         {
           "name": "site:nav:menu:database:menu:institution-type:text",
@@ -448,7 +416,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:institution-type:order",
-          "valueString": "19"
+          "valueString": "17"
         },
         {
           "name": "site:nav:menu:database:menu:institution:text",
@@ -460,7 +428,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:institution:order",
-          "valueString": "20"
+          "valueString": "18"
         },
         {
           "name": "site:nav:menu:database:menu:prefix:text",
@@ -472,7 +440,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:prefix:order",
-          "valueString": "21"
+          "valueString": "19"
         },
         {
           "name": "site:nav:menu:database:menu:gender:text",
@@ -484,7 +452,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:gender:order",
-          "valueString": "22"
+          "valueString": "20"
         },
         {
           "name": "site:nav:menu:database:menu:marital-status:text",
@@ -496,7 +464,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:marital-status:order",
-          "valueString": "23"
+          "valueString": "21"
         },
         {
           "name": "site:nav:menu:database:menu:profession:text",
@@ -508,7 +476,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:profession:order",
-          "valueString": "24"
+          "valueString": "22"
         },
         {
           "name": "site:nav:menu:database:menu:disciplineaction:text",
@@ -520,7 +488,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:disciplineaction:order",
-          "valueString": "25"
+          "valueString": "23"
         },
         {
           "name": "site:nav:menu:database:menu:salaryladder:text",
@@ -532,7 +500,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:salaryladder:order",
-          "valueString": "26"
+          "valueString": "24"
         },
         {
           "name": "site:nav:menu:database:menu:salarystep:text",
@@ -544,7 +512,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:salarystep:order",
-          "valueString": "27"
+          "valueString": "25"
         },
         {
           "name": "site:nav:menu:database:menu:salarysource:text",
@@ -556,7 +524,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:salarysource:order",
-          "valueString": "28"
+          "valueString": "26"
         },
         {
           "name": "site:nav:menu:database:menu:frequency:text",
@@ -568,7 +536,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:frequency:order",
-          "valueString": "29"
+          "valueString": "27"
         },
         {
           "name": "site:nav:menu:database:menu:profession:text",
@@ -580,7 +548,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:profession:order",
-          "valueString": "30"
+          "valueString": "28"
         },
         {
           "name": "site:nav:menu:database:menu:profession-category:text",
@@ -592,7 +560,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:profession-category:order",
-          "valueString": "31"
+          "valueString": "29"
         },
         {
           "name": "site:nav:menu:database:menu:profession-subcategory:text",
@@ -604,7 +572,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:profession-subcategory:order",
-          "valueString": "32"
+          "valueString": "30"
         },
         {
           "name": "site:nav:menu:database:menu:profession-subsubcategory:text",
@@ -616,7 +584,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:profession-subsubcategory:order",
-          "valueString": "33"
+          "valueString": "31"
         },
         {
           "name": "site:nav:menu:database:menu:education-category:text",
@@ -628,7 +596,7 @@
         },
         {
           "name": "site:nav:menu:database:menu:education-category:order",
-          "valueString": "34"
+          "valueString": "32"
         },
         {
           "name": "site:nav:menu:database:menu:education-subcategory:text",
@@ -640,7 +608,19 @@
         },
         {
           "name": "site:nav:menu:database:menu:education-subcategory:order",
-          "valueString": "35"
+          "valueString": "33"
+        },
+        {
+          "name": "site:nav:menu:database:menu:holidays:text",
+          "valueString": "Public Holidays"
+        },
+        {
+          "name": "site:nav:menu:database:menu:holidays:url",
+          "valueString": "/resource/search/holidays"
+        },
+        {
+          "name": "site:nav:menu:database:menu:holidays:order",
+          "valueString": "34"
         },
         {
           "name": "site:nav:menu:reports:text",
@@ -767,6 +747,22 @@
           "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-basic-name').valueString"
         },
         {
+          "name": "shortname:CodeSystem:format",
+          "valueString": "%s,(%s)"
+        },
+        {
+          "name": "shortname:CodeSystem:order",
+          "valueString": "name,amharic"
+        },
+        {
+          "name": "shortname:CodeSystem:paths:name:fhirpath",
+          "valueString": "CodeSystem.where(id='ihris-job-ethiopia').display"
+        },
+        {
+          "name": "shortname:CodeSystem:paths:amharic:fhirpath",
+          "valueString": "CodeSystem.where(id='ihris-job-ethiopia').property.where(code='amharic').valueString"
+        },
+        {
           "name": "defaults:components:date-time:minValueDateTime",
           "valueString": "1920-01-01"
         },
@@ -789,6 +785,14 @@
         {
           "name": "defaults:components:date:calendar",
           "valueString": "Ethiopian"
+        },
+        {
+          "name": "defaults:fields:Organization.partOf:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:PractitionerRole.organization:type",
+          "valueString": "tree"
         },
         {
           "name": "defaults:fields:PractitionerRole.location:type",
@@ -845,6 +849,22 @@
         {
           "name": "defaults:fields:Person.extension:location.value[x]:valueReference:user_filter:replace",
           "valueString": "$1"
+        },
+        {
+          "name": "defaults:fields:Basic.extension:collateral.extension:location.value[x]:valueReference:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Basic.extension:collateral.extension:location.value[x]:valueReference:initialValue",
+          "valueString": "Location/ET"
+        },
+        {
+          "name": "defaults:fields:Basic.extension:emergency.extension:location.value[x]:valueReference:type",
+          "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Basic.extension:emergency.extension:location.value[x]:valueReference:initialValue",
+          "valueString": "Location/ET"
         },
         {
           "name": "workflow:processor:endrole:file",

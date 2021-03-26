@@ -11,8 +11,8 @@ Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension[educationHistory].extension[institution].valueCoding ^label = "Institution"
 * extension[educationHistory].extension[level].valueCoding ^label = "Education Level"
 * extension[educationHistory].extension[level].valueCoding 1..1 MS
-* extension[educationHistory].extension[degree].valueCoding ^label = "Educational Background/Carrier"
-* extension[educationHistory].extension[degree].valueCoding 1..1 MS
+/* extension[educationHistory].extension[degree].valueCoding ^label = "Educational Background/Carrier"
+* extension[educationHistory].extension[degree].valueCoding 1..1 MS*/
 * extension[educationHistory].extension[educationalMajor].valueCoding ^label = "Educational Major"
 * extension[educationHistory].extension[educationalMajor].valueCoding 0..1 MS
 * extension[educationHistory].extension[year].valueDate ^label = "Year Of Graduation"
@@ -26,7 +26,7 @@ Title:          "Education History details"
 * extension contains
       institution 1..1 MS and
       level 1..1 MS and
-      degree 1..1 MS and
+      /*degree 1..1 MS and*/
       educationalMajor 0..1 MS and
       year 0..1 MS and
       current 0..1 MS
@@ -36,9 +36,9 @@ Title:          "Education History details"
 * extension[level].value[x] only Coding
 * extension[level].valueCoding ^label = "Education Level"
 * extension[level].valueCoding from IhrisEducationLevelValueSet (required)
-* extension[degree].value[x] only Coding
+/* extension[degree].value[x] only Coding
 * extension[degree].valueCoding ^label = "Educational Background/Carrier"
-* extension[degree].valueCoding from IhrisDegreeValueSet (required)
+* extension[degree].valueCoding from IhrisDegreeValueSet (required)*/
 * extension[educationalMajor].value[x] only Coding
 * extension[educationalMajor].valueCoding ^label = "Educational Major"
 * extension[educationalMajor].valueCoding from IhrisEducationalMajorValueSet (required)
@@ -336,31 +336,31 @@ Usage:          #definition
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
-* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
+/* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "Educational Background/Carrier"
 * item[0].item[2].type = #choice
 * item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-degree-valueset"
 * item[0].item[2].required = true
+* item[0].item[2].repeats = false*/
+
+* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
+* item[0].item[2].text = "Education Major"
+* item[0].item[2].type = #choice
+* item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-educational-major-valueset"
+* item[0].item[2].required = false
 * item[0].item[2].repeats = false
 
-* item[0].item[3].linkId = "Basic.extension[0].extension[3]"
-* item[0].item[3].text = "Education Major"
-* item[0].item[3].type = #choice
-* item[0].item[3].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-educational-major-valueset"
+* item[0].item[3].linkId = "Basic.extension[0].extension[3]#year"
+* item[0].item[3].text = "Year Of Graduation"
+* item[0].item[3].type = #date
 * item[0].item[3].required = false
 * item[0].item[3].repeats = false
 
-* item[0].item[4].linkId = "Basic.extension[0].extension[4]#year"
-* item[0].item[4].text = "Year Of Graduation"
-* item[0].item[4].type = #date
+* item[0].item[4].linkId = "Basic.extension[0].extension[4]"
+* item[0].item[4].text = "Is Current?"
+* item[0].item[4].type = #boolean
 * item[0].item[4].required = false
 * item[0].item[4].repeats = false
-
-* item[0].item[5].linkId = "Basic.extension[0].extension[5]"
-* item[0].item[5].text = "Is Current?"
-* item[0].item[5].type = #boolean
-* item[0].item[5].required = false
-* item[0].item[5].repeats = false
 
 Instance:       ihris-page-basic-education-history
 InstanceOf:     IhrisPage
@@ -380,10 +380,10 @@ Usage:          #example
 * extension[display].extension[link][1].extension[url].valueUrl = "/questionnaire/ihris-education-history/basic-education-history?practitioner=FIELD"
 * extension[display].extension[search][0].valueString = "Practitioner|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[display].extension[search][1].valueString = "Institution|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueReference.reference"
-* extension[display].extension[search][2].valueString = "Degree|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding.display"
-* extension[display].extension[search][3].valueString = "Level|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='level').valueCoding.display"
-* extension[display].extension[search][4].valueString = "Educational Major|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='educationalMajor').valueCoding.display"
-* extension[display].extension[search][5].valueString = "Year|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
+/* extension[display].extension[search][2].valueString = "Degree|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding.display"*/
+* extension[display].extension[search][2].valueString = "Level|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='level').valueCoding.display"
+* extension[display].extension[search][3].valueString = "Educational Major|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='educationalMajor').valueCoding.display"
+* extension[display].extension[search][4].valueString = "Year|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='year').valueDate"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[field][1].extension[path].valueString = "Basic.extension:educationHistory.extension:year.value[x]:valueDate"
@@ -394,9 +394,9 @@ Usage:          #example
 * extension[section][0].extension[field][0].valueString = "extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "extension:educationHistory.extension:institution.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "extension:educationHistory.extension:level.value[x]:valueCoding"
-* extension[section][0].extension[field][3].valueString = "extension:educationHistory.extension:degree.value[x]:valueCoding"
-* extension[section][0].extension[field][4].valueString = "extension:educationHistory.extension:educationalMajor.value[x]:valueCoding"
-* extension[section][0].extension[field][5].valueString = "extension:educationHistory.extension:year.value[x]:valueDate"
+/* extension[section][0].extension[field][3].valueString = "extension:educationHistory.extension:degree.value[x]:valueCoding"*/
+* extension[section][0].extension[field][3].valueString = "extension:educationHistory.extension:educationalMajor.value[x]:valueCoding"
+* extension[section][0].extension[field][4].valueString = "extension:educationHistory.extension:year.value[x]:valueDate"
 
 
 Instance:       ihris-page-institution

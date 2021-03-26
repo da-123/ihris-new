@@ -35,6 +35,7 @@ const workflowPromotionEthiopia = {
             req.body.subject = { reference: resource.practitioner.reference }
           }
           let extensions = []
+          let roleorganization = {}
           if ( req.body.item[0].item[1].item[1].linkId === "PractitionerRole.extension[4]" 
             && req.body.item[0].item[1].item[1].answer 
             && req.body.item[0].item[1].item[1].answer[0] 
@@ -70,19 +71,11 @@ const workflowPromotionEthiopia = {
               extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-type",
               valueCoding:req.body.item[0].item[1].item[5].answer[0].valueCoding })
           }
-          if ( req.body.item[0].item[1].item[6].linkId === "PractitionerRole.extension[5]" 
+          if ( req.body.item[0].item[1].item[6].linkId === "PractitionerRole.organization" 
             && req.body.item[0].item[1].item[6].answer 
             && req.body.item[0].item[1].item[6].answer[0] 
-            && req.body.item[0].item[1].item[6].answer[0].valueCoding){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-directorate",
-              valueCoding:req.body.item[0].item[1].item[6].answer[0].valueCoding })
-          }
-          if ( req.body.item[0].item[1].item[7].linkId === "PractitionerRole.extension[6]" 
-            && req.body.item[0].item[1].item[7].answer 
-            && req.body.item[0].item[1].item[7].answer[0] 
-            && req.body.item[0].item[1].item[7].answer[0].valueCoding){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-caseteam",
-              valueCoding:req.body.item[0].item[1].item[7].answer[0].valueCoding })
+            && req.body.item[0].item[1].item[6].answer[0].valueReference){
+             roleorganization.push({ reference: req.body.item[0].item[1].item[6].answer[0].valueReference.reference})
           }
           let data = resource.extension
           function getExtension(url) {
@@ -103,6 +96,7 @@ const workflowPromotionEthiopia = {
             },
             practitioner: { reference: resource.practitioner.reference },
             location:[ req.body.item[0].item[1].item[3].answer[0].valueReference],
+            organization: roleorganization ,
             code: [
               { coding: [ req.body.item[0].item[1].item[0].answer[0].valueCoding ] }
             ],

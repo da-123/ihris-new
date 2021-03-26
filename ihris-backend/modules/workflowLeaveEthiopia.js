@@ -15,8 +15,6 @@ const workflowLeaveEthiopia = {
           type: "transaction",
           entry: []
         }
-        //let params = new URLSearchParams()
-        //params.append( "practitioner", req.query.practitioner )
         resource = await fhirAxios.read( "Practitioner", req.query.practitioner )
         if ( req.body && req.body.item 
           && req.body.item && req.body.item[0].linkId === "Basic"
@@ -98,23 +96,27 @@ const workflowLeaveEthiopia = {
             let leaveStockDays
             for( let entry of leaveStockbundle.entry ) {
               if ( entry.resource.resourceType === "Basic" ) {
-                //winston.info("RESOURCE" + JSON.stringify( entry.resource,null,2))
                 try {
                   try{
                     leaveStockDays = entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString
                   } catch(err){
-                    winston.error("Error Getting Leave Stock days "+ leaveStockDays)
-                    return undefined
+                    winston.error("Error Getting Leave Stock days ")
+                    resolve(await workflowLeaveEthiopia.outcome("Error Getting Leave Stock days"))
                   } 
                   let leaveStockDaysNum  = Number(leaveStockDays)
                   let requestedDaysNum =  Number(requestedDays)
                   let newleaveStockDays = leaveStockDaysNum - requestedDaysNum
                   try{
-                    entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
+                    if (isNaN(newleaveStockDays) && newleaveStockDays > 0){
+                      entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
+                    } else {
+                      winston.info("Leave Stock is less that Zero")
+                      resolve(await workflowLeaveEthiopia.outcome("Calculated Leave stock is less than zero (" +newleaveStockDays+"). Please adjust dates"))
+                    }
                   } catch(err){
-                    winston.info(JSON.stringify( entry,null,2))
+                    //winston.info(JSON.stringify( entry,null,2))
                     winston.error("Error Saving Leave Stock days "+ newleaveStockDays)
-                    return undefined
+                    reject(err)
                   }
                   bundle.entry.push( {
                     resource: entry.resource,
@@ -125,12 +127,15 @@ const workflowLeaveEthiopia = {
                   } )
                 } catch( err ) {
                   winston.error("Error updating Leave Stock Basic/"+ entry.resource.id)
-                  return undefined
+                  reject(err)
                 }
               }
             } 
           } else {
-            let extensions = []
+            resolve(await workflowLeaveEthiopia.outcome("No Leave Stock Data What should system do for this leave type. Please enter leave sock data first"))
+            //No Leave Stock Data What should system do.
+            // Send feedback error saying not leaveStock Data? or just save negative Values.
+            /*let extensions = []
             let complexExt = []
             if (req.query.practitioner) {
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference",
@@ -181,7 +186,7 @@ const workflowLeaveEthiopia = {
                     url: "Basic"
                   }
                 })
-              }
+              }*/
             }
             resolve(bundle)
             /*results = await fhirAxios.create( bundle )
@@ -207,6 +212,31 @@ const workflowLeaveEthiopia = {
           req.body.meta.tag.push( { system: "http://ihris.org/fhir/tags/resource", code: results.entry[0].response.location } )
           resolve( req )
         }
+    })
+  },
+  outcome: (message) => {
+    return new Promise ((resolve, reject ) => {
+      let outcomeBundle = {
+        resourceType: "Bundle",
+        type: "transaction",
+        entry: [{
+          resource:{
+            resourceType: "OperationOutcome",
+            issue: [
+            {
+              severity: "error",
+              code: "exception",
+              diagnostics: message
+            }]
+          },
+          request: {
+            method: "POST",
+            url: "OperationOutcome"
+          }
+        }]
+      }
+      winston.info(JSON.stringify(outcomeBundle,null,2))
+      resolve(outcomeBundle)
     })
   }
 }

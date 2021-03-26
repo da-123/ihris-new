@@ -173,7 +173,7 @@ const workflowEmergency = {
           reject("Invalid input")
         }
       } ).catch( (err) => {
-        winston.error(err)
+        winston.error(err.message)
         reject(err)
       } )
     } )

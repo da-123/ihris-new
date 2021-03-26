@@ -34,14 +34,14 @@ const workflowEducationHistory = {
                 complexExt.push({ url: "institution",
                 valueCoding: req.body.item[0].item[0].answer[0].valueCoding })
             }
-            if ( req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
+            /*if ( req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
                 && req.body.item[0].item[2].answer 
                 && req.body.item[0].item[2].answer[0] 
                 && req.body.item[0].item[2].answer[0].valueCoding){
                 complexExt.push({ url: "degree",
                 valueCoding: req.body.item[0].item[2].answer[0].valueCoding
                             })
-            }
+            }*/
             if ( req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                 && req.body.item[0].item[1].answer 
                 && req.body.item[0].item[1].answer[0] 
@@ -49,26 +49,26 @@ const workflowEducationHistory = {
                 complexExt.push({ url: "level",
                 valueCoding:req.body.item[0].item[1].answer[0].valueCoding })
             } 
+            if ( req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
+                && req.body.item[0].item[2].answer 
+                && req.body.item[0].item[2].answer[0] 
+                && req.body.item[0].item[2].answer[0].valueCoding){
+                complexExt.push({ url: "educationalMajor",
+                valueCoding:req.body.item[0].item[2].answer[0].valueCoding })
+            }
             if ( req.body.item[0].item[3].linkId === "Basic.extension[0].extension[3]" 
                 && req.body.item[0].item[3].answer 
                 && req.body.item[0].item[3].answer[0] 
-                && req.body.item[0].item[3].answer[0].valueCoding){
-                complexExt.push({ url: "educationalMajor",
-                valueCoding:req.body.item[0].item[3].answer[0].valueCoding })
+                && req.body.item[0].item[3].answer[0].valueDate){
+                complexExt.push({ url: "year",
+                valueDate:req.body.item[0].item[3].answer[0].valueDate })
             }
             if ( req.body.item[0].item[4].linkId === "Basic.extension[0].extension[4]" 
                 && req.body.item[0].item[4].answer 
                 && req.body.item[0].item[4].answer[0] 
-                && req.body.item[0].item[4].answer[0].valueDate){
-                complexExt.push({ url: "year",
-                valueDate:req.body.item[0].item[4].answer[0].valueDate })
-            }
-            if ( req.body.item[0].item[5].linkId === "Basic.extension[0].extension[5]" 
-                && req.body.item[0].item[5].answer 
-                && req.body.item[0].item[5].answer[0] 
-                && req.body.item[0].item[5].answer[0].valueBoolean){
+                && req.body.item[0].item[4].answer[0].valueBoolean){
                 complexExt.push({ url: "current",
-                valueBoolean: req.body.item[0].item[5].answer[0].valueBoolean })
+                valueBoolean: req.body.item[0].item[4].answer[0].valueBoolean })
             }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-education-history",

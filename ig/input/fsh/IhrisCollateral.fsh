@@ -235,7 +235,7 @@ Usage:          #definition
 * item[0].item[8].repeats = false
 * item[0].item[8].extension[constraint].extension[key].valueId = "ihris-work-email-check"
 * item[0].item[8].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)'"
+* item[0].item[8].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
 * item[0].item[8].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[9].linkId = "Basic.extension[0].extension[9]"
@@ -245,7 +245,7 @@ Usage:          #definition
 * item[0].item[9].repeats = false
 * item[0].item[9].extension[constraint].extension[key].valueId = "ihris-other-email-check"
 * item[0].item[9].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)'"
+* item[0].item[9].extension[constraint].extension[expression].valueString = "matches('^$|^([0-9a-zA-Z_.]+@([0-9a-zA-Z]+[.])+[a-zA-Z]{2,4}$)')"
 * item[0].item[9].extension[constraint].extension[human].valueString = "Email Address is not properly formatted."
 
 * item[0].item[10].linkId = "Basic.extension[0].extension[10]"
