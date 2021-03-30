@@ -383,7 +383,7 @@ Usage:          #example
 * extension[section][15].extension[resource].extension[column][5].extension[header].valueString = "Actions"
 * extension[section][15].extension[resource].extension[column][5].extension[field].valueString = "_action"
 * extension[section][15].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-performance/performance?practitioner=FHIRID"
-* extension[section][15].extension[resource].extension[action][0].extension[text].valueString = "Add Perfromamce Evaluation"
+* extension[section][15].extension[resource].extension[action][0].extension[text].valueString = "Add Performance Evaluation"
 * extension[section][15].extension[resource].extension[action][0].extension[row].valueBoolean = false
 * extension[section][15].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
 * extension[section][15].extension[resource].extension[action][0].extension[class].valueString = "primary"
@@ -555,7 +555,7 @@ Usage:          #example
 * extension[section][22].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-award)
 * extension[section][22].extension[resource].extension[searchfield].valueString = "practitioner"
 * extension[section][22].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
-* extension[section][22].extension[resource].extension[column][0].extension[header].valueString = "Title Of Ward"
+* extension[section][22].extension[resource].extension[column][0].extension[header].valueString = "Title Of Award"
 * extension[section][22].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='award').valueString"
 * extension[section][22].extension[resource].extension[column][1].extension[header].valueString = "Date of Award"
 * extension[section][22].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-award').extension.where(url='date').valueDate"

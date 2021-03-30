@@ -1333,7 +1333,7 @@ Usage:          #definition
 
 * item[8].linkId = "PractitionerRole"
 * item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description"
-* item[8].text = "Position Informatiom|Health worker position informatiom"
+* item[8].text = "Position Information|Health worker position Information"
 * item[8].type = #group
 * item[8].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
 * item[8].extension[constraint][0].extension[severity].valueCode = #error
