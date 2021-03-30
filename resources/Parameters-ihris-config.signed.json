@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-26T11:58:55.995Z",
+        "when": "2021-03-30T09:44:09.124Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "w+JVt0rHJmOos7+OuztcXKJGCteq2Xp4/NtSAEl9HoRfXrtco02K9JATOpzPwRo4dtYRIzZnKCNC0dqJxr5cBTNXhS9E75+Ud8tULQ5r6jThPLr9jRpyNuA+AanHBpey768SmRtZOo+8lwZXx//EWq+X5wSy7NK54f73vW3SD4w="
+        "data": "2/usz4FhDoV1onRG+ujcgu0m2KBF3mtStzAlQh4snIOtMT0dmOkLz6fak12+OzpJe9vJS+qLaXMGZZnXugm4befvOQ1bC/PD/lE93AgpRYbXKzxrjQGUQtYCEnFmqI4Fm1g3EE+k2WzjF8H5pxqccMscFbwEI4bFPrIqGqTuKXI="
       }
     },
     {
@@ -623,6 +623,18 @@
           "valueString": "34"
         },
         {
+          "name": "site:nav:menu:database:menu:relation:text",
+          "valueString": "Relationship Types"
+        },
+        {
+          "name": "site:nav:menu:database:menu:relation:url",
+          "valueString": "/resource/search/relation"
+        },
+        {
+          "name": "site:nav:menu:database:menu:relation:order",
+          "valueString": "35"
+        },
+        {
           "name": "site:nav:menu:reports:text",
           "valueString": "Reports"
         },
@@ -745,22 +757,6 @@
         {
           "name": "shortname:Basic:paths:name:fhirpath",
           "valueString": "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-basic-name').valueString"
-        },
-        {
-          "name": "shortname:CodeSystem:format",
-          "valueString": "%s,(%s)"
-        },
-        {
-          "name": "shortname:CodeSystem:order",
-          "valueString": "name,amharic"
-        },
-        {
-          "name": "shortname:CodeSystem:paths:name:fhirpath",
-          "valueString": "CodeSystem.where(id='ihris-job-ethiopia').display"
-        },
-        {
-          "name": "shortname:CodeSystem:paths:amharic:fhirpath",
-          "valueString": "CodeSystem.where(id='ihris-job-ethiopia').property.where(code='amharic').valueString"
         },
         {
           "name": "defaults:components:date-time:minValueDateTime",

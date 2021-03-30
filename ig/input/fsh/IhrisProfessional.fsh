@@ -21,6 +21,12 @@ Description:    "iHRIS Profile of the Basic resource for Professional."
 * extension[professional].extension[profession_sub_category].valueCoding MS
 * extension[professional].extension[profession_sub_sub_category].valueCoding ^label = "Profession Sub Sub Category"
 * extension[professional].extension[profession_sub_sub_category].valueCoding MS
+* extension[professional].extension[license_number].valueString ^label = "License Number"
+* extension[professional].extension[license_number].valueString MS
+* extension[professional].extension[issue_date].valueDate ^label = "Issue Date"
+* extension[professional].extension[issue_date].valueDate MS
+* extension[professional].extension[expiry_date].valueDate ^label = "Expiry Date"
+* extension[professional].extension[expiry_date].valueDate MS
 * extension[professional].extension[remark].valueString ^label = "Remarks"
 * extension[professional].extension[remark].valueString MS
     
@@ -34,6 +40,9 @@ Title:          "Professional details"
       profession_category 0..1 MS and
       profession_sub_category 0..1 MS and
       profession_sub_sub_category 0..1 MS and
+      license_number 0..1 MS and
+      issue_date 0..1 MS and
+      expiry_date 0..1 MS and
       remark 0..1 MS
 * extension[education_category].value[x] only Coding
 * extension[education_category].valueCoding ^label = "Education Level Category"
@@ -53,6 +62,12 @@ Title:          "Professional details"
 * extension[profession_sub_sub_category].value[x] only Coding
 * extension[profession_sub_sub_category].valueCoding ^label = "Profession Sub Sub Category"
 * extension[profession_sub_sub_category].valueCoding from IhrisProfessionSubSubCategoryValueSet (required)
+* extension[license_number].value[x] only string
+* extension[license_number].valueString ^label = "License Number"
+* extension[issue_date].value[x] only date
+* extension[issue_date].valueDate ^label = "Issue Date"
+* extension[expiry_date].value[x] only date
+* extension[expiry_date].valueDate ^label = "Expiry Date"
 * extension[remark].value[x] only string
 * extension[remark].valueString ^label = "Remarks"
 
@@ -149,6 +164,11 @@ Usage:          #definition
 * item[0].linkId = "Basic"
 * item[0].text = "Professional License Category"
 * item[0].type = #group
+* item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
+* item[0].extension[constraint].extension[severity].valueCode = #error
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[8]').answer.first().valueDate.empty() or where(linkId='Basic.extension[0].extension[8]').answer.first().valueDate >= where(linkId='Basic.extension[0].extension[7]').answer.first().valueDate"
+* item[0].extension[constraint].extension[human].valueString = "The Expiry date must be after the Issue date."
+
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Education Level Category"
@@ -192,11 +212,29 @@ Usage:          #definition
 * item[0].item[5].required = false
 * item[0].item[5].repeats = false
 
-* item[0].item[6].linkId = "Basic.extension[0].extension[6]"
-* item[0].item[6].text = "Remarks"
-* item[0].item[6].type = #text
+* item[0].item[6].linkId = "Basic.extension[0].extension[7]"
+* item[0].item[6].text = "License Number"
+* item[0].item[6].type = #string
 * item[0].item[6].required = false
 * item[0].item[6].repeats = false
+
+* item[0].item[7].linkId = "Basic.extension[0].extension[8]"
+* item[0].item[7].text = "Issue Date"
+* item[0].item[7].type = #date
+* item[0].item[7].required = false
+* item[0].item[7].repeats = false
+
+* item[0].item[8].linkId = "Basic.extension[0].extension[9]"
+* item[0].item[8].text = "Expiry Date"
+* item[0].item[8].type = #date
+* item[0].item[8].required = false
+* item[0].item[8].repeats = false
+
+* item[0].item[9].linkId = "Basic.extension[0].extension[6]"
+* item[0].item[9].text = "Remarks"
+* item[0].item[9].type = #text
+* item[0].item[9].required = false
+* item[0].item[9].repeats = false
 
 Instance:       ihris-page-professional
 InstanceOf:     IhrisPage

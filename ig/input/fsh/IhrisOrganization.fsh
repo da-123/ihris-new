@@ -1,7 +1,7 @@
 Profile:        IhrisOrganization
 Parent:         Organization
 Id:             ihris-organization
-Title:          "iHRIS organization"
+Title:          "Department/CaseTeam"
 Description:    "iHRIS Profile of Organizations such as departments and caseteams."
 * active 1..1 MS
 * active ^label = "Status"
@@ -38,7 +38,7 @@ Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-organization)
 * extension[display].extension[search][0].valueString = "Name|name"
-* extension[display].extension[search][1].valueString = "Type|type.text"
+* extension[display].extension[search][1].valueString = "Type|type.coding"
 * extension[display].extension[search][2].valueString = "CaseTeam Department|partOf.reference"
 * extension[display].extension[search][3].valueString = "Status|active"
 * extension[display].extension[filter][0].valueString = "Name|name:contains"

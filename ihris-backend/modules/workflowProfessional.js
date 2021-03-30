@@ -70,12 +70,33 @@ const workflowProfessional = {
                 complexExt.push({ url: "profession_sub_sub_category",
                 valueCoding:req.body.item[0].item[5].answer[0].valueCoding })
             }
-            if ( req.body.item[0].item[6].linkId === "Basic.extension[0].extension[6]" 
+            if ( req.body.item[0].item[6].linkId === "Basic.extension[0].extension[7]" 
                 && req.body.item[0].item[6].answer 
                 && req.body.item[0].item[6].answer[0] 
                 && req.body.item[0].item[6].answer[0].valueText){
+                complexExt.push({ url: "license_number",
+                valueString:req.body.item[0].item[6].answer[0].valueString})
+            }
+            if ( req.body.item[0].item[7].linkId === "Basic.extension[0].extension[8]" 
+                && req.body.item[0].item[7].answer 
+                && req.body.item[0].item[7].answer[0] 
+                && req.body.item[0].item[7].answer[0].valueDate){
+                complexExt.push({ url: "issue_date",
+                valueDate:req.body.item[0].item[7].answer[0].valueDate })
+                }
+            if ( req.body.item[0].item[8].linkId === "Basic.extension[0].extension[9]" 
+                && req.body.item[0].item[8].answer 
+                && req.body.item[0].item[8].answer[0] 
+                && req.body.item[0].item[8].answer[0].valueDate){
+                complexExt.push({ url: "expiry_date",
+                valueDate:req.body.item[0].item[8].answer[0].valueDate })
+                }
+            if ( req.body.item[0].item[9].linkId === "Basic.extension[0].extension[6]" 
+                && req.body.item[0].item[9].answer 
+                && req.body.item[0].item[9].answer[0] 
+                && req.body.item[0].item[9].answer[0].valueText){
                 complexExt.push({ url: "remark",
-                valueString:req.body.item[0].item[5].answer[0].valueText})
+                valueString:req.body.item[0].item[9].answer[0].valueText})
             }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-professional",
