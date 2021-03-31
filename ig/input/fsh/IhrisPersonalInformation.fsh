@@ -1331,7 +1331,7 @@ Usage:          #definition
 * item[7].item[0].required = false
 * item[7].item[0].repeats = false
 
-* item[8].linkId = "PractitionerRole"
+/* item[8].linkId = "PractitionerRole"
 * item[8].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description"
 * item[8].text = "Position Information|Health worker position Information"
 * item[8].type = #group
@@ -1415,4 +1415,4 @@ Usage:          #definition
 * item[8].item[9].repeats = false
 * item[8].item[9].readOnly = true
 * item[8].item[9].answerOption.valueString = "__REPLACE__Practitioner"
-* item[8].item[9].answerOption.initialSelected = true
+* item[8].item[9].answerOption.initialSelected = true*/

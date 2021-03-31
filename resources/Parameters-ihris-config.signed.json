@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-30T09:44:09.124Z",
+        "when": "2021-03-31T13:48:39.355Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "2/usz4FhDoV1onRG+ujcgu0m2KBF3mtStzAlQh4snIOtMT0dmOkLz6fak12+OzpJe9vJS+qLaXMGZZnXugm4befvOQ1bC/PD/lE93AgpRYbXKzxrjQGUQtYCEnFmqI4Fm1g3EE+k2WzjF8H5pxqccMscFbwEI4bFPrIqGqTuKXI="
+        "data": "ruQYhQpz3wFHFi+UBRXy8BStk4CmVqwUbnL1G39ACFlHNzanBbbliKxruuVOsGSrNQLW+8xi8kVCTZPnEP583/vCpSM5gdyvGFlvF/IP7l9GoyHyaywEzlxnXHH0vFXxY3tf1Jg53X6Ht90vZF6iwOEztCBkPHFhUMNUO1rdMzc="
       }
     },
     {
@@ -863,12 +863,20 @@
           "valueString": "Location/ET"
         },
         {
-          "name": "workflow:processor:endrole:file",
-          "valueString": "../modules/workflowEndRoleEthiopia"
+          "name": "workflow:processor:fulltime:file",
+          "valueString": "../modules/workflowFulltimeEthiopia"
         },
         {
-          "name": "workflow:questionnaire:endrole:url",
-          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-endrole"
+          "name": "workflow:questionnaire:fulltime:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-fulltime-ethiopia"
+        },
+        {
+          "name": "workflow:processor:contract:file",
+          "valueString": "../modules/workflowContractEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:contract:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-contract-ethiopia"
         },
         {
           "name": "workflow:processor:promotion:file",
