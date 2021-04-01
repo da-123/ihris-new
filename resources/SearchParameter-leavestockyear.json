@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "leavestockyear-search",
+  "url": "http://ihris.org/fhir/SearchParameter/leavestock-search",
+  "name": "Search Parameter for a practitioner's Leave Stock Year",
+  "status": "active",
+  "description": "Search for a practitioner's Leave Stock Year.",
+  "code": "leavestockyear",
+  "base": [
+    "Basic"
+  ],
+  "type": "date",
+  "expression": "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock').extension.where(url='year')",
+  "xpath": "f:Basic/f:extension[@url='http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock']/f:extension[@url='year']",
+  "xpathUsage": "normal"
+}

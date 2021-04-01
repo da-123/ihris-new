@@ -90,34 +90,27 @@ const workflowLeaveEthiopia = {
             })
           }
           try {
-            let leaveStockbundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, leavestock: leaveType} )
+            let cuttOffYear = new Date().getFullYear()
+            if (leaveType == "annual" ){
+              cuttOffYear = new Date().getFullYear() - 2
+            } 
+            let leaveStockbundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, leavestock: leaveType, _sort: "leavestockyear" , leavestockyear: "ge"+cuttOffYear } )
             //winston.info("BUNDLE" + JSON.stringify( leaveStockbundle,null,2))
-          if ( leaveStockbundle.entry ) {
-            let leaveStockDays
-            for( let entry of leaveStockbundle.entry ) {
-              if ( entry.resource.resourceType === "Basic" ) {
-                try {
-                  try{
-                    leaveStockDays = entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString
-                  } catch(err){
-                    winston.error("Error Getting Leave Stock days ")
-                    resolve(await workflowLeaveEthiopia.outcome("Error Getting Leave Stock days"))
-                  } 
-                  let leaveStockDaysNum  = Number(leaveStockDays)
-                  let requestedDaysNum =  Number(requestedDays)
-                  let newleaveStockDays = leaveStockDaysNum - requestedDaysNum
-                  try{
-                    if (isNaN(newleaveStockDays) && newleaveStockDays > 0){
-                      entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
-                    } else {
-                      winston.info("Leave Stock is less that Zero")
-                      resolve(await workflowLeaveEthiopia.outcome("Calculated Leave stock is less than zero (" +newleaveStockDays+"). Please adjust dates"))
-                    }
-                  } catch(err){
-                    //winston.info(JSON.stringify( entry,null,2))
-                    winston.error("Error Saving Leave Stock days "+ newleaveStockDays)
-                    reject(err)
-                  }
+            if ( leaveStockbundle.entry ) {
+              let totalleaveStockDays = 0
+              for( let entry of leaveStockbundle.entry ) {
+                if ( entry.resource.resourceType === "Basic" ) {
+                  //leaveStockYear = entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "year").valueString
+                  //if (parseInt(leaveStockYear) >= cuttOffYear){
+                    totalleaveStockDays +=  Number(entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString)
+                  //} 
+                }
+              } 
+              let requestedDaysNum =  Number(requestedDays)
+              let newleaveStockDays = totalleaveStockDays - requestedDaysNum
+              if ( Number(newleaveStockDays) >= 0){
+                if (leaveType != "annual" ){
+                  entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
                   bundle.entry.push( {
                     resource: entry.resource,
                     request: {
@@ -125,14 +118,57 @@ const workflowLeaveEthiopia = {
                       url: "Basic/"+entry.resource.id
                     }
                   } )
-                } catch( err ) {
-                  winston.error("Error updating Leave Stock Basic/"+ entry.resource.id)
-                  reject(err)
+                } else {
+
                 }
+                
+                let resourceNumDays = 0
+                for( let entry of leaveStockbundle.entry ) {
+                  if (leaveType != "annual" ){ 
+                      entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
+                      bundle.entry.push( {
+                        resource: entry.resource,
+                        request: {
+                          method: "PUT",
+                          url: "Basic/"+entry.resource.id
+                        }
+                      } ) 
+                      break
+                    } else {
+                      resourceNumDays =  Number(entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString)
+                      requestedDaysNum = resourceNumDays - requestedDaysNum
+                      if(Number(requestedDaysNum) < 0){
+                        entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = 0 + ''
+                        bundle.entry.push( {
+                          resource: entry.resource,
+                          request: {
+                            method: "PUT",
+                            url: "Basic/"+entry.resource.id
+                          }
+                        } )
+                        requestedDaysNum = Math.abs(requestedDaysNum)
+                      } else if(Number(requestedDaysNum) >= 0) {
+                        entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = requestedDaysNum + ''
+                        bundle.entry.push( {
+                          resource: entry.resource,
+                          request: {
+                            method: "PUT",
+                            url: "Basic/"+entry.resource.id
+                          }
+                        } )
+                        break
+                      } else {
+                        winston.info("Calculated value is not a number")
+                        resolve(await workflowLeaveEthiopia.outcome(winston.info("Calculated value is not a number")))
+                      }
+                  }
+                }
+              } else {
+                winston.info("Leave Stock is less that Zero")
+                resolve(await workflowLeaveEthiopia.outcome("Calculated Leave stock is less than zero (" +newleaveStockDays+"). Please adjust dates"))
               }
-            } 
           } else {
-            resolve(await workflowLeaveEthiopia.outcome("No Leave Stock Data What should system do for this leave type. Please enter leave sock data first"))
+            resolve(await workflowLeaveEthiopia.outcome("No Leave Stock Data. Please enter leave sock data first"))
             //No Leave Stock Data What should system do.
             // Send feedback error saying not leaveStock Data? or just save negative Values.
             /*let extensions = []
@@ -189,11 +225,6 @@ const workflowLeaveEthiopia = {
               }*/
             }
             resolve(bundle)
-            /*results = await fhirAxios.create( bundle )
-            if ( results.entry && results.entry.length > 0) {
-              winston.info("Saved "+ results.entry.length + " results") 
-              resolve(bundle)
-            } */
           } catch (err) {
             winston.error(err)
             reject(err)
