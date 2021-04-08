@@ -120,14 +120,21 @@ export default {
               order: this.nav.menu[menu_id].menu[sub_id].order
             }
             entry.menu.push( sub )
-            entry.menu.sort( (a,b) => a.order === b.order ? 0 : ( a.order < b.order ? -1 : 1 ) )
+            entry.menu.sort( (a,b) => a.text === b.text ? 0 : ( a.text < b.text ? -1 : 1 ) )
+            //entry.menu.sort( (a,b) => Number(a.order) === Number(b.order) ? 0 : ( Number(a.order) < Number(b.order) ? -1 : 1 ) )
           }
         } else if ( this.nav.menu[menu_id].url ) {
           entry.url = this.nav.menu[menu_id].url
         }
         this.menu.push( entry )
       }
-      this.menu.sort( (a,b) => a.order === b.order ? 0 : ( a.order < b.order ? -1 : 1 ) )
+      this.menu.sort( (a,b) => Number(a.order) === Number(b.order) ? 0 : ( Number(a.order) < Number(b.order) ? -1 : 1 ) )
+    },
+    compare: function(a,b){
+      if (a.order > b.order) return 1;
+      if (b.order > a.order) return -1;
+
+      return 0;
     }
   }
 }
