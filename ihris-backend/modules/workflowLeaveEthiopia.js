@@ -1,6 +1,7 @@
 const nconf = require('./config')
 const winston = require('winston')
 const differenceInBusinessDays = require('date-fns/differenceInBusinessDays')
+const differenceInDays = require('date-fns/differenceInDays')
 const fhirAxios = nconf.fhirAxios
 
 const workflowLeaveEthiopia = {
@@ -52,7 +53,12 @@ const workflowLeaveEthiopia = {
                 valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDateTime,
                               end:req.body.item[0].item[2].answer[0].valueDateTime}
                              })
-                requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                let continousLeaveType = ["maternity","paternity","sick"]
+                if (continousLeaveType.includes(leaveType)){
+                  requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                } else {
+                  requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                }
                 complexExt.push({ url: "daysRequested",
                 valueInteger:requestedDays})
             }
