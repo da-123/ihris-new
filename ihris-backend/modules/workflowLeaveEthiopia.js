@@ -2,6 +2,8 @@ const nconf = require('./config')
 const winston = require('winston')
 const differenceInBusinessDays = require('date-fns/differenceInBusinessDays')
 const differenceInDays = require('date-fns/differenceInDays')
+const compareAsc = require('date-fns/compareAsc')
+const isWeekend = require('date-fns/isWeekend')
 const fhirAxios = nconf.fhirAxios
 
 const workflowLeaveEthiopia = {
@@ -57,7 +59,24 @@ const workflowLeaveEthiopia = {
                 if (continousLeaveType.includes(leaveType)){
                   requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
                 } else {
+                  //Deduct holidays
+                  let periodStart = req.body.item[0].item[1].answer[0].valueDateTime
+                  let periodend = req.body.item[0].item[2].answer[0].valueDateTime
+                  let numHolidays = 0
                   requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                  let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
+                  if(holidaysResource.id === "ihris-holidays-codesystem"){
+                    for (let holidayConcept of holidaysResource.concept){
+                      if(isWeekend(holidayConcept.property.valueDateTime)){
+
+                      } else {
+                        if(compareAsc(holidayConcept.property.valueDateTime,periodStart) >= 0 && compareAsc(holidayConcept.property.valueDateTime,periodend) <= 0){
+                          numHolidays++
+                        }
+                      }
+                    }
+                    requestedDays = requestedDays - numHolidays
+                  }
                 }
                 complexExt.push({ url: "daysRequested",
                 valueInteger:requestedDays})
