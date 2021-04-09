@@ -129,12 +129,6 @@ export default {
         this.menu.push( entry )
       }
       this.menu.sort( (a,b) => Number(a.order) === Number(b.order) ? 0 : ( Number(a.order) < Number(b.order) ? -1 : 1 ) )
-    },
-    compare: function(a,b){
-      if (a.order > b.order) return 1;
-      if (b.order > a.order) return -1;
-
-      return 0;
     }
   }
 }
