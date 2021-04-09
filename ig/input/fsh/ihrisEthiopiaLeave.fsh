@@ -125,7 +125,7 @@ Title:          "Leave Stock details"
 * extension[numDays].valueString ^label = "Number Of Days"
 * extension[numDays].valueString ^constraint[0].key = "ihris-number-check"
 * extension[numDays].valueString ^constraint[0].severity = #error
-* extension[numDays].valueString ^constraint[0].expression = "matches('^[0-9][0-9][0-9]?$')"
+* extension[numDays].valueString ^constraint[0].expression = "matches('^[0-9]{0,1}[0-9][0-9]?$')"
 * extension[numDays].valueString ^constraint[0].human = "Given Name must be only text."
 * extension[year].value[x] only date
 * extension[year].valueDate ^label = "Year"
@@ -256,7 +256,7 @@ Usage:          #definition
 * item[0].item[2].repeats = false
 * item[0].item[2].extension[constraint].extension[key].valueId = "ihris-num-check"
 * item[0].item[2].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9][0-9]?$')"
+* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9]{0,1}[0-9][0-9]?$')"
 * item[0].item[2].extension[constraint].extension[human].valueString = "Should be a Number."
 
 Instance:       ihris-page-leavestock
