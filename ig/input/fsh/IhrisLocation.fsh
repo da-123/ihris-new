@@ -1,7 +1,7 @@
 Profile:        IhrisJurisdiction
 Parent:         Location
 Id:             ihris-jurisdiction
-Title:          "iHRIS Jurisdiction"
+Title:          "Jurisdictions(Country/Region/Zone/Woreda)"
 Description:    "iHRIS Profile of Locations to manage jurisdictions."
 * type 1..1 MS
 * type ^label = "Location Type"
@@ -22,7 +22,7 @@ Description:    "iHRIS Profile of Locations to manage jurisdictions."
 Profile:        IhrisFacility
 Parent:         Location
 Id:             ihris-facility
-Title:          "iHRIS Facility"
+Title:          "Facility"
 Description:    "iHRIS Profile of Locations to manage facilities."
 * type 1..* MS
 * type ^label = "Facilty Service Type"
@@ -30,6 +30,8 @@ Description:    "iHRIS Profile of Locations to manage facilities."
 * type.coding ^label = "Facilty Service Type"
 * physicalType 1..1 MS
 * physicalType ^label = "Facilty Physical Type"
+* physicalType.coding 1..1 MS
+* physicalType.coding ^label = "Facilty Physical Type"
 * name 1..1 MS
 * name ^label = "Name"
 * status 1..1 MS
@@ -49,7 +51,7 @@ Title:            "iHRIS Jurisdiction Type ValueSet"
 
 CodeSystem:      IhrisJurisdictionType
 Id:              ihris-jurisdiction-type
-Title:           "Jurisdiction Type(Country/Region/Zone/Woreda)"
+Title:           "Jurisdiction Type"
 * ^date = "2020-11-12T08:41:04.362Z"
 * ^version = "0.3.0"
 * #country "Country" "Country"
@@ -64,8 +66,8 @@ Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-facility)
 * extension[display].extension[search][0].valueString = "Facility Name|name"
-* extension[display].extension[search][1].valueString = "Facility Type|type[1].text"
-* extension[display].extension[search][2].valueString = "Facility Physical Type|physicalType.text"
+* extension[display].extension[search][1].valueString = "Facility Type|type.coding.display"
+* extension[display].extension[search][2].valueString = "Facility Physical Type|physicalType.coding.display"
 * extension[display].extension[search][3].valueString = "Jurisdiction|partOf.reference"
 * extension[display].extension[search][4].valueString = "Status|status"
 /* extension[display].extension[search][3].valueString = "Longitute|position.longitude"
