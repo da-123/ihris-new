@@ -252,7 +252,7 @@ Usage:          #example
 * extension[section][11].extension[resource].extension[column][0].extension[header].valueString = "Job"
 * extension[section][11].extension[resource].extension[column][0].extension[field].valueString = "PractitionerRole.code.coding[0]"
 * extension[section][11].extension[resource].extension[column][1].extension[header].valueString = "Place Of Work"
-* extension[section][11].extension[resource].extension[column][1].extension[field].valueString = "PractitionerRole.location.reference"
+* extension[section][11].extension[resource].extension[column][1].extension[field].valueString = "PractitionerRole.location"
 * extension[section][11].extension[resource].extension[column][2].extension[header].valueString = "First Employment Date"
 * extension[section][11].extension[resource].extension[column][2].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-first-employment-date').valueDate"
 * extension[section][11].extension[resource].extension[column][3].extension[header].valueString = "Start Date"
