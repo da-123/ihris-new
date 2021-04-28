@@ -65,17 +65,19 @@ const workflowLeaveEthiopia = {
                   let numHolidays = 0
                   requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
                   let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
-                  if(holidaysResource.id === "ihris-holidays-codesystem"){
-                    for (let holidayConcept of holidaysResource.concept){
-                      if(isWeekend(holidayConcept.property.valueDateTime)){
+                  if(holidaysResource.id === "ihris-holidays-codesystem" ){
+                    if(holidaysResource.concept){
+                      for (let holidayConcept of holidaysResource.concept){
+                        if(isWeekend(holidayConcept.property.valueDateTime)){
 
-                      } else {
-                        if(compareAsc(holidayConcept.property.valueDateTime,periodStart) >= 0 && compareAsc(holidayConcept.property.valueDateTime,periodend) <= 0){
-                          numHolidays++
+                        } else {
+                          if(compareAsc(holidayConcept.property.valueDateTime,periodStart) >= 0 && compareAsc(holidayConcept.property.valueDateTime,periodend) <= 0){
+                            numHolidays++
+                          }
                         }
                       }
+                      requestedDays = requestedDays - numHolidays
                     }
-                    requestedDays = requestedDays - numHolidays
                   }
                 }
                 complexExt.push({ url: "daysRequested",
