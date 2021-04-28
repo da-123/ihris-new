@@ -19,7 +19,7 @@ const workflowEndRoleEthiopia = {
             && req.body.item[0].item && req.body.item[0].item[0].linkId === "period.end" 
             && req.body.item[0].item[0].answer && req.body.item[0].item[0].answer[0] 
             && req.body.item[0].item[0].answer[0].valueDateTime
-            && req.body.item[0].item[1].linkId === "PractitionerRole.extension[0]" 
+            && req.body.item[0].item[1].linkId === "departure" 
             && req.body.item[0].item[1].answer && req.body.item[0].item[1].answer[0] 
             && req.body.item[0].item[1].answer[0].valueCoding ) {
               let reason = { url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure",

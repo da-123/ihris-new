@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-03-31T13:48:39.355Z",
+        "when": "2021-04-28T10:00:12.884Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "ruQYhQpz3wFHFi+UBRXy8BStk4CmVqwUbnL1G39ACFlHNzanBbbliKxruuVOsGSrNQLW+8xi8kVCTZPnEP583/vCpSM5gdyvGFlvF/IP7l9GoyHyaywEzlxnXHH0vFXxY3tf1Jg53X6Ht90vZF6iwOEztCBkPHFhUMNUO1rdMzc="
+        "data": "ih4cz/DfjN4aVzSIy9k0ADj2huyYKabUzHoItjiCviaq5XU6EAigc0NPRuy/pyqNt+MzD35Rk6Lg6uuD8F67ylSF5vcuQhJ9bvDtySCDlxOy1DfUIcPTtaFMtLjiY2d3JVzaFYxtDSbiHi68KvTMtrIZ4YMeZXltHZg9QvaXP4o="
       }
     },
     {
@@ -603,7 +603,7 @@
           "valueString": "Education Level Sub Category"
         },
         {
-          "name": "site:nav:menu:database:menu:education-category:url",
+          "name": "site:nav:menu:database:menu:education-subcategory:url",
           "valueString": "/resource/search/education-subcategory"
         },
         {
@@ -659,6 +659,18 @@
           "valueString": "1"
         },
         {
+          "name": "site:nav:menu:reports:menu:contractstaff:text",
+          "valueString": "Employee Contract Report"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:contractstaff:url",
+          "valueString": "/report/ihris-es-report-ethiopia-contract-staff"
+        },
+        {
+          "name": "site:nav:menu:reports:menu:contractstaff:order",
+          "valueString": "2"
+        },
+        {
           "name": "site:nav:menu:reports:menu:performance:text",
           "valueString": "Performance Report"
         },
@@ -680,7 +692,7 @@
         },
         {
           "name": "site:nav:menu:reports:menu:departure:order",
-          "valueString": "3"
+          "valueString": "4"
         },
         {
           "name": "site:nav:menu:reports:menu:retirement:text",
@@ -692,7 +704,7 @@
         },
         {
           "name": "site:nav:menu:reports:menu:retirement:order",
-          "valueString": "4"
+          "valueString": "5"
         },
         {
           "name": "site:nav:menu:users:text",
@@ -885,6 +897,14 @@
         {
           "name": "workflow:questionnaire:promotion:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-promotion-ethiopia"
+        },
+        {
+          "name": "workflow:processor:endrole:file",
+          "valueString": "../modules/workflowEndRoleEthiopia"
+        },
+        {
+          "name": "workflow:questionnaire:endrole:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-endrole"
         },
         {
           "name": "workflow:processor:leave:file",

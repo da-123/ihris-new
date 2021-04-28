@@ -638,31 +638,28 @@ Usage:          #definition
 * purpose = "Workflow page for ending a role/job."
 
 * item[0].linkId = "PractitionerRole"
-* item[0].text = "Terminate Job Record"
+* item[0].text = "Terminate Position"
 * item[0].type = #group
 
 * item[0].item[0].linkId = "period.end"
-* item[0].item[0].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.period.end"
 * item[0].item[0].text = "End Date"
 * item[0].item[0].type = #dateTime
 * item[0].item[0].required = true
 * item[0].item[0].repeats = false
 
-* item[0].item[1].linkId = "PractitionerRole.extension[0]"
-* item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
+* item[0].item[1].linkId = "departure"
 * item[0].item[1].text = "Reason For Depature"
 * item[0].item[1].type = #choice
 * item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-reason-departure-valueset"
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
-* item[0].item[2].linkId = "PractitionerRole.extension[1]"
-* item[0].item[2].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:positionStatus.value[x]:valueCoding"
+* item[0].item[2].linkId = "status"
 * item[0].item[2].text = "Position Status"
 * item[0].item[2].type = #choice
-* item[0].item[2].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-position-status"
 * item[0].item[2].required = true
 * item[0].item[2].repeats = false
+* item[0].item[2].readOnly = true
 * item[0].item[2].answerOption.valueCoding = http://ihris.org/fhir/CodeSystem/ihris-position-status#closed
 * item[0].item[2].answerOption.initialSelected = true
 
