@@ -37,11 +37,11 @@
     },
     {
       "name": "kibana:username",
-      "valueString": ""
+      "valueString": "elastic"
     },
     {
       "name": "kibana:password",
-      "valueString": ""
+      "valueString": "256changed"
     },
     {
       "name": "logs",

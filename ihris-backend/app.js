@@ -112,12 +112,15 @@ async function startUp() {
   app.use(logger('dev'))
 
   // This has to be before the body parser or it won't proxy a POST body
+  const kibanaUSER = nconf.get('kibana:username')
+  const kibanaPASS = nconf.get('kibana:password')
   app.use('/kibana', createProxyMiddleware( {
-    target: nconf.get('kibana:base') || "http://localhost:5601"
+    target: nconf.get('kibana:base') || "http://localhost:5601",
     //headers: { 'kbn-xsrf': true },
     //changeOrigin: true,
     //ws: true,
     //followRedirects: true
+    auth: ''+kibanaUSER+':'+kibanaPASS
   } ) )
 
 
