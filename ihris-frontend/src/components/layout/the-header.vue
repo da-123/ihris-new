@@ -105,8 +105,8 @@ export default {
       this.loading = true
       fetch("/auth/logout").then(() => {
         this.loading = false
-        //this.$store.commit('logout')
-        this.$emit('loggedout')
+        this.$store.commit('logout')
+        //this.$emit('logout')
         if ( force ) {
           this.$store.commit('setMessage', { type: 'warning', text: 'You have been logged out due to inactivity.', timeout: 3600000 } )
         } else {
