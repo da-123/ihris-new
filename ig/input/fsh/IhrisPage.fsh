@@ -348,7 +348,7 @@ Usage:          #example
 * extension[section][14].extension[resource].extension[searchfield].valueString = "practitioner"
 * extension[section][14].extension[resource].extension[linkfield].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[section][14].extension[resource].extension[column][0].extension[header].valueString = "Education Institution"
-* extension[section][14].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueReference.reference"
+* extension[section][14].extension[resource].extension[column][0].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='institution').valueCoding"
 /* extension[section][14].extension[resource].extension[column][1].extension[header].valueString = "Degree"
 * extension[section][14].extension[resource].extension[column][1].extension[field].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-education-history').extension.where(url='degree').valueCoding"*/
 * extension[section][14].extension[resource].extension[column][1].extension[header].valueString = "level"

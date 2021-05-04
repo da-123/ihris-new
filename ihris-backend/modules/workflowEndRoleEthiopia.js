@@ -29,6 +29,7 @@ const workflowEndRoleEthiopia = {
                           valueCoding: req.body.item[0].item[2].answer[0].valueCoding }
               resource.extension.push(positionStatus)
               resource.period.end = req.body.item[0].item[0].answer[0].valueDateTime
+              resource.active = false
               bundle.entry.push( { 
                 resource: resource,
                 request: {

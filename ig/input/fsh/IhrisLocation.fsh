@@ -17,7 +17,8 @@ Description:    "iHRIS Profile of Locations to manage jurisdictions."
 * partOf 0..1 MS
 * partOf only Reference(IhrisJurisdiction)
 * partOf ^label = "Part Of(Country/Region/Zone/Woreda)"
-* extension contains http://hl7.org/fhir/StructureDefinition/location-boundary-geojson named geojson 0..*
+* extension contains http://hl7.org/fhir/StructureDefinition/location-boundary-geojson named geojson 0..1 MS
+* extension[geojson] ^label = "Location Boundary(Geojson)"
 
 Profile:        IhrisFacility
 Parent:         Location
@@ -27,6 +28,7 @@ Description:    "iHRIS Profile of Locations to manage facilities."
 * type 1..* MS
 * type ^label = "Facilty Service Type"
 * type.coding 1..1 MS
+* type.coding from IhrisEthiopiaFacilityTypeValueSet
 * type.coding ^label = "Facilty Service Type"
 * physicalType 1..1 MS
 * physicalType ^label = "Facilty Physical Type"
@@ -63,6 +65,29 @@ Title:           "Jurisdiction Type"
 * #zone "Zone" "Zone"
 * #woreda "Woreda" "Woreda"
 
+ValueSet:         IhrisEthiopiaFacilityTypeValueSet
+Id:               ihris-facility-type
+Title:            "iHRIS Facility Type ValueSet"
+* ^date = "2020-11-12T08:41:04.362Z"
+* ^version = "0.3.0"
+* codes from system IhrisEthiopiaFacilityType
+
+CodeSystem:      IhrisEthiopiaFacilityType
+Id:              ihris-facility-type
+Title:           "Facility Type"
+* ^date = "2020-11-12T08:41:04.362Z"
+* ^version = "0.3.0"
+* #hospital "Hospital"
+* #office "Office"
+* #HC "Health Center"
+* #HP "Health Post"
+* #LAB "Laboratory"
+* #IC "Imaging Center"
+* #SC "Specaility Clinic"
+* #CLC "Clinic"
+* #SPC "Speciality Center"
+* #PHARM "Pharmacy"
+
 Instance:       ihris-page-facility
 InstanceOf:     IhrisPage
 Title:          "iHRIS Facility Page"
@@ -74,10 +99,10 @@ Usage:          #example
 * extension[display].extension[search][2].valueString = "Facility Physical Type|physicalType.coding.display"
 * extension[display].extension[search][3].valueString = "Jurisdiction|partOf.reference"
 * extension[display].extension[search][4].valueString = "Status|status"
-/* extension[display].extension[search][3].valueString = "Longitute|position.longitude"
-* extension[display].extension[search][4].valueString = "Latitude|position.latitude"*/
+* extension[display].extension[search][5].valueString = "Longitute|position.longitude"
+* extension[display].extension[search][6].valueString = "Latitude|position.latitude"
 * extension[display].extension[filter][0].valueString = "Name|name:contains"
-* extension[display].extension[filter][1].valueString = "Type|type|http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* extension[display].extension[filter][1].valueString = "Type|type|http://ihris.org/fhir/ValueSet/ihris-facility-type"
 * extension[display].extension[filter][2].valueString = "Physical Type|physicalType|http://hl7.org/fhir/ValueSet/location-physical-type"
 * extension[section][0].extension[title].valueString = "Facility"
 * extension[section][0].extension[description].valueString = "Facility/Duty Post details"
