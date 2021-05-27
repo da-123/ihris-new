@@ -629,7 +629,7 @@ Description:    "iHRIS extension for Personal Information Ethnicity."
 * ^context.type = #element
 * ^context.expression = "Practitioner"
 * value[x] only Coding
-* valueCoding 1..1 MS
+* valueCoding 0..1 MS
 * valueCoding ^label = "Ethnicity"
 * valueCoding from IhrisEthnicityValueSet (required)
 
