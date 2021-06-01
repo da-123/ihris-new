@@ -90,13 +90,13 @@ const workflowLeaveEthiopia = {
                 complexExt.push({ url: "dateRequested",
                 valueDate:req.body.item[0].item[3].answer[0].valueDate })
             }
-            if ( req.body.item[0].item[4].linkId === "Basic.extension[0].extension[5]" 
+            /*if ( req.body.item[0].item[4].linkId === "Basic.extension[0].extension[5]" 
                 && req.body.item[0].item[4].answer 
                 && req.body.item[0].item[4].answer[0] 
                 && req.body.item[0].item[4].answer[0].valueCoding){
                 complexExt.push({ url: "leaveSubType",
                 valueCoding:req.body.item[0].item[4].answer[0].valueCoding })
-            }
+            }*/
             if(complexExt){
               extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave",
               extension: complexExt})
