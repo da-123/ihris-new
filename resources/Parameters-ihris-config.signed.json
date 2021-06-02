@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-05-27T11:36:11.888Z",
+        "when": "2021-06-02T08:40:11.556Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "0vztI7379i3OPXWTTqpGXQ4RsDKD0c/p6nem+r+ArcMu4bH5sGv5gaBNdEOJf46o/Xe2ZR+Ahlm716bdQLjSyFbv3TD/OAUZVHZXQKLQsMyopFN1uYAkTseG4s5Goe/LZKpJOBU1w9ThHz1IoGD3NsumhLAvzD0YEdy81Agd19g="
+        "data": "WtV6ktWGpxe9Gf3EAyKi75p2I5T/a96Tfw7rZKdUT/YHCUw1i024+0FClJoFGTzJtt1XjZLUz3xWYBP58rRXdaoicCrYVWJzjy0UAPsNMi+MM9canUT/CpbqbGT32LuvKa9nDOY4JsnmtheAK9hGap+CD6fVw/1pf54gAoUNPc4="
       }
     },
     {
@@ -28,7 +28,7 @@
       "part": [
         {
           "name": "site:title",
-          "valueString": "iHRIS"
+          "valueString": "intergrated Human Resource"
         },
         {
           "name": "site:site",
@@ -817,10 +817,6 @@
         {
           "name": "defaults:fields:Location.partOf:type",
           "valueString": "tree"
-        },
-        {
-          "name": "defaults:fields:Location.partOf:initialValue",
-          "valueString": "Location/ET"
         },
         {
           "name": "defaults:fields:Location.partOf:user_filter:regex",
