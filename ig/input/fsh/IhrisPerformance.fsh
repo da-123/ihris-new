@@ -39,12 +39,8 @@ Title:          "Performance details"
 * extension[performanceType].valueCoding from IhrisPerformanceTypeValueSet (required)
 * extension[evaluator].value[x] only string
 * extension[evaluator].valueString ^label = "Evaluator's Name"
-* extension[score].value[x] only string
+* extension[score].value[x] only decimal
 * extension[score].valueDecimal ^label = "Score Attained"
-* extension[score].valueDecimal ^constraint[0].key = "ihris-score-check"
-* extension[score].valueDecimal ^constraint[0].severity = #error
-* extension[score].valueDecimal ^constraint[0].expression = "matches('^[0-9][0-9]?(\.[0-9]{1,2})?$|^100$')"
-* extension[score].valueDecimal ^constraint[0].human = "Score has to be a number from 0 to 100"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
 * extension[period].valuePeriod ^constraint[0].severity = #error
