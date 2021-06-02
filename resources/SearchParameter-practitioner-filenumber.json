@@ -1,0 +1,15 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "practitioner-filenumber",
+  "url": "http://ihris.org/fhir/SearchParameter/practitioner-filenumber",
+  "name": "Search Parameter on filenumber for practitioner",
+  "status": "active",
+  "description": "Search by file number for a practitioner resource.",
+  "code": "filenumber",
+  "base": [
+    "Practitioner"
+  ],
+  "type": "string",
+  "expression": "Practitioner.identifier.where(type.coding.code='fileNo').value",
+  "xpathUsage": "normal"
+}

@@ -179,6 +179,7 @@ Usage:          #example
 * extension[display].extension[filter][3].valueString = "Mother's Name|mothersname:contains"
 * extension[display].extension[filter][4].valueString = "Employee ID|employeeid"
 * extension[display].extension[filter][5].valueString = "PIN ID|_id"
+* extension[display].extension[filter][6].valueString = "File Number|filenumber"
 * extension[display].extension[field][0].extension[path].valueString = "Practitioner.id"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-personal-information/practitioner"
