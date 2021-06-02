@@ -59,10 +59,14 @@ Title:          "Work Experience details"
 * extension[period].valuePeriod.start ^label = "Date Started"
 * extension[period].valuePeriod.start ^constraint[0].key = "ihris-period-start-date-check"
 * extension[period].valuePeriod.start ^constraint[0].severity = #error
-* extension[period].valuePeriod.start ^constraint[0].human = "The end date must be less than now."
+* extension[period].valuePeriod.start ^constraint[0].human = "The Start date must be less than now."
 * extension[period].valuePeriod.start ^constraint[0].expression = "$this < today() + 1 day"
 * extension[period].valuePeriod.end 1..1 MS
 * extension[period].valuePeriod.end ^label = "Date Ended"
+* extension[period].valuePeriod.end ^constraint[0].key = "ihris-period-start-date-check"
+* extension[period].valuePeriod.end ^constraint[0].severity = #error
+* extension[period].valuePeriod.end ^constraint[0].human = "The end date must be less than now."
+* extension[period].valuePeriod.end ^constraint[0].expression = "$this < today() + 1 day"
 * extension[responsibilities].value[x] only string
 * extension[responsibilities].valueString ^label = "Job Description"
 * extension[reasonLeaving].value[x] only string
@@ -126,14 +130,18 @@ Usage:          #definition
 * item[0].item[5].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
 * item[0].item[5].extension[constraint].extension[severity].valueCode = #error
 * item[0].item[5].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
-* item[0].item[5].extension[constraint].extension[human].valueString = "Hire Date must not be in the future."
-
+* item[0].item[5].extension[constraint].extension[human].valueString = "Start Date must not be in the future."
 
 * item[0].item[6].linkId = "Basic.extension[0].extension[6]"
 * item[0].item[6].text = "Date Ended"
 * item[0].item[6].type = #dateTime
 * item[0].item[6].required = true
 * item[0].item[6].repeats = false
+* item[0].item[6].extension[constraint].extension[key].valueId = "ihris-date-lessthantoday-check"
+* item[0].item[6].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[6].extension[constraint].extension[expression].valueString = "$this < today() + 1 day"
+* item[0].item[6].extension[constraint].extension[human].valueString = "ENd Date must not be in the future."
+
 
 * item[0].item[7].linkId = "Basic.extension[0].extension[7]"
 * item[0].item[7].text = "Job Description"
