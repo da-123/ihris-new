@@ -395,8 +395,8 @@ Usage:          #example
 * extension[section][15].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][15].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][15].extension[resource].extension[action][1].extension[class].valueString = "primary"
-* extension[section][16].extension[title].valueString = "Employment History"
-* extension[section][16].extension[description].valueString = "Employment History for the Person"
+* extension[section][16].extension[title].valueString = "Work Experience"
+* extension[section][16].extension[description].valueString = "Work Experience for the Person"
 * extension[section][16].extension[name].valueString = "employment-history"
 * extension[section][16].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-employment-history)
 * extension[section][16].extension[resource].extension[searchfield].valueString = "practitioner"
@@ -412,7 +412,7 @@ Usage:          #example
 * extension[section][16].extension[resource].extension[column][4].extension[header].valueString = "Actions"
 * extension[section][16].extension[resource].extension[column][4].extension[field].valueString = "_action"
 * extension[section][16].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-employment-history/employment-history?practitioner=FHIRID"
-* extension[section][16].extension[resource].extension[action][0].extension[text].valueString = "Add Employment History"
+* extension[section][16].extension[resource].extension[action][0].extension[text].valueString = "Add Work Experience"
 * extension[section][16].extension[resource].extension[action][0].extension[row].valueBoolean = false
 * extension[section][16].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
 * extension[section][16].extension[resource].extension[action][0].extension[class].valueString = "primary"

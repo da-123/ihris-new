@@ -1,8 +1,8 @@
 Profile:        IhrisBasicEmploymentHistory
 Parent:         IhrisPractitionerBasic
 Id:             ihris-basic-employment-history
-Title:          "Employment History Information"
-Description:    "iHRIS Profile of the Basic resource for Employment History."
+Title:          "Work Experience Information"
+Description:    "iHRIS Profile of the Basic resource for Work Experience."
 * extension[practitioner].valueReference 1..1 MS
 * extension[practitioner].valueReference ^label = "Health Worker"
 * extension contains
@@ -29,7 +29,7 @@ Description:    "iHRIS Profile of the Basic resource for Employment History."
 
 Extension:      IhrisEmploymentHistory
 Id:             ihris-employment-history
-Title:          "Employment History details"
+Title:          "Work Experience details"
 * extension contains
       organization 1..1 MS and
       address 0..1 MS and
@@ -71,17 +71,17 @@ Title:          "Employment History details"
 Instance:       IhrisPractitionerWorkflowEmploymentHistory
 InstanceOf:     IhrisQuestionnaire
 Usage:          #definition
-* title = "iHRIS Employment History Workflow"
-* description = "iHRIS workflow to record a Employment History"
+* title = "iHRIS Work Experience Workflow"
+* description = "iHRIS workflow to record a Work Experience"
 * id = "ihris-employment-history"
 * url = "http://ihris.org/fhir/Questionnaire/ihris-employment-history"
 * name = "ihris-employment-history"
 * status = #active
 * date = 2020-08-27
-* purpose = "Workflow page for recording a Employment History information."
+* purpose = "Workflow page for recording a Work Experience information."
 
 * item[0].linkId = "Basic"
-* item[0].text = "Employment History"
+* item[0].text = "Work Experience"
 * item[0].type = #group
 * item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint].extension[severity].valueCode = #error
@@ -149,7 +149,7 @@ Usage:          #definition
 
 Instance:       ihris-page-employment-history
 InstanceOf:     IhrisPage
-Title:          "iHRIS Basic Employment History Page"
+Title:          "iHRIS Basic Work Experience Page"
 Usage:          #example
 * code = IhrisResourceCodeSystem#page
 * extension[display].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-employment-history)
@@ -167,8 +167,8 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "Starting Position|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-employment-history').extension.where(url='startingPosition').valueString"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
-* extension[section][0].extension[title].valueString = "Employment History"
-* extension[section][0].extension[description].valueString = "Employment History details"
+* extension[section][0].extension[title].valueString = "Work Experience"
+* extension[section][0].extension[description].valueString = "Work Experience details"
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:employmentHistory.extension:organization.value[x]:valueString"
