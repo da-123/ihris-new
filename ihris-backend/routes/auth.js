@@ -1,9 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const nconf = require('../modules/config')
-const user = require('../modules/user')
+const user = require('../modules/user').user
+const User = require('../modules/user').User
 const winston = require('winston')
 const fhirAudit = require('../modules/fhirAudit')
+
+const admin = require('../../resources/Person-ihris-user-admin.json')
 
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
@@ -59,24 +62,44 @@ passport.use( new GoogleStrategy(
 
 passport.use( 'local', new LocalStrategy({passReqToCallback: true },
   ( req, email, password, done ) => {
-
-    user.lookupByEmail( email ).then( (userObj) => {
-      if ( !userObj ) {
-        fhirAudit.login( userObj, req.ip, false, email )
-        done( null, false )
-      } else {
+     if(email == "admin@ihris.org"){
+      const getAdminUser = async(admin, password) => {
+        let userObj = new User(admin)
+        await userObj.updatePermissions()
         if ( userObj.checkPassword( password ) ) {
+          return(userObj)
+        } else {
+          return (false)
+        }
+      }
+      getAdminUser(admin, password).then(userObj => {
+        if ( userObj ) {
           fhirAudit.login( userObj, req.ip, true, email )
           done( null, userObj )
         } else {
           fhirAudit.login( userObj, req.ip, false, email )
           done( null, false )
         }
-      }
-    } ).catch( (err) => {
-      fhirAudit.login( {}, req.ip, false, email )
-      done( err )
-    } )
+      })
+    } else {
+      user.lookupByEmail( email ).then( (userObj) => {
+        if ( !userObj ) {
+          fhirAudit.login( userObj, req.ip, false, email )
+          done( null, false )
+        } else {
+          if ( userObj.checkPassword( password ) ) {
+            fhirAudit.login( userObj, req.ip, true, email )
+            done( null, userObj )
+          } else {
+            fhirAudit.login( userObj, req.ip, false, email )
+            done( null, false )
+          }
+        }
+      } ).catch( (err) => {
+        fhirAudit.login( {}, req.ip, false, email )
+        done( err )
+      } )
+    }
   }
 ) )
 
