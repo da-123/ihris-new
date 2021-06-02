@@ -89,8 +89,11 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "Username/Email|Person.telecom.where(system='email').value"
 * extension[display].extension[search][2].valueString = "Role|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-assign-role').valueReference.reference"
 * extension[display].extension[search][3].valueString = "Location|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-user-location').valueReference.reference"
+* extension[display].extension[filter][0].valueString = "User|name:contains"
+* extension[display].extension[filter][1].valueString = "Email|email:contains"
 * extension[display].extension[field][0].extension[path].valueString = "Person.extension:password.extension:password.value[x]:valueString"
 * extension[display].extension[field][0].extension[type].valueString = "password"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-user/user"
 * extension[display].extension[add].extension[icon].valueString = "mdi-account-plus"
 * extension[display].extension[add].extension[class].valueString = "accent"
@@ -101,6 +104,7 @@ Usage:          #example
 * extension[section][0].extension[field][1].valueString = "Person.telecom"
 * extension[section][0].extension[field][2].valueString = "Person.extension:role.value[x]:valueReference"
 * extension[section][0].extension[field][3].valueString = "Person.extension:location.value[x]:valueReference"
+* extension[section][0].extension[field][4].valueString = "Person.extension:password.extension:password.value[x]:valueString"
 
 Instance:       IhrisUser
 InstanceOf:     IhrisQuestionnaire
