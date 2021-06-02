@@ -90,7 +90,7 @@ Usage:          #example
 * extension[display].extension[search][2].valueString = "Role|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-assign-role').valueReference.reference"
 * extension[display].extension[search][3].valueString = "Location|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-user-location').valueReference.reference"
 * extension[display].extension[filter][0].valueString = "User|name:contains"
-* extension[display].extension[filter][1].valueString = "Email|email:contains"
+* extension[display].extension[filter][1].valueString = "Email|email"
 * extension[display].extension[field][0].extension[path].valueString = "Person.extension:password.extension:password.value[x]:valueString"
 * extension[display].extension[field][0].extension[type].valueString = "password"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
