@@ -22,8 +22,8 @@ Description:    "iHRIS Profile of the Basic resource for Performance."
 * extension[performance].extension[period].valuePeriod.start ^label = "Evaluation Period Start Date"
 * extension[performance].extension[period].valuePeriod.end 1..1 MS
 * extension[performance].extension[period].valuePeriod.end ^label = "Evaluation Period End Date"
-* extension[performance].extension[score].valueString ^label = "Score Attained"
-* extension[performance].extension[score].valueString 1..1 MS
+* extension[performance].extension[score].valueDecimal ^label = "Score Attained"
+* extension[performance].extension[score].valueDecimal 1..1 MS
     
 Extension:      IhrisPerformance
 Id:             ihris-performance
@@ -40,11 +40,11 @@ Title:          "Performance details"
 * extension[evaluator].value[x] only string
 * extension[evaluator].valueString ^label = "Evaluator's Name"
 * extension[score].value[x] only string
-* extension[score].valueString ^label = "Score Attained"
-* extension[score].valueString ^constraint[0].key = "ihris-score-check"
-* extension[score].valueString ^constraint[0].severity = #error
-* extension[score].valueString ^constraint[0].expression = "matches('^[0-9][0-9]?$|^100$')"
-* extension[score].valueString ^constraint[0].human = "Score has to be a number from 0 to 100"
+* extension[score].valueDecimal ^label = "Score Attained"
+* extension[score].valueDecimal ^constraint[0].key = "ihris-score-check"
+* extension[score].valueDecimal ^constraint[0].severity = #error
+* extension[score].valueDecimal ^constraint[0].expression = "matches('^[0-9][0-9]?(\.[0-9]{1,2})?$|^100$')"
+* extension[score].valueDecimal ^constraint[0].human = "Score has to be a number from 0 to 100"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
 * extension[period].valuePeriod ^constraint[0].severity = #error
@@ -124,7 +124,7 @@ Usage:          #definition
 * item[0].item[0].repeats = false
 * item[0].item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
+* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z]*$')"
 * item[0].item[0].extension[constraint].extension[human].valueString = "Name must be only text."
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
@@ -146,7 +146,7 @@ Usage:          #definition
 * item[0].item[3].repeats = false
 * item[0].item[3].extension[constraint].extension[key].valueId = "ihris-score-check"
 * item[0].item[3].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9]?$|^100$')"
+* item[0].item[3].extension[constraint].extension[expression].valueString = "matches('^[0-9][0-9]?(\\\\.[0-9]{1,2})?$|^100$')"
 * item[0].item[3].extension[constraint].extension[human].valueString = "Score has to be a number from 0 to 100."
 
 * item[0].item[4].linkId = "Basic.extension[0].extension[4]"
