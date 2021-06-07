@@ -44,6 +44,10 @@
       "valueString": "256changed"
     },
     {
+      "name": "redis:url",
+      "valueString": "redis://redis-master.tools.svc:6379"
+    },
+    {
       "name": "logs",
       "part": [
         {
