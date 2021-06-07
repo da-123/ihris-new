@@ -1,13 +1,13 @@
 FROM node:12.19.0-slim
-ADD http://download.redis.io/redis-stable.tar.gz . 
+#ADD http://download.redis.io/redis-stable.tar.gz . 
 RUN apt-get update && apt-get install build-essential -y --no-install-recommends   
-RUN tar xvzf redis-stable.tar.gz && \
-    cd redis-stable && \
-    make && \
-    mv src/redis-server /usr/bin/ && \
-    cd .. && \
-    rm -r redis-stable && \
-    npm install -g concurrently && \
+#RUN tar xvzf redis-stable.tar.gz && \
+  #  cd redis-stable && \
+  #  make && \
+  #  mv src/redis-server /usr/bin/ && \
+ #   cd .. && \
+ #   rm -r redis-stable && \
+RUN npm install -g concurrently && \
     npm install -g npm
     #npm install -g fsh-sushi
 
@@ -39,4 +39,5 @@ EXPOSE 3000
 
 EXPOSE 6379
 
-CMD concurrently "/usr/bin/redis-server --bind '0.0.0.0'" "sleep 5s; npm start" 
+
+CMD ["npm", "start"]
