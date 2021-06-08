@@ -57,13 +57,13 @@ const workflowLeaveEthiopia = {
                              })
                 let continousLeaveType = ["maternity","paternity","sick"]
                 if (continousLeaveType.includes(leaveType)){
-                  requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                  requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime))
                 } else {
                   //Deduct holidays
                   let periodStart = req.body.item[0].item[1].answer[0].valueDateTime
                   let periodend = req.body.item[0].item[2].answer[0].valueDateTime
                   let numHolidays = 0
-                  requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime)) + 1
+                  requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime))
                   let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
                   if(holidaysResource.id === "ihris-holidays-codesystem" ){
                     if(holidaysResource.concept){

@@ -17,9 +17,7 @@ const user = {
   },
   restoreUser: ( obj ) => {
     let userObj = new User( obj.resource )
-    if (obj.permissions){
-      userObj.restorePermissions( obj.permissions )
-    }
+    userObj.restorePermissions( obj.permissions )
     return userObj
   },
   lookup: ( query ) => {
