@@ -64,6 +64,7 @@ Title:           "Leave Type"
 * #prenatal "Prenatal Leave" "Prenatal Leave"
 * #postnatal "Postnatal Leave" "Postnatal Leave"
 * #medical  "Medical Leave" "Medical Leave"
+* #leaveWithoutPay  "Leave Without Pay" "Leave Without Pay"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
@@ -125,6 +126,7 @@ Usage:          #definition
 * item[0].item[3].type = #date
 * item[0].item[3].required = true
 * item[0].item[3].repeats = false
+
 
 Instance:       ihris-page-leave
 InstanceOf:     IhrisPage
