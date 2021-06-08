@@ -71,6 +71,7 @@ Title:           "Leave Type"
 * #wedding "Wedding Days" "Wedding Days"
 * #exam "Exam Leave" "Exam Leave"
 * #medical "Medical Leave" "Medical Leave"
+* #leaveWithoutPay  "Leave Without Pay" "Leave Without Pay"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
@@ -89,6 +90,7 @@ Title:           "Leave Sub Type"
 * #EOD "Every other day"
 * #EODHDM "Every other day half day: Morning"
 * #EODHDA "Every other day half day: Afternoon" 
+* #ED "Every Day"
 
 ValueSet:         IhrisLeaveSubTypeValueSet
 Id:               ihris-leave-sub-type-valueset
