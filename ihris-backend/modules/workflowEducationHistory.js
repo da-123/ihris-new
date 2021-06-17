@@ -70,6 +70,14 @@ const workflowEducationHistory = {
                 complexExt.push({ url: "current",
                 valueBoolean: req.body.item[0].item[4].answer[0].valueBoolean })
             }
+            if ( req.body.item[0].item[5].linkId === "Basic.extension[0].extension[5]" 
+                && req.body.item[0].item[5].answer 
+                && req.body.item[0].item[5].answer[0] 
+                && req.body.item[0].item[5].answer[0].valueAttachment){
+                complexExt.push({ url: "attachment",
+                valueAttachment: req.body.item[0].item[5].answer[0].valueAttachment
+                            })
+            }
             if(complexExt){
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-education-history",
                 extension: complexExt})

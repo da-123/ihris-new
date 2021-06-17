@@ -19,6 +19,8 @@ Description:    "iHRIS Profile of the Basic resource for Education History."
 * extension[educationHistory].extension[year].valueDate 0..1 MS
 * extension[educationHistory].extension[current].valueBoolean ^label = "Is Current?"
 * extension[educationHistory].extension[current].valueBoolean MS
+* extension[educationHistory].extension[attachment].valueAttachment ^label = "Attachment"
+* extension[educationHistory].extension[attachment].valueAttachment MS
     
 Extension:      IhrisEducationHistory
 Id:             ihris-education-history
@@ -29,7 +31,8 @@ Title:          "Education History details"
       /*degree 1..1 MS and*/
       educationalMajor 0..1 MS and
       year 0..1 MS and
-      current 0..1 MS
+      current 0..1 MS and
+      attachment 0..1 MS
 * extension[institution].value[x] only Coding
 * extension[institution].valueCoding from IhrisInstitutionValueSet
 * extension[institution].valueCoding ^label = "Institution"
@@ -47,6 +50,9 @@ Title:          "Education History details"
 * extension[current].value[x] only boolean
 * extension[current].valueBoolean MS
 * extension[current].valueBoolean ^label = "Is Current"
+* extension[attachment].value[x] only Attachment
+* extension[attachment].valueAttachment 0..1 MS
+* extension[attachment].valueAttachment ^label = "Attachment"
 
 CodeSystem:      IhrisDegree
 Id:              ihris-degree
@@ -361,6 +367,12 @@ Usage:          #definition
 * item[0].item[4].type = #boolean
 * item[0].item[4].required = false
 * item[0].item[4].repeats = false
+
+* item[0].item[5].linkId = "Basic.extension[0].extension[5]"
+* item[0].item[5].text = "Attachement"
+* item[0].item[5].type = #attachment
+* item[0].item[5].required = false
+* item[0].item[5].repeats = false
 
 Instance:       ihris-page-basic-education-history
 InstanceOf:     IhrisPage
