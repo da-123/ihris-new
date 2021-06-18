@@ -48,6 +48,10 @@
       "valueString": "redis://redis-master.tools.svc:6379"
     },
     {
+      "name": "session:secret",
+      "valueString": "3b26d1eb6ab6e1a6d6b844d489c101881078a039d526b002968c8baf4cc61474a1c9779b8490c81ef6fd437526251f8b5a0c679d673f3443dcd78a9f1b2cc876"
+    },
+    {
       "name": "logs",
       "part": [
         {
