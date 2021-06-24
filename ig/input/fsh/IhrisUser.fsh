@@ -90,7 +90,6 @@ Usage:          #example
 * extension[display].extension[search][2].valueString = "Role|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-assign-role').valueReference.reference"
 * extension[display].extension[search][3].valueString = "Location|Person.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-user-location').valueReference.reference"
 * extension[display].extension[filter][0].valueString = "User|name:contains"
-* extension[display].extension[filter][1].valueString = "Email|email"
 * extension[display].extension[field][0].extension[path].valueString = "Person.extension:password.extension:password.value[x]:valueString"
 * extension[display].extension[field][0].extension[type].valueString = "password"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
@@ -123,7 +122,7 @@ Usage:          #definition
 * item[0].type = #group
 * item[0].extension[constraint].extension[key].valueId = "ihris-password-check"
 * item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].extension[constraint].extension[expression].valueString = "where(linkId='password#password').answer.first().valueString != where(linkId='confrimpassword#password').answer.first().valueString"
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='password').answer.first().valueString = where(linkId='confrimpassword').answer.first().valueString"
 * item[0].extension[constraint].extension[human].valueString = "Please make sure Password and Confrim Password Match."
 
 * item[0].item[0].linkId = "Person.name[0].text"
@@ -189,3 +188,45 @@ Usage:          #definition
 * item[0].item[7].type = #string
 * item[0].item[7].required = true
 * item[0].item[7].repeats = false
+
+Instance:       IhrisChangePassword
+InstanceOf:     IhrisQuestionnaire
+Usage:          #definition
+* title = "iHRIS Change Password Workflow"
+* description = "iHRIS workflow to Change Users Password"
+* id = "ihris-change-password"
+* url = "http://ihris.org/fhir/Questionnaire/ihris-change-password"
+* name = "ihris-change-password"
+* status = #active
+* date = 2020-12-08
+* purpose = "Workflow page for changing a user's password."
+
+* item[0].linkId = "Person"
+* item[0].text = "Change Password"
+* item[0].type = #group
+* item[0].extension[constraint][0].extension[key].valueId = "ihris-password-check"
+* item[0].extension[constraint][0].extension[severity].valueCode = #error
+* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='newpassword').answer.first().valueString = where(linkId='confrimpassword').answer.first().valueString"
+* item[0].extension[constraint][0].extension[human].valueString = "Please make sure New Password and Confrim Password Match."
+* item[0].extension[constraint][1].extension[key].valueId = "ihris-oldpassword-check"
+* item[0].extension[constraint][1].extension[severity].valueCode = #error
+* item[0].extension[constraint][1].extension[expression].valueString = "where(linkId='oldpassword').answer.first().valueString != where(linkId='newpassword').answer.first().valueString"
+* item[0].extension[constraint][1].extension[human].valueString = "Please make sure New Password is not the Same as Old Password."
+
+* item[0].item[0].linkId = "oldpassword#password"
+* item[0].item[0].text = "Old Password"
+* item[0].item[0].type = #string
+* item[0].item[0].required = true
+* item[0].item[0].repeats = false
+
+* item[0].item[1].linkId = "newpassword#password"
+* item[0].item[1].text = "Password"
+* item[0].item[1].type = #string
+* item[0].item[1].required = true
+* item[0].item[1].repeats = false
+
+* item[0].item[2].linkId = "confrimpassword#password"
+* item[0].item[2].text = "Confirm Password"
+* item[0].item[2].type = #string
+* item[0].item[2].required = true
+* item[0].item[2].repeats = false

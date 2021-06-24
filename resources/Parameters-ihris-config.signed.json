@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-06-02T08:40:11.556Z",
+        "when": "2021-06-24T11:05:06.879Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "WtV6ktWGpxe9Gf3EAyKi75p2I5T/a96Tfw7rZKdUT/YHCUw1i024+0FClJoFGTzJtt1XjZLUz3xWYBP58rRXdaoicCrYVWJzjy0UAPsNMi+MM9canUT/CpbqbGT32LuvKa9nDOY4JsnmtheAK9hGap+CD6fVw/1pf54gAoUNPc4="
+        "data": "ThEEKlyGvvrOLsuX+yGyWXK4ZaSyxGXfszlfvXnKl3Ce8jJ5JWH9H0TLcAHig+JEDR90HdGd5ryW3S4clpFN9sGSq/Yzuoij3x4/3529QYF3PubmEYljD+PGG8YZvTqxGcYkdB4QKFlMB4zSimWJZiKCYhJkeh5LXgDigy7+qus="
       }
     },
     {
@@ -715,6 +715,22 @@
           "valueString": "/resource/search/user"
         },
         {
+          "name": "site:nav:menu:password:text",
+          "valueString": "Change Password"
+        },
+        {
+          "name": "site:nav:menu:password:url",
+          "valueString": "/questionnaire/ihris-change-password/user"
+        },
+        {
+          "name": "site:nav:menu:password:order",
+          "valueString": "7"
+        },
+        {
+          "name": "site:nav:menu:password:icon",
+          "valueString": "mdi-lock-reset"
+        },
+        {
           "name": "shortname:Practitioner:format",
           "valueString": "%s, %s , %s"
         },
@@ -985,6 +1001,14 @@
         {
           "name": "workflow:questionnaire:user:url",
           "valueString": "http://ihris.org/fhir/Questionnaire/ihris-user"
+        },
+        {
+          "name": "workflow:processor:password:file",
+          "valueString": "../modules/workflowChangePassword"
+        },
+        {
+          "name": "workflow:questionnaire:password:url",
+          "valueString": "http://ihris.org/fhir/Questionnaire/ihris-change-password"
         }
       ]
     }
