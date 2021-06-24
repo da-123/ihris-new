@@ -16,11 +16,11 @@
             "code": "1.2.840.10065.1.12.1.14"
           }
         ],
-        "when": "2021-06-24T11:05:06.879Z",
+        "when": "2021-06-24T16:40:48.492Z",
         "who": {
           "reference": "http://ihris.org/fhir/Organization/ihris"
         },
-        "data": "ThEEKlyGvvrOLsuX+yGyWXK4ZaSyxGXfszlfvXnKl3Ce8jJ5JWH9H0TLcAHig+JEDR90HdGd5ryW3S4clpFN9sGSq/Yzuoij3x4/3529QYF3PubmEYljD+PGG8YZvTqxGcYkdB4QKFlMB4zSimWJZiKCYhJkeh5LXgDigy7+qus="
+        "data": "QmILHdoi4WH1zxU/eJ9L2hGxLMq3AWanhT+e5TMn4Xv/ya2WgxQCW0eoZ+koZgWOPnqM/fepiZWglxOFFYbP3xqwiGICUrpnkRrOdJVAfY8TuFPy6YJAk30I9NPQJauhvHPFEQPB4yIM0lyV6fXFmHDegYyF/vuVH3zvntxcv70="
       }
     },
     {
@@ -833,6 +833,10 @@
         {
           "name": "defaults:fields:Location.partOf:type",
           "valueString": "tree"
+        },
+        {
+          "name": "defaults:fields:Location.partOf:initialValue",
+          "valueString": "Location/ET"
         },
         {
           "name": "defaults:fields:Location.partOf:user_filter:regex",
