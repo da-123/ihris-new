@@ -9,7 +9,7 @@
   "parameter": [
     {
       "name": "fhir:base",
-      "valueString": "https://fhir.sandboxaddis.com/fhir"
+      "valueString": "http://196.188.93.169:8080/fhir"
     },
     {
       "name": "elasticsearch:base",
