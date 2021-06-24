@@ -62,7 +62,7 @@ passport.use( new GoogleStrategy(
 
 passport.use( 'local', new LocalStrategy({passReqToCallback: true },
   ( req, email, password, done ) => {
-     if(email == "admin@ihris.org"){
+     /*if(email == "admin@ihris.org"){
       const getAdminUser = async(admin, password) => {
         let userObj = new User(admin)
         await userObj.updatePermissions()
@@ -81,7 +81,7 @@ passport.use( 'local', new LocalStrategy({passReqToCallback: true },
           done( null, false )
         }
       })
-    } else {
+    } else {*/
       user.lookupByEmail( email ).then( (userObj) => {
         if ( !userObj ) {
           fhirAudit.login( userObj, req.ip, false, email )
@@ -99,7 +99,7 @@ passport.use( 'local', new LocalStrategy({passReqToCallback: true },
         fhirAudit.login( {}, req.ip, false, email )
         done( err )
       } )
-    }
+    //}
   }
 ) )
 
