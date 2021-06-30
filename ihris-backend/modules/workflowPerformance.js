@@ -29,7 +29,7 @@ const workflowPerformance = {
             let performanceType = req.body.item[0].item[4].answer[0].valueCoding.code
             let startDate = req.body.item[0].item[1].answer[0].valueDateTime
             let endDate = req.body.item[0].item[2].answer[0].valueDateTime
-            let performanceBundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, performancetype: performanceType, performanceperiod: "sa"+endDate , performanceperiod: "eb"+startDate } )
+            let performanceBundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, performancetype: performanceType, performanceperiod: "ge"+startDate , performanceperiod: "eb"+endDate } )
             if ( performanceBundle.entry ) {
               resolve(await workflowPerformance.outcome(winston.info("Another "+performanceType+ " evaluation exists for that performance period. Please adjust Type or Date Period ")))
             } else {

@@ -38,7 +38,11 @@ Title:          "Performance details"
 * extension[performanceType].valueCoding ^label = "Performance Type"
 * extension[performanceType].valueCoding from IhrisPerformanceTypeValueSet (required)
 * extension[evaluator].value[x] only string
-* extension[evaluator].valueString ^label = "Evaluator's Name"
+* extension[evaluator].valueString ^label = "Evaluator's FullName"
+* extension[evaluator].valueString ^constraint[0].key = "ihris-name-check"
+* extension[evaluator].valueString ^constraint[0].severity = #error
+* extension[evaluator].valueString ^constraint[0].human = "Name must be only text"
+* extension[evaluator].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
 * extension[score].value[x] only decimal
 * extension[score].valueDecimal ^label = "Score Attained"
 * extension[period].value[x] only Period
@@ -106,7 +110,7 @@ Usage:          #definition
 * item[0].type = #group
 * item[0].extension[constraint][0].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint][0].extension[severity].valueCode = #error
-* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
+* item[0].extension[constraint][0].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
 * item[0].extension[constraint][0].extension[human].valueString = "The end date must be after the start date."
 /* item[0].extension[constraint][1].extension[key].valueId = "ihris-period-diff"
 * item[0].extension[constraint][1].extension[severity].valueCode = #error
@@ -120,7 +124,7 @@ Usage:          #definition
 * item[0].item[0].repeats = false
 * item[0].item[0].extension[constraint].extension[key].valueId = "ihris-given-name-check"
 * item[0].item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z]*$')"
+* item[0].item[0].extension[constraint].extension[expression].valueString = "matches('^[A-Za-z ]*$')"
 * item[0].item[0].extension[constraint].extension[human].valueString = "Name must be only text."
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
@@ -177,5 +181,6 @@ Usage:          #example
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:performance.extension:evaluator.value[x]:valueString"
-* extension[section][0].extension[field][2].valueString = "Basic.extension:performance.extension:period.value[x]:valuePeriod"
-* extension[section][0].extension[field][3].valueString = "Basic.extension:performance.extension:score.value[x]:valueString"
+* extension[section][0].extension[field][2].valueString = "Basic.extension:performance.extension:performanceType.value[x]:valueCoding"
+* extension[section][0].extension[field][3].valueString = "Basic.extension:performance.extension:period.value[x]:valuePeriod"
+* extension[section][0].extension[field][4].valueString = "Basic.extension:performance.extension:score.value[x]:valueDecimal"
