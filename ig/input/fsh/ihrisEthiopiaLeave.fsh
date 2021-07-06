@@ -72,6 +72,7 @@ Title:           "Leave Type"
 * #exam "Exam Leave" "Exam Leave"
 * #medical "Medical Leave" "Medical Leave"
 * #leaveWithoutPay  "Leave Without Pay" "Leave Without Pay"
+* #sabbatical  "Sabbatical Leave" "Sabbatical Leave"
 
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
