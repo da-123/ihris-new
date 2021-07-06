@@ -1,5 +1,8 @@
 const nconf = require('./config')
 const winston = require('winston')
+const parseISO = require('date-fns/parseISO')
+const isSunday = require('date-fns/isSunday')
+const compareAsc = require('date-fns/compareAsc')
 const fhirAxios = nconf.fhirAxios
 
 const workflowFulltimeEthiopia = {
@@ -12,6 +15,24 @@ const workflowFulltimeEthiopia = {
           entry: []
         }
         //winston.info(JSON.stringify( req.body,null,2))
+        let hireDate = req.body.item[0].item[6].answer[0].valueDateTime
+        if(!isSunday(parseISO(hireDate))){
+          let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
+          if(holidaysResource.id === "ihris-holidays-codesystem" ){
+            if(holidaysResource.concept){
+              for (let holidayConcept of holidaysResource.concept){
+                if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(hireDate)) = 0){
+                  winston.error("Hire Date is a Public Holiday ")
+                  resolve(await workflowFulltimeEthiopia.outcome("Hire Date is cannot be a Public Holiday. Change Hire Date"))
+                }
+              }
+            }
+          }
+        } else {
+          winston.error("Hire Date is a Sunday ")
+          resolve(await workflowFulltimeEthiopia.outcome("Hire Date is cannot be a Sunday. Change Hire Date"))
+        }
+        
         let resource = await fhirAxios.read( "Practitioner", req.query.practitioner )
       
         if (resource.resourceType === "Practitioner"){
@@ -94,7 +115,7 @@ const workflowFulltimeEthiopia = {
               code: [
                 { coding: [ req.body.item[0].item[0].answer[0].valueCoding ] }
               ],
-              period: { start: req.body.item[0].item[6].answer[0].valueDateTime },
+              period: { start: hireDate },
               extension: extensions,
             }
 
