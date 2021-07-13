@@ -104,6 +104,14 @@ const workflowContractEthiopia = {
                 extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-position-status",
                 valueCoding:req.body.item[0].item[11].answer[0].valueCoding })
             }
+
+            if ( req.body.item[0].item[12].linkId === "PractitionerRole.extension[3]" 
+            && req.body.item[0].item[12].answer 
+            && req.body.item[0].item[12].answer[0]
+            && req.body.item[0].item[12].answer[0].valueText){
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-fund-source",
+              valueString:req.body.item[0].item[12].answer[0].valueText })
+            }
             let newRole = {
               resourceType: "PractitionerRole",
               meta: {
