@@ -4,6 +4,7 @@ const differenceInBusinessDays = require('date-fns/differenceInBusinessDays')
 const differenceInDays = require('date-fns/differenceInDays')
 const compareAsc = require('date-fns/compareAsc')
 const isWeekend = require('date-fns/isWeekend')
+const parseISO = require('date-fns/parseISO')
 const fhirAxios = nconf.fhirAxios
 
 const workflowLeaveEthiopia = {
@@ -20,7 +21,7 @@ const workflowLeaveEthiopia = {
         let leaveType = req.body.item[0].item[0].answer[0].valueCoding.code
         let startDate = req.body.item[0].item[1].answer[0].valueDateTime
         let endDate = req.body.item[0].item[2].answer[0].valueDateTime
-        let leaveBundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, leavetype: leaveType, leaveperiod: "sa"+endDate , leaveperiod: "eb"+startDate } )   
+        let leaveBundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, leavetype: leaveType, leaveperiod: "ge"+startDate , leaveperiod: "eb"+endDate } )   
         if ( leaveBundle.entry ) {
           resolve(await workflowLeaveEthiopia.outcome(winston.info("Another Leave request of "+leaveType+ " exists for that period. Please adjust Type or Date Period ")))
         } else {
@@ -74,10 +75,10 @@ const workflowLeaveEthiopia = {
                     if(holidaysResource.id === "ihris-holidays-codesystem" ){
                       if(holidaysResource.concept){
                         for (let holidayConcept of holidaysResource.concept){
-                          if(isWeekend(holidayConcept.property.valueDateTime)){
+                          if(isWeekend(parseISO(holidayConcept.property.valueDateTime))){
 
                           } else {
-                            if(compareAsc(holidayConcept.property.valueDateTime,periodStart) >= 0 && compareAsc(holidayConcept.property.valueDateTime,periodend) <= 0){
+                            if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(periodStart)) >= 0 && compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(periodend)) <= 0){
                               numHolidays++
                             }
                           }

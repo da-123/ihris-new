@@ -182,6 +182,8 @@ Usage:          #example
 * extension[display].extension[filter][6].valueString = "File Number|filenumber"
 * extension[display].extension[field][0].extension[path].valueString = "Practitioner.id"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[display].extension[field][1].extension[path].valueString = "Practitioner.identifier.type.coding"
+* extension[display].extension[field][1].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-personal-information/practitioner"
 * extension[display].extension[add].extension[icon].valueString = "mdi-account-plus"
 * extension[display].extension[add].extension[class].valueString = "accent"
@@ -369,8 +371,8 @@ Usage:          #example
 * extension[section][14].extension[resource].extension[action][1].extension[text].valueString = "View"
 * extension[section][14].extension[resource].extension[action][1].extension[row].valueBoolean = true
 * extension[section][14].extension[resource].extension[action][1].extension[class].valueString = "primary"
-* extension[section][15].extension[title].valueString = "Performance Evaluation Information"
-* extension[section][15].extension[description].valueString = "Performance Evaluation for the Person"
+* extension[section][15].extension[title].valueString = "Performance Appraisal Information"
+* extension[section][15].extension[description].valueString = "Performance Appraisal for the Person"
 * extension[section][15].extension[name].valueString = "performance"
 * extension[section][15].extension[resource].extension[resource].valueReference = Reference(StructureDefinition/ihris-basic-performance)
 * extension[section][15].extension[resource].extension[searchfield].valueString = "practitioner"
@@ -388,7 +390,7 @@ Usage:          #example
 * extension[section][15].extension[resource].extension[column][5].extension[header].valueString = "Actions"
 * extension[section][15].extension[resource].extension[column][5].extension[field].valueString = "_action"
 * extension[section][15].extension[resource].extension[action][0].extension[link].valueString = "/questionnaire/ihris-performance/performance?practitioner=FHIRID"
-* extension[section][15].extension[resource].extension[action][0].extension[text].valueString = "Add Performance Evaluation"
+* extension[section][15].extension[resource].extension[action][0].extension[text].valueString = "Add Performance Appraisal"
 * extension[section][15].extension[resource].extension[action][0].extension[row].valueBoolean = false
 * extension[section][15].extension[resource].extension[action][0].extension[emptyDisplay].valueBoolean = true
 * extension[section][15].extension[resource].extension[action][0].extension[class].valueString = "primary"

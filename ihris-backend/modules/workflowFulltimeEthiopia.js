@@ -14,14 +14,16 @@ const workflowFulltimeEthiopia = {
           type: "transaction",
           entry: []
         }
-        //winston.info(JSON.stringify( req.body,null,2))
+        
         let hireDate = req.body.item[0].item[6].answer[0].valueDateTime
         if(!isSunday(parseISO(hireDate))){
           let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
           if(holidaysResource.id === "ihris-holidays-codesystem" ){
             if(holidaysResource.concept){
+              winston.info("HAD HOLIDAYS CONCEPT")
+              let i = 0
               for (let holidayConcept of holidaysResource.concept){
-                if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(hireDate)) = 0){
+                if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(hireDate)) === 0){
                   winston.error("Hire Date is a Public Holiday ")
                   resolve(await workflowFulltimeEthiopia.outcome("Hire Date is cannot be a Public Holiday. Change Hire Date"))
                 }

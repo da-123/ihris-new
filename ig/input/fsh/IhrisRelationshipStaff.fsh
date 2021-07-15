@@ -39,7 +39,7 @@ Usage:          #example
 * extension[reportdetails].extension[reportelement][5].extension[label].valueString = "birthDate"
 * extension[reportdetails].extension[reportelement][5].extension[name].valueString = "birthDate"
 * extension[reportdetails].extension[reportelement][5].extension[display].valueString = "BirthDate"
-* extension[reportdetails].extension[reportelement][5].extension[filter].valueBoolean = false
+* extension[reportdetails].extension[reportelement][5].extension[filter].valueBoolean = true
 * extension[reportdetails].extension[reportelement][5].extension[dropDownFilter].valueBoolean = false
 * extension[reportdetails].extension[reportelement][6].extension[label].valueString = "phone"
 * extension[reportdetails].extension[reportelement][6].extension[name].valueString = "Practitioner.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-personal-information-phone').valueString"

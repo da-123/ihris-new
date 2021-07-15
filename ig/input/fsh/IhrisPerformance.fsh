@@ -64,7 +64,7 @@ CodeSystem:      IhrisPerformanceScore
 Id:              ihris-performance-score
 Title:           "Performance Score"
 * ^date = "2020-11-17T10:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * #1 "Improvement Required" "Improvement Required"
 * #2 "Development Required" "Development Required"
 * #3 "Meets Expectations" "Meets Expectations"
@@ -75,22 +75,22 @@ ValueSet:         IhrisPerformanceScoreValueSet
 Id:               ihris-performance-score-valueset
 Title:            "iHRIS Performance Score ValueSet"
 * ^date = "2020-11-17T10:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * codes from system IhrisPerformanceScore
 
 CodeSystem:      IhrisPerformanceType
 Id:              ihris-performance-type
 Title:           "Performance Score"
 * ^date = "2020-11-17T10:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * #probation "Probation period" "Probation period"
-* #annual "Annual Performance Evaluation" "Annual Performance Evaluation"
+* #annual "Annual Performance Appraisal" "Annual Performance Appraisal"
 
 ValueSet:         IhrisPerformanceTypeValueSet
 Id:               ihris-performance-type-valueset
 Title:            "iHRIS Performance Score ValueSet"
 * ^date = "2020-11-10T10:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * codes from system IhrisPerformanceType
 
 Instance:       IhrisPractitionerWorkflowPerformance
@@ -176,8 +176,8 @@ Usage:          #example
 * extension[display].extension[search][1].valueString = "End Date|extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-performance').extension.where(url='period').valuePeriod.end"
 * extension[display].extension[field][0].extension[path].valueString = "Basic.extension:practitioner.value[x]:valueReference"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
-* extension[section][0].extension[title].valueString = "Performance Evaluation"
-* extension[section][0].extension[description].valueString = "Performance Evaluation details"
+* extension[section][0].extension[title].valueString = "Performance Appraisal"
+* extension[section][0].extension[description].valueString = "Performance Appraisal details"
 * extension[section][0].extension[name].valueString = "Basic"
 * extension[section][0].extension[field][0].valueString = "Basic.extension:practitioner"
 * extension[section][0].extension[field][1].valueString = "Basic.extension:performance.extension:evaluator.value[x]:valueString"
