@@ -182,6 +182,8 @@ Usage:          #example
 * extension[display].extension[filter][6].valueString = "File Number|filenumber"
 * extension[display].extension[field][0].extension[path].valueString = "Practitioner.id"
 * extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[display].extension[field][1].extension[path].valueString = "Practitioner.identifier.type.coding"
+* extension[display].extension[field][1].extension[readOnlyIfSet].valueBoolean = true
 * extension[display].extension[add].extension[url].valueUrl = "/questionnaire/ihris-personal-information/practitioner"
 * extension[display].extension[add].extension[icon].valueString = "mdi-account-plus"
 * extension[display].extension[add].extension[class].valueString = "accent"
