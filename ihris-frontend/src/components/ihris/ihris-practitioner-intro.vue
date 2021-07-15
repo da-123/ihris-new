@@ -4,12 +4,14 @@
     flex-direction: row;
     position: fixed;
     background-color: var(--v-warning-base) !important;
-    width: 60%;
+    width: 40%;
+    height:40px;
     z-index: 1;
     top: 65px;
     color: #ffff;
-    padding-left: 20px;
-    border-radius: 0 0 10px 0;
+    padding-left: 5px;
+    border-radius: 0 0 10px 10px;
+    margin-left:16%;
 }
 
 .hide {
@@ -75,17 +77,20 @@ export default {
 
           let practitioner = this.slotProps.source.data
 
-          let extensions =  practitioner.extension.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
-
           let firstName = practitioner.name[0].given[0];
 
           let gender = practitioner.gender;
+
+          let extensions =  practitioner.extension[0]//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
+
+          extensions = extensions.extension
 
           let fatherName = extensions.filter(ext => ext.url === 'fathers')
 
           let grandFatherLastName = extensions.filter(ext => ext.url === 'grandfatherslastname')
 
-          this.intro.value = firstName+" "+fatherName+" "+grandFatherLastName+" "+gender
+
+          this.intro.value = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString+" "+gender
 
         }
     },
