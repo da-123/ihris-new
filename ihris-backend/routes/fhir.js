@@ -325,6 +325,7 @@ router.get("/CodeSystem/\\$lookup", (req, res) => {
 } )
 
 router.get("/DocumentReference/:id/\\$html", (req, res) => {
+
   if ( !req.user ) {
     return res.status(401).json( outcomes.NOTLOGGEDIN )
   }

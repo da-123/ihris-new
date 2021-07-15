@@ -90,28 +90,29 @@ const workflowContractEthiopia = {
               extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-salary",
               valueMoney:{value: req.body.item[0].item[9].answer[0].valueString }})
             }
-            if ( req.body.item[0].item[10].linkId === "PractitionerRole.extension[2]" 
-              && req.body.item[0].item[10].answer 
-              && req.body.item[0].item[10].answer[0] 
-              && req.body.item[0].item[10].answer[0].valueText){
-                extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-remark",
-                valueString:req.body.item[0].item[10].answer[0].valueText })
+
+            if ( req.body.item[0].item[10].linkId === "PractitionerRole.extension[3]" 
+            && req.body.item[0].item[10].answer 
+            && req.body.item[0].item[10].answer[0]
+            && req.body.item[0].item[10].answer[0].valueText){
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-fund-source",
+              valueString:req.body.item[0].item[10].answer[0].valueText })
             }
-            if ( req.body.item[0].item[11].linkId === "positionStatus" 
+            if ( req.body.item[0].item[11].linkId === "PractitionerRole.extension[2]" 
               && req.body.item[0].item[11].answer 
-              && req.body.item[0].item[11].answer[0]
-              && req.body.item[0].item[11].answer[0].valueCoding){
-                extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-position-status",
-                valueCoding:req.body.item[0].item[11].answer[0].valueCoding })
+              && req.body.item[0].item[11].answer[0] 
+              && req.body.item[0].item[11].answer[0].valueText){
+                extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-remark",
+                valueString:req.body.item[0].item[11].answer[0].valueText })
             }
 
-            if ( req.body.item[0].item[12].linkId === "PractitionerRole.extension[3]" 
+            if ( req.body.item[0].item[12].linkId === "positionStatus" 
             && req.body.item[0].item[12].answer 
             && req.body.item[0].item[12].answer[0]
-            && req.body.item[0].item[12].answer[0].valueText){
-              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-fund-source",
-              valueString:req.body.item[0].item[12].answer[0].valueText })
-            }
+            && req.body.item[0].item[12].answer[0].valueCoding){
+              extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-position-status",
+              valueCoding:req.body.item[0].item[12].answer[0].valueCoding })
+          }
             let newRole = {
               resourceType: "PractitionerRole",
               meta: {

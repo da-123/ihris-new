@@ -212,7 +212,7 @@ module.exports = router
 
   // Fallback for the vue router using history mode
   // If this causes issues, would need to either
-  // server the ui from a subdirectory or change to hash mode
+  // server the ui from a subdirectory or change to hash mo de
   app.use( (req,res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'))
   } )

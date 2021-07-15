@@ -27,7 +27,7 @@
           </v-btn>
         </v-toolbar>
       </template>
-      <template v-slot:item._action="{ item }">
+      <template v-slot:item.action="{ item }">
         <v-btn 
           v-for="action in item.actions" 
           :to="setupLink( action.link, item )" 

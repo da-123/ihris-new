@@ -59,7 +59,7 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleJobType named jobType 0..1 MS and
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
-    IhrisPractitionerRoleJobInformationFundSource named jobInformationFundSource 0..1 MS and
+    IhrisPractitionerRoleFundSource named jobInformationFundSource 0..1 MS and
     IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS and
     IhrisPractitionerRoleReasonChange named reasonForChange 0..1 MS and
     IhrisPractitionerRoleSalaryScale named salaryScale 0..1 MS 
@@ -330,17 +330,6 @@ Description:    "iHRIS extension for Job Information Remark."
 * valueString 0..1 MS
 * valueString ^label = "Job Information Remark"
 
-
-Extension:      IhrisPractitionerRolejobInformationFundSource
-Id:             ihris-practitionerrole-job-information-fund-source
-Title:          "iHRIS Job Description Job Information Source of Fund"
-Description:    "iHRIS extension for Job Information Source of Fund."
-* ^context.type = #element
-* ^context.expression = "PractitionerRole"
-* value[x] only string
-* valueString 0..1 MS
-* valueString ^label = "Source of Fund"
-
 Extension:      IhrisPractitionerRoleSalary
 Id:             ihris-practitionerrole-salary
 Title:          "iHRIS Job Description salary"
@@ -350,6 +339,16 @@ Description:    "iHRIS extension for Job Information Salary."
 * value[x] only Money
 * valueMoney 0..1 MS
 * valueMoney ^label = "Salary"
+
+Extension:      IhrisPractitionerRoleFundSource
+Id:             ihris-practitionerrole-job-information-fund-source
+Title:          "iHRIS Job Description Job Information Source of Fund"
+Description:    "iHRIS extension for Job Information Source of Fund."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+* value[x] only string
+* valueString 0..1 MS
+* valueString ^label = "Source of Fund"
 
 /*Extension:      IhrisPractitionerRoleCaseTeam
 Id:             ihris-practitionerrole-caseteam
@@ -1006,26 +1005,27 @@ Usage:          #definition
 * item[0].item[9].required = false
 * item[0].item[9].repeats = false
 
-* item[0].item[10].linkId = "PractitionerRole.extension[2]"
-* item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
-* item[0].item[10].text = "Remark"
-* item[0].item[10].type = #text
+* item[0].item[10].linkId = "PractitionerRole.extension[3]"
+* item[0].item[10].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationFundSource.value[x]:valueString"
+* item[0].item[10].text = "Source of Fund"
+* item[0].item[10].type = #string
 * item[0].item[10].required = false
 * item[0].item[10].repeats = false
 
-* item[0].item[11].linkId = "positionStatus"
-* item[0].item[11].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:positionStatus.value[x]:valueCoding"
-* item[0].item[11].text = "Position Status"
-* item[0].item[11].type = #choice
-* item[0].item[11].required = true
+* item[0].item[11].linkId = "PractitionerRole.extension[2]"
+* item[0].item[11].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationRemark.value[x]:valueString"
+* item[0].item[11].text = "Remark"
+* item[0].item[11].type = #text
+* item[0].item[11].required = false
 * item[0].item[11].repeats = false
-* item[0].item[11].readOnly = true
-* item[0].item[11].answerOption.valueCoding = http://ihris.org/fhir/CodeSystem/ihris-position-status#occupied
-* item[0].item[11].answerOption.initialSelected = true
 
-* item[0].item[12].linkId = "PractitionerRole.extension[3]"
-* item[0].item[12].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:jobInformationFundSource.value[x]:valueString"
-* item[0].item[12].text = "Source of Fund"
-* item[0].item[12].type = #string
-* item[0].item[12].required = false
+
+* item[0].item[12].linkId = "positionStatus"
+* item[0].item[12].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:positionStatus.value[x]:valueCoding"
+* item[0].item[12].text = "Position Status"
+* item[0].item[12].type = #choice
+* item[0].item[12].required = true
 * item[0].item[12].repeats = false
+* item[0].item[12].readOnly = true
+* item[0].item[12].answerOption.valueCoding = http://ihris.org/fhir/CodeSystem/ihris-position-status#occupied
+* item[0].item[12].answerOption.initialSelected = true

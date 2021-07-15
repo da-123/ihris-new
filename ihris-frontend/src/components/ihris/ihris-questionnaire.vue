@@ -1,6 +1,6 @@
 <template>
   <v-container class="my-3">
-
+    <ihris-practitioner-intro :slotProps="source" :isQuestionnaire="true"></ihris-practitioner-intro>
     <v-form 
       ref="form"
       v-model="valid"
@@ -68,11 +68,32 @@ export default {
       overlay: false,
       isEdit: false,
       valid: true,
-      advancedValid: true
+      advancedValid: true,
+      source: { path: "", data: {} }
     }
   },
+  components:{
+      "ihris-practitioner-intro": () => import(/* webpackChunkName: "fhir-primary" */ "@/components/ihris/ihris-practitioner-intro" )
+  },
   created: function() {
-    //console.log("QUERY",this.$route.query)
+
+
+    let params = this.$route.query;
+
+    let fhirId = params.practitioner;
+
+    if ( fhirId) {
+      fetch( "/fhir/Practitioner/"+fhirId ).then(response => {
+        response.json().then(data => {
+
+          this.source = {source:{ data: data, path: "Practitioner" }}
+        }).catch(err=> {
+          console.log(err)
+        })
+      }).catch(err=> {
+        console.log(err)
+      })
+    }
   },
   methods: {
     processFHIR: async function() {

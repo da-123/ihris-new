@@ -89,7 +89,7 @@ export default {
   created: function() {
     if ( this.fhirId ) {
       this.loading = true
-      //console.log("getting",this.field,this.fhirId)
+      //console.log("getting",this.field,this.fhirId) 
       fetch( "/fhir/"+this.field+"/"+this.fhirId ).then(response => {
         response.json().then(data => {
           //this.$store.commit('setCurrentResource', data)
@@ -361,6 +361,7 @@ export default {
             this.loading = false
             if ( this.fhirId ) {
               this.$router.go(0)
+              //this.$store.commit('setMessage', { type: 'success', text: 'Update successful.' } )
             } else {
               this.$router.push({ name:"resource_view", params: {page: this.page, id: data.id } })
             }

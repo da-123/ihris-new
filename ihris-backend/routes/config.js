@@ -122,6 +122,7 @@ const processUserFilter = ( user, resource, regex_str, replace ) => {
 
 router.get('/page/:page/:type?', function(req, res) {
   let page = "ihris-page-"+req.params.page
+
   if ( !req.user ) {
     return res.status(401).json( outcomes.NOTLOGGEDIN )
   }
@@ -359,6 +360,9 @@ router.get('/page/:page/:type?', function(req, res) {
             fieldKeys.sort( getSortFunc( order[base] ) )
           }
           for( let field of fieldKeys ) {
+
+            console.log("FIELD", field)
+
             if ( fields[field]["max"] === "0" ) {
               continue
             }
@@ -506,6 +510,11 @@ router.get('/page/:page/:type?', function(req, res) {
           }
           return output
         }
+    
+        vueOutput += '<div><ihris-practitioner-intro :slotProps=\"slotProps\" :isQuestionnaire=\"false"\>\n'+
+                      '</ihris-practitioner-intro>\n'+
+                      '<div class="ihris-intro-float">\n'
+                      
         for ( let name of sectionKeys ) {
           vueOutput += "<ihris-section :slotProps=\"slotProps\" :edit=\"isEdit\" name=\""+name+"\" title=\""+sections[name].title+"\" description=\""+sections[name].description+"\" :secondary=\""+!!sections[name].resource+"\">\n<template #default=\"slotProps\">\n"
           if ( sections[name].resource ) {
@@ -544,6 +553,7 @@ router.get('/page/:page/:type?', function(req, res) {
         vueOutput += '</template></'+resourceElement+'>'+"\n"
       }
       vueOuput = "</template>"
+      vueOutput += "</div></div>\n"
       winston.debug(vueOutput)
       return res.status(200).json({ template: vueOutput, data: {
         sectionMenu: sectionMenu,
@@ -933,6 +943,8 @@ router.get('/questionnaire/:questionnaire', function(req, res) {
         let sectionId = md5sum.digest('hex')
 
         let label = item.text.split('|',2)
+
+        
         vueOutput += '<ihris-questionnaire-section id="' + sectionId + '" path="' + item.linkId + '" label="' + label[0] + '"'
         if ( label.length === 2 ) {
           vueOutput += ' description="' + label[1] + '"'

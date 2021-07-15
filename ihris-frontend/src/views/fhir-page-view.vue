@@ -24,7 +24,11 @@ export default {
     getTemplate: function() {
       fetch( "/config/page/"+page ).then(response => {
         response.json().then(data => {
+
+          
           if ( data.resourceType === "OperationOutcome" ) {
+
+            console.log("OUTCOME")
             Vue.component( 'ihris-template', {
               name: 'ihris-template',
               data: function() {
@@ -53,6 +57,7 @@ export default {
                 }
               },
               components: {
+                "ihris-practitioner-intro": () => import(/* webpackChunkName: "fhir-primary" */ "@/components/ihris/ihris-practitioner-intro" ),
                 "ihris-resource": () => import(/* webpackChunkName: "fhir-primary" */ "@/components/ihris/ihris-resource" ),
                 "ihris-codesystem": () => import(/* webpackChunkName: "fhir-codesystem" */ "@/components/ihris/ihris-codesystem" ),
                 "ihris-section": () => import(/* webpackChunkName: "fhir-primary" */ "@/components/ihris/ihris-section" ),
