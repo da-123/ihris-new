@@ -22,7 +22,7 @@ const workflowContractEthiopia = {
           if(holidaysResource.id === "ihris-holidays-codesystem" ){
             if(holidaysResource.concept){
               for (let holidayConcept of holidaysResource.concept){
-                if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(hireDate)) = 0){
+                if(compareAsc(parseISO(holidayConcept.property.valueDateTime),parseISO(hireDate)) === 0){
                   winston.error("Hire Date is a Public Holiday ")
                   resolve(await workflowFulltimeEthiopia.outcome("Hire Date is cannot be a Public Holiday. Change Hire Date"))
                 }
