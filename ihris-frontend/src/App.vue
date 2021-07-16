@@ -13,7 +13,7 @@
         top
         multi-line
         >
-        {{ $store.state.message.text }}
+        <span class="ihris-snack-text">{{ $store.state.message.text }}</span>
           <v-btn icon dark @click="$store.commit('closeMessage')">
             <v-icon>mdi-close</v-icon>
           </v-btn>
@@ -68,6 +68,10 @@
   height: 70px;
   visibility: hidden;
   pointer-events: none;
+}
+
+.ihris-snack-text{
+  font-size: x-large;
 }
 </style>
 

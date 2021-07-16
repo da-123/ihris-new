@@ -1,3 +1,8 @@
+<style >
+.highlighted{
+  background-color: #5396dc !important;
+}
+</style>
 <template>
   <v-container class="my-3">
         
@@ -55,7 +60,8 @@
             </v-list-item>
           </template>
           <v-subheader v-if="sectionMenu" class="white--text"><h2>Sections</h2></v-subheader>
-          <v-list-item v-for="section in sectionMenu" :href="'#section-'+section.name" :key="section.name">
+          <v-list-item v-for="section in sectionMenu" :href="'#section-'+section.name" :key="section.name" 
+              :class="'#section-'+section.name === path ? 'highlighted' : ''">
             <v-list-item-content class="white--text" v-if="!edit || !section.secondary">
               <v-list-item-title class="text-uppercase"><h4>{{ section.title }}</h4></v-list-item-title>
               <v-list-item-subtitle class="white--text">{{ section.desc }}</v-list-item-subtitle>
@@ -83,10 +89,12 @@ export default {
       overlay: false,
       isEdit: false,
       linktext: [ ],
-      advancedValid: true
+      advancedValid: true,
+      path:''
     }
   },
   created: function() {
+
     if ( this.fhirId ) {
       this.loading = true
       //console.log("getting",this.field,this.fhirId) 
@@ -169,6 +177,15 @@ export default {
       if ( hasPresets ) {
         this.source = { data: presets, path: this.field }
       }
+    }
+  },
+  watch : {
+    $route:function(to, from){
+
+     console.log(to,from)
+     console.log("HASH ", this.$route.hash)
+     this.path = this.$route.hash;
+
     }
   },
   computed: {
