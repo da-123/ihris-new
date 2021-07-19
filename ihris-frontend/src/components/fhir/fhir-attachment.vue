@@ -175,8 +175,10 @@ export default {
       let label ="";
       if ( this.slotProps && this.slotProps.input)label = this.slotProps.input.label
       else label = this.label
-      label = label.split("(");
-      return label[0]
+      if(label.includes("(")){
+        label = label.split("(");
+        return label[0]
+      }else return label
     },
     required: function() {
       return (this.index || 0) < this.min
