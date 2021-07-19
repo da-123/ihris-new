@@ -361,8 +361,6 @@ router.get('/page/:page/:type?', function(req, res) {
           }
           for( let field of fieldKeys ) {
 
-            console.log("FIELD", field)
-
             if ( fields[field]["max"] === "0" ) {
               continue
             }

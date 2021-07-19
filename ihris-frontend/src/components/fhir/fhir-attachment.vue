@@ -41,7 +41,7 @@
       </v-file-input>
     </template>
     <template #header>
-      {{display}}
+      {{display_simple}}
     </template>
     <template #value>
       <v-menu 
@@ -170,6 +170,13 @@ export default {
     display: function() {
       if ( this.slotProps && this.slotProps.input) return this.slotProps.input.label
       else return this.label
+    },
+    display_simple: function(){
+      let label ="";
+      if ( this.slotProps && this.slotProps.input)label = this.slotProps.input.label
+      else label = this.label
+      label = label.split("(");
+      return label[0]
     },
     required: function() {
       return (this.index || 0) < this.min
