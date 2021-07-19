@@ -63,7 +63,7 @@ Description:    "iHRIS profile of Practitioner."
 * gender ^label = "Gender"
 * gender from IhrisEthiopiaGenderValueSet (required)
 * photo 0..1 MS
-* photo ^label = "Photo"
+* photo ^label = "Photo(Max Size= 50MB, Ext:jpeg,jpg,png)"
 * telecom 0..0
 * communication 0..* MS
 * communication ^label = "Language"
