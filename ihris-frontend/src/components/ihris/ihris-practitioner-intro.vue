@@ -23,7 +23,7 @@
 </style>
 
 <template>
-  <div :class="['ihris-intro',(hasScrolled || this.isQuestionnaire) ? 'show':'hide']">
+  <div v-if="intro.value !== ''" :class="['ihris-intro',(hasScrolled || this.isQuestionnaire) ? 'show':'hide']">
      <span>{{intro.display}} : {{intro.value}}</span>
   </div>
   

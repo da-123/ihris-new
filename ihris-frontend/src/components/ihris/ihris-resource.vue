@@ -377,8 +377,9 @@ export default {
             this.overlay = false
             this.loading = false
             if ( this.fhirId ) {
-              this.$router.go(0)
-              //this.$store.commit('setMessage', { type: 'success', text: 'Update successful.' } )
+               this.$store.commit('setMessage', { type: 'success', text: 'Update successful.' } )
+               setTimeout(() => this.$router.go(0), 2000);
+              
             } else {
               this.$router.push({ name:"resource_view", params: {page: this.page, id: data.id } })
             }
