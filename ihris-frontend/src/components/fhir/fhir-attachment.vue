@@ -5,7 +5,9 @@
         :disabled="disabled" 
         :label="display" 
         :loading="loading"
+        :accept="accept"
         v-model="upload" 
+        :prepend-icon="icon"
         outlined 
         hide-details="auto" 
         :rules="rules" 
@@ -162,6 +164,16 @@ export default {
   computed: {
     isImage: function() {
       return this.value.contentType && this.value.contentType.startsWith("image/")
+    },
+    accept:function(){
+      if(this.value.contentType && this.value.contentType.startsWith("image/"))
+        return "image/*"
+      else return []
+    },
+    icon:function(){
+      if(this.value.contentType && this.value.contentType.startsWith("image/"))
+        return "mdi-camera"
+      else return '$file'
     },
     index: function() {
       if ( this.slotProps && this.slotProps.input ) return this.slotProps.input.index
