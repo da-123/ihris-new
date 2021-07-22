@@ -1,17 +1,19 @@
 <style scoped>
 .ihris-intro{
-    display: flex;
+   display: flex;
     flex-direction: row;
     position: fixed;
-    background-color: var(--v-warning-base) !important;
-    width: 40%;
-    height:40px;
+    background-color: var(--v-warning-base)!important;
+    width: 30vw;
+    height: 56px;
     z-index: 1;
-    top: 65px;
-    color: #ffff;
+    top: 9%;
+    padding: 7px;
+    color: #fff;
     padding-left: 5px;
     border-radius: 0 0 10px 10px;
-    margin-left:16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hide {
