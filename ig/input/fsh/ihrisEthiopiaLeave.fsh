@@ -14,7 +14,7 @@ Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension[ethiopiaLeave].extension[period].valuePeriod.start ^minValueDateTime = "1950-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end MS
-* extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave Return Date"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[dateRequested].valueDate MS
@@ -41,7 +41,7 @@ Title:          "Leave details"
 * extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
 * extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
 * extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
-* extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[period].valuePeriod.end ^label = "Leave Return Date"
 * extension[period].valuePeriod.end 1..1 MS
 * extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
 * extension[period].valuePeriod ^constraint[0].severity = #error
