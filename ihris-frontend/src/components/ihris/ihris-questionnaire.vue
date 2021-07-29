@@ -234,7 +234,7 @@ export default {
             }
             //console.log(data)
           })
-          this.$store.commit('setMessage', { type: 'success', text: 'Insert successful.' } )
+          this.$store.commit('setMessage', { type: 'success', text: 'Added successfully.' } )
         } else {
           this.overlay = false
           this.loading = false

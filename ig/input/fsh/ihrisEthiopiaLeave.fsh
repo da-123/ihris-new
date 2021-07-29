@@ -14,7 +14,7 @@ Description:    "iHRIS Profile of the Basic resource for Ethiopia Leave."
 * extension[ethiopiaLeave].extension[period].valuePeriod.start ^minValueDateTime = "1950-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end MS
-* extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[ethiopiaLeave].extension[period].valuePeriod.end ^label = "Leave Return Date"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
 * extension[ethiopiaLeave].extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
 * extension[ethiopiaLeave].extension[dateRequested].valueDate MS
@@ -41,7 +41,7 @@ Title:          "Leave details"
 * extension[period].valuePeriod.start ^maxValueDateTime = "2030-01-01"
 * extension[period].valuePeriod.end ^minValueDateTime = "1950-01-01"
 * extension[period].valuePeriod.end ^maxValueDateTime = "2030-01-01"
-* extension[period].valuePeriod.end ^label = "Leave End Date"
+* extension[period].valuePeriod.end ^label = "Leave Return Date"
 * extension[period].valuePeriod.end 1..1 MS
 * extension[period].valuePeriod ^constraint[0].key = "ihris-period-start-end"
 * extension[period].valuePeriod ^constraint[0].severity = #error
@@ -58,8 +58,8 @@ Title:          "Leave details"
 CodeSystem:      IhrisLeaveTypeCodeSystem
 Id:              ihris-leave-type-codesystem
 Title:           "Leave Type"
-* ^date = "2020-10-20T08:41:04.362Z"
-* ^version = "0.2.0"
+* ^date = "2021-06-21T08:41:04.362Z"
+* ^version = "0.5.0"
 * #annual "Annual Leave" "Annual Leave"
 * #maternity "Maternity Leave" "Maternity Leave"
 * #paternity "Paternity Leave" "Paternity Leave"
@@ -77,15 +77,15 @@ Title:           "Leave Type"
 ValueSet:         IhrisLeaveTypeValueSet
 Id:               ihris-leave-type-valueset
 Title:            "iHRIS leave Type ValueSet"
-* ^date = "2020-10-20T08:41:04.362Z"
-* ^version = "0.2.0"
+* ^date = "2021-06-21T08:41:04.362Z"
+* ^version = "0.5.0"
 * codes from system IhrisLeaveTypeCodeSystem
 
 CodeSystem:      IhrisLeaveSubTypeCodeSystem
 Id:              ihris-leave-sub-type-codesystem
 Title:           "Leave Sub Type"
 * ^date = "2020-10-20T08:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * #FHDM "First half day: Morning"
 * #FHDA "First half day: Afternoon"
 * #EOD "Every other day"
@@ -97,8 +97,22 @@ ValueSet:         IhrisLeaveSubTypeValueSet
 Id:               ihris-leave-sub-type-valueset
 Title:            "iHRIS leave Sub Type ValueSet"
 * ^date = "2020-10-20T08:41:04.362Z"
-* ^version = "0.2.0"
+* ^version = "0.5.0"
 * codes from system IhrisLeaveSubTypeCodeSystem
+
+CodeSystem:      IhrisHolidaysCodeSystem
+Id:              ihris-holidays-codesystem
+Title:           "Public Holidays"
+* ^version = "0.5.0"
+* ^property[0].code = #date
+* ^property[0].description = "Date"
+* ^property[0].type = #dateTime
+
+ValueSet:         IhrisHolidaysValueSet
+Id:               ihris-holidays-valueset
+Title:            "Holiday"
+* ^version = "0.5.0"
+* codes from system IhrisHolidaysCodeSystem
 
 Profile:        IhrisBasicEthiopiaLeaveStock
 Parent:         IhrisPractitionerBasic
@@ -150,8 +164,8 @@ Usage:          #definition
 * item[0].type = #group
 * item[0].extension[constraint].extension[key].valueId = "ihris-start-end-date"
 * item[0].extension[constraint].extension[severity].valueCode = #error
-* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime.empty() or where(linkId='Basic.extension[0].extension[2]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime"
-* item[0].extension[constraint].extension[human].valueString = "The end date must be after the start date."
+* item[0].extension[constraint].extension[expression].valueString = "where(linkId='Basic.extension[0].extension[1]').answer.first().valueDateTime >= where(linkId='Basic.extension[0].extension[4]').answer.first().valueDate"
+* item[0].extension[constraint].extension[human].valueString = "The Start Date must be after the Requested date."
 
 * item[0].item[0].linkId = "Basic.extension[0].extension[0]"
 * item[0].item[0].text = "Leave Type"
@@ -166,17 +180,21 @@ Usage:          #definition
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
 
-* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
+/* item[0].item[2].linkId = "Basic.extension[0].extension[2]"
 * item[0].item[2].text = "End Date"
 * item[0].item[2].type = #dateTime
 * item[0].item[2].required = true
-* item[0].item[2].repeats = false
+* item[0].item[2].repeats = false*/
 
-/** item[0].item[3].linkId = "Basic.extension[0].extension[3]"
-* item[0].item[3].text = "Days Requested"
-* item[0].item[3].type = #integer
-* item[0].item[3].required = true
-* item[0].item[3].repeats = false*/
+* item[0].item[2].linkId = "Basic.extension[0].extension[3]"
+* item[0].item[2].text = "Number of Days Requested"
+* item[0].item[2].type = #string
+* item[0].item[2].required = true
+* item[0].item[2].repeats = false
+* item[0].item[2].extension[constraint].extension[key].valueId = "ihris-num-check"
+* item[0].item[2].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[2].extension[constraint].extension[expression].valueString = "matches('^[0-9]{0,1}[0-9][0-9]?$')"
+* item[0].item[2].extension[constraint].extension[human].valueString = "Days Requested should be a Number."
 
 * item[0].item[3].linkId = "Basic.extension[0].extension[4]"
 * item[0].item[3].text = "Date Requested"
@@ -292,3 +310,22 @@ Usage:          #example
 * extension[section][0].extension[field][1].valueString = "Basic.extension:ethiopiaLeaveStock.extension:leave-type.value[x]:valueCoding"
 * extension[section][0].extension[field][2].valueString = "Basic.extension:ethiopiaLeaveStock.extension:numDays.value[x]:valueString"
 * extension[section][0].extension[field][3].valueString = "Basic.extension:ethiopiaLeaveStock.extension:year.value[x]:valueDate"
+
+Instance:       ihris-page-holidays
+InstanceOf:     IhrisPage
+Title:          "iHRIS Holidays CodeSystem Page"
+Usage:          #example
+* code = IhrisResourceCodeSystem#page
+* extension[display].extension[resource].valueReference = Reference(CodeSystem/ihris-holidays-codesystem)
+* extension[display].extension[search][0].valueString = "Code|code"
+* extension[display].extension[search][1].valueString = "Display|display"
+* extension[display].extension[search][2].valueString = "Date|date"
+* extension[display].extension[field][0].extension[path].valueString = "CodeSystem.code"
+* extension[display].extension[field][0].extension[readOnlyIfSet].valueBoolean = true
+* extension[section][0].extension[title].valueString = "Holidays"
+* extension[section][0].extension[description].valueString = "Public Holidays"
+* extension[section][0].extension[name].valueString = "CodeSystem"
+* extension[section][0].extension[field][0].valueString = "CodeSystem.display"
+* extension[section][0].extension[field][1].valueString = "CodeSystem.code"
+* extension[section][0].extension[field][2].valueString = "CodeSystem.definition"
+* extension[section][0].extension[field][3].valueString = "CodeSystem.date"

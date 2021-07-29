@@ -2,9 +2,11 @@ const nconf = require('./config')
 const winston = require('winston')
 const differenceInBusinessDays = require('date-fns/differenceInBusinessDays')
 const differenceInDays = require('date-fns/differenceInDays')
+const addBusinessDays = require('date-fns/addBusinessDays')
 const compareAsc = require('date-fns/compareAsc')
 const isWeekend = require('date-fns/isWeekend')
-const parseISO = require('date-fns/parseISO')
+//const parseISO = require('date-fns/parseISO')
+const { formatISO, parseISO, addDays } = require('date-fns')
 const fhirAxios = nconf.fhirAxios
 
 const workflowLeaveEthiopia = {
@@ -12,7 +14,6 @@ const workflowLeaveEthiopia = {
     return new Promise( async (resolve, reject) => {
       try {
         let resource
-        let requestedDays
         let bundle = {
           resourceType: "Bundle",
           type: "transaction",
@@ -20,7 +21,11 @@ const workflowLeaveEthiopia = {
         }
         let leaveType = req.body.item[0].item[0].answer[0].valueCoding.code
         let startDate = req.body.item[0].item[1].answer[0].valueDateTime
-        let endDate = req.body.item[0].item[2].answer[0].valueDateTime
+        let requestedDays = parseInt(req.body.item[0].item[2].answer[0].valueString)
+        //winston.info("DATES")
+        //winston.info("START DATE " +startDate)
+        //winston.info(req.body.item[0].item[2].answer[0].valueString)
+        let endDate = formatISO(addBusinessDays(new Date(req.body.item[0].item[1].answer[0].valueDateTime),parseInt(req.body.item[0].item[2].answer[0].valueString)),{representation: 'date'})
         let leaveBundle = await fhirAxios.search( "Basic", { practitioner: req.query.practitioner, leavetype: leaveType, leaveperiod: "ge"+startDate , leaveperiod: "eb"+endDate } )   
         if ( leaveBundle.entry ) {
           resolve(await workflowLeaveEthiopia.outcome(winston.info("Another Leave request of "+leaveType+ " exists for that period. Please adjust Type or Date Period ")))
@@ -52,25 +57,20 @@ const workflowLeaveEthiopia = {
               if ( (req.body.item[0].item[1].linkId === "Basic.extension[0].extension[1]" 
                   && req.body.item[0].item[1].answer 
                   && req.body.item[0].item[1].answer[0] 
-                  && req.body.item[0].item[1].answer[0].valueDateTime)||(
-                  req.body.item[0].item[2].linkId === "Basic.extension[0].extension[2]" 
-                  && req.body.item[0].item[2].answer 
-                  && req.body.item[0].item[2].answer[0] 
-                  && req.body.item[0].item[2].answer[0].valueDateTime
-                  )){
-                  complexExt.push({ url: "period",
+                  && req.body.item[0].item[1].answer[0].valueDateTime)){
+                  /*complexExt.push({ url: "period",
                   valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDateTime,
                                 end:req.body.item[0].item[2].answer[0].valueDateTime}
-                              })
+                              })*/
                   let continousLeaveType = ["maternity","paternity","sick"]
                   if (continousLeaveType.includes(leaveType)){
-                    requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime))
+                    //requestedDays = differenceInDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime))
+                    endDate = formatISO(addDays(new Date(req.body.item[0].item[1].answer[0].valueDateTime),parseInt(req.body.item[0].item[2].answer[0].valueString)),{representation: 'date'})
                   } else {
                     //Deduct holidays
                     let periodStart = req.body.item[0].item[1].answer[0].valueDateTime
-                    let periodend = req.body.item[0].item[2].answer[0].valueDateTime
+                    let periodend = endDate
                     let numHolidays = 0
-                    requestedDays = differenceInBusinessDays(new Date(req.body.item[0].item[2].answer[0].valueDateTime),new Date(req.body.item[0].item[1].answer[0].valueDateTime))
                     let holidaysResource = await fhirAxios.read( "CodeSystem", "ihris-holidays-codesystem" )
                     if(holidaysResource.id === "ihris-holidays-codesystem" ){
                       if(holidaysResource.concept){
@@ -83,10 +83,14 @@ const workflowLeaveEthiopia = {
                             }
                           }
                         }
-                        requestedDays = requestedDays - numHolidays
+                        endDate = formatISO(addBusinessDays(new Date(periodend),numHolidays),{representation: 'date'})
                       }
                     }
                   }
+                  complexExt.push({ url: "period",
+                        valuePeriod:{ start:req.body.item[0].item[1].answer[0].valueDateTime,
+                                      end: ""+endDate}
+                                    })
                   complexExt.push({ url: "daysRequested",
                   valueInteger:requestedDays})
               }
@@ -140,8 +144,7 @@ const workflowLeaveEthiopia = {
                     //} 
                   }
                 } 
-                let requestedDaysNum =  Number(requestedDays)
-                let newleaveStockDays = totalleaveStockDays - requestedDaysNum
+                let newleaveStockDays = totalleaveStockDays - requestedDays
                 if ( Number(newleaveStockDays) >= 0){
                   if (leaveType != "annual" ){
                     entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = newleaveStockDays + ''
@@ -155,7 +158,6 @@ const workflowLeaveEthiopia = {
                   } else {
 
                   }
-                  
                   let resourceNumDays = 0
                   for( let entry of leaveStockbundle.entry ) {
                     if (leaveType != "annual" ){ 
@@ -170,7 +172,7 @@ const workflowLeaveEthiopia = {
                         break
                       } else {
                         resourceNumDays =  Number(entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString)
-                        requestedDaysNum = resourceNumDays - requestedDaysNum
+                        let requestedDaysNum = resourceNumDays - requestedDays
                         if(Number(requestedDaysNum) < 0){
                           entry.resource.extension.find( ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-ethiopia-leave-stock" ).extension.find( ext => ext.url === "numDays").valueString = 0 + ''
                           bundle.entry.push( {
