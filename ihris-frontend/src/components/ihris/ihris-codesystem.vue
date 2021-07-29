@@ -195,8 +195,12 @@ export default {
             this.$router.push({ name:"resource_view", params: {page: this.page, id: this.fhir.code } })
           }
         } 
+        this.$store.commit('setMessage', { type: 'success', text: 'Added successfully.' } )
       } ).catch(err => {
         console.log("FAILED TO SAVE",url,err)
+        this.overlay = false
+        this.loading = false
+        this.$store.commit('setMessage', { type: 'error', text: 'Failed to update data.' } )
       } )
       //console.log(this.fhir)
 
