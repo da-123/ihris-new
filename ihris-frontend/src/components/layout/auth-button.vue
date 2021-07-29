@@ -110,7 +110,7 @@ export default {
               //this.absolute=false
               this.snackbar=true
               this.message="Login successful"
-              this.$emit("loggedin", data.name)
+              this.$emit("loggedin", data.user)
             }).catch(err => {
               this.loggingin = false
               this.snackbar=true

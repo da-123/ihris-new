@@ -135,7 +135,8 @@ export default {
             }*/
             if (data.hasOwnProperty("user")) {
               if ( data.user.loggedin ) {
-                this.$store.commit('login', data.user.name || "" )
+                let user = {name:data.user.name || "", location:data.user.location || ""}
+                this.$store.commit('login', user)
               } else {
                 this.$store.commit('logout')
               }

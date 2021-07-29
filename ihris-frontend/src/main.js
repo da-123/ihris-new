@@ -19,7 +19,7 @@ Object.defineProperty(Vue.prototype, '$fhirutils', {
 
 Vue.use(require('vue-moment'));
 export const eventBus = new Vue()
-Vue.use(IdleVue, { eventEmitter: eventBus, store, idleTime: 600000, startAtIdle: false })
+Vue.use(IdleVue, { eventEmitter: eventBus, store, idleTime: 900000, startAtIdle: false })
 
 new Vue({
   router,

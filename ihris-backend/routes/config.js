@@ -8,7 +8,9 @@ const outcomes = require('../config/operationOutcomes')
 const fhirConfig = require('../modules/fhirConfig')
 const fhirDefinition = require('../modules/fhirDefinition')
 const crypto = require('crypto')
-const winston = require('winston')
+const winston = require('winston');
+const { url } = require('inspector');
+const { resolve } = require('path');
 
 const getUKey = () => {
   return Math.random().toString(36).replace(/^[^a-z]+/,'') + Math.random().toString(36).substring(2,15)
@@ -36,7 +38,7 @@ const filterNavigation = ( user, nav, prefix ) => {
 }
 
 /* GET home page. */
-router.get('/site', function(req, res) {
+router.get('/site', async function(req, res) {
   const defaultUser = nconf.get("user:loggedout") || "ihris-user-loggedout"
   let site = JSON.parse(JSON.stringify(nconf.get("site") || {}))
   if ( nconf.getBool("security:disabled") ) {
@@ -49,6 +51,15 @@ router.get('/site', function(req, res) {
     } else {
       site.user.loggedin = true
       site.user.name = req.user.resource.name[0].text
+      let locReference = req.user.resource.extension.find(ext => 
+        ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-user-location"
+        ).valueReference.reference
+
+      let location = await getLocationByRef(locReference).then(loc =>{
+          return loc
+      })
+      if(location !== "") location = " - "+location
+      site.user.location = location
     }
     filterNavigation( req.user, site.nav )
   } else {
@@ -56,6 +67,7 @@ router.get('/site', function(req, res) {
     delete site.nav
   }
   //site.updated = new Date().toISOString()
+  console.log("SITE, ", site)
   res.status(200).json( site )
 })
 
@@ -67,6 +79,22 @@ router.get('/reload', function(req,res) {
   } )
 } )
 
+const getLocationByRef = async (reference) =>  {
+  return new Promise(resolve =>{
+    if(reference && reference !== ''){
+      let urlObj = reference.split("/")
+      fhirAxios.read( urlObj[0], urlObj.pop() ).then(async (resource) => {
+          resolve(resource.name)
+      }).catch( (err) => {
+        winston.error(err.message)
+        let outcome = { ...outcomes.ERROR }
+        outcome.issue[0].diagnostics = err.message
+        resolve("")
+      })
+    }
+  })
+  
+}
 const getDefinition = ( resource ) => {
   let structureDef = resource.split('/')
   return fhirAxios.read( structureDef[0], structureDef[1] )

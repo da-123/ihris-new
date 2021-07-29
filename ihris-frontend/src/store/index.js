@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     user: {
       loggedin: false,
-      name: ""
+      name: "",
+      location:""
     },
     security_off: false,
     message: {
@@ -23,13 +24,17 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    login( state, data ) {
+    login( state, user ) {
       state.user.loggedin = true
-      state.user.name = data
+      state.user.name = user.name
+      state.user.location = user.location
+
+      console.log("STATE ",user)
     },
     logout( state ) {
       state.user.loggedin = false
       state.user.name = ""
+      state.user.location =""
     },
     securityOff( state, data ) {
       state.security_off = data

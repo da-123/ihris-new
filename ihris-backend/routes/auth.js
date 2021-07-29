@@ -179,11 +179,15 @@ router.post("/login",
   passport.authenticate('local', {}),
   ( req, res ) => {
     let name = "Unknown"
+    let location = ""
     try {
+      location = req.user.resource.extension.find(ext => 
+        ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-user-location"
+        ).valueReference.reference
       name = req.user.resource.name[0].text
     } catch(err) {
     }
-    res.status(200).json({ok:true,name:name})
+    res.status(200).json({ok:true,user:{name:name, location:location}})
   }
 )
 

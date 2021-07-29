@@ -15,7 +15,7 @@
       This should only be done during development.
     </div>
     <v-spacer></v-spacer>
-    <div>Welcome <span v-if="$store.state.user.loggedin">, {{ $store.state.user.name }}</span></div>
+    <div>Welcome <span v-if="$store.state.user.loggedin">, {{ $store.state.user.name }} {{ $store.state.user.location}}</span></div>
     <v-spacer></v-spacer>
     <v-progress-circular
       indeterminate
@@ -75,7 +75,7 @@ export default {
     return {
       loading: false,
       idle_countdown: false,
-      idle_logout: 30
+      idle_logout: 30,
     }
   },
   components: {
