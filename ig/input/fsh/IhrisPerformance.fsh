@@ -85,6 +85,7 @@ Title:           "Performance Score"
 * ^version = "0.5.0"
 * #probation "Probation period" "Probation period"
 * #annual "Annual Performance Appraisal" "Annual Performance Appraisal"
+* #biannual "Bi-Annual Performance Appraisal" "Bi-Annual Performance Appraisal"
 
 ValueSet:         IhrisPerformanceTypeValueSet
 Id:               ihris-performance-type-valueset
