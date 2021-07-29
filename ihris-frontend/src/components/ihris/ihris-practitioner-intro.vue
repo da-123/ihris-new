@@ -1,19 +1,24 @@
 <style scoped>
-.ihris-intro{
-   display: flex;
+.ihris-intro-container{
+    display: flex;
     flex-direction: row;
     position: fixed;
-    background-color: var(--v-warning-base)!important;
+    background-color: #d06f1a;
     width: 30vw;
-    height: 56px;
     z-index: 1;
-    top: 9%;
-    padding: 7px;
+    top: 11%;
+    padding: 2px;
     color: #fff;
+    font-size: smaller;
     padding-left: 5px;
     border-radius: 0 0 10px 10px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+}
+.ihris-intro{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
 .hide {
@@ -22,13 +27,24 @@
 .show {
     opacity:1;
 }
+.photo{
+  max-width: 30%;
+}
 </style>
 
 <template>
-  <div v-if="intro.value !== ''" :class="['ihris-intro',(hasScrolled || this.isQuestionnaire) ? 'show':'hide']">
-     <span>{{intro.display}} : {{intro.value}}</span>
-  </div>
-  
+<div v-if="intro.fullname !== ''" :class="['ihris-intro-container',(hasScrolled || this.isQuestionnaire) ? 'show':'hide']">
+     <v-img :src="photoURL" contain :max-height="150" class="photo" position="left" />
+     <div class="ihris-intro">
+          <span>Employee ID : {{intro.employeeID}}</span>
+          <span>Full name : {{intro.fullname}}</span>
+          <span>Date of Birth : {{intro.birthDate}}</span>
+          <span>Gender : {{intro.gender}}</span>
+          <!--<span>Facility/Location : {{intro.gender}}</span>
+          <span>Job title : {{intro.gender}}</span>
+          <span>Employment status : {{intro.gender}}</span>-->
+    </div>
+</div>
 </template>
 
 <script>
@@ -40,9 +56,13 @@ export default {
 
       intro:{
         display:"Health Worker",
-        value:""
+        fullname:"",
+        photoURL:"",
+        birthDate:"",
+        gender:"",
+        employeeID:""
       },
-      hasScrolled:false
+      hasScrolled:false,
     }
   },
   components:{
@@ -70,7 +90,7 @@ export default {
         }
       },
       deep: true
-    }
+    },
   },
   methods: {
     setupData() {
@@ -79,9 +99,15 @@ export default {
 
           let practitioner = this.slotProps.source.data
 
+          console.log(practitioner)
+
           let firstName = practitioner.name[0].given[0];
 
-          let gender = practitioner.gender;
+          this.intro.gender = practitioner.gender;
+
+          this.intro.birthDate = practitioner.birthDate
+
+          this.intro.employeeID = practitioner.identifier[0].value
 
           let extensions =  practitioner.extension[0]//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
 
@@ -91,8 +117,20 @@ export default {
 
           let grandFatherLastName = extensions.filter(ext => ext.url === 'grandfatherslastname')
 
+          
+          let photo = practitioner.photo[0]
 
-          this.intro.value = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString+" "+gender
+          this.intro.fullname = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString
+
+         /* if ( this.photoURL ) {
+            URL.revokeObjectURL( this.photoURL )
+          }*/
+          if ( photo.data && photo.contentType ) {
+            let dataURL = "data:"+photo.contentType+";base64,"+photo.data
+            fetch(dataURL).then( res => res.blob() ).then( blob => this.photoURL = URL.createObjectURL( blob ) ).catch( e => {
+              console.log("Failed to get data from base64.",e)
+            } )
+          }
 
         }
     },
@@ -101,6 +139,9 @@ export default {
       console.log(window.top.scrollY);
       this.hasScrolled = (window.top.scrollY >= 100);
       console.log(event);
+    },
+    toggleContent(){
+      this.showMore = !this.showMore;
     }
   }
 }

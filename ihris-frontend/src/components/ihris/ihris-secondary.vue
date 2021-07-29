@@ -101,12 +101,14 @@ export default {
       this.items = []
       this.loading = true
       this.addItems( url )
+      console.log("URL ",url);
     },
     addItems: function (url) {
       fetch( url ).then( response => {
         if ( response.status === 200 ) {
           response.json().then( async data => {
             if ( data.entry && data.entry.length > 0 ) {
+              console.log("ENTRY ",data.entry)
               for( let entry of data.entry ) {
                 let row = { id: entry.resource.id }
                 for( let header of this.columns ) {

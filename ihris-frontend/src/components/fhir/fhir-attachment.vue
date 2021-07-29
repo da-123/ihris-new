@@ -1,9 +1,10 @@
 <template>
   <ihris-element :edit="edit" :loading="false">
     <template #form>
+      <strong>{{display}}</strong>
       <v-file-input 
         :disabled="disabled" 
-        :label="display" 
+        :label="display_simple" 
         :loading="loading"
         :accept="accept"
         v-model="upload" 
@@ -15,7 +16,7 @@
         @change='doUpload'
         :error-messages="errors"
       >
-        <template #label>{{display}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
+        <template #label>{{display_simple}} <span v-if="required" class="red--text font-weight-bold">*</span></template>
         <template #append-outer>
           <v-menu 
             v-if="objURL"
@@ -41,6 +42,7 @@
           </v-menu>
         </template>
       </v-file-input>
+       
     </template>
     <template #header>
       {{display_simple}}
@@ -86,7 +88,11 @@ export default {
       disabled: false,
       objURL: "",
       errors: [],
-      lockWatch: false
+      lockWatch: false,
+      size:{
+        width:0,
+        height:0
+      }
     }
   },
   created: function() {
@@ -102,6 +108,16 @@ export default {
         }
       },
       deep: true
+    },
+    upload(file){
+      console.log(file)
+      if(this.isImage){
+        let img = new FileReader()
+        img.onload = () => {
+          this.size.width = img.width;
+          this.size.height = img.height;
+        }
+      }
     }
   },
   methods: {
@@ -166,12 +182,12 @@ export default {
       return this.value.contentType && this.value.contentType.startsWith("image/")
     },
     accept:function(){
-      if(this.value.contentType && this.value.contentType.startsWith("image/"))
+      if(this.label.toLowerCase().includes("photo"))
         return "image/*"
       else return []
     },
     icon:function(){
-      if(this.value.contentType && this.value.contentType.startsWith("image/"))
+      if(this.label.toLowerCase().includes("photo"))
         return "mdi-camera"
       else return '$file'
     },
