@@ -51,14 +51,18 @@ router.get('/site', async function(req, res) {
     } else {
       site.user.loggedin = true
       site.user.name = req.user.resource.name[0].text
-      let locReference = req.user.resource.extension.find(ext => 
+      let locReference = ""
+      let refObj = req.user.resource.extension.find(ext => 
         ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-user-location"
-        ).valueReference.reference
-
-      let location = await getLocationByRef(locReference).then(loc =>{
-          return loc
-      })
-      if(location !== "") location = " - "+location
+        )
+      let location = ""
+      if(refObj){
+        locReference = refObj.valueReference.reference
+        location = await getLocationByRef(locReference).then(loc =>{
+            return loc
+        })
+        if(location !== "") location = " - "+location
+      }
       site.user.location = location
     }
     filterNavigation( req.user, site.nav )
@@ -66,8 +70,6 @@ router.get('/site', async function(req, res) {
     site.user = { loggedin: false }
     delete site.nav
   }
-  //site.updated = new Date().toISOString()
-  console.log("SITE, ", site)
   res.status(200).json( site )
 })
 
