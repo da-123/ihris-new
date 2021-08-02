@@ -94,9 +94,9 @@ const workflowContractEthiopia = {
             if ( req.body.item[0].item[10].linkId === "PractitionerRole.extension[3]" 
             && req.body.item[0].item[10].answer 
             && req.body.item[0].item[10].answer[0]
-            && req.body.item[0].item[10].answer[0].valueText){
+            && req.body.item[0].item[10].answer[0].valueString){
               extensions.push({ url: "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-job-information-fund-source",
-              valueString:req.body.item[0].item[10].answer[0].valueText })
+              valueString:req.body.item[0].item[10].answer[0].valueString })
             }
             if ( req.body.item[0].item[11].linkId === "PractitionerRole.extension[2]" 
               && req.body.item[0].item[11].answer 
