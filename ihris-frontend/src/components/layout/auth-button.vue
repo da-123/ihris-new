@@ -80,7 +80,12 @@ export default {
       loggingin: false,
       message: "",
       snackbar: false,
-      absolute: true
+      absolute: true,
+      notificationDays :5,
+      monthNames : ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                  ],
+      notificationMessage: "Please send your HR report to assigned juridiction or facility."
     }
   },
   computed: {
@@ -110,6 +115,27 @@ export default {
               //this.absolute=false
               this.snackbar=true
               this.message="Login successful"
+              //Check the report message date for notification
+              fetch("/fhir/CodeSystem/ihris-report-notification-codesystem",{
+                method: "GET",
+              }).then(response =>{
+                if(response.ok){
+                  response.json().then(data =>{
+                    const today = new Date()
+                    let currentMonth = this.monthNames[today.getMonth()]
+                    let found = data.concept.find(m => m.display === currentMonth)
+                    if(found){
+                      let currentYear = today.getFullYear()
+                      let currentDay = today.getDay()
+                      let daysInMonth = new Date(currentYear, today.getMonth()+1,0).getDate()
+                      if(currentDay >= (daysInMonth - this.notificationDays) && currentDay <= daysInMonth){
+                        this.$store.commit('setMessage', { type: 'warning', text: this.notificationMessage,timeout:100000} )
+                      }
+                    }
+                  })
+                }
+              })
+
               this.$emit("loggedin", data.user)
             }).catch(err => {
               this.loggingin = false

@@ -28,8 +28,6 @@ export default new Vuex.Store({
       state.user.loggedin = true
       state.user.name = user.name
       state.user.location = user.location
-
-      console.log("STATE ",user)
     },
     logout( state ) {
       state.user.loggedin = false
