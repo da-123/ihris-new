@@ -96,17 +96,17 @@ export default {
 
           let practitioner = this.slotProps.source.data
 
-          let firstName = practitioner.name[0].given[0];
+          let firstName = (practitioner.name)?practitioner.name[0].given[0]:"";
 
           this.intro.gender = practitioner.gender;
 
           this.intro.birthDate = practitioner.birthDate
 
-          this.intro.employeeID = practitioner.identifier[0].value
+          this.intro.employeeID = (practitioner.identifier)?practitioner.identifier[0].value:""
 
-          let extensions =  practitioner.extension[0]//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
+          let extensions =  (practitioner.extension)?practitioner.extension[0]:null//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
 
-          extensions = extensions.extension
+          extensions = (extensions)?extensions.extension:[]
 
           let fatherName = extensions.filter(ext => ext.url === 'fathers')
 
@@ -116,7 +116,7 @@ export default {
           let photo = ""
           if(practitioner.photo) photo = practitioner.photo[0]
 
-          this.intro.fullname = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString
+          this.intro.fullname = firstName+" "+(fatherName.length>0)?fatherName[0].valueString:""+" "+(grandFatherLastName>0)?grandFatherLastName[0].valueString:""
 
          /*if ( this.photoURL ) {
             URL.revokeObjectURL( this.photoURL )
