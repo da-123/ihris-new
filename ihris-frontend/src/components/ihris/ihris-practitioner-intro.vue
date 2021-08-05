@@ -68,9 +68,6 @@ export default {
   components:{
      
   },
-  created: function() {
-   this.setupData()
-  },
   mounted(){
 
     if(!this.isQuestionnaire){
@@ -99,8 +96,6 @@ export default {
 
           let practitioner = this.slotProps.source.data
 
-          console.log(practitioner)
-
           let firstName = practitioner.name[0].given[0];
 
           this.intro.gender = practitioner.gender;
@@ -118,16 +113,20 @@ export default {
           let grandFatherLastName = extensions.filter(ext => ext.url === 'grandfatherslastname')
 
           
-          let photo = practitioner.photo[0]
+          let photo = ""
+          if(practitioner.photo) photo = practitioner.photo[0]
 
           this.intro.fullname = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString
 
-         /* if ( this.photoURL ) {
+         /*if ( this.photoURL ) {
             URL.revokeObjectURL( this.photoURL )
           }*/
           if ( photo.data && photo.contentType ) {
             let dataURL = "data:"+photo.contentType+";base64,"+photo.data
-            fetch(dataURL).then( res => res.blob() ).then( blob => this.photoURL = URL.createObjectURL( blob ) ).catch( e => {
+            fetch(dataURL).then( res => res.blob() ).then( blob => {
+              this.photoURL = URL.createObjectURL( blob ) 
+              //URL.revokeObjectURL(this.photoURL)
+              }).catch( e => {
               console.log("Failed to get data from base64.",e)
             } )
           }
