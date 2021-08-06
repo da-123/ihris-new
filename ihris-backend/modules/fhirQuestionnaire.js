@@ -178,16 +178,11 @@ const fhirQuestionnaire = {
           current[lastElement].url = field.url
         }
 
-      } else if ( typeof field.answer === 'string' && field.answer.startsWith("__REPLACE__") ) {
-        let reference = field.answer.substring(11)
-        if ( entries.hasOwnProperty(reference) ) {
-          current[lastElement] = { reference: entries[reference].fullUrl }
-        }
       } else {
         if ( !current.hasOwnProperty( lastElement ) ) {
           if ( arrayIdx !== false ) {
             if ( Array.isArray( field.answer ) ) {
-              current[lastElement] = field.answer 
+              current[lastElement] = field.answer
             } else {
               current[lastElement] = []
               current[lastElement][arrayIdx] = field.answer || ""
@@ -201,7 +196,7 @@ const fhirQuestionnaire = {
               if ( Array.isArray( current[lastElement] ) && current[lastElement].length > 0 ) {
                 current[lastElement] = current[lastElement].concat( field.answer )
               } else {
-                current[lastElement] = field.answer 
+                current[lastElement] = field.answer
               }
             } else {
               current[lastElement][arrayIdx] = field.answer || ""
@@ -210,6 +205,36 @@ const fhirQuestionnaire = {
             current[lastElement] = field.answer || ""
           }
         }
+      }
+    }
+
+    for (const field of fields) {
+      const fieldPath = field.definition.split('.');
+      let fieldResource = fieldPath.shift();
+      if (typeof field.answer === 'string' && field.answer.startsWith('__REPLACE__')) {
+        const replaceResource = field.answer.substring(11).split('.')[0];
+        const replacePaths = field.answer.substring(11).split('.');
+        if ((replacePaths.length === 1 || (replacePaths.length === 2 && replacePaths[1] === 'id')) && entries.hasOwnProperty(replaceResource)) {
+          setNestedKey(entries[fieldResource].resource, fieldPath, { reference: entries[replaceResource].fullUrl });
+        } else {
+          let replaceValue;
+          for (const path of replacePaths) {
+            if (!replaceValue) {
+              replaceValue = entries[path].resource;
+            } else {
+              replaceValue = replaceValue[path];
+            }
+          }
+          setNestedKey(entries[fieldResource].resource, fieldPath, replaceValue);
+        }
+      }
+    }
+
+    function setNestedKey(obj, path, value) {
+      if (path.length === 1) {
+        obj[path] = value;
+      } else {
+        setNestedKey(obj[path[0]], path.slice(1), value);
       }
     }
     let bundleEntries = []
@@ -351,7 +376,7 @@ const fhirQuestionnaire = {
                         }
                       } else if ( field.type[0].code === "CodeableConcept" ) {
                         if ( question.repeats ) {
-                          item.answer.forEach( answer => { 
+                          item.answer.forEach( answer => {
                             let extData = { ...data }
                             extData.answer = { url: url, valueCodeableConcept: { coding: [ answer.valueCoding ], text: answer.valueCoding.display } }
                             fields.push( extData )
@@ -411,7 +436,7 @@ const fhirQuestionnaire = {
                       }
                     } else {
                       data.field = field.type[0]
-                      data.answer = item.answer 
+                      data.answer = item.answer
                     }
 
                     fields.push(data)

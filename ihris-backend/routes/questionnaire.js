@@ -112,11 +112,24 @@ router.post("/QuestionnaireResponse", (req, res, next) => {
   } else {
 
     fhirQuestionnaire.processQuestionnaire( req.body ).then( (bundle) => {
-      winston.debug(JSON.stringify(bundle,null,2))
       fhirSecurity.preProcess( bundle ).then( (uuid) => {
+        winston.error("Done PreProcessing")
+        if(Object.keys(req.user.permissions.filter.Practitioner.constraint).length){
+          if (bundle.entry[0].resource.resourceType === "Practitioner" ){
+            let relatedLoc = Object.keys(req.user.permissions.filter.Practitioner.constraint)
+            for (let value of relatedLoc){
+              let location = value.split("=")
+              bundle.entry[0].resource.extension.find(ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-related-group").extension.push( {
+                url: "location",
+                valueString: location[1]
+              } )
+            }
+          }
+        }
         fhirFilter.filterBundle( "write", bundle, req.user )
         let errorCheck = checkBundleForError( bundle )
         if ( errorCheck ) {
+          winston.error("There is an ERROR")
           return res.status( 401 ).json( errorCheck )
         }
 
