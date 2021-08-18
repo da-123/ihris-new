@@ -19,7 +19,9 @@ const workflowUser = {
           type: "transaction",
           entry: []
         }
-        resolve(await workflowUser.outcome("Checking TRY Catch"))
+        winston.error("IN TRY CATCH")
+        winston.error(JSON.stringify(req,null,2))
+        resolve(await workflowUser.outcome("IN TRY CATCH 2"))
         if ( req.body && req.body.item 
           && req.body.item && req.body.item[0].linkId === "Person"
           && req.body.item[0].item && req.body.item[0].item[0].linkId === "Person.name[0].text" 
@@ -174,14 +176,13 @@ const workflowUser = {
               //winston.info(JSON.stringify( bundle,null,2))
               resolve(bundle)
             }).catch( (err) => {
-              resolve(await workflowUser.outcome(err.message))
-              //reject( err.message )
+              reject( err.message )
             })
           }
       } catch (err){
-        winston.error(err)
-        //reject( err.message )
-        resolve(await workflowUser.outcome(err.message))
+        winston.error(err.message)
+        reject( err.message )
+        //resolve(await workflowUser.outcome(err.message))
       }
     })
   },
