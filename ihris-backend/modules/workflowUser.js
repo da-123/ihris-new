@@ -19,8 +19,8 @@ const workflowUser = {
           type: "transaction",
           entry: []
         }
+        winston.error(JSON.stringify(req.body,null,2))
         winston.error("IN TRY CATCH")
-        winston.error(JSON.stringify(req,null,2))
         resolve(await workflowUser.outcome("IN TRY CATCH 2"))
         if ( req.body && req.body.item 
           && req.body.item && req.body.item[0].linkId === "Person"
