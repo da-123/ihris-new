@@ -19,6 +19,7 @@ const workflowUser = {
           type: "transaction",
           entry: []
         }
+        resolve(await workflowUser.outcome("Checking TRY Catch"))
         if ( req.body && req.body.item 
           && req.body.item && req.body.item[0].linkId === "Person"
           && req.body.item[0].item && req.body.item[0].item[0].linkId === "Person.name[0].text" 
@@ -28,7 +29,6 @@ const workflowUser = {
           && req.body.item[0].item[3].answer 
           && req.body.item[0].item[3].answer[0] 
           && req.body.item[0].item[3].answer[0].valueString) {
-          resolve(await workflowUser.outcome("USER HAS NAME AND PASSWORD"))
             let userEmail = req.body.item[0].item[3].answer[0].valueString
             let userRoles = undefined
             let constraint = undefined
@@ -174,12 +174,14 @@ const workflowUser = {
               //winston.info(JSON.stringify( bundle,null,2))
               resolve(bundle)
             }).catch( (err) => {
-              reject( err.message )
+              resolve(await workflowUser.outcome(err.message))
+              //reject( err.message )
             })
           }
       } catch (err){
         winston.error(err)
-        reject(err.message)
+        //reject( err.message )
+        resolve(await workflowUser.outcome(err.message))
       }
     })
   },
