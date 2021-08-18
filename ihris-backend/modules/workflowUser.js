@@ -13,6 +13,7 @@ let locationRoleID = undefined
 const workflowUser = {
   process: ( req ) => {
     return new Promise( async (resolve, reject) => {
+      resolve(await workflowUser.outcome("IN PROMISE"))
       try {
         let bundle = {
           resourceType: "Bundle",
@@ -28,6 +29,7 @@ const workflowUser = {
           && req.body.item[0].item[3].answer 
           && req.body.item[0].item[3].answer[0] 
           && req.body.item[0].item[3].answer[0].valueString) {
+          resolve(await workflowUser.outcome("USER HAS NAME AND PASSWORD"))
             let userEmail = req.body.item[0].item[3].answer[0].valueString
             let userRoles = undefined
             let constraint = undefined
@@ -36,6 +38,7 @@ const workflowUser = {
             let extensions = []
             user.lookupByEmail(userEmail).then( async (userObj) =>  {
               if ( !userObj ) {
+              resolve(await workflowUser.outcome("NO USER FOUND"))
                 if(req.body.item[0].item[5].linkId === "location" 
                     && req.body.item[0].item[5].answer 
                     && req.body.item[0].item[5].answer[0] 
