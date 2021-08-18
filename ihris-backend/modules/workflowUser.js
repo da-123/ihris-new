@@ -19,10 +19,7 @@ const workflowUser = {
           type: "transaction",
           entry: []
         }
-        winston.error(JSON.stringify(req.body,null,2))
-        winston.error("IN TRY CATCH")
-        resolve(await workflowUser.outcome("IN TRY CATCH 2"))
-        if ( req.body && req.body.item 
+        /*if ( req.body && req.body.item 
           && req.body.item && req.body.item[0].linkId === "Person"
           && req.body.item[0].item && req.body.item[0].item[0].linkId === "Person.name[0].text" 
           && req.body.item[0].item[0].answer && req.body.item[0].item[0].answer[0] 
@@ -30,7 +27,7 @@ const workflowUser = {
           && req.body.item[0].item[3].linkId === "Person.telecom[0].value" 
           && req.body.item[0].item[3].answer 
           && req.body.item[0].item[3].answer[0] 
-          && req.body.item[0].item[3].answer[0].valueString) {
+          && req.body.item[0].item[3].answer[0].valueString) {*/
             let userEmail = req.body.item[0].item[3].answer[0].valueString
             let userRoles = undefined
             let constraint = undefined
@@ -39,7 +36,6 @@ const workflowUser = {
             let extensions = []
             user.lookupByEmail(userEmail).then( async (userObj) =>  {
               if ( !userObj ) {
-              resolve(await workflowUser.outcome("NO USER FOUND"))
                 if(req.body.item[0].item[5].linkId === "location" 
                     && req.body.item[0].item[5].answer 
                     && req.body.item[0].item[5].answer[0] 
@@ -178,11 +174,10 @@ const workflowUser = {
             }).catch( (err) => {
               reject( err.message )
             })
-          }
+          //}
       } catch (err){
-        winston.error(err.message)
-        reject( err.message )
-        //resolve(await workflowUser.outcome(err.message))
+        winston.error(err)
+        reject(err.message)
       }
     })
   },
