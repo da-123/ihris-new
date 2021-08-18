@@ -39,7 +39,7 @@ const workflowUser = {
                 if(req.body.item[0].item[5].linkId === "location" 
                     && req.body.item[0].item[5].answer 
                     && req.body.item[0].item[5].answer[0] 
-                    && req.body.item[0].item[5].answer[0].valueReference){
+                    && req.body.item[0].item[5].answer[0].valueReference.reference != ""){
                       try {
                         userRoles = await fhirAxios.search("Basic", { locationconstraint: "related-location=" +req.body.item[0].item[5].answer[0].valueReference  })
                       } catch (err) {
@@ -183,11 +183,20 @@ const workflowUser = {
   },
   postProcess: ( req, results ) => {
     return new Promise( (resolve, reject) => {
-        if ( results.entry && results.entry.length > 0 && results.entry[1].response.location ) {
+        if ( results.entry && results.entry.length === 1 && results.entry[0].response.location ) {
           if ( !req.body.meta ) req.body.meta = {}
           if ( !req.body.meta.tag ) req.body.meta.tag = []
-          req.body.meta.tag.push( { system: "http://ihris.org/fhir/tags/resource", code: results.entry[1].response.location } )
+          req.body.meta.tag.push( { system: "http://ihris.org/fhir/tags/resource", code: results.entry[0].response.location } )
           resolve( req )
+        } else if ( results.entry && results.entry.length > 1) {
+          for( let entry of results.entry ) {
+            if (entry.response.location.includes("Person/")){
+              if ( !req.body.meta ) req.body.meta = {}
+              if ( !req.body.meta.tag ) req.body.meta.tag = []
+              req.body.meta.tag.push( { system: "http://ihris.org/fhir/tags/resource", code: entry.response.location } )
+              resolve( req )
+            }
+          }
         }
     })
   },

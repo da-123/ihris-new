@@ -6,8 +6,8 @@
     background-color: #d06f1a;
     width: 30vw;
     z-index: 1;
-    top: 11%;
-    padding: 2px;
+    top: 15%;
+    padding: 5px;
     color: #fff;
     font-size: smaller;
     padding-left: 5px;
@@ -40,9 +40,6 @@
           <span>Full name : {{intro.fullname}}</span>
           <span>Date of Birth : {{intro.birthDate}}</span>
           <span>Gender : {{intro.gender}}</span>
-          <!--<span>Facility/Location : {{intro.gender}}</span>
-          <span>Job title : {{intro.gender}}</span>
-          <span>Employment status : {{intro.gender}}</span>-->
     </div>
 </div>
 </template>
