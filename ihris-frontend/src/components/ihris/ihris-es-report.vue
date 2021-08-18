@@ -117,13 +117,10 @@ export default {
       this.getData()
     })
     eventBus.$on("mhero-select-all", () => {
+      this.selected = []
       this.selected = this.results
       this.selectAll = true
     })
-  },
-  mounted: function() {
-    this.getTotalRecords();
-    this.getData(true);
   },
   methods: {
     clickIt: function(record) {
@@ -209,6 +206,9 @@ export default {
     getTotalRecords() {
       let url = `/es/${this.reportData.indexName}/_count`
       let body = this.buildTerms()
+      body.reportOptions = {
+        locationBasedConstraint: this.reportData.locationBasedConstraint
+      }
       fetch(url, {
           method: 'POST',
           headers: {
@@ -238,6 +238,9 @@ export default {
       this.prevPage = this.options.page;
 
       let body = this.buildTerms()
+      body.reportOptions = {
+        locationBasedConstraint: this.reportData.locationBasedConstraint
+      }
       let sorting = []
       for(let index in this.options.sortBy) {
         let sortCol = this.options.sortBy[index]
@@ -280,9 +283,10 @@ export default {
               }
               if(this.selectAll) {
                 this.selected = this.results
-              } else {
-                this.selected = []
               }
+              //  else {
+              //   this.selected = []
+              // }
               this.loading = false;
             })
             .catch(err => {
