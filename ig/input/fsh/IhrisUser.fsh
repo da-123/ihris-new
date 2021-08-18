@@ -1,7 +1,7 @@
 Profile:        IhrisPersonUser
 Parent:         Person
 Id:             ihris-person-user
-Title:          "User Profile."
+Title:          "System User"
 Description:    "iHRIS profile of the Person resource to manage user access."
 * name 1..1 MS
 * name ^label = "Name"
@@ -20,7 +20,7 @@ Description:    "iHRIS profile of the Person resource to manage user access."
 * telecom.value 1..1 MS
 * telecom.value ^label = "Email"
 * extension contains 
-      IhrisAssignRole named role 0..* MS and
+      IhrisAssignRole named role 0..1 MS and
       IhrisPassword named password 0..1 MS and
       IhrisUserLocation named location 0..* MS
 * extension[role] ^label = "Role(s)"
@@ -182,6 +182,10 @@ Usage:          #definition
 * item[0].item[6].type = #string
 * item[0].item[6].required = true
 * item[0].item[6].repeats = false
+* item[0].item[6].extension[constraint].extension[key].valueId = "ihris-password-strength-check"
+* item[0].item[6].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[6].extension[constraint].extension[expression].valueString = "matches('^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$')"
+* item[0].item[6].extension[constraint].extension[human].valueString = "Password Should be Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
 
 * item[0].item[7].linkId = "confrimpassword#password"
 * item[0].item[7].text = "Confirm Password"
@@ -224,6 +228,11 @@ Usage:          #definition
 * item[0].item[1].type = #string
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false
+* item[0].item[1].extension[constraint].extension[key].valueId = "ihris-password-strength-check"
+* item[0].item[1].extension[constraint].extension[severity].valueCode = #error
+* item[0].item[1].extension[constraint].extension[expression].valueString = "matches('^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$')"
+* item[0].item[1].extension[constraint].extension[human].valueString = "Password Should be Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+
 
 * item[0].item[2].linkId = "confrimpassword#password"
 * item[0].item[2].text = "Confirm Password"
