@@ -1,5 +1,20 @@
+<style scoped>
+.leave-notification{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: -24px;
+    background-color: #d06f1a;
+    border-radius: 0px 0px 10px 10px;
+    color:#ffff;
+    padding:3px;
+}
+</style>
 <template>
   <v-container class="my-3" v-if="!edit">
+    <div v-if="isLeaveStock" class="leave-notification">
+      <span id="msg-span"></span>
+    </div>
     <v-data-table
       :headers="columns"
       :items="items"
@@ -58,23 +73,42 @@ export default {
       empty: true,
       items: [],
       loading: true,
-      topActions: []
+      topActions: [],
+      isLeaveStock:false,
+      output:''
     }
   },
   mounted: function() {
     this.setupData()
   },
-  watch: {
-    /*
-    slotProps: {
-      handler() {
-        this.setupData()
-      },
-      deep: true
-    }
-    */
+  created: function(){
+     this.getMonthlyLeaveDays()
   },
   methods: {
+    getMonthlyLeaveDays:function(){
+      this.isLeaveStock = this.profile.includes("ihris-basic-ethiopia-leave-stock")
+      if(this.profile.includes("http://ihris.org/fhir/StructureDefinition/ihris-job-description")){
+        let param = this.linkField.replace(".","_").substring(this.linkField.lastIndexOf('.'))
+        let url = "/fhir/" + this.field + "?"+param+"=" + this.linkId
+        fetch( url ).then( response => {
+          if ( response.status === 200 ) {
+            response.json().then(data => {
+              if(data.entry){
+              const extensions = data.entry[0].resource.extension;
+              const firstDate = extensions.find(
+                ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-first-employment-date"
+                ).valueDate
+                const currentYear = new Date().getFullYear()
+                const empYear = new Date(firstDate).getFullYear()
+                const p = document.createElement('p')
+                p.textContent = `You have ${(currentYear - empYear)} monthly leave days.`
+                document.getElementById("msg-span").appendChild(p)
+              }
+            })
+          }
+        })
+      }
+    },
     setupData: function() {
       /*
       if ( this.slotProps && this.slotProps.source ) {
@@ -108,14 +142,12 @@ export default {
       this.items = []
       this.loading = true
       this.addItems( url )
-      console.log("URL ",url);
     },
     addItems: function (url) {
       fetch( url ).then( response => {
         if ( response.status === 200 ) {
           response.json().then( async data => {
             if ( data.entry && data.entry.length > 0 ) {
-              console.log("ENTRY ",data.entry)
               for( let entry of data.entry ) {
                 if(this.searchField.split(':').length === 2 && entry.resource.resourceType === this.searchField.split(':')[0]) {
                   continue

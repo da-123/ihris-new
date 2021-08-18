@@ -165,6 +165,22 @@ Title:            "iHRIS Employment Status ValueSet"
 * ^version = "0.2.0"
 * codes from system IhrisEmploymentStatusCodeSystem
 
+CodeSystem:      IhrisReportNotificationCodeSystem
+Id:              ihris-report-notification-codesystem
+Title:           "Reports Notification Months"
+* ^date = "2021-08-02T08:41:04.362Z"
+* ^version = "0.2.0"
+* #march "March" "March"
+* #june "June" "June"
+* #september "September" "September"
+
+ValueSet:         IhrisReportNotificationValueSet
+Id:               ihris-report-notification-valueset
+Title:            "iHRIS Report Notification ValueSet"
+* ^date = "2021-08-02T08:41:04.362Z"
+* ^version = "0.2.0"
+* codes from system IhrisReportNotificationCodeSystem
+
 Extension:      IhrisPractitionerRolePositionStatus
 Id:             ihris-practitionerrole-position-status
 Title:          "iHRIS Job Description Position Status"

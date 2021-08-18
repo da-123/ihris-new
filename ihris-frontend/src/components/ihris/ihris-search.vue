@@ -47,7 +47,7 @@ export default {
       debug: "",
       headers: [],
       results: [],
-      options: { itemsPerPage: 10 },
+      options: { itemsPerPage: 10,sortBy:['given'] },
       loading: false,
       total: 0,
       prevPage: -1,
@@ -120,7 +120,7 @@ export default {
       }
       if (url === "") {
         let count = this.options.itemsPerPage || 10;
-        let sort = "";
+        /*let sort = "";
         for (let idx in this.options.sortBy) {
           if (sort) {
             sort += ",";
@@ -129,12 +129,13 @@ export default {
             sort += "-";
           }
           sort += this.options.sortBy[idx];
-        }
+        }*/
         url =
           "/fhir/" +
           this.resource +
           "?_count=" +
           count +
+          "&_sort="+this.options.sortBy.join()+
           "&_total=accurate&_profile=" +
           this.profile;
         let sTerms = Object.keys(this.terms);

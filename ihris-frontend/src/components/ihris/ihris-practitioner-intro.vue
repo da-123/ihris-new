@@ -68,9 +68,6 @@ export default {
   components:{
      
   },
-  created: function() {
-   this.setupData()
-  },
   mounted(){
 
     if(!this.isQuestionnaire){
@@ -99,35 +96,37 @@ export default {
 
           let practitioner = this.slotProps.source.data
 
-          console.log(practitioner)
-
-          let firstName = practitioner.name[0].given[0];
+          let firstName = (practitioner.name)?practitioner.name[0].given[0]:"";
 
           this.intro.gender = practitioner.gender;
 
           this.intro.birthDate = practitioner.birthDate
 
-          this.intro.employeeID = practitioner.identifier[0].value
+          this.intro.employeeID = (practitioner.identifier)?practitioner.identifier[0].value:""
 
-          let extensions =  practitioner.extension[0]//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
+          let extensions =  (practitioner.extension)?practitioner.extension[0]:null//.filter(ext => ext.url === 'http://ihris.org/fhir/StructureDefinition/ihris-practitioner-familynames')
 
-          extensions = extensions.extension
+          extensions = (extensions)?extensions.extension:[]
 
           let fatherName = extensions.filter(ext => ext.url === 'fathers')
 
           let grandFatherLastName = extensions.filter(ext => ext.url === 'grandfatherslastname')
 
           
-          let photo = practitioner.photo[0]
+          let photo = ""
+          if(practitioner.photo) photo = practitioner.photo[0]
 
-          this.intro.fullname = firstName+" "+fatherName[0].valueString+" "+grandFatherLastName[0].valueString
+          this.intro.fullname = firstName+" "+(fatherName.length>0)?fatherName[0].valueString:""+" "+(grandFatherLastName>0)?grandFatherLastName[0].valueString:""
 
-         /* if ( this.photoURL ) {
+         /*if ( this.photoURL ) {
             URL.revokeObjectURL( this.photoURL )
           }*/
           if ( photo.data && photo.contentType ) {
             let dataURL = "data:"+photo.contentType+";base64,"+photo.data
-            fetch(dataURL).then( res => res.blob() ).then( blob => this.photoURL = URL.createObjectURL( blob ) ).catch( e => {
+            fetch(dataURL).then( res => res.blob() ).then( blob => {
+              this.photoURL = URL.createObjectURL( blob ) 
+              //URL.revokeObjectURL(this.photoURL)
+              }).catch( e => {
               console.log("Failed to get data from base64.",e)
             } )
           }
