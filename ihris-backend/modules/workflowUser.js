@@ -13,7 +13,6 @@ let locationRoleID = undefined
 const workflowUser = {
   process: ( req ) => {
     return new Promise( async (resolve, reject) => {
-      resolve(await workflowUser.outcome("IN PROMISE"))
       try {
         let bundle = {
           resourceType: "Bundle",
