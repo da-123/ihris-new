@@ -10,6 +10,7 @@ const fhirModules = require('../modules/fhirModules')
 const isEmpty = require('is-empty')
 const outcomes = require('../config/operationOutcomes')
 const winston = require('winston')
+const { filter } = require('../modules/fhirFilter')
 
 let workflowModules = {}
 
@@ -113,16 +114,18 @@ router.post("/QuestionnaireResponse", (req, res, next) => {
 
     fhirQuestionnaire.processQuestionnaire( req.body ).then( (bundle) => {
       fhirSecurity.preProcess( bundle ).then( (uuid) => {
-        winston.error("Done PreProcessing")
-        if(Object.keys(req.user.permissions.filter.Practitioner.constraint).length){
-          if (bundle.entry[0].resource.resourceType === "Practitioner" ){
-            let relatedLoc = Object.keys(req.user.permissions.filter.Practitioner.constraint)
-            for (let value of relatedLoc){
-              let location = value.split("=")
-              bundle.entry[0].resource.extension.find(ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-related-group").extension.push( {
-                url: "location",
-                valueString: location[1]
-              } )
+        winston.info("Done Pre Processing")
+        if(req.user.permissions.hasOwnProperty('filter')){
+          if(Object.keys(req.user.permissions.filter.Practitioner.constraint).length){
+            if (bundle.entry[0].resource.resourceType === "Practitioner" ){
+              let relatedLoc = Object.keys(req.user.permissions.filter.Practitioner.constraint)
+              for (let value of relatedLoc){
+                let location = value.split("=")
+                bundle.entry[0].resource.extension.find(ext => ext.url === "http://ihris.org/fhir/StructureDefinition/ihris-related-group").extension.push( {
+                  url: "location",
+                  valueString: location[1]
+                } )
+              }
             }
           }
         }
