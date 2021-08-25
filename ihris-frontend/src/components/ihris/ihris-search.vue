@@ -130,12 +130,15 @@ export default {
           }
           sort += this.options.sortBy[idx];
         }*/
+        let sort =""
+        if(this.page == "practitioner")
+          sort = "&_sort="+this.options.sortBy.join()
         url =
           "/fhir/" +
           this.resource +
           "?_count=" +
           count +
-          "&_sort="+this.options.sortBy.join()+
+          sort+
           "&_total=accurate&_profile=" +
           this.profile;
         let sTerms = Object.keys(this.terms);
