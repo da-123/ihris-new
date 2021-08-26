@@ -10,6 +10,7 @@ Usage:          #example
 * extension[reportdetails].extension[resource].valueString = "Practitioner"
 * extension[reportdetails].extension[query].valueString = "active=true"
 * extension[reportdetails].extension[displayCheckbox].valueBoolean = true
+* extension[reportdetails].extension[locationBasedConstraint].valueBoolean = true
 * extension[reportdetails].extension[reportelement][0].extension[label].valueString = "employeeId"
 * extension[reportdetails].extension[reportelement][0].extension[name].valueString = "identifier.where(type.coding.where(code='employeeId')).value"
 * extension[reportdetails].extension[reportelement][0].extension[display].valueString = "Employee Id"
@@ -55,6 +56,10 @@ Usage:          #example
 * extension[reportdetails].extension[reportelement][8].extension[display].valueString = "Ethnicity"
 * extension[reportdetails].extension[reportelement][8].extension[filter].valueBoolean = true
 * extension[reportdetails].extension[reportelement][8].extension[dropDownFilter].valueBoolean = true
+* extension[reportdetails].extension[reportelement][9].extension[label].valueString = "ihris-related-group"
+* extension[reportdetails].extension[reportelement][9].extension[name].valueString = "Practitioner.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-related-group').extension.where(url='location').valueString"
+* extension[reportdetails].extension[reportelement][9].extension[filter].valueBoolean = false
+* extension[reportdetails].extension[reportelement][9].extension[dropDownFilter].valueBoolean = false
 
 * extension[reportlink][0].extension[name].valueString = "role"
 * extension[reportlink][0].extension[resource].valueString = "PractitionerRole"
