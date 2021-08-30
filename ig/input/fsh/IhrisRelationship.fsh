@@ -21,6 +21,7 @@ Description:    "Defines the primary resource of the relationship"
       query 0..1 MS and
       cachingDisabled 0..1 MS and
       displayCheckbox 0..1 MS and
+      locationBasedConstraint 0..1 MS and
       IhrisReportElement named reportelement 0..* MS
 * extension[name].value[x] only string
 * extension[name].valueString 1..1
@@ -40,6 +41,10 @@ Description:    "Defines the primary resource of the relationship"
 * extension[displayCheckbox].value[x] only boolean
 * extension[displayCheckbox].valueBoolean 1..1
 * extension[displayCheckbox].valueBoolean ^label = "Whether rows of the report are selectable or not"
+* extension[locationBasedConstraint].value[x] only boolean
+* extension[locationBasedConstraint].valueBoolean 1..1
+* extension[locationBasedConstraint].valueBoolean ^label = "Whether rows of the report are are limited by location or not"
+
 
 
 Extension:      IhrisReportLink
