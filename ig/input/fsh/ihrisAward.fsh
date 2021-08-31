@@ -8,7 +8,7 @@ Description:    "iHRIS Profile of the Basic resource for an Award to the practio
 * extension contains
     IhrisAward named ihrisaward 1..1 MS
 * extension[ihrisaward].extension[award].valueString 1..1 MS
-* extension[ihrisaward].extension[award].valueString ^label = "Title Of Ward" 
+* extension[ihrisaward].extension[award].valueString ^label = "Title Of AWard" 
 * extension[ihrisaward].extension[organization].valueString 0..1 MS
 * extension[ihrisaward].extension[organization].valueString ^label = "Awarding Organization"
 * extension[ihrisaward].extension[date].valueDate 1..1 MS
@@ -26,7 +26,7 @@ Title:          "Award details"
     remark 0..1 MS
 * extension[award].value[x] only string
 * extension[award].valueString 1..1 MS
-* extension[award].valueString ^label = "Title Of Ward" 
+* extension[award].valueString ^label = "Title Of AWard" 
 * extension[award].valueString ^constraint[0].key = "ihris-award-check"
 * extension[award].valueString ^constraint[0].severity = #error
 * extension[award].valueString ^constraint[0].expression = "matches('^[A-Za-z ]*$')"
@@ -73,7 +73,7 @@ Usage:          #definition
 
 
 * item[0].item[1].linkId = "Basic.extension[0].extension[1]"
-* item[0].item[1].text = "Date Of Ward"
+* item[0].item[1].text = "Date Of AWard"
 * item[0].item[1].type = #date
 * item[0].item[1].required = true
 * item[0].item[1].repeats = false

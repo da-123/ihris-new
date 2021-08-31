@@ -60,7 +60,7 @@ Description:    "iHRIS profile of Practitioner."
     IhrisPractitionerRoleFirstEmploymentDate named firstEmploymentDate 1..1 MS and
     IhrisPractitionerRoleJobInformationRemark named jobInformationRemark 0..1 MS and
     IhrisPractitionerRoleFundSource named jobInformationFundSource 0..1 MS and
-    IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS and
+    /*IhrisPractitionerRoleReasonDeparture named reasonForDepature 0..1 MS and*/
     IhrisPractitionerRoleReasonChange named reasonForChange 0..1 MS and
     IhrisPractitionerRoleSalaryScale named salaryScale 0..1 MS 
 * extension[salary].valueMoney MS
@@ -81,12 +81,10 @@ Description:    "iHRIS profile of Practitioner."
 * extension[firstEmploymentDate] ^label = "First Employment Date"
 * extension[jobInformationRemark].valueString MS
 * extension[jobInformationRemark] ^label = "Remark"
-
 * extension[jobInformationFundSource].valueString MS
 * extension[jobInformationFundSource] ^label = "Source of Fund"
-
-* extension[reasonForDepature].valueCoding MS
-* extension[reasonForDepature] ^label = "Reason for Departure"
+/* extension[reasonForDepature].valueCoding MS
+* extension[reasonForDepature] ^label = "Reason for Departure"*/
 * extension[reasonForChange].valueCoding MS
 * extension[reasonForChange] ^label = "Reason for Change"
 
@@ -164,22 +162,6 @@ Title:            "iHRIS Employment Status ValueSet"
 * ^date = "2020-10-29T08:41:04.362Z"
 * ^version = "0.2.0"
 * codes from system IhrisEmploymentStatusCodeSystem
-
-CodeSystem:      IhrisReportNotificationCodeSystem
-Id:              ihris-report-notification-codesystem
-Title:           "Reports Notification Months"
-* ^date = "2021-08-02T08:41:04.362Z"
-* ^version = "0.2.0"
-* #march "March" "March"
-* #june "June" "June"
-* #september "September" "September"
-
-ValueSet:         IhrisReportNotificationValueSet
-Id:               ihris-report-notification-valueset
-Title:            "iHRIS Report Notification ValueSet"
-* ^date = "2021-08-02T08:41:04.362Z"
-* ^version = "0.2.0"
-* codes from system IhrisReportNotificationCodeSystem
 
 Extension:      IhrisPractitionerRolePositionStatus
 Id:             ihris-practitionerrole-position-status
@@ -262,7 +244,7 @@ Title:            "iHRIS Salary Scale ValueSet"
 * ^version = "0.3.0"
 * codes from system IhrisSalaryScaleCodeSystem
 
-Extension:      IhrisPractitionerRoleReasonDeparture
+/*Extension:      IhrisPractitionerRoleReasonDeparture
 Id:             ihris-practitionerrole-reason-departure
 Title:          "iHRIS Job Description Reason for Departure"
 Description:    "iHRIS extension for Job Description Reason for Departure."
@@ -271,9 +253,9 @@ Description:    "iHRIS extension for Job Description Reason for Departure."
 * value[x] only Coding
 * valueCoding 0..1 MS
 * valueCoding ^label = "Reason for Change/Departure"
-* valueCoding from IhrisReasonDepartureValueSet (required)
+* valueCoding from IhrisReasonDepartureValueSet (required)*/
 
-CodeSystem:      IhrisReasonDepartureCodeSystem
+/*CodeSystem:      IhrisReasonDepartureCodeSystem
 Id:              ihris-reason-departure-codesystem
 Title:           "Reason For Change/Departure"
 * ^date = "2020-11-14T08:41:04.362Z"
@@ -292,7 +274,7 @@ Id:               ihris-reason-departure-valueset
 Title:            "iHRIS Reason Departure ValueSet"
 * ^date = "2020-11-14T08:41:04.362Z"
 * ^version = "0.3.0"
-* codes from system IhrisReasonDepartureCodeSystem
+* codes from system IhrisReasonDepartureCodeSystem*/
 
 Extension:      IhrisPractitionerRoleReasonChange
 Id:             ihris-practitionerrole-reason-change
@@ -308,8 +290,8 @@ Description:    "iHRIS extension for Job Description Reason for Change."
 CodeSystem:      IhrisReasonChangeCodeSystem
 Id:              ihris-reason-change-codesystem
 Title:           "Reason For Change/Departure"
-* ^date = "2020-11-14T08:41:04.362Z"
-* ^version = "0.3.0"
+* ^date = "2021-07-14T08:41:04.362Z"
+* ^version = "0.6.0"
 * #transfer "Transfer" "Transfer"
 * #promotionCarrierStructure "Promotion-Carrier structure" "Promotion-Carrier structure"
 * #promotionAdmin "Promotion-Admin" "Promotion-Admin"
@@ -318,12 +300,17 @@ Title:           "Reason For Change/Departure"
 * #RehireRetirement "Rehire after Retirement" "Rehire after Retirement"
 * #anotherJobPosition "Another Job Position" "Another Job Position"
 * #health "Health Related" "Health Related"
+* #earlyRetirement "Early Retirement" "Early Retirement"
+* #mandatoryRetirement "Mandatory Retirement" "Mandatory Retirement"
+* #resignation "Resignation" "Resignation"
+* #death "Death" "death"
+* #quit "Quit" "Quit"
 
 ValueSet:         IhrisReasonChangeValueSet
 Id:               ihris-reason-change-valueset
 Title:            "iHRIS Reason Change ValueSet"
 * ^date = "2020-11-14T08:41:04.362Z"
-* ^version = "0.3.0"
+* ^version = "0.5.0"
 * codes from system IhrisReasonChangeCodeSystem
 
 Extension:      IhrisPractitionerRoleFirstEmploymentDate
@@ -721,7 +708,7 @@ Usage:          #definition
 * item[0].item[0].item[0].repeats = false
 
 * item[0].item[0].item[1].linkId = "PractitionerRole.extension[0]"
-* item[0].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForDepature.value[x]:valueCoding"
+* item[0].item[0].item[1].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:reasonForChange.value[x]:valueCoding"
 * item[0].item[0].item[1].text = "Reason For Change"
 * item[0].item[0].item[1].type = #choice
 * item[0].item[0].item[1].answerValueSet = "http://ihris.org/fhir/ValueSet/ihris-reason-change-valueset"
@@ -1034,7 +1021,6 @@ Usage:          #definition
 * item[0].item[11].type = #text
 * item[0].item[11].required = false
 * item[0].item[11].repeats = false
-
 
 * item[0].item[12].linkId = "positionStatus"
 * item[0].item[12].definition = "http://ihris.org/fhir/StructureDefinition/ihris-job-description#PractitionerRole.extension:positionStatus.value[x]:valueCoding"
