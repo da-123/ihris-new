@@ -34,7 +34,7 @@
 
 <template>
 <div v-if="intro.fullname !== ''" :class="['ihris-intro-container',(hasScrolled || this.isQuestionnaire) ? 'show':'hide']">
-     <v-img :src="photoURL" contain :max-height="150" class="photo" position="left" />
+     <v-img :src="intro.photoURL" contain :max-height="150" class="photo" position="left" />
      <div class="ihris-intro">
           <span>Employee ID : {{intro.employeeID}}</span>
           <span>Full name : {{intro.fullname}}</span>
@@ -108,20 +108,20 @@ export default {
           let fatherName = extensions.filter(ext => ext.url === 'fathers')
 
           let grandFatherLastName = extensions.filter(ext => ext.url === 'grandfatherslastname')
-
           
           let photo = ""
           if(practitioner.photo) photo = practitioner.photo[0]
+          fatherName = (fatherName.length>0)?fatherName[0].valueString:""
+          grandFatherLastName = (grandFatherLastName.length>0)?grandFatherLastName[0].valueString:""
 
-          this.intro.fullname = firstName+" "+(fatherName.length>0)?fatherName[0].valueString:""+" "+(grandFatherLastName>0)?grandFatherLastName[0].valueString:""
-
+          this.intro.fullname = firstName+" "+fatherName+" "+grandFatherLastName
          /*if ( this.photoURL ) {
             URL.revokeObjectURL( this.photoURL )
           }*/
           if ( photo.data && photo.contentType ) {
             let dataURL = "data:"+photo.contentType+";base64,"+photo.data
             fetch(dataURL).then( res => res.blob() ).then( blob => {
-              this.photoURL = URL.createObjectURL( blob ) 
+              this.intro.photoURL = URL.createObjectURL( blob ) 
               //URL.revokeObjectURL(this.photoURL)
               }).catch( e => {
               console.log("Failed to get data from base64.",e)

@@ -73,10 +73,10 @@ Description:    "iHRIS profile of Practitioner."
 * communication from IhrisEthiopiaLanguageValueSet
 * communication.extension contains
      IhrisPractitionerLanguageProficiency named proficiency 0..* MS
- * communication.extension[proficiency] MS
- * communication.extension[proficiency] ^label = "Proficiency"
- * communication.extension[proficiency].extension[level].valueCoding MS
- * communication.extension[proficiency].extension[type].valueCoding MS
+* communication.extension[proficiency] MS
+* communication.extension[proficiency] ^label = "Proficiency"
+* communication.extension[proficiency].extension[level].valueCoding MS
+* communication.extension[proficiency].extension[type].valueCoding MS
 * extension contains
     IhrisPractitionerMaritalStatus named maritalStatus 0..1 MS and
     IhrisPractitionerDependents named dependents 0..* MS and
@@ -139,9 +139,9 @@ Extension:      IhrisPractitionerLanguageProficiency
  Id:             ihris-practitioner-language-proficiency
  Title:          "iHRIS Practitioner Language Proficiency"
  Description:    "iHRIS extension for Practitioner Language Proficiency."
- * ^context.type = #element
- * ^context.expression = "Practitioner"
- * extension contains 
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains 
      level 0..* MS and
      type 0..* MS
 * extension[level] ^label = "Proficiency Level"

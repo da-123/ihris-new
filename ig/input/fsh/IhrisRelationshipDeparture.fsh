@@ -47,6 +47,7 @@ Usage:          #example
 * extension[reportlink][0].extension[linkElement].valueString = "PractitionerRole.practitioner.reference"
 * extension[reportlink][0].extension[linkTo].valueString = "departure"
 * extension[reportlink][0].extension[linkElementSearchParameter].valueString = "practitioner"
+* extension[reportlink][0].extension[query].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure').valueCoding.code=earlyRetirement,mandatoryRetirement"
 * extension[reportlink][0].extension[multiple].valueBoolean = false
 * extension[reportlink][0].extension[reportelement][0].extension[label].valueString = "job"
 * extension[reportlink][0].extension[reportelement][0].extension[name].valueString = "code.coding.where(system='http://ihris.org/fhir/CodeSystem/ihris-job-ethiopia').display"

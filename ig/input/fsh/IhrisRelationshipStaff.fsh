@@ -119,3 +119,13 @@ Usage:          #example
 * extension[reportlink][1].extension[reportelement][0].extension[display].valueString = "Facility/Place of work"
 * extension[reportlink][1].extension[reportelement][0].extension[filter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][0].extension[dropDownFilter].valueBoolean = true
+* extension[reportlink][1].extension[reportelement][1].extension[label].valueString = "type"
+* extension[reportlink][1].extension[reportelement][1].extension[name].valueString = "type"
+* extension[reportlink][1].extension[reportelement][1].extension[display].valueString = "Facilty Service Type"
+* extension[reportlink][1].extension[reportelement][1].extension[filter].valueBoolean = true
+* extension[reportlink][1].extension[reportelement][1].extension[dropDownFilter].valueBoolean = true
+* extension[reportlink][1].extension[reportelement][2].extension[label].valueString = "physicalType"
+* extension[reportlink][1].extension[reportelement][2].extension[name].valueString = "physicalType"
+* extension[reportlink][1].extension[reportelement][2].extension[display].valueString = "Facilty Physical Type"
+* extension[reportlink][1].extension[reportelement][2].extension[filter].valueBoolean = true
+* extension[reportlink][1].extension[reportelement][2].extension[dropDownFilter].valueBoolean = true
