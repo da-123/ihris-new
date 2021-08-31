@@ -41,7 +41,6 @@ Usage:          #example
 * extension[reportdetails].extension[reportelement][5].extension[filter].valueBoolean = false
 * extension[reportdetails].extension[reportelement][5].extension[dropDownFilter].valueBoolean = false
 
-
 * extension[reportlink][0].extension[name].valueString = "role"
 * extension[reportlink][0].extension[resource].valueString = "PractitionerRole"
 * extension[reportlink][0].extension[linkElement].valueString = "PractitionerRole.practitioner.reference"
@@ -79,7 +78,7 @@ Usage:          #example
 * extension[reportlink][0].extension[reportelement][5].extension[filter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][5].extension[dropDownFilter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][6].extension[label].valueString = "reasonForDepature"
-* extension[reportlink][0].extension[reportelement][6].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure').valueCoding.display"
+* extension[reportlink][0].extension[reportelement][6].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-change').valueCoding.display"
 * extension[reportlink][0].extension[reportelement][6].extension[display].valueString = "Reason For Change/Depature"
 * extension[reportlink][0].extension[reportelement][6].extension[filter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][6].extension[dropDownFilter].valueBoolean = true
