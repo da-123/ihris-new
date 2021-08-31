@@ -136,14 +136,14 @@ Description:    "iHRIS profile of Practitioner."
 * extension[attachments].extension[documents].valueAttachment MS
 
 Extension:      IhrisPractitionerLanguageProficiency
- Id:             ihris-practitioner-language-proficiency
- Title:          "iHRIS Practitioner Language Proficiency"
- Description:    "iHRIS extension for Practitioner Language Proficiency."
- * ^context.type = #element
- * ^context.expression = "Practitioner"
- * extension contains 
-     level 0..* MS and
-     type 0..* MS
+Id:             ihris-practitioner-language-proficiency
+Title:          "iHRIS Practitioner Language Proficiency"
+Description:    "iHRIS extension for Practitioner Language Proficiency."
+* ^context.type = #element
+* ^context.expression = "Practitioner"
+* extension contains 
+    level 0..* MS and
+    type 0..* MS
 * extension[level] ^label = "Proficiency Level"
 * extension[level].value[x] only Coding
 * extension[level].valueCoding 0..1 MS
