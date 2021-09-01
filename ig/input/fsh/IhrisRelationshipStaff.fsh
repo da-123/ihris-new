@@ -135,3 +135,29 @@ Usage:          #example
 * extension[reportlink][1].extension[reportelement][2].extension[display].valueString = "Facilty Physical Type"
 * extension[reportlink][1].extension[reportelement][2].extension[filter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][2].extension[dropDownFilter].valueBoolean = true
+
+* extension[reportlink][2].extension[name].valueString = "profession"
+* extension[reportlink][2].extension[resource].valueString = "Basic"
+* extension[reportlink][2].extension[linkElement].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
+* extension[reportlink][2].extension[linkTo].valueString = "practitioner"
+* extension[reportlink][2].extension[multiple].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][0].extension[label].valueString = "educationCategory"
+* extension[reportlink][2].extension[reportelement][0].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='education_category').valueCoding.display"
+* extension[reportlink][2].extension[reportelement][0].extension[display].valueString = "Education Level Category"
+* extension[reportlink][2].extension[reportelement][0].extension[filter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][0].extension[dropDownFilter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][1].extension[label].valueString = "educationSubCategory"
+* extension[reportlink][2].extension[reportelement][1].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='education_sub_category').valueCoding.display"
+* extension[reportlink][2].extension[reportelement][1].extension[display].valueString = "Education Level Sub Category"
+* extension[reportlink][2].extension[reportelement][1].extension[filter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][1].extension[dropDownFilter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][2].extension[label].valueString = "professionCategoryType"
+* extension[reportlink][2].extension[reportelement][2].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='profession').valueCoding.display"
+* extension[reportlink][2].extension[reportelement][2].extension[display].valueString = "Professional Category Type"
+* extension[reportlink][2].extension[reportelement][2].extension[filter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][2].extension[dropDownFilter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][3].extension[label].valueString = "professionCategory"
+* extension[reportlink][2].extension[reportelement][3].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='profession_category').valueCoding.display"
+* extension[reportlink][2].extension[reportelement][3].extension[display].valueString = "Profession Category"
+* extension[reportlink][2].extension[reportelement][3].extension[filter].valueBoolean = true
+* extension[reportlink][2].extension[reportelement][3].extension[dropDownFilter].valueBoolean = false
