@@ -46,7 +46,7 @@ Usage:          #example
 * extension[reportlink][0].extension[linkElement].valueString = "PractitionerRole.practitioner.reference"
 * extension[reportlink][0].extension[linkTo].valueString = "retirement"
 * extension[reportlink][0].extension[linkElementSearchParameter].valueString = "practitioner"
-* extension[reportlink][0].extension[query].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure').valueCoding.code=earlyRetirement,mandatoryRetirement"
+* extension[reportlink][0].extension[query].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-change').valueCoding.code=earlyRetirement,mandatoryRetirement"
 * extension[reportlink][0].extension[multiple].valueBoolean = false
 * extension[reportlink][0].extension[reportelement][0].extension[label].valueString = "job"
 * extension[reportlink][0].extension[reportelement][0].extension[name].valueString = "code.coding.where(system='http://ihris.org/fhir/CodeSystem/ihris-job-ethiopia').display"
@@ -73,9 +73,9 @@ Usage:          #example
 * extension[reportlink][0].extension[reportelement][4].extension[display].valueString = "Employment Status"
 * extension[reportlink][0].extension[reportelement][4].extension[filter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][4].extension[dropDownFilter].valueBoolean = true
-* extension[reportlink][0].extension[reportelement][5].extension[label].valueString = "reasonForDepature"
-* extension[reportlink][0].extension[reportelement][5].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-departure').valueCoding.display"
-* extension[reportlink][0].extension[reportelement][5].extension[display].valueString = "Reason For Change"
+* extension[reportlink][0].extension[reportelement][5].extension[label].valueString = "reasonForChange"
+* extension[reportlink][0].extension[reportelement][5].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-change').valueCoding.display"
+* extension[reportlink][0].extension[reportelement][5].extension[display].valueString = "Reason For Change/Departure"
 * extension[reportlink][0].extension[reportelement][5].extension[filter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][5].extension[dropDownFilter].valueBoolean = true
 
