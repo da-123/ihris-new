@@ -108,7 +108,6 @@ Usage:          #example
 * extension[reportlink][0].extension[reportelement][7].extension[display].valueString = "Job Type"
 * extension[reportlink][0].extension[reportelement][7].extension[filter].valueBoolean = true
 * extension[reportlink][0].extension[reportelement][7].extension[dropDownFilter].valueBoolean = true
-
 * extension[reportlink][0].extension[reportelement][8].extension[label].valueString = "reasonForChange"
 * extension[reportlink][0].extension[reportelement][8].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitionerrole-reason-change').valueCoding.display"
 * extension[reportlink][0].extension[reportelement][8].extension[display].valueString = "Reason For Change/Departure"
@@ -126,12 +125,12 @@ Usage:          #example
 * extension[reportlink][1].extension[reportelement][0].extension[filter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][0].extension[dropDownFilter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][1].extension[label].valueString = "type"
-* extension[reportlink][1].extension[reportelement][1].extension[name].valueString = "type"
+* extension[reportlink][1].extension[reportelement][1].extension[name].valueString = "type.coding.where(system='http://ihris.org/fhir/CodeSystem/ihris-facility-type').display"
 * extension[reportlink][1].extension[reportelement][1].extension[display].valueString = "Facilty Service Type"
 * extension[reportlink][1].extension[reportelement][1].extension[filter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][1].extension[dropDownFilter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][2].extension[label].valueString = "physicalType"
-* extension[reportlink][1].extension[reportelement][2].extension[name].valueString = "physicalType"
+* extension[reportlink][1].extension[reportelement][2].extension[name].valueString = "physicalType.text"
 * extension[reportlink][1].extension[reportelement][2].extension[display].valueString = "Facilty Physical Type"
 * extension[reportlink][1].extension[reportelement][2].extension[filter].valueBoolean = true
 * extension[reportlink][1].extension[reportelement][2].extension[dropDownFilter].valueBoolean = true
