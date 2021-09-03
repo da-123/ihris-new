@@ -139,7 +139,7 @@ Usage:          #example
 * extension[reportlink][2].extension[resource].valueString = "Basic"
 * extension[reportlink][2].extension[linkElement].valueString = "Basic.extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-practitioner-reference').valueReference.reference"
 * extension[reportlink][2].extension[linkTo].valueString = "practitioner"
-* extension[reportlink][2].extension[multiple].valueBoolean = true
+* extension[reportlink][2].extension[multiple].valueBoolean = false
 * extension[reportlink][2].extension[reportelement][0].extension[label].valueString = "educationCategory"
 * extension[reportlink][2].extension[reportelement][0].extension[name].valueString = "extension.where(url='http://ihris.org/fhir/StructureDefinition/ihris-professional').extension.where(url='education_category').valueCoding.display"
 * extension[reportlink][2].extension[reportelement][0].extension[display].valueString = "Education Level Category"
