@@ -9,7 +9,7 @@
   "parameter": [
     {
       "name": "fhir:base",
-      "valueString": "http://10.22200.210:8080"
+      "valueString": "http://10.22.200.210:8080"
     },
     {
       "name": "elasticsearch:base",
