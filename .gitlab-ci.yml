@@ -2,8 +2,8 @@ variables:
   BRANCH: ${CI_COMMIT_REF_NAME}
   PROJECT: ${CI_PROJECT_PATH_SLUG}
   BUILD_NUMBER: ${CI_PIPELINE_IID}
-  H_PORT: 3000
-  C_PORT: 3000
+  H_PORT: 3001
+  C_PORT: 3001
 stages:
   - build
   - deploy
@@ -21,7 +21,7 @@ build_project:
     when:
       - always
   tags:
-    - fe-vm-ihris
+    - front-end
 
 deploy_project:
   stage: deploy
@@ -35,4 +35,4 @@ deploy_project:
     when:
       - always
   tags:
-    - fe-vm-ihris
+    - front-end
