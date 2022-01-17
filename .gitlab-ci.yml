@@ -1,38 +1,20 @@
 variables:
-  BRANCH: ${CI_COMMIT_REF_NAME}
-  PROJECT: ${CI_PROJECT_PATH_SLUG}
-  BUILD_NUMBER: ${CI_PIPELINE_IID}
-  H_PORT: 3001
-  C_PORT: 3001
-stages:
-  - build
-  - deploy
+  CI_REGISTRY_IMAGE: "repo.moh.gov.et:5050/dha-team/ihris" 
+  DOCKER_TLS_CERTDIR: ""
+docker-build:
+  # Official docker image.
+  image: docker:19.03.12
+  stage: build 
+  services:
+    - docker:19.03.12-dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:master-$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:master-latest .
+    - docker push $CI_REGISTRY_IMAGE:master-latest
+    - docker push $CI_REGISTRY_IMAGE:master-$CI_COMMIT_SHORT_SHA
 
-build_project:
-  stage: build
   only:
     - master
-  script:
-    - echo Building $BRANCH branch of project $PROJECT started on `date`
-    - docker build --cache-from ${PROJECT}_${BRANCH} -t ${PROJECT}_${BRANCH}:$BUILD_NUMBER -t ${PROJECT}_${BRANCH}:latest .
-    - echo Build of ${PROJECT}_${BRANCH}:$BUILD_NUMBER Finished on `date`.
-  retry:
-    max: 2
-    when:
-      - always
   tags:
-    - front-end
-
-deploy_project:
-  stage: deploy
-  only:
-    - master
-  script:
-    - docker stop ${PROJECT}_${BRANCH} || true && docker rm ${PROJECT}_${BRANCH} || true
-    - docker run -d --restart=always  --network host --name ${PROJECT}_${BRANCH} ${PROJECT}_${BRANCH}:$BUILD_NUMBER
-  retry:
-    max: 2
-    when:
-      - always
-  tags:
-    - front-end
+    - backend
