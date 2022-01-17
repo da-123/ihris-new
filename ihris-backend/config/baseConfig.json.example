@@ -13,7 +13,7 @@
     },
     {
       "name": "elasticsearch:base",
-      "valueString": "http://104.154.143.228:9200/"
+      "valueString": "http://localhost:9200/"
     },
     {
       "name": "elasticsearch:max_compiliation_rate",
@@ -33,7 +33,7 @@
     },
     {
       "name": "kibana:base",
-      "valueString": "http://104.154.143.228:5601"
+      "valueString": "http://localhost:5601"
     },
     {
       "name": "kibana:username",
