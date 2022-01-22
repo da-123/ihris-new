@@ -13,6 +13,9 @@ docker-build:
     - docker build -t $CI_REGISTRY_IMAGE:backend-$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:backend-latest ./ihris-backend/
     - docker push $CI_REGISTRY_IMAGE:backend-latest
     - docker push $CI_REGISTRY_IMAGE:backend-$CI_COMMIT_SHORT_SHA
+    - docker build -t $CI_REGISTRY_IMAGE:backend-$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:ihris-config ./ihris-backend/Dockerfile.ihris.config
+    - docker push $CI_REGISTRY_IMAGE:ihris-config
+    - docker push $CI_REGISTRY_IMAGE:ihris-config-$CI_COMMIT_SHORT_SHA
     - docker build -t $CI_REGISTRY_IMAGE:frontend-$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:frontend-latest ./ihris-frontend/
     - docker push $CI_REGISTRY_IMAGE:frontend-latest
     - docker push $CI_REGISTRY_IMAGE:frontend-$CI_COMMIT_SHORT_SHA
