@@ -1,42 +1,47 @@
-FROM node:12.19.0-slim
-#ADD http://download.redis.io/redis-stable.tar.gz . 
-RUN apt-get update && apt-get install build-essential -y --no-install-recommends   
-#RUN tar xvzf redis-stable.tar.gz && \
-  #  cd redis-stable && \
-  #  make && \
-  #  mv src/redis-server /usr/bin/ && \
- #   cd .. && \
- #   rm -r redis-stable && \
-RUN npm install -g concurrently && \
-    npm install -g npm
-    #npm install -g fsh-sushi
+FROM node:erbium-slim
 
-WORKDIR /app
+ARG branch=master
+RUN apt-get -qq update && apt-get install -y -qq git
+RUN git clone --branch ${branch} https://github.com/iHRIS/iHRIS /src/
 
-COPY . /app
 
-#RUN cd fsh
-#RUN sushi -s .
-#RUN ls
-#RUN pwd
-#RUN cd tools && npm install
-#RUN npm install
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/profiles/*
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/examples/*
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/extensions/*
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/vocabulary/*
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/fsh/build/input/resources/*
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/resources/Person-ihris-user-*.json
-#RUN node tools/load.js --server https://fhir.sandboxaddis.com/hapi-fhir-jpaserver/fhir/ /app/resources/Parameters-ihris-config.signed.json #Only change this file if there is a change to in in the update
+# generate fsh files
+WORKDIR /src/ig
+RUN npm install -g fsh-sushi
+RUN sushi -s .
 
-RUN cp /app/ihris-backend/config/baseConfig.json.example /app/ihris-backend/config/baseConfig.json
-RUN cd /app/ihris-backend && npm install
-RUN cd /app/ihris-backend && npm install date-fns@^2.0.0
+WORKDIR /src/tools
+RUN npm install
 
-WORKDIR /app/ihris-backend
+WORKDIR /src/ihris-backend
+RUN npm install
+
+# RUN cp /src/server/config/config_docker_template.json /src/server/config/config_docker.json
+# RUN cp /src/server/config/config_cicd_template.json /src/server/config/config_cicd.json
+
+RUN cp /src/ihris-backend/config/baseConfig.json.example /src/ihris-backend/config/baseConfig.json
+
+# ARG NODE_ENV=docker
+ARG NODE_ENV=production
+ENV NODE_ENV=$NODE_ENV
+
+ARG IHRIS_EMNUTT__BASE=http://localhost:3002/emNutt/fhir
+ENV IHRIS_EMNUTT__BASE=$IHRIS_EMNUTT__BASE
+
+ARG IHRIS_FHIR__BASE=http://localhost:8080/hapi/fhir
+ENV IHRIS_FHIR__BASE=$IHRIS_FHIR__BASE
+
+ARG IHRIS_FHIR__USERNAME=hapi
+ENV IHRIS_FHIR__USERNAME=$IHRIS_FHIR__USERNAME
+
+ARG IHRIS_FHIR__PASSWORD=hapi
+ENV IHRIS_FHIR__PASSWORD=$IHRIS_FHIR__PASSWORD
+
+ARG IHRIS_ELASTICSEARCH__BASE=http://localhost:9200
+ENV IHRIS_ELASTICSEARCH__BASE=$IHRIS_ELASTICSEARCH__BASE
+
+ARG IHRIS_KIBANA__BASE=http://localhost:5601
+ENV IHRIS_KIBANA__BASE=$IHRIS_KIBANA__BASE
 
 EXPOSE 3000
-
-EXPOSE 6379
-
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
