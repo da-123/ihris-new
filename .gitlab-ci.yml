@@ -21,4 +21,4 @@ docker-build:
   only:
     - master
   tags:
-    - backend
+    - front-end
