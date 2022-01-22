@@ -35,9 +35,8 @@ RUN cd /app/ihris-backend && npm install date-fns@^2.0.0
 
 WORKDIR /app/ihris-backend
 
-EXPOSE 3001
+EXPOSE 3000
 
 EXPOSE 6379
-
 
 CMD ["npm", "start"]
