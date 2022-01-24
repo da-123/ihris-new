@@ -2,7 +2,7 @@ FROM node:erbium-slim
 
 ARG branch=master
 RUN apt-get -qq update && apt-get install -y -qq git
-RUN git clone --branch ${branch} https://repo.moh.gov.et/dha-team/ihris /src/
+RUN git clone --branch ${branch} git@repo.moh.gov.et:dha-team/ihris.git /src/
 
 
 # generate fsh files
